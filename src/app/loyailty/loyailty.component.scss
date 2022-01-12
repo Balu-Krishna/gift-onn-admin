@@ -1,16 +1,12 @@
 .admins_head h6 {
-    font-family: "Montserrat", sans-serif !important;
-    color: #000 !important;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: capitalize;
-    font-size: 18px !important;
+    font-size: 17px;
     margin-left: 30px;
 }
 
 .add_btn h6 {
-    height: 40px;
-    font-family: "Montserrat", sans-serif;
-    background-color: #988149;
+    background-color: #9e8656;
     color: #fff;
     padding: 7px 14px 7px 14px;
     border-radius: 5px;
@@ -20,26 +16,17 @@
 }
 
 .filter-btn {
-    color: #988149;
+    color: #9e8656;
+    text-transform: capitalize;
     font-size: 14px;
     float: right;
     margin-right: 10px;
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
-    border: 1px solid #988149;
-    height: 40px;
 }
 
 .activ_btn a {
-    
-      border: 1px solid #00C292;
-      color: #ffffff !important;
-      background: #00C292 0% 0% no-repeat padding-box;
-      border-radius: 4px !important;
-      font-family: 'Montserrat' !important;
-      font-size: 12px !important;
-      padding: 6px 20px 6px 20px;
-  
+    background-color: #4be868;
+    padding: 2px 12px;
+    border-radius: 3px;
 }
 
 .dele_btn {
@@ -80,15 +67,16 @@
 }
 
 .export_btn a {
-    border: 1px solid #988149;
-    height: 32px;
+    border: 1px solid #9e8656;
+    /* padding: 3px; */
+    height: 24px;
     width: 52px;
     border-radius: 5px;
     text-align: center;
     margin-left: 7px;
-    color: #988149;
-    padding-top: 4px;
-    margin-top: -8px;
+    color: #9e8656;
+    padding-top: 2px;
+    margin-top: -4px;
 }
 
 .tab_admin {
@@ -123,14 +111,3 @@
 .td_wid {
     color: black;
 }
-.table thead th {
-    font-family: "Montserrat", sans-serif !important;
-    font-size: 14px;
-    line-height: 20px !important;
-    font-weight: 600;
-  }
-  .table tbody tr {
-    font-family: "Montserrat", sans-serif !important;
-    font-size: 12.5px !important;
-    font-weight: 500;
-  }

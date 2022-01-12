@@ -5,23 +5,19 @@
     </div>
     <div class="d-flex justify-content-end">
       <div class="pr-4">
-        <button
-          mat-stroked-button
-          color="primary"
-          class="filter-btn"
-          (click)="openFilter()"
-        >
+        <button mat-stroked-button
+                color="primary"
+                class="filter-btn"
+                (click)="openFilter()">
           Filter
           <mat-icon>filter_list</mat-icon>
         </button>
       </div>
       <div>
-        <button
-          mat-stroked-button
-          color="accent"
-          class="add-user-btn"
-          (click)="addUser()"
-        >
+        <button mat-stroked-button
+                color="accent"
+                class="add-user-btn"
+                (click)="addUser()">
           Add Users
         </button>
       </div>
@@ -36,48 +32,45 @@
           <span class="font-weight-bold align-middle pr-3">Export: </span>
         </div>
         <div class="pr-3">
-          <button
-            mat-stroked-button
-            color="accent"
-            class="btn-outline-35"
-            (click)="download('csv')"
-          >
+          <button mat-stroked-button
+                  color="accent"
+                  class="btn-outline-35"
+                  (click)="download('csv')">
             CSV
           </button>
         </div>
         <div class="pr-3">
-          <button
-            mat-stroked-button
-            color="accent"
-            class="btn-outline-35"
-            (click)="download('xls')"
-          >
+          <button mat-stroked-button
+                  color="accent"
+                  class="btn-outline-35"
+                  (click)="download('xls')">
             XLS
           </button>
         </div>
         <div class="pr-3">
-          <button
-            mat-stroked-button
-            color="accent"
-            class="btn-outline-35"
-            (click)="download('pdf')"
-          >
+          <button mat-stroked-button
+                  color="accent"
+                  class="btn-outline-35"
+                  (click)="download('pdf')">
             PDF
           </button>
         </div>
       </div>
     </div>
 
-    <div class="d-flex align-content-center pt-3">
-      <mat-form-field appearance="outline" style="font-size: 20px" class="pr-3">
-        <mat-icon matSuffix>search</mat-icon>
-        <input
-          matInput
-          type="search"
-          placeholder="search"
-          class="search-input"
-        />
-      </mat-form-field>
+    <div class="col-lg-5 col-md-5 col-sm-5 d-flex justify-content-end"
+         style="margin-right:25px">
+      <form class="search-form">
+        <mat-form-field class="form_field search_btn"
+                        appearance="outline">
+          <mat-icon class="form_field form_icon_search"
+                    matSuffix>search</mat-icon>
+          <input matInput
+                 type="search"
+                 placeholder="search"
+                 class="search-input">
+        </mat-form-field>
+      </form>
     </div>
   </div>
   <div class="table-responsive">
@@ -85,10 +78,9 @@
       <thead>
         <tr>
           <th>Emp ID</th>
-          <th>Name</th>
+          <th>Emolpyee Name</th>
           <th>Email</th>
           <th>Role</th>
-          <th>Department</th>
           <th>Status</th>
           <th>Action</th>
         </tr>
@@ -99,28 +91,29 @@
           <td>{{ user.firstName + " " + user.lastName }}</td>
           <td>{{ user.email }}</td>
           <td>{{ user.role }}</td>
-          <td>{{ user.department }}</td>
-
-          <td>
-            <div
-              style="font-family: 'Montserrat'; font-size: 14px"
-              class="badge rounded"
-              [ngClass]="
-                user.status == 'ACTIVE' ? 'badge-success' : 'badge-danger'
+          <td class="text-center">
+            <div style="
+                font-family: 'Montserrat';
+                width: 84px;
+                height: 29px;
+                font-size: 13px;
+                text-align: center;
               "
-            >
+                 class="badge rounded"
+                 [ngClass]="
+                user.status == 'ACTIVE' ? 'badge-success' : 'badge-danger'
+              ">
               <span> {{ user.status }} </span>
             </div>
           </td>
           <td>
-            <button mat-icon-button (click)="editUser(user)">
-              <i style="color:#1ccfb4;font-size:16px;" class="fas fa-edit"></i>
+            <button mat-icon-button
+                    (click)="editUser(user)">
+              <mat-icon>edit_note</mat-icon>
             </button>
-            <button mat-icon-button (click)="deleteModel()">
-              <!-- <mat-icon style="color: #fa4242">delete</mat-icon> -->
-              <!-- <mat-icon fontIcon="fa-smile"></mat-icon> -->
-              <i style="color:red;font-size:16px;" class="far fa-trash-alt"></i>
-
+            <button mat-icon-button
+                    (click)="deleteModel()">
+              <mat-icon style="color: #fa4242">delete</mat-icon>
             </button>
           </td>
         </tr>

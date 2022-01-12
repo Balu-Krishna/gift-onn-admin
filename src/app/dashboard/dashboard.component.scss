@@ -59,7 +59,7 @@
 }
 
 .card-design {
-  width: 322px;
+  width: 100%;
   display: flex;
   padding: 1rem 0.5rem;
   height: 104px;
@@ -84,17 +84,14 @@
 .dash_board h1 {
   font-size: 25px;
   font-weight: 700;
-  color: #988149;
+  color: #ae985f;
   padding-left: 35px;
 }
 
 .dash_head h2 {
-  color: #000 !important;
-  font-family: 'Montserrat' !important;
-  font-weight: 600;
-  text-transform: capitalize;
-  font-size: 18px;
-  margin-left:30px !important;
+  font-weight: 650;
+  padding-left: 35px;
+  font-size: 14px;
 }
 
 .sale_graph h2 {
@@ -185,4 +182,50 @@
 
 .cancel {
   background-color: #e5a0a0 !important;
+}
+::ng-deep .cdk-overlay-pane {
+  min-width: 210px !important;
+  pointer-events: auto;
+  font-size: 14px;
+  top: 192px !important;
+  right: 65px !important;
+  overflow: hidden;
+}
+::ng-deep .mat-form-field-infix {
+  min-width: 75px !important;
+  top: -8px;
+  right: -20px;
+  z-index: 99999999999999999999999999;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+::ng-deep .mat-form-field {
+  border: solid 2px #7c808b;
+  width: 129px;
+  height: 40px;
+  border-radius: 10px;
+}
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+::ng-deep .mat-select-arrow {
+  position: relative;
+  right: 51px;
+  top: -6px;
+  z-index: 9999999999999;
+  color: #7c808b;
+}
+::ng-deep .mat-label {
+  background-color: red !important;
+}
+.mat-select-value {
+  position: relative;
+  top: -6px;
+}
+::ng-deep label#mat-form-field-label-1 {
+  background: #f5eef1;
+  width: 72px;
+  padding: 0 10px 0;
 }
