@@ -1,0 +1,146 @@
+<section class="mb-4 mr-2">
+    <div class="row">
+        <div class="col-lg-6 admins_head">
+            <h6>Marketing</h6> 
+        </div>
+        <div class="col-lg-6 d-flex justify-content-end">
+          <span class="admin_lable">Marketing /</span> <span class="add">Add Product Launch</span>
+        </div>
+    </div>
+  </section>
+
+
+  <Section style="margin-left: 20px;">
+    <mat-card>
+        <form [formGroup]="addproductlanch" (ngSubmit)="addLayaltySubmit()">
+            <div class="row">
+              <div class="col-md-6 col-lg-6 col-sm-6">
+              <mat-form-field class="example-full-width"  appearance="fill">
+                <mat-label>VENDOR ID </mat-label>
+                <input matInput  formControlName="vendorId"   placeholder="Enter Vendor Id">
+              </mat-form-field>
+              </div>    
+              <div class="col-md-6 col-lg-6 col-sm-6">
+                <mat-form-field class="example-full-width"  appearance="fill">
+                  <mat-label>PARTNER ID</mat-label>
+                  <input matInput  formControlName="partnerId"   placeholder="Enter Partner Id">
+                </mat-form-field>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>PRODUCT CATEGORY</mat-label>
+                        <mat-select formControlName="productCategory">
+                          <mat-option  value="">Selete Category</mat-option>
+                          <mat-option value="accent">Accent</mat-option>
+                          <mat-option value="warn">Warn</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-sm-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>PRODUCT SUB CATEGORY</mat-label>
+                        <mat-select formControlName="productSubCategory">
+                          <mat-option  value="">Selete Sub Category</mat-option>
+                          <mat-option value="accent">Accent</mat-option>
+                          <mat-option value="warn">Warn</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-sm-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>COUNTRY</mat-label>
+                        <mat-select formControlName="country">
+                          <mat-option  value="">Selete Country</mat-option>
+                          <mat-option value="accent">Accent</mat-option>
+                          <mat-option value="warn">Warn</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-sm-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>LOCATION</mat-label>
+                        <mat-select formControlName="location">
+                          <mat-option  value="">Selete Location</mat-option>
+                          <mat-option value="accent">Accent</mat-option>
+                          <mat-option value="warn">Warn</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                  </div>
+                  <div class="col-md-12 col-lg-12 col-sm-12">
+                    <mat-form-field  class="example-full-width" appearance="fill">
+                        <mat-label>LAUNCHING DATE</mat-label>
+                        <input matInput  formControlName="endDate" placeholder="Enter Date" [matDatepicker]="picker" >
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>PRODUCT DESCRIPTION</mat-label>
+                            <textarea matInput formControlName="productdescription" placeholder="write here"></textarea>
+                          </mat-form-field>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-lg-2 col-sm-2" style="margin-left: 20px;">
+                    <h4>Upload Product</h4>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-4"></div>
+                <!-- <div class="col-md-3 col-lg-3 col-sm-3 d-flex justify-content-end">
+                    <h4>(Max 6 Image)</h4>
+                </div> -->
+                <div class="col-md-3 col-lg-3 col-sm-3">
+                    <h4>Upload Product Video</h4>
+                </div>
+                <!-- <div class="col-md-1 col-lg-1 col-sm-1"></div> -->
+                <!-- <div class="col-md-2 col-lg-2 col-sm-2 d-flex justify-content-end">
+                    <h4>(Optional)</h4>
+                </div> -->
+            </div>
+            <div class="row">
+                <div class="col-md-5 col-lg-5 col-sm-5 d-flex justify-content-center p-5" style="border: dotted 2px gray; margin-left: 2pc;">
+                    <input #fileInput type="file" hidden (change)="handleChange($event.target.files)" formControlName="productimage"   />
+                    <div class="row" (click)="fileInput.click()">
+                        <div class="col-md-12 col-lg-12 col-sm-12" style="text-align: center;">
+                         <img src="../../../../assets/cloud-computing%20(1).svg" width="10%" alt="">
+                        </div>
+                        <div class="col-md-12 col-lg-12 col-sm-12" style="text-align: center;">
+                         <h3 style="color: gray;">Click to Upload</h3>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div class="col-md-1 col-lg-1 col-sm-1"></div>
+                    <div class="col-md-5 col-lg-5 col-sm-5 d-flex justify-content-center p-5" style="border: dotted 2px gray;">
+                        <input #fileInput2 type="file" hidden (change)="handleChange($event.target.files)" formControlName="productvedio"   />
+                        <div class="row" (click)="fileInput2.click()">
+                         <div class="col-md-12 col-lg-12 col-sm-12" style="text-align: center;">
+                          <img src="../../../../assets/cloud-computing%20(1).svg" width="10%" alt="">
+                         </div>
+                         <div class="col-md-12 col-lg-12 col-sm-12" style="text-align: center;">
+                          <h3 style="color: gray;">Click to Upload</h3>
+                         </div>
+                     </div>
+                     </div>
+                    <div class="row m-2">
+                        <div class="col-md-12 col-lg-12 col-sm-12">
+                            <div *ngIf="submitted && f.productimage.errors" class="error-block display-block">
+                                <div *ngIf="f.productimage.errors.required" >
+                                    <i class="fas fa-info-circle"></i> Please Upload Complete Images
+                                </div>
+                              </div>
+                        </div>
+                       
+                    </div>
+             </div>
+             <div class="row">
+                <div class="col-md-3">
+                    <Button class="login-button" type="submit">Save</Button>
+                </div>
+                <div class="col-md-3">
+                    <Button class="Cancel-button">Cancel</Button>
+                </div>
+             </div>
+        </form>
+    </mat-card>
+  </Section>

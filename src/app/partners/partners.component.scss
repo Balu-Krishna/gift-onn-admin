@@ -1,43 +1,51 @@
 .lable-font-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
+    font-family: "Montserrat", sans-serif !important;
+    color: #000 !important;
+      font-weight: 600;
+      text-transform: capitalize;
+      font-size: 18px !important;
+  
 }
 .add-user-btn {
   height: 40px;
-  background: #9e8656;
+  background: #988149;
   color: #fff;
-  font-size: 18px;
-  font-family: "Montserrat", sans-serif;
-}
-.filter-btn {
-  height: 40px;
-  background: transparent;
-  border: 1px solid #9e8656;
-  color: #9e8656;
-  font-size: 18px;
+  font-size: 14px;
   font-family: "Montserrat", sans-serif;
 }
 
+.filter-btn {
+  height: 40px;
+  background: transparent;
+  border: 1px solid #988149;
+  color: #988149;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  
+}
+
 .btn-outline-35 {
+
   height: 35px;
   background: transparent;
-  border: 1px solid #9e8656;
-  color: #9e8656;
-  font-size: 18px;
+  border: 1px solid #988149;
+  color: #988149;
   font-family: "Montserrat", sans-serif;
+  margin-left: -9px;
+
 }
 .table-striped > tbody > tr:nth-child(2n + 1) > td,
 .table-striped > tbody > tr:nth-child(2n + 1) > th {
   background-color: #f4f6f9;
 }
 .table thead th {
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 14px;
+  line-height: 20px !important;
+  font-weight: 600;
 }
 .table tbody tr {
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 12.5px !important;
   font-weight: 500;
 }

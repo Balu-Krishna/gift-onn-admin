@@ -1,0 +1,268 @@
+span {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+div {
+  height: auto;
+  width: 100%;
+}
+::ng-deep .main-panel .nav-tabs .nav-link {
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+
+/*contacts component*/
+
+.tab-content div {
+  height: auto;
+}
+
+.sideBar {
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  overflow-y: auto;
+  border: 1px solid #f7f7f7;
+  height: calc(100% - 120px);
+}
+
+.sideBar-search {
+  padding: 6px 10px 6px 43px;
+  width: 123%;
+  height: 45px;
+  border: 0px;
+  margin-bottom: 2px;
+  background: #fbf8f8;
+}
+::ng-deep .tab-content {
+  border: none;
+  padding: 0;
+  margin-top: 0 !important;
+}
+
+.sideBar div {
+  width: 100%;
+}
+
+.sideBar-body {
+  position: relative;
+  padding: 10px;
+  background-color: #fbf8f8;
+  height: 69px;
+  width: 300px;
+  margin: 0 0 5px 0;
+  cursor: pointer;
+}
+
+.sideBar-body:hover {
+  background-color: #faeddd;
+}
+
+/*contact time*/
+
+.time-container {
+  position: absolute;
+  text-align: end;
+  justify-content: flex-end;
+}
+
+.sideBar-time {
+  height: 10px;
+  color: black;
+  line-height: 10px;
+  padding: 0px;
+}
+
+.time-meta {
+  text-align: right;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.4);
+  vertical-align: baseline;
+}
+
+/*contact avatar*/
+
+.sideBar-avatar {
+  text-align: center;
+  padding: 0;
+  margin: auto;
+}
+
+.avatar-icon {
+  position: relative;
+  width: 49px;
+  height: 49px;
+}
+
+.avatar-icon img {
+  border-radius: 50%;
+  height: 49px;
+  width: 49px;
+}
+
+.sideBar-main {
+  padding: 0;
+}
+
+.sideBar-main .row {
+  padding: 0;
+  margin: 0;
+}
+
+/*status*/
+
+.status {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.status-online {
+  background-color: LightSeaGreen;
+}
+
+.status-offline {
+  background-color: rgb(189, 77, 77);
+}
+
+/*contact name*/
+
+.sideBar-name {
+  padding: 0px;
+  padding: 5px 0px;
+}
+
+.name-meta {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000;
+  line-height: 10px;
+}
+
+.contact-name {
+  font-size: 15px;
+  color: #000;
+  font-weight: 700;
+}
+
+.last-message {
+  opacity: 0.5;
+}
+::ng-deep .custom_sidebarInfo {
+  height: 393px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+::ng-deep .custom_sidebarInfo::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(207, 191, 191, 0.3);
+  background-color: #f5f5f5;
+}
+
+::ng-deep .custom_sidebarInfo::-webkit-scrollbar {
+  width: 7px;
+  background-color: #f5f5f5;
+}
+::ng-deep .custom_sidebarInfo::-webkit-scrollbar-thumb {
+  background-color: #a18c59;
+}
+:ng-deep .left_custom_tab {
+  padding-top: 0 !important;
+}
+::ng-deep .message-text {
+  width: 300px;
+  box-shadow: 0px 0px 3px #0000001a;
+  padding: 15px !important;
+  font-size: 14px;
+  margin: 10px 0;
+  font-weight: 600 !important;
+  border-radius: 20px;
+}
+::ng-deep .receiver {
+  margin: 0 0 5px 0;
+}
+::ng-deep .receiver-time {
+  position: absolute;
+  left: 48%;
+  bottom: -8px;
+  font-weight: 700;
+  color: #000 !important;
+}
+::ng-deep .sender {
+  margin: 5px 0;
+}
+::ng-deep .sender .message-text {
+  background-color: #faeddd !important;
+}
+::ng-deep .write_message {
+  bottom: -140px !important;
+  left: -57px !important;
+  border: navajowhite;
+  border-bottom: solid 1px #eee;
+  width: 127%;
+}
+::ng-deep .send_textarea .bi-send-fill {
+  font-size: 20px !important;
+  transform: rotate(41deg) !important;
+  pointer-events: all;
+  cursor: pointer;
+  color: #000;
+}
+::ng-deep .send_textarea textarea.form-control {
+  padding-left: 41px;
+  padding-bottom: 7px;
+}
+::ng-deep .send_textarea textarea.form-control:focus {
+  border-color: #495057;
+}
+::ng-deep .reply .bi-plus {
+  position: absolute;
+  top: 99px;
+  z-index: 9;
+  color: #afaeae;
+  font-size: 26px;
+}
+::ng-deep .send_textarea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -126px;
+  width: 120%;
+}
+::ng-deep .heading-name-details {
+  font-size: 14px;
+  font-weight: 700;
+  color: #99824b;
+  margin-left: 17px;
+  text-decoration: none !important;
+}
+::ng-deep .heading-name-details:hover {
+  color: #99824b;
+}
+::ng-deep .side-mainArea .form-group {
+  margin-bottom: 0;
+  position: absolute;
+  top: 4px;
+}
+::ng-deep .search_barChat {
+  position: relative;
+}
+::ng-deep .search_barChat .bi-search {
+  position: absolute;
+  top: 6px;
+}

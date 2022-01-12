@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from "@angular/core";
-import { FormGroup, Validators, FormBuilder } from "@angular/forms";
+import { FormGroup, Validators, FormBuilder, FormControl } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 @Component({
@@ -13,13 +13,9 @@ export class FilterComponent implements OnInit {
   productForm: FormGroup;
   customerForm: FormGroup;
   partnerForm: FormGroup;
-  promotionForm: FormGroup;
-  productLaunchForm: FormGroup;
-  orderForm: FormGroup;
-  couponsForm: FormGroup;
-  vendororderForm: FormGroup;
-  offerForm: FormGroup;
+  vendorordeForm: FormGroup;
   loyaltyForm: FormGroup;
+
 
   constructor(
     public dialogRef: MatDialogRef<FilterComponent>,
@@ -64,68 +60,23 @@ export class FilterComponent implements OnInit {
       location: [""],
       status: [""],
     });
-    this.promotionForm = this.fb.group({
-      promoId: [""],
-      storeId: [""],
-      category: [""],
-      subCategory: [""],
-      country: [""],
-      startDate: [""],
-      endDate: [""],
-      status: [""],
-    });
-    this.productLaunchForm = this.fb.group({
-      promoId: [""],
-      storeId: [""],
-      category: [""],
-      subCategory: [""],
-      country: [""],
-      launchDate: [""],
+
+    this.vendorordeForm = this.fb.group({
+      Selectid: [""],
+      date: [""],
       time: [""],
-      status: [""],
-    });
-    this.orderForm = this.fb.group({
-      storeId: [""],
-      category: [""],
-      subCategory: [""],
-      status: [""],
-    });
-    this.couponsForm = this.fb.group({
-      storeName: [""],
-      couponType: [""],
-      category: [""],
-      subCategory: [""],
-      startDate: [""],
-      endDate: [""],
-      store: [""],
+      discount: [""],
+      Order: [""],
+      Customer: [""],
+
 
     });
-    this.vendororderForm = this.fb.group({
-      storeId: [""],
-      Date: [""],
-      customerId: [""],
-      orderId: [""],
-      discount: [""],
-      time: [""],
-    });
-    this.offerForm = this.fb.group({
-      endDate: [""],
-      startDate: [""],
-      SubCategory: [""],
-      category: [""],
-      storeId: [""],
-      location: [""],
-      country: [""],
-    });
+
     this.loyaltyForm = this.fb.group({
-      endDate: [""],
-      currency: [""],
-      rewardType: [""],
+
     });
   }
-  get plf() {
-    return this.productLaunchForm.controls;
-  }
+
   get uf() {
     return this.userForm.controls;
   }
@@ -135,20 +86,8 @@ export class FilterComponent implements OnInit {
   get pf() {
     return this.productForm.controls;
   }
-  get cf() {
-    return this.customerForm.controls;
-  }
-  get mpf() {
-    return this.productForm.controls;
-  }
-  get orf() {
-    return this.orderForm.controls;
-  }
-  get vof() {
-    return this.vendororderForm.controls;
-  }
-  get off() {
-    return this.offerForm.controls;
+  get of() {
+    return this.vendorordeForm.controls;
   }
   get lf() {
     return this.loyaltyForm.controls;
@@ -168,11 +107,7 @@ export class FilterComponent implements OnInit {
     this.productForm.reset();
     this.customerForm.reset();
     this.partnerForm.reset();
-    this.promotionForm.reset();
-    this.productLaunchForm.reset();
-    this.orderForm.reset();
-    this.vendororderForm.reset();
-    this.offerForm.reset();
+    this.vendorordeForm.reset();
     this.loyaltyForm.reset();
 
   }
@@ -181,4 +116,7 @@ export class FilterComponent implements OnInit {
     this.reset();
   }
   ngOnInit(): void { }
+
+
 }
+

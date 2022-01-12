@@ -10,8 +10,13 @@
 @import "./assets/scss/functions";
 
 /* === Icon fonts === */
-
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 @import "~@mdi/font/scss/materialdesignicons";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
 
 /* === Template mixins === */
 
@@ -66,270 +71,262 @@
 @import "./assets/scss/layout";
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
-
 body {
-    margin: 0;
-    font-family: "Montserrat", sans-serif !important;
+  font-family: 'Montserrat' !important;
+  margin: 0;
+  background-image: linear-gradient(to top, rgba(255, 0, 0, 0), #f7eeed);
 }
+::ng-deep .mat-error
+{
+  font-size: 12px !important;
 
+}
+.mat-card>:last-child:not(.mat-card-footer), .mat-card-content>:last-child:not(.mat-card-footer)
+{
+  font-family: 'Montserrat' !important;
+
+  }
 .mat-form-field-appearance-fill .mat-form-field-flex {
-    background-color: white !important;
+  background-color: white !important;
 }
-
-body {
-    background-image: linear-gradient(to top, rgba(255, 0, 0, 0), #f7eeed);
-}
-
 .navbar,
 .content-wrapper {
-    background: transparent !important;
+  background: transparent !important;
 }
 
 .page-body-wrapper {
-    padding-left: 30px;
-    padding-right: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
 }
-
-.sidebar {
-    border-radius: 20px;
-    box-shadow: 0px 0px 3px #0000001a;
+.sidebar
+{
+  font-family: 'Montserrat' !important;
+  border-radius: 20px;
+  box-shadow: 0px 0px 3px #0000001a;
 }
-
 .sidebar .nav-profile-image img {
-    width: auto !important;
-    height: auto !important;
-    border-radius: unset !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: unset !important;
 }
 
 .sidebar li.nav-item.nav-profile {
-    padding-left: 15px !important;
-    background: #ffffff !important;
-    border-radius: 20px !important;
-    margin-bottom: 30px;
+  padding-left: 15px !important;
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  margin-bottom: 30px;
+  font-family: 'Montserrat' !important;
 }
-
+   
 .sidebar li.nav-item {
-    padding: 0 15px !important;
+  padding: 0 15px !important;
+  font-family: 'Montserrat' !important;
 }
 
 .sidebar li.nav-item.active {
-    background: #faeddd;
-    border-left: 5px solid #988149;
+  background: #faeddd;
+  border-left: 5px solid #988149;
 }
 
 .sidebar li.nav-item.active a.nav-link span.menu-title {
-    color: #988149 !important;
+  color: #988149 !important;
+  font-family: 'Montserrat' !important;
 }
 
 .activeIcon {
-    display: none;
+  display: none;
 }
 
 .sidebar li.nav-item.active {
-    .activeIcon {
-        display: block;
-    }
-    .normalIcon {
-        display: none;
-    }
+  .activeIcon {
+    display: block;
+  }
+  .normalIcon {
+    display: none;
+  }
 }
 
 .main-panel .content-wrapper {
-    padding-top: 0;
-    padding-left: 10px;
-    .mat-select-trigger {
-        height: auto;
-    }
-    .mat-form-field-appearance-outline .mat-form-field-infix {
-        padding: 16px 0px 5px;
-        border-top: none;
-    }
-    .mat-select {
-        position: relative;
-        top: 6px;
-    }
-    .mat-form-field-outline {
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    }
-    .mat-form-field-outline:hover {
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    }
+  padding-top: 0;
+  padding-left: 10px;
+  .mat-select-trigger {
+    height: auto;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 7px 25px 13px;
+    border-top: none;
+  }
+  .mat-select {
+    position: relative;
+    top: 6px;
+  }
+  .mat-form-field-outline {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  .mat-form-field-outline:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
 }
 
 .dash_board h2 {
-    font-size: 18px !important;
-    margin-bottom: 8px;
+  font-size: 18px !important;
+  margin-bottom: 8px;
 }
 
 .dash_head h4 {
-    color: #000000;
-    font-weight: 400 !important;
-    font-size: 16px !important;
+  color: #000000;
+  font-weight: 400 !important;
+  font-size: 16px !important;
 }
 
 .navbar .navbar-menu-wrapper {
-    width: calc(100% - 80px) !important;
+  width: calc(100% - 80px) !important;
 }
 
 .navbar-menu-wrapper h4.panelTitle {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 20px;
-    color: #000000;
-    font-weight: 500;
-    font-size: 18px;
-    position: relative;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+  color: #000000;
+  font-weight: 500;
+  font-size: 18px;
+  position: relative;
 }
 
 span.month.setCardValue {
-    color: #7c808b !important;
+  color: #7c808b !important;
 }
 
 span.cardCount {
-    color: #000000 !important;
+  color: #000000 !important;
 }
 
 img.circleImage {
-    position: absolute;
-    left: -85%;
-    bottom: 0;
+  position: absolute;
+  left: -85%;
+  bottom: 0;
 }
 
 nav#sidebar.setPositionRelative {
-    position: relative;
+  position: relative;
 }
 
 .page-body-wrapper {
-    padding-top: 25px !important;
+  padding-top: 25px !important;
 }
 
 // mat-label normal state style
 ::ng-deep .mat-form-field-label {
-    color: rgba(0, 0, 0, 0.6) !important;
-    // color: $mainColor!important;
+  color: rgba(0, 0, 0, 0.6) !important;
+  // color: $mainColor!important;
 }
-
+::ng-deep .mat-form-field {
+  margin-bottom: -14px;
+}
 // mat-label error style
 ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
-    color: rgba(0, 0, 0, 0.6) !important;
+  color: rgba(0, 0, 0, 0.6) !important;
 }
-
+::ng-deep .mat-typography h2
+{
+    color: #000 !important;
+    font-family: 'Montserrat' !important;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+::ng-deep .mat-typography p {
+  font-size: 12px !important;
+  font-family: 'Montserrat' !important;
+}
+::ng-deep .mat-typography{
+  color: #A4A4A4 !important;
+  font-size: 14px !important;
+  font-family: 'Montserrat' !important;
+}
 // mat-input error carent color
 ::ng-deep .mat-form-field-invalid .mat-input-element,
 .mat-warn .mat-input-element {
-    caret-color: rgba(0, 0, 0, 0.6) !important;
+  caret-color: rgba(0, 0, 0, 0.6) !important;
 }
 
 // mat-input error outline color
-::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
-    color: rgba(0, 0, 0, 0.6) !important;
-    opacity: 0.8 !important;
+::ng-deep
+  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+  .mat-form-field-outline-thick {
+  color: rgba(0, 0, 0, 0.6) !important;
+  opacity: 0.8 !important;
 }
 
-::ng-deep .mat-form-field-appearance-fill.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-fill-thick {
-    color: rgba(0, 0, 0, 0.6) !important;
-    opacity: 0.8 !important;
+::ng-deep
+  .mat-form-field-appearance-fill.mat-form-field-invalid.mat-form-field-invalid
+  .mat-form-field-fill-thick {
+  color: rgba(0, 0, 0, 0.6) !important;
+  opacity: 0.8 !important;
 }
 
 ::ng-deep .mat-step-header .mat-step-icon-selected,
 .mat-step-header .mat-step-icon-state-done,
 .mat-step-header .mat-step-icon-state-edit {
-    color: rgba(0, 0, 0, 0.6) !important;
+  color: rgba(0, 0, 0, 0.6) !important;
 }
 
 ::ng-deep .mat-input-invalid .mat-form-field-underline {
-    color: rgba(0, 0, 0, 0.6) !important;
+  color: rgba(0, 0, 0, 0.6) !important;
 }
-
 
 /** Overrides underline color **/
 
 .my-form-field.mat-form-field-appearance-fill .mat-form-field-underline,
 .my-form-field.mat-form-field-appearance-fill .mat-form-field-ripple,
-.my-form-field.mat-form-field-appearance-fill.mat-focused .mat-form-field-underline,
-.my-form-field.mat-form-field-appearance-fill.mat-focused .mat-form-field-ripple {
-    background-color: white;
+.my-form-field.mat-form-field-appearance-fill.mat-focused
+  .mat-form-field-underline,
+.my-form-field.mat-form-field-appearance-fill.mat-focused
+  .mat-form-field-ripple {
+  background-color: white;
 }
 
 ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-underline {
-    color: rgb(14, 13, 13) !important;
+  color: rgb(14, 13, 13) !important;
 }
 
 .mat-form-field-invalid .mat-input-element {
-    caret-color: #0c0c0c;
+  caret-color: #0c0c0c;
 }
 
 .mat-form-field-invalid .mat-input-element {
-    color: #0c0c0c;
+  color: #0c0c0c;
 }
 
 .mat-form-field.mat-form-field-invalid .mat-form-field-underline {
-    color: #0e0d0d !important;
+  color: #0e0d0d !important;
 }
 
 // .mat-tab-list{padding-left: 169px !important;}
 // .mat-tab-label-content:hover{color:#8b7441;}
 // .mat-ink-bar{background-color: #9e9e9e !important; color:#8b7441;}
-.page--title {
-    font: normal normal 600 20px/24px "Montserrat" !important;
+.mat-tab-label-active {
+  color: #988149 !important;
 }
 
-.outline--button {
-    font: normal normal 500 16px/19px "Montserrat" !important;
-    height: 48px !important;
-    border: 2px solid #988149 !important;
-    border-radius: 6px !important;
-    color: #988149 !important;
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #988149;
 }
 
-.outline--export--button {
-    font: normal normal 500 16px/19px "Montserrat" !important;
-    height: 40px !important;
-    border: 0.5px solid #988149 !important;
-    border-radius: 6px !important;
-    color: #988149 !important;
+.mat-tab-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 150px;
 }
-
-.primary--button {
-    font: normal normal 500 16px/19px "Montserrat" !important;
-    height: 48px !important;
-    background: #988149 0% 0% no-repeat padding-box !important;
-    border-radius: 6px !important;
-    color: #ffffff !important;
+::ng-deep .mat-form-field-infix {
+  width: 100px !important;
 }
-
-.danger--button {
-    font: normal normal 500 16px/19px "Montserrat" !important;
-    height: 48px !important;
-    background: red 0% 0% no-repeat padding-box !important;
-    border-radius: 6px !important;
-    color: #ffffff !important;
-}
-
-.secondary--button {
-    font: normal normal 500 16px/19px "Montserrat" !important;
-    height: 48px !important;
-    background: grey 0% 0% no-repeat padding-box !important;
-    border-radius: 6px !important;
-    color: #ffffff !important;
-}
-
-.table-striped>tbody>tr:nth-child(2n + 1)>td,
-.table-striped>tbody>tr:nth-child(2n + 1)>th {
-    background-color: #f4f6f9 !important;
-}
-
-.table thead th {
-    font-family: "Montserrat", sans-serif !important;
-    font-size: 16px !important;
-    font-weight: 500 !important;
-}
-
-.table tbody tr {
-    font-family: "Montserrat", sans-serif !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
+::ng-deep .mat-dialog-content {
+  overflow: hidden;
 }
