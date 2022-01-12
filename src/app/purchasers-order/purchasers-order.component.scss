@@ -64,14 +64,16 @@ input:checked+.slider:before {
 }
 
 .admins_head h6 {
-    font-weight: 700;
+    font-family: "Montserrat", sans-serif !important;
+    color: #000 !important;
+    font-weight: 600;
     text-transform: capitalize;
-    font-size: 17px;
+    font-size: 18px !important;
     margin-left: 30px;
 }
 
 .product_btn h6 {
-    background-color: #9e8656;
+    background-color: #988149;
     color: #fff;
     padding: 7px 14px 7px 14px;
     border-radius: 5px;
@@ -125,16 +127,15 @@ input:checked+.slider:before {
 }
 
 .export_btn a {
-    border: 1px solid #9e8656;
-    /* padding: 3px; */
-    height: 24px;
+    border: 1px solid #988149;
+    height: 32px;
     width: 52px;
     border-radius: 5px;
     text-align: center;
     margin-left: 7px;
-    color: #9e8656;
-    padding-top: 2px;
-    margin-top: -4px;
+    color: #988149;
+    padding-top: 4px;
+    margin-top: -8px;
 }
 
 .form_field {
@@ -277,16 +278,89 @@ input:checked+.slider:before {
     border-radius: 6px;
     width: 100%;
     height: 50px;
-    border: 1px solid #9e8656;
+    border: 1px solid #988149;
     font-size: 20px;
-    color: #9e8656;
+    color: #988149;
 }
 
 .rounded-button {
     border-radius: 6px;
     width: 100%;
     height: 50px;
-    background: #9e8656;
+    background: #988149;
     font-size: 20px;
     color: #ffffff;
+}
+
+.add {
+    color: #988149;
+}
+
+.admin_lable {
+    color: gray;
+}
+
+element.style {
+    visibility: visible;
+    left: 0px;
+    width: 160px;
+}
+
+.table_box {
+    width: 100%;
+}
+element.style {
+    visibility: visible;
+    left: 0px;
+    width: 160px;
+}
+.table thead th {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 14px;
+    line-height: 20px !important;
+    font-weight: 600;
+  }
+  .table tbody tr {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 12.5px !important;
+    font-weight: 500;
+  }
+.mat-ink-bar {
+    background-color: #b59c3f;
+}
+
+.mat-tab-label .mat-tab-label-active {
+    color: #988149;
+    font-weight: 600;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    color: #988149 !important;
+}
+
+.mat-ripple .mat-tab-label .mat-focus-indicator .mat-tab-label-active .ng-star-inserted>.mat-tab-label-content {
+    color: #ff0000;
+}
+
+.mat-tab-label-active .mat-tab-label-content {
+    color: #ff0000;
+}
+
+.mat-tab-label-active .mat-tab-label-content {
+    color: var(--second);
+    font-weight: 700;
+    position: relative;
+}
+
+.th_wid {
+    color: #000;
+    font-weight: bold;
+    font-size: 100px;
+}
+
+.purche_data {
+    color: #000;
+    font-weight: bold;
+    font-size: 100px;
 }

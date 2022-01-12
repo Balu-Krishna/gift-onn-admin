@@ -1,47 +1,25 @@
-<!-- <section>
+<section>
     <div class="row">
         <div class="col-lg-6 admins_head">
             <h6>Loyality</h6>
         </div>
-        <div class="pr-4">
-            <button mat-stroked-button color="primary" class="outline--button" (click)="openFilter()">
-                Filter
-                <mat-icon>filter_list</mat-icon>
-            </button>
-
-        </div>
         <div class="col-lg-6 add_btn">
-
             <h6 (click)="addLoyalty()">Add Loyality</h6>
-        </div>
-
-    </div>
-</section> -->
-
-<div>
-    <div class="d-flex justify-content-between pb-4">
-        <div class="pl-5">
-            <p class="page--title">Loyality</p>
-        </div>
-        <div class="d-flex justify-content-end">
-            <div class="pr-4">
-                <button mat-stroked-button color="primary" class="outline--button" (click)="openFilter()">
-                    Filter
-                    <mat-icon>filter_list</mat-icon>
-                </button>
+            <div class="">
+                <button mat-stroked-button color="primary" class="filter-btn" (click)="openFilter()">
+        Filter
+        <mat-icon>filter_list</mat-icon>
+      </button>
             </div>
-            <div>
-                <button mat-stroked-button color="accent" class="primary--button" (click)="addLoyalty()">Add Loyality
-                </button>
-            </div>
+
+
         </div>
     </div>
-</div>
+</section>
 <section class="table_box" style="margin-left: 20px;">
     <div class="row">
         <div class="col-lg-6 export_btn">
-            <h6>Export:</h6><a>csv</a><a>xls</a><a>pdf</a>
-        </div>
+            <h6>Export:</h6><a>csv</a><a>xls</a><a>pdf</a> </div>
         <div class="col-lg-5 col-md-5 col-sm-5 d-flex justify-content-end" style="margin-right:25px">
             <form class="search-form">
                 <mat-form-field class="form_field search_btn" appearance="outline">
@@ -53,19 +31,19 @@
     </div>
     <table class="table table-striped table-hover tab_admin">
         <thead>
-            <tr>
-                <th>Purchaser Name</th>
-                <th>Product Id</th>
-                <th>Reward Type</th>
-                <th>Amount</th>
-                <th>Points</th>
-                <th>Currency Code</th>
-                <th>Loyailty End Date</th>
-                <th>Earn Points</th>
-                <th>Action</th>
+            <tr style="padding-top: 20px;">
+                <th class="th_wid">Purchaser Name</th>
+                <th class="th_wid">Product Id</th>
+                <th class="th_wid">Reward Type</th>
+                <th class="th_wid">Amount</th>
+                <th class="th_wid">Points</th>
+                <th class="th_wid">Currency Code</th>
+                <th class="th_wid">Loyailty End Date</th>
+                <th class="th_wid">Earn Points</th>
+                <th class="th_wid">Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="td_wid">
             <tr>
                 <td>Rajesh Varma</td>
                 <td>JOY56897</td>

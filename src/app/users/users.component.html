@@ -1,14 +1,14 @@
 <div>
   <div class="d-flex justify-content-between pb-4">
-    <div class="pl-5">
-      <p class="page--title">Admin</p>
+    <div class="font-weight-bold pl-5">
+      <h2>Admin</h2>
     </div>
     <div class="d-flex justify-content-end">
       <div class="pr-4">
         <button
           mat-stroked-button
           color="primary"
-          class="outline--button"
+          class="filter-btn"
           (click)="openFilter()"
         >
           Filter
@@ -19,10 +19,10 @@
         <button
           mat-stroked-button
           color="accent"
-          class="primary--button"
+          class="add-user-btn"
           (click)="addUser()"
         >
-          Add User
+          Add Users
         </button>
       </div>
     </div>
@@ -39,7 +39,7 @@
           <button
             mat-stroked-button
             color="accent"
-            class="outline--export--button"
+            class="btn-outline-35"
             (click)="download('csv')"
           >
             CSV
@@ -49,7 +49,7 @@
           <button
             mat-stroked-button
             color="accent"
-            class="outline--export--button"
+            class="btn-outline-35"
             (click)="download('xls')"
           >
             XLS
@@ -59,7 +59,7 @@
           <button
             mat-stroked-button
             color="accent"
-            class="outline--export--button"
+            class="btn-outline-35"
             (click)="download('pdf')"
           >
             PDF
@@ -85,9 +85,10 @@
       <thead>
         <tr>
           <th>Emp ID</th>
-          <th>Emolpyee Name</th>
+          <th>Name</th>
           <th>Email</th>
           <th>Role</th>
+          <th>Department</th>
           <th>Status</th>
           <th>Action</th>
         </tr>
@@ -98,6 +99,8 @@
           <td>{{ user.firstName + " " + user.lastName }}</td>
           <td>{{ user.email }}</td>
           <td>{{ user.role }}</td>
+          <td>{{ user.department }}</td>
+
           <td>
             <div
               style="font-family: 'Montserrat'; font-size: 14px"
@@ -111,10 +114,13 @@
           </td>
           <td>
             <button mat-icon-button (click)="editUser(user)">
-              <mat-icon>edit_note</mat-icon>
+              <i style="color:#1ccfb4;font-size:16px;" class="fas fa-edit"></i>
             </button>
             <button mat-icon-button (click)="deleteModel()">
-              <mat-icon style="color: #fa4242">delete</mat-icon>
+              <!-- <mat-icon style="color: #fa4242">delete</mat-icon> -->
+              <!-- <mat-icon fontIcon="fa-smile"></mat-icon> -->
+              <i style="color:red;font-size:16px;" class="far fa-trash-alt"></i>
+
             </button>
           </td>
         </tr>

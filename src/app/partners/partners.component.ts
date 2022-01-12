@@ -51,7 +51,7 @@ export class PartnersComponent implements OnInit {
 
   ngOnInit(): void {}
   addPartner() {
-    this.router.navigate(["partners/add-partner"]);
+    this.router.navigate(["add-Partners"]);
   }
   viewPartner(partner) {
     const dialogRef = this.dialog.open(ViewPartnerComponent, {

@@ -1,0 +1,93 @@
+<div class="d-flex justify-content-between pb-4">
+  <div class="font-weight-bold pl-5">
+    <h2>User</h2>
+  </div>
+  <div class="d-flex justify-content-end">
+    <span class="admin_lable">Users Types /</span>
+    <span class="add">Edit User</span>
+  </div>
+</div>
+<Section style="margin-left: 20px">
+  <mat-card>
+    <form [formGroup]="editUserForm" (ngSubmit)="saveUser()">
+      <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-12">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>FIRST NAME</mat-label>
+            <input
+              matInput
+              formControlName="firstName"
+              placeholder="Enter First Name"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-12">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>SECOND NAME</mat-label>
+            <input
+              matInput
+              formControlName="lastName"
+              placeholder="Enter Second Name"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-12 col-lg-12 col-sm-12">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>EMAIL ID</mat-label>
+            <input
+              matInput
+              formControlName="email"
+              placeholder="Enter email id"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6 col-lg-6 col-sm-12">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>ROLE</mat-label>
+            <mat-select formControlName="role">
+              <mat-option value="vendor"> Vendor </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-12">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>EMP ID</mat-label>
+            <input matInput formControlName="id" placeholder="Enter Id" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-12">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>DEPARTMENT</mat-label>
+            <mat-select formControlName="department">
+              <mat-option value="Pending"> Pending </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-12">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>STATUS</mat-label>
+            <mat-select formControlName="status">
+              <mat-option value="Pending"> Pending </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-12 my-md-5">
+          <div class="row">
+            <div class="col-md-2">
+              <button mat-flat-button type="submit" class="rounded-button">
+                Save
+              </button>
+            </div>
+            <div class="col-md-2">
+              <button mat-flat-button type="button" class="outline-button">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</Section>

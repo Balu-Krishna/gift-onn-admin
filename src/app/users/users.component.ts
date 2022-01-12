@@ -14,6 +14,7 @@ export class UsersComponent implements OnInit {
       empid: 1,
       lastName: "Nallamothu",
       firstName: "Sudharshan",
+      department: "Marketing",
       role: "IT",
       status: "ACTIVE",
       email: "sudharshan.nallamothu@oracle.com",
@@ -22,6 +23,7 @@ export class UsersComponent implements OnInit {
       empid: 2,
       lastName: "Nallamothu",
       firstName: "Sudharshan",
+      department: "Sales",
       role: "IT",
       status: "ACTIVE",
       email: "sudharshan.nallamothu@oracle.com",
@@ -30,6 +32,7 @@ export class UsersComponent implements OnInit {
       empid: 3,
       lastName: "Nallamothu",
       firstName: "Sudharshan",
+      department: "IT",
       role: "IT",
       status: "ACTIVE",
       email: "sudharshan.nallamothu@oracle.com",
@@ -38,6 +41,7 @@ export class UsersComponent implements OnInit {
       empid: 4,
       lastName: "Nallamothu",
       firstName: "Sudharshan",
+      department: "Marketing",
       role: "IT",
       status: "IN-ACTIVE",
       email: "sudharshan.nallamothu@oracle.com",
@@ -48,10 +52,10 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {}
 
   addUser() {
-    this.router.navigate(["users/add-user"]);
+    this.router.navigate(["add-user"]);
   }
   editUser(user) {
-    this.router.navigate(["users/edit-user", user.empid]);
+    this.router.navigate(["edit-user", user.empid]);
   }
   download(type) {
     console.log(type);

@@ -13,49 +13,6 @@ import { SuccessfulModelComponent } from "../successful-model/successful-model.c
   styleUrls: ['./vender-order.component.scss']
 })
 export class VenderOrderComponent implements OnInit {
-  vendorList = [
-    {
-      qrnumber: "21558",
-      orderId: "225222",
-      storeId: "55665",
-      CustomerId: "85545",
-      purchaserName: "Sai Krishna",
-      dateTime: "12/01/2022 || 1:30",
-      productId: "JOY1244",
-      productName: "Bracelet",
-      totalPrice: "15000",
-      discount: "25%",
-      netPrice: "14500",
-
-    },
-    {
-      qrnumber: "21558",
-      orderId: "225222",
-      storeId: "55665",
-      CustomerId: "85545",
-      purchaserName: "Sai Krishna",
-      dateTime: "12/01/2022 || 1:30",
-      productId: "JOY1244",
-      productName: "Bracelet",
-      totalPrice: "15000",
-      discount: "25%",
-      netPrice: "14500",
-
-    },
-    {
-      qrnumber: "21558",
-      orderId: "225222",
-      storeId: "55665",
-      CustomerId: "85545",
-      purchaserName: "Sai Krishna",
-      dateTime: "12/01/2022 || 1:30",
-      productId: "JOY1244",
-      productName: "Bracelet",
-      totalPrice: "15000",
-      discount: "25%",
-      netPrice: "14500",
-
-    },]
 
   constructor(private router: Router, public dialog: MatDialog) { }
 
@@ -65,7 +22,7 @@ export class VenderOrderComponent implements OnInit {
   openFilter() {
     const dialogRef = this.dialog.open(FilterComponent, {
       width: "50%",
-      data: { filterType: "vendororder" },
+      data: { filterType: "vendorordeForm" },
     });
   }
   approveProduct(vendorordeFormr) {

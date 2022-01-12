@@ -2,3 +2,19 @@
 * {
   font-family: "Montserrat", sans-serif;
 }
+
+::ng-deep .main_pg {
+  padding-left: 20px !important;
+}
+::ng-deep .content-wrapper {
+  padding: 0;
+}
+::ng-deep .ng-star-inserted .col-md-4 {
+  padding-right: 5px;
+}
+
+::ng-deep .menu-title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
