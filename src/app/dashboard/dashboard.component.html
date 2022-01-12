@@ -11,10 +11,10 @@
         Dashboard
       </h2>
     </div>
-    <div class="col-md-3 d-flex justify-content-end">
-      <mat-form-field class="example-full-width"
-                      appearance="outline">
-        <mat-label class="monthly_info">Monthly</mat-label>
+    <div class="col-md-3 d-flex justify-content-end"
+         id="test">
+      <mat-form-field>
+        <mat-label>Monthly</mat-label>
         <mat-select>
           <mat-option *ngFor="let item of Monthly"
                       [value]="item.lable ">
@@ -60,7 +60,7 @@
           <div class="card-title">
             <span class="number">650</span>
           </div>
-          <span class="month">Total Vendors</span>
+          <span class="month">Total Vender</span>
         </div>
       </mat-card>
     </div>
@@ -78,7 +78,7 @@
           <div class="card-title">
             <span class="number">300</span>
           </div>
-          <span class="month">Total Products Added</span>
+          <span class="month">Total Products Addede</span>
         </div>
       </mat-card>
     </div>

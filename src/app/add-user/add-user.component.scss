@@ -2,15 +2,15 @@
   border-radius: 6px;
   width: 100%;
   height: 50px;
-  border: 1px solid #988149;
+  border: 1px solid #9e8656;
   font-size: 18px;
-  color: #988149;
+  color: #9e8656;
 }
 .rounded-button {
   border-radius: 6px;
   width: 100%;
   height: 50px;
-  background: #988149;
+  background: #9e8656;
   font-size: 18px;
   color: #ffffff;
 }
@@ -31,28 +31,29 @@
   font-size: 16px !important;
   font-family: "Montserrat" !important;
 }
+
 ::ng-deep.mat-form-field-ripple {
   /*change color of underline when focused*/
-  background-color: #988149 !important;
+  background-color: #9e8656 !important;
 }
 ::ng-deep.mat-select-arrow {
-  color: #988149 !important;
+  color: #9e8656 !important;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
-  background-color: #988149;
+  background-color: #9e8656;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-  color: #988149;
+  color: #9e8656;
 }
 
 ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-  color: #988149;
+  color: #9e8656;
 }
 
 ::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-  color: #988149;
+  color: #9e8656;
 }
 ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
   padding: 0 !important;
@@ -61,10 +62,7 @@
   padding: 0;
 }
 ::ng-deep .mat-form-field-infix input {
-  font-family: 'Montserrat';
   padding: 5px 0;
-  color: #000 !important;
-  font-size: 15px;
 }
 ::ng-deep .mat-select-value {
   height: 27px;

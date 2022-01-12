@@ -5,8 +5,9 @@
     <div class="font-weight-bold">
       <p style="font-size: 24px">Filter</p>
     </div>
-    <div class="example-button-container button_close">
-      <button mat-mini-fab
+    <div class="example-button-container">
+      <button class="button_close"
+              mat-mini-fab
               color="warn"
               (click)="close()"
               style="background: #e04f5f">
@@ -87,7 +88,7 @@
             <mat-select formControlName="location">
               <mat-option value="hyderabad"> Hyderabad </mat-option>
               <mat-option value="banglore"> Banglore </mat-option>
-              <mat-option value="chennai"> Chennai </mat-option>
+              <mat-option value="chenni"> Chenni </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -99,7 +100,7 @@
             <mat-select formControlName="vendorName">
               <mat-option value="hyderabad"> Joyalukkas </mat-option>
               <mat-option value="banglore"> Malabar Gold </mat-option>
-              <mat-option value="chennai"> Kalyan </mat-option>
+              <mat-option value="chenni"> Kalyan </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -111,7 +112,7 @@
             <mat-select formControlName="storeId">
               <mat-option value="hyderabad"> JOS543 </mat-option>
               <mat-option value="banglore"> MG0222 </mat-option>
-              <mat-option value="chennai"> KA123 </mat-option>
+              <mat-option value="chenni"> KA123 </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -150,7 +151,7 @@
   <div *ngIf="data.filterType == 'product'">
     <form [formGroup]="productForm"
           (ngSubmit)="submit()"
-          class="">
+          class="m-5 pl-5">
       <div class="row">
         <div class="col-sm-12 col-md-6">
           <p class="m-0 form-lable">Product ID</p>
@@ -160,7 +161,7 @@
                         placeholder="Select Product Id">
               <mat-option value="hyderabad"> Hyderabad </mat-option>
               <mat-option value="banglore"> Banglore </mat-option>
-              <mat-option value="chennai"> Chennai </mat-option>
+              <mat-option value="chenni"> Chenni </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -172,7 +173,7 @@
                         placeholder="Select Store Id">
               <mat-option value="hyderabad"> Joyalukkas </mat-option>
               <mat-option value="banglore"> Malabar Gold </mat-option>
-              <mat-option value="chennai"> Kalyan </mat-option>
+              <mat-option value="chenni"> Kalyan </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -184,7 +185,7 @@
                         placeholder="Select Category">
               <mat-option value="hyderabad"> Joyalukkas </mat-option>
               <mat-option value="banglore"> Malabar Gold </mat-option>
-              <mat-option value="chennai"> Kalyan </mat-option>
+              <mat-option value="chenni"> Kalyan </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -196,7 +197,7 @@
                         placeholder="Select Sub Category">
               <mat-option value="hyderabad"> Joyalukkas </mat-option>
               <mat-option value="banglore"> Malabar Gold </mat-option>
-              <mat-option value="chennai"> Kalyan </mat-option>
+              <mat-option value="chenni"> Kalyan </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -267,7 +268,7 @@
                         placeholder="Select Customer Id">
               <mat-option value="hyderabad"> 1234 </mat-option>
               <mat-option value="banglore"> 124AD </mat-option>
-              <mat-option value="chennai"> 123 </mat-option>
+              <mat-option value="chenni"> 123 </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -279,7 +280,7 @@
                         placeholder="Select Country">
               <mat-option value="hyderabad"> Joyalukkas </mat-option>
               <mat-option value="banglore"> Malabar Gold </mat-option>
-              <mat-option value="chennai"> Kalyan </mat-option>
+              <mat-option value="chenni"> Kalyan </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -291,7 +292,7 @@
                         placeholder="Select Location">
               <mat-option value="hyderabad"> hyderabad </mat-option>
               <mat-option value="banglore"> banglore </mat-option>
-              <mat-option value="chennai"> Chennai </mat-option>
+              <mat-option value="chenni"> chenni </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -303,7 +304,7 @@
                         placeholder="Select Rating">
               <mat-option value="hyderabad"> 1 </mat-option>
               <mat-option value="banglore"> 2 </mat-option>
-              <mat-option value="chennai"> 3 </mat-option>
+              <mat-option value="chenni"> 3 </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -360,7 +361,7 @@
                         placeholder="Select Partner Name">
               <mat-option value="hyderabad"> 1234 </mat-option>
               <mat-option value="banglore"> 124AD </mat-option>
-              <mat-option value="chennai"> 123 </mat-option>
+              <mat-option value="chenni"> 123 </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -372,7 +373,7 @@
                         placeholder="Select Partner ID">
               <mat-option value="hyderabad"> Joyalukkas </mat-option>
               <mat-option value="banglore"> Malabar Gold </mat-option>
-              <mat-option value="chennai"> Kalyan </mat-option>
+              <mat-option value="chenni"> Kalyan </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -384,7 +385,7 @@
                         placeholder="Select Category">
               <mat-option value="hyderabad"> hyderabad </mat-option>
               <mat-option value="banglore"> banglore </mat-option>
-              <mat-option value="chennai"> Chennai </mat-option>
+              <mat-option value="chenni"> chenni </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -396,7 +397,7 @@
                         placeholder="Select Sub Category">
               <mat-option value="hyderabad"> 1 </mat-option>
               <mat-option value="banglore"> 2 </mat-option>
-              <mat-option value="chennai"> 3 </mat-option>
+              <mat-option value="chenni"> 3 </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -408,7 +409,7 @@
                         placeholder="Select Country">
               <mat-option value="hyderabad"> 1 </mat-option>
               <mat-option value="banglore"> 2 </mat-option>
-              <mat-option value="chennai"> 3 </mat-option>
+              <mat-option value="chenni"> 3 </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -420,7 +421,7 @@
                         placeholder="Select Location">
               <mat-option value="hyderabad"> 1 </mat-option>
               <mat-option value="banglore"> 2 </mat-option>
-              <mat-option value="chennai"> 3 </mat-option>
+              <mat-option value="chenni"> 3 </mat-option>
             </mat-select>
           </mat-form-field>
         </div>

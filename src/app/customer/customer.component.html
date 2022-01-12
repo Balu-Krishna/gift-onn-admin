@@ -48,15 +48,13 @@
       </div>
     </div>
 
-    <div class="d-flex align-content-center pt-3">
-      <mat-form-field appearance="outline"
-                      style="font-size: 20px"
+    <div class="d-flex align-content-center pt-3 search_informative">
+      <mat-form-field style="font-size:20px"
                       class="pr-3">
-        <mat-icon matSuffix>search</mat-icon>
-        <input matInput
-               type="search"
-               placeholder="search"
-               class="search-input" />
+        <input type="search"
+               class="search-input"
+               placeholder="search" />
+        <i class="bi bi-search"></i>
       </mat-form-field>
     </div>
   </div>
@@ -83,7 +81,7 @@
               <div>
                 <img src="../../../../assets/gift.jpeg" />
               </div>
-              <div style="line-height: 22px !important;" class="pl-2">
+              <div class="pl-2">
                 {{ customer.name }}
               </div>
             </div>

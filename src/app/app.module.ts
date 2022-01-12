@@ -151,7 +151,6 @@ import { SentMessageComponent } from './customers-support/sent-message/sent-mess
     AngularEditorModule,
     HttpClientModule,
     MaterialModule,
-    
   ],
   exports: [AngularEditorModule],
   providers: [ThemeService],

@@ -67,17 +67,8 @@
 .table_box{ box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 7px 0px;width: 1039px; padding-top: 30px; background-color: #fff;border-radius: 10px;}
 .export_btn{display: flex;margin: auto;}
 .export_btn h6{font-size: 14px;padding-left: 12px;color: #9d9c9c;font-weight: 500;}
-.export_btn a{
-  border: 1px solid #988149;
-  height: 32px;
-  width: 52px;
-  border-radius: 5px;
-  text-align: center;
-  margin-left: 7px;
-  color: #988149;
-  padding-top: 4px;
-  margin-top: -8px;
-}
+.export_btn a{border: 1px solid #9e8656;/* padding: 3px; */height: 24px;width: 52px;
+    border-radius: 5px;text-align: center;margin-left: 7px;color: #9e8656;padding-top: 2px;margin-top: -4px;}
 .form_field{padding:0 !important; box-shadow: white;}
 // .search_btn{width: 94%;height: 34px;top: 12px;box-shadow: rgb(100 100 111 / 20%) 0px 3px 7px 0px;}
 .img_tab img{width: 84px; height: 50px;}
@@ -95,17 +86,6 @@ table td img{
     height: 58px;
   border-radius: 8% !important;
   opacity: 1;
-  }
-  .table thead th {
-    font-family: "Montserrat", sans-serif !important;
-    font-size: 14px;
-    line-height: 20px !important;
-    font-weight: 600;
-  }
-  .table tbody tr {
-    font-family: "Montserrat", sans-serif !important;
-    font-size: 12.5px !important;
-    font-weight: 500;
   }
 .th_wid{padding-left: 0px;}
 .prod_tab tr{font-size: 12px;text-align: center;}

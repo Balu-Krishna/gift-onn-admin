@@ -15,14 +15,14 @@
 .outline-button {
   width: 140px;
   height: 40px;
-  border: 1px solid #988149;
+  border: 1px solid #9e8656;
   font-size: 15px;
-  color: #988149;
+  color: #9e8656;
 }
 .rounded-button {
   width: 140px;
   height: 40px;
-  background: #988149;
+  background: #9e8656;
   font-size: 15px;
   color: #ffffff;
 }
@@ -31,27 +31,27 @@
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
-  background-color: #988149 !important;
+  background-color: #9e8656 !important;
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
-  background-color: #988149 !important; /*inner circle color change*/
+  background-color: #9e8656 !important; /*inner circle color change*/
   height: 17px;
   width: 17px;
 }
 
 ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
   .mat-radio-outer-circle {
-  border-color: #988149 !important; /*outer ring color change*/
+  border-color: #9e8656 !important; /*outer ring color change*/
   width: 17px !important;
   height: 17px !important;
 }
 ::ng-deep.mat-form-field-ripple {
   /*change color of underline when focused*/
-  background-color: #988149 !important;
+  background-color: #9e8656 !important;
 }
 ::ng-deep.mat-select-arrow {
-  color: #988149 !important;
+  color: #9e8656 !important;
 }
 .full-width {
   width: 100%;
@@ -61,22 +61,22 @@
 }
 
 ::ng-deep.mat-select-arrow {
-  color: #988149 !important;
+  color: #9e8656 !important;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
-  background-color: #988149;
+  background-color: #9e8656;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-  color: #988149;
+  color: #9e8656;
 }
 ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-  color: #988149;
+  color: #9e8656;
 }
 
 ::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-  color: #988149;
+  color: #9e8656;
 }
 ::ng-deep .mat-radio-button {
   padding: 0 36px 0 0 !important;

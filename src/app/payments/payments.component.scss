@@ -48,17 +48,6 @@
     -ms-transform: translateX(26px);
     transform: translateX(26px);
   }
-  .table thead th {
-    font-family: "Montserrat", sans-serif !important;
-    font-size: 14px;
-    line-height: 20px !important;
-    font-weight: 600;
-  }
-  .table tbody tr {
-    font-family: "Montserrat", sans-serif !important;
-    font-size: 12.5px !important;
-    font-weight: 500;
-  }
   
   /* Rounded sliders */
   .slider.round {
@@ -68,16 +57,8 @@
   .slider.round:before {
     border-radius: 50%;
   }
-  .admins_head h6
-  {
-    font-family: "Montserrat", sans-serif !important;
-    color: #000 !important;
-    font-weight: 600;
-    text-transform: capitalize;
-    font-size: 18px !important;
-    margin-left: 30px;
-  }
-.product_btn h6{background-color:#988149;color:#fff;padding: 7px 14px 7px 14px;border-radius: 5px;text-transform: capitalize;font-size: 14px;float:right;}
+  .admins_head h6{font-weight: 700;text-transform: capitalize;font-size: 17px; margin-left: 30px;}
+.product_btn h6{background-color:#9e8656;color:#fff;padding: 7px 14px 7px 14px;border-radius: 5px;text-transform: capitalize;font-size: 14px;float:right;}
 .activ_btn a{background-color: #4be868;padding: 1px 4px;border-radius: 3px;}
 .act_btn{display: flex;}
 .dele_btn{margin-left: 11px;} 
@@ -86,18 +67,8 @@
 .table_box{ box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 7px 0px;width: 1024px; padding-top: 30px; background-color: #fff;border-radius: 10px;}
 .export_btn{display: flex;margin: auto;}
 .export_btn h6{font-size: 14px;padding-left: 12px;color: #9d9c9c;font-weight: 500;}
-.export_btn a
-{
-  border: 1px solid #988149;
-  height: 32px;
-  width: 52px;
-  border-radius: 5px;
-  text-align: center;
-  margin-left: 7px;
-  color: #988149;
-  padding-top: 4px;
-  margin-top: -8px;
-  }
+.export_btn a{border: 1px solid #9e8656;/* padding: 3px; */height: 24px;width: 52px;
+    border-radius: 5px;text-align: center;margin-left: 7px;color: #9e8656;padding-top: 2px;margin-top: -4px;}
 .form_field{padding:0 !important; box-shadow: white;}
 // .search_btn{width: 94%;height: 34px;top: 12px;box-shadow: rgb(100 100 111 / 20%) 0px 3px 7px 0px;}
 .img_tab img{width: 84px; height: 50px;}
