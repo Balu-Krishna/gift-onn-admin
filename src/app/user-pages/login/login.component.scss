@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url() no-repeat;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+.mat-input-element {
+  font-size: 20px;
+}
+.full-width {
+  width: 80%;
+}
+.h-150 {
+  height: 150px;
+}
+.login-button {
+  height: 50px;
+  background: #9e8656;
+  font-size: 20px;
+}
+.image-absolute {
+  width: 100%;
+  padding-left: 20px;
+}
+
+.translate-middle-y {
+  transform: translateY(-50%) !important;
+}
+
+.end-0 {
+  right: -60px !important;
+}
+.top-50 {
+  top: 50% !important;
+}
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #9e8656 !important;
+}
+.mat-form-field-wrapper {
+  padding-bottom: 0px !important;
+}
+.pt-35 {
+  padding-top: 35px;
+}
+.forget_text {
+  font-size: 16px;
+  text-align: end !important;
+  color: #988149;
+  font-weight: 500;
+  cursor: pointer;
+}
+@media (max-width: 991px) {
+  .full-width {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .h-150 {
+    width: 100%;
+  }
+}
+.custom-pad {
+  height: 100%;
+}
+@media (min-width: 2560px) {
+  .custom-pad {
+    height: 100%;
+  }
+}
+@media (min-width: 1400px) {
+  .offset-xxl-3 {
+    margin-left: 200px;
+  }
+}

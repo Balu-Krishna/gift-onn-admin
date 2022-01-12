@@ -1,0 +1,977 @@
+<!-- <section>
+    <div class="row">
+        <div class="col-lg-6 admins_head">
+            <h6>Offer</h6>
+        </div>
+        <div class="col-lg-6 add_btn">
+        </div>
+    </div>
+</section>
+<section class="table_box" style="margin-left: 20px;">
+    <div class="row">
+        <div class="col-lg-6 export_btn">
+            <h6>Export:</h6><a>csv</a><a>xls</a><a>pdf</a>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 d-flex justify-content-end" style="margin-right:25px">
+            <form class="search-form">
+                <mat-form-field class="form_field search_btn" appearance="outline">
+                    <mat-icon class="form_field" matSuffix>search</mat-icon>
+                    <input matInput type="search" placeholder="search" class="search-input">
+                </mat-form-field>
+            </form>
+        </div>
+    </div>
+    <mat-tab-group>
+        <mat-tab class="text-right tab_view mention" label="Occasional Offers" style="padding-left: 221px;">
+            <section class="">
+                <table class="table table-striped table-hover tab_admin prod_tab">
+                    <thead>
+                        <tr style="padding-top: 20px;">
+                            <th class="th_wid">Banner Image</th>
+                            <th class="th_wid">Store ID</th>
+                            <th class="th_wid">Offer ID</th>
+                            <th class="th_wid">Category</th>
+                            <th class="th_wid">Sub Category</th>
+                            <th class="th_wid">Name</th>
+                            <th class="th_wid">Description</th>
+                            <th class="th_wid">Country</th>
+                            <th class="th_wid">Location</th>
+                            <th class="th_wid">Start Date</th>
+                            <th class="th_wid"> End Date</th>
+                            <th class="th_wid">Status</th>
+                            <th class="th_wid">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vendor of vendorList">
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>
+                                <div class="font-weight-bold" [ngClass]="
+                                            vendor.status.toUpperCase() == 'APPROVED'
+                                              ? 'text-success'
+                                              : vendor.status.toUpperCase() == 'PENDING'
+                                              ? 'text-warning'
+                                              : 'text-danger'
+                                          ">
+                                    <span style="font-size: 16px"> {{ vendor.status }} </span>
+                                </div>
+                            </td>
+                            <td>
+                                <button mat-button [matMenuTriggerFor]="menu" mat-flat-button color="warn">
+                                    Options
+                                    <mat-icon>arrow_drop_down</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu">
+                                    <button mat-menu-item (click)="denyVendor(vendor)">Deny</button>
+                                    <button mat-menu-item (click)="freezeVendor(vendor)">
+                                        Freeze
+                                    </button>
+                                    <button mat-menu-item (click)="approveVendor(vendor)">
+                                        Approve
+                                    </button>
+                                    <button mat-menu-item (click)="ratingVendor(vendor)">
+                                        Rating
+                                    </button>
+                                </mat-menu>
+                            </td>
+                        </tr> -->
+<!-- <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.</td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="1">Deny</option>
+                                    <option value="2">InActive</option>
+                                    <option value="3">Approve</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.</td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr> -->
+<!-- </tbody>
+                </table>
+            </section>
+        </mat-tab>
+        <mat-tab label="Regular Offer">
+            <section class="">
+                <table class="table table-striped table-hover tab_admin prod_tab">
+                    <thead>
+                        <tr style="padding-top: 20px;">
+                            <th class="th_wid">Banner Image</th>
+                            <th class="th_wid">Store ID</th>
+                            <th class="th_wid">Offer ID</th>
+                            <th class="th_wid">Category</th>
+                            <th class="th_wid">Sub Category</th>
+                            <th class="th_wid">Name</th>
+                            <th class="th_wid">Description</th>
+                            <th class="th_wid">Country</th>
+                            <th class="th_wid">Location</th>
+                            <th class="th_wid">Start Date</th>
+                            <th class="th_wid"> End Date</th>
+                            <th class="th_wid">Status</th>
+                            <th class="th_wid">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vendor of vendorList">
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>
+                                <div class="font-weight-bold" [ngClass]="
+                                                                        vendor.status.toUpperCase() == 'APPROVED'
+                                                                          ? 'text-success'
+                                                                          : vendor.status.toUpperCase() == 'PENDING'
+                                                                          ? 'text-warning'
+                                                                          : 'text-danger'
+                                                                      ">
+                                    <span style="font-size: 16px"> {{ vendor.status }} </span>
+                                </div>
+                            </td>
+                            <td>
+                                <button mat-button [matMenuTriggerFor]="menu" mat-flat-button color="warn">
+                                    Options
+                                    <mat-icon>arrow_drop_down</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu">
+                                    <button mat-menu-item (click)="denyVendor(vendor)">Deny</button>
+                                    <button mat-menu-item (click)="freezeVendor(vendor)">
+                                        Freeze
+                                    </button>
+                                    <button mat-menu-item (click)="approveVendor(vendor)">
+                                        Approve
+                                    </button>
+                                    <button mat-menu-item (click)="ratingVendor(vendor)">
+                                        Rating
+                                    </button>
+                                </mat-menu>
+                            </td>
+                        </tr> -->
+<!-- <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr> -->
+<!-- <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.</td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr> -->
+<!-- </tbody>
+                </table>
+            </section>
+        </mat-tab>
+        <mat-tab label="Seasonal offer">
+            <section class="">
+                <table class="table table-striped table-hover tab_admin prod_tab">
+                    <thead>
+                        <tr style="padding-top: 20px;">
+                            <th class="th_wid">Banner Image</th>
+                            <th class="th_wid">Store ID</th>
+                            <th class="th_wid">Offer ID</th>
+                            <th class="th_wid">Category</th>
+                            <th class="th_wid">Sub Category</th>
+                            <th class="th_wid">Name</th>
+                            <th class="th_wid">Description</th>
+                            <th class="th_wid">Country</th>
+                            <th class="th_wid">Location</th>
+                            <th class="th_wid">Start Date</th>
+                            <th class="th_wid"> End Date</th>
+                            <th class="th_wid">Status</th>
+                            <th class="th_wid">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vendor of vendorList">
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>
+                                <div class="font-weight-bold" [ngClass]="
+                                                                    vendor.status.toUpperCase() == 'APPROVED'
+                                                                      ? 'text-success'
+                                                                      : vendor.status.toUpperCase() == 'PENDING'
+                                                                      ? 'text-warning'
+                                                                      : 'text-danger'
+                                                                  ">
+                                    <span style="font-size: 16px"> {{ vendor.status }} </span>
+                                </div>
+                            </td>
+                            <td>
+                                <button mat-button [matMenuTriggerFor]="menu" mat-flat-button color="warn">
+                                    Options
+                                    <mat-icon>arrow_drop_down</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu">
+                                    <button mat-menu-item (click)="denyVendor(vendor)">Deny</button>
+                                    <button mat-menu-item (click)="freezeVendor(vendor)">
+                                        Freeze
+                                    </button>
+                                    <button mat-menu-item (click)="approveVendor(vendor)">
+                                        Approve
+                                    </button>
+                                    <button mat-menu-item (click)="ratingVendor(vendor)">
+                                        Rating
+                                    </button>
+                                </mat-menu>
+                            </td>
+                        </tr> -->
+<!-- <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.</td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr>  -->
+<!-- </tbody>
+                </table>
+            </section>
+        </mat-tab>
+        <mat-tab label="Bank offer">
+            <section class="">
+                <table class="table table-striped table-hover tab_admin prod_tab">
+                    <thead>
+                        <tr style="padding-top: 20px;">
+                            <th class="th_wid">Banner Image</th>
+                            <th class="th_wid">Store ID</th>
+                            <th class="th_wid">Offer ID</th>
+                            <th class="th_wid">Category</th>
+                            <th class="th_wid">Sub Category</th>
+                            <th class="th_wid">Name</th>
+                            <th class="th_wid">Description</th>
+                            <th class="th_wid">Country</th>
+                            <th class="th_wid">Location</th>
+                            <th class="th_wid">Start Date</th>
+                            <th class="th_wid"> End Date</th>
+                            <th class="th_wid">Status</th>
+                            <th class="th_wid">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vendor of vendorList">
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>
+                                <div class="font-weight-bold" [ngClass]="
+                                                                    vendor.status.toUpperCase() == 'APPROVED'
+                                                                      ? 'text-success'
+                                                                      : vendor.status.toUpperCase() == 'PENDING'
+                                                                      ? 'text-warning'
+                                                                      : 'text-danger'
+                                                                  ">
+                                    <span style="font-size: 16px"> {{ vendor.status }} </span>
+                                </div>
+                            </td>
+                            <td>
+                                <button mat-button [matMenuTriggerFor]="menu" mat-flat-button color="warn">
+                                    Options
+                                    <mat-icon>arrow_drop_down</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu">
+                                    <button mat-menu-item (click)="denyVendor(vendor)">Deny</button>
+                                    <button mat-menu-item (click)="freezeVendor(vendor)">
+                                        Freeze
+                                    </button>
+                                    <button mat-menu-item (click)="approveVendor(vendor)">
+                                        Approve
+                                    </button>
+                                    <button mat-menu-item (click)="ratingVendor(vendor)">
+                                        Rating
+                                    </button>
+                                </mat-menu>
+                            </td>
+                        </tr> -->
+<!-- <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.</td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicin. </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>Pending</td>
+                            <td class="selec_option" (change)="action($event.target.value)">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Option </option>
+                                    <option value="deny">Deny</option>
+                                    <option value="freeze">Freeze</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </td>
+                        </tr> -->
+<!-- </tbody>
+</table>
+</section>
+</mat-tab>
+</mat-tab-group>
+</section> -->
+
+
+<div class="d-flex justify-content-between pb-4">
+    <div class="pl-5">
+        <p class="page--title">Offers</p>
+    </div>
+    <div class="d-flex justify-content-end">
+        <div class="pr-4">
+            <button mat-stroked-button color="primary" class="outline--button" (click)="openFilter()">
+                Filter
+                <mat-icon>filter_list</mat-icon>
+            </button>
+
+        </div>
+        <div>
+            <button mat-stroked-button color="accent" class="primary--button" (click)="addVendor()">
+                Add Offer
+            </button>
+        </div>
+        <div *ngIf="productLaunchSelected">
+            <button mat-stroked-button color="accent" class="primary--button" (click)="addProductLaunch()">
+                Add Product Launch
+            </button>
+        </div>
+    </div>
+</div>
+<div class="ml-4 shadow-lg bg-white rounded">
+    <div class="d-flex justify-content-between">
+        <div class="justify-content-center align-self-center">
+            <div class="d-flex justify-content-start">
+                <div class="text-muted pl-2 justify-content-center align-self-center">
+                    <span class="font-weight-bold align-middle pr-3">Export: </span>
+                </div>
+                <div class="pr-3">
+                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('csv')">
+                        CSV
+                    </button>
+                </div>
+                <div class="pr-3">
+                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('xls')">
+                        XLS
+                    </button>
+                </div>
+                <div class="pr-3">
+                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('pdf')">
+                        PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex align-content-center pt-3">
+            <mat-form-field appearance="outline" style="font-size: 20px" class="pr-3">
+                <mat-icon matSuffix>search</mat-icon>
+                <input matInput type="search" placeholder="search" class="search-input" />
+            </mat-form-field>
+        </div>
+    </div>
+    <mat-tab-group (selectedTabChange)="myTabSelectedTabChange($event)">
+        <mat-tab class="text-right tab_view" label="Occasional Offers" style="padding-left: 221px">
+            <div class="table-responsive py-3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr style="padding-top: 20px;">
+                            <th class="th_wid">Banner Image</th>
+                            <th class="th_wid">Store ID</th>
+                            <th class="th_wid">Offer ID</th>
+                            <th class="th_wid">Category</th>
+                            <th class="th_wid">Sub Category</th>
+                            <th class="th_wid">Name</th>
+                            <th class="th_wid">Description</th>
+                            <th class="th_wid">Country</th>
+                            <th class="th_wid">Location</th>
+                            <th class="th_wid">Start Date</th>
+                            <th class="th_wid"> End Date</th>
+                            <th class="th_wid">Status</th>
+                            <th class="th_wid">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vendor of vendorList">
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>
+                                <div class="font-weight-bold" [ngClass]="
+                                                            vendor.status.toUpperCase() == 'APPROVED'
+                                                              ? 'text-success'
+                                                              : vendor.status.toUpperCase() == 'PENDING'
+                                                              ? 'text-warning'
+                                                              : 'text-danger'
+                                                          ">
+                                    <span style="font-size: 16px"> {{ vendor.status }} </span>
+                                </div>
+                            </td>
+                            <td>
+                                <button mat-button [matMenuTriggerFor]="menu" mat-flat-button color="warn">
+                                    Options
+                                    <mat-icon>arrow_drop_down</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu">
+                                    <button mat-menu-item (click)="denyVendor(vendor)">Deny</button>
+                                    <button mat-menu-item (click)="freezeVendor(vendor)">
+                                        Freeze
+                                    </button>
+                                    <button mat-menu-item (click)="approveVendor(vendor)">
+                                        Approve
+                                    </button>
+                                    <button mat-menu-item (click)="ratingVendor(vendor)">
+                                        Rating
+                                    </button>
+                                </mat-menu>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </mat-tab>
+        <mat-tab class="text-right tab_view" label="Regular Offer" style="padding-left: 221px">
+            <div class="table-responsive py-3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr style="padding-top: 20px;">
+                            <th class="th_wid">Banner Image</th>
+                            <th class="th_wid">Store ID</th>
+                            <th class="th_wid">Offer ID</th>
+                            <th class="th_wid">Category</th>
+                            <th class="th_wid">Sub Category</th>
+                            <th class="th_wid">Name</th>
+                            <th class="th_wid">Description</th>
+                            <th class="th_wid">Country</th>
+                            <th class="th_wid">Location</th>
+                            <th class="th_wid">Start Date</th>
+                            <th class="th_wid"> End Date</th>
+                            <th class="th_wid">Status</th>
+                            <th class="th_wid">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vendor of vendorList">
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>
+                                <div class="font-weight-bold" [ngClass]="
+                                                                                            vendor.status.toUpperCase() == 'APPROVED'
+                                                                                              ? 'text-success'
+                                                                                              : vendor.status.toUpperCase() == 'PENDING'
+                                                                                              ? 'text-warning'
+                                                                                              : 'text-danger'
+                                                                                          ">
+                                    <span style="font-size: 16px"> {{ vendor.status }} </span>
+                                </div>
+                            </td>
+                            <td>
+                                <button mat-button [matMenuTriggerFor]="menu" mat-flat-button color="warn">
+                                    Options
+                                    <mat-icon>arrow_drop_down</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu">
+                                    <button mat-menu-item (click)="denyVendor(vendor)">Deny</button>
+                                    <button mat-menu-item (click)="freezeVendor(vendor)">
+                                        Freeze
+                                    </button>
+                                    <button mat-menu-item (click)="approveVendor(vendor)">
+                                        Approve
+                                    </button>
+                                    <button mat-menu-item (click)="ratingVendor(vendor)">
+                                        Rating
+                                    </button>
+                                </mat-menu>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </mat-tab>
+
+        <mat-tab class="text-right tab_view" label="Regular Offer" style="padding-left: 221px">
+            <div class="table-responsive py-3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr style="padding-top: 20px;">
+                            <th class="th_wid">Banner Image</th>
+                            <th class="th_wid">Store ID</th>
+                            <th class="th_wid">Offer ID</th>
+                            <th class="th_wid">Category</th>
+                            <th class="th_wid">Sub Category</th>
+                            <th class="th_wid">Name</th>
+                            <th class="th_wid">Description</th>
+                            <th class="th_wid">Country</th>
+                            <th class="th_wid">Location</th>
+                            <th class="th_wid">Start Date</th>
+                            <th class="th_wid"> End Date</th>
+                            <th class="th_wid">Status</th>
+                            <th class="th_wid">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vendor of vendorList">
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>
+                                <div class="font-weight-bold" [ngClass]="
+                                                                                    vendor.status.toUpperCase() == 'APPROVED'
+                                                                                      ? 'text-success'
+                                                                                      : vendor.status.toUpperCase() == 'PENDING'
+                                                                                      ? 'text-warning'
+                                                                                      : 'text-danger'
+                                                                                  ">
+                                    <span style="font-size: 16px"> {{ vendor.status }} </span>
+                                </div>
+                            </td>
+                            <td>
+                                <button mat-button [matMenuTriggerFor]="menu" mat-flat-button color="warn">
+                                    Options
+                                    <mat-icon>arrow_drop_down</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu">
+                                    <button mat-menu-item (click)="denyVendor(vendor)">Deny</button>
+                                    <button mat-menu-item (click)="freezeVendor(vendor)">
+                                        Freeze
+                                    </button>
+                                    <button mat-menu-item (click)="approveVendor(vendor)">
+                                        Approve
+                                    </button>
+                                    <button mat-menu-item (click)="ratingVendor(vendor)">
+                                        Rating
+                                    </button>
+                                </mat-menu>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </mat-tab>
+
+        <mat-tab class="text-right tab_view" label="Bank offer" style="padding-left: 221px">
+            <div class="table-responsive py-3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr style="padding-top: 20px;">
+                            <th class="th_wid">Banner Image</th>
+                            <th class="th_wid">Store ID</th>
+                            <th class="th_wid">Offer ID</th>
+                            <th class="th_wid">Category</th>
+                            <th class="th_wid">Sub Category</th>
+                            <th class="th_wid">Name</th>
+                            <th class="th_wid">Description</th>
+                            <th class="th_wid">Country</th>
+                            <th class="th_wid">Location</th>
+                            <th class="th_wid">Start Date</th>
+                            <th class="th_wid"> End Date</th>
+                            <th class="th_wid">Status</th>
+                            <th class="th_wid">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vendor of vendorList">
+                            <td><img src="../../assets/gift.jpeg"></td>
+                            <td>89736</td>
+                            <td>JOY873</td>
+                            <td>Jewellary</td>
+                            <td>Bracelet</td>
+                            <td>Weekend Sale</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing </td>
+                            <td>India</td>
+                            <td>Hyderabad</td>
+                            <td>01/12/2021</td>
+                            <td>01/12/2021</td>
+                            <td>
+                                <div class="font-weight-bold" [ngClass]="
+                                                                                        vendor.status.toUpperCase() == 'APPROVED'
+                                                                                          ? 'text-success'
+                                                                                          : vendor.status.toUpperCase() == 'PENDING'
+                                                                                          ? 'text-warning'
+                                                                                          : 'text-danger'
+                                                                                      ">
+                                    <span style="font-size: 16px"> {{ vendor.status }} </span>
+                                </div>
+                            </td>
+                            <td>
+                                <button mat-button [matMenuTriggerFor]="menu" mat-flat-button color="warn">
+                                    Options
+                                    <mat-icon>arrow_drop_down</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu">
+                                    <button mat-menu-item (click)="denyVendor(vendor)">Deny</button>
+                                    <button mat-menu-item (click)="freezeVendor(vendor)">
+                                        Freeze
+                                    </button>
+                                    <button mat-menu-item (click)="approveVendor(vendor)">
+                                        Approve
+                                    </button>
+                                    <button mat-menu-item (click)="ratingVendor(vendor)">
+                                        Rating
+                                    </button>
+                                </mat-menu>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-between pb-4">
+  <div class="pl-5">
+    <p class="page-title">E-Signature</p>
+  </div>
+  <div class="d-flex justify-content-end">
+    <p class="text-muted lable-font-title">Vendors /</p>
+    <p class="lable-font-title font-color">Add Vendor</p>
+  </div>
+</div>
+<Section style="margin-left: 20px">
+  <mat-card>
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="lable-font-title">Add E-Signature</p>
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="col-md-7 col-lg-7 col-sm-7 d-flex justify-content-center box"
+        style="border: dotted 2px gray; margin-left: 2pc"
+      >
+        <input
+          #fileInput
+          type="file"
+          hidden
+          (change)="handleChange($event.target.files)"
+        />
+        <div class="row" (click)="fileInput.click()">
+          <div class="col-md-12 col-lg-12 col-sm-12" style="text-align: center">
+            <img
+              src="../../../../assets/cloud-computing%20(1).svg"
+              width="10%"
+              alt=""
+            />
+          </div>
+          <div class="col-md-12 col-lg-12 col-sm-12" style="text-align: center">
+            <h3 style="color: gray">Click to Upload</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-sm-12 mt-5">
+        <div class="d-flex justify-content-around">
+          <button mat-flat-button color="primary" class="accept-button mr-5">
+            Finished Onboarding
+          </button>
+          <button mat-flat-button color="accent" class="cancel-button mr-5">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</Section>

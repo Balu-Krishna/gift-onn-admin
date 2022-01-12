@@ -1,0 +1,161 @@
+<div class="d-flex justify-content-between pb-4">
+  <div class="pl-5">
+    <p class="page-title">Patners</p>
+  </div>
+  <div class="d-flex justify-content-end">
+    <div class="pr-4">
+      <button
+        mat-stroked-button
+        color="primary"
+        class="outline--button"
+        (click)="openFilter()"
+      >
+        Filter
+        <mat-icon>filter_list</mat-icon>
+      </button>
+    </div>
+    <div>
+      <button
+        mat-stroked-button
+        color="accent"
+        class="primary--button"
+        (click)="addPartner()"
+      >
+        Add Partner
+      </button>
+    </div>
+  </div>
+</div>
+<div class="ml-4 shadow-lg bg-white rounded">
+  <div class="d-flex justify-content-between">
+    <div class="justify-content-center align-self-center">
+      <div class="d-flex justify-content-start">
+        <div class="text-muted pl-2 justify-content-center align-self-center">
+          <span class="font-weight-bold align-middle pr-3">Export: </span>
+        </div>
+        <div class="pr-3">
+          <button
+            mat-stroked-button
+            color="accent"
+            class="outline--export--button"
+            (click)="download('csv')"
+          >
+            CSV
+          </button>
+        </div>
+        <div class="pr-3">
+          <button
+            mat-stroked-button
+            color="accent"
+            class="outline--export--button"
+            (click)="download('xls')"
+          >
+            XLS
+          </button>
+        </div>
+        <div class="pr-3">
+          <button
+            mat-stroked-button
+            color="accent"
+            style="font-size: 18px"
+            class="outline--export--button"
+            (click)="download('pdf')"
+          >
+            PDF
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex align-content-center pt-3">
+      <mat-form-field appearance="outline" style="font-size: 20px" class="pr-3">
+        <mat-icon matSuffix>search</mat-icon>
+        <input
+          matInput
+          type="search"
+          placeholder="search"
+          class="search-input"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="table-responsive py-3">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Logo</th>
+          <th>Patner Name</th>
+          <th>Patner ID</th>
+          <th>Patner Email Id</th>
+          <th>Category</th>
+          <th>Sub Category</th>
+          <th>Country</th>
+          <th>Location</th>
+          <th>Rating</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let partner of patners">
+          <!-- <td>{{ partner.logo }}</td> -->
+          <td class="img_tab"><img [src]="partner.logo" /></td>
+          <td>
+            <a
+              href="javascript:void(0);"
+              (click)="viewPartner(partner)"
+              style="color: #9e8656"
+            >
+              {{ partner.partnerName }}
+            </a>
+          </td>
+          <td>{{ partner.partnerId }}</td>
+          <td>{{ partner.partnerEmailId }}</td>
+          <td>{{ partner.category }}</td>
+          <td>{{ partner.subCategory }}</td>
+          <td>{{ partner.country }}</td>
+          <td>{{ partner.location }}</td>
+          <td>{{ partner.rating }}</td>
+          <td>
+            <div
+              class="font-weight-bold"
+              [ngClass]="
+                partner.status.toUpperCase() == 'APPROVED'
+                  ? 'text-success'
+                  : partner.status.toUpperCase() == 'PENDING'
+                  ? 'text-warning'
+                  : 'text-danger'
+              "
+            >
+              <span style="font-size: 16px"> {{ partner.status }} </span>
+            </div>
+          </td>
+          <td>
+            <button
+              mat-button
+              [matMenuTriggerFor]="menu"
+              mat-flat-button
+              color="warn"
+            >
+              Options
+              <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="approvePatner(partner)">
+                Approve
+              </button>
+              <button mat-menu-item (click)="denyPatner(partner)">Deny</button>
+              <button mat-menu-item (click)="freezePatner(partner)">
+                Freeze
+              </button>
+
+              <button mat-menu-item (click)="ratingPatner(partner)">
+                Rating
+              </button>
+            </mat-menu>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

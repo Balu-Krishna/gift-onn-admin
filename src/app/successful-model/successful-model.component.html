@@ -1,0 +1,16 @@
+<div class="row ">
+    <div class="col-md-12 col-sm-12 col-lg-12 d-flex justify-content-center">
+        <div class="img_set">
+            <img src="../../../../assets/thumbs-up-hand-symbol.svg" alt="">
+        </div>
+    </div>
+    <div *ngIf="data=='user'" class="col-md-12 col-sm-12 col-lg-12 d-flex justify-content-center mt-2">
+        <h3>User Added Successfully </h3>
+    </div>
+    <div *ngIf="data=='vendor'" class="col-md-12 col-sm-12 col-lg-12 d-flex justify-content-center mt-2">
+        <h3>Vendor Added Successfully </h3>
+    </div>
+    <div *ngIf="data=='product'" class="col-md-12 col-sm-12 col-lg-12 d-flex justify-content-center mt-2">
+        <h3>Product Added Successfully </h3>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+
+<div class="row">
+    <div class="col-sm-11 col-lg-11 col-sm-11 text-center" *ngIf="data=='customer'">
+        <h3>Rating for Customer</h3>
+    </div>
+    <div class="col-sm-11 col-lg-11 col-sm-11 text-center" *ngIf="data=='partner'">
+      <h3>Rating for Partner</h3>
+  </div>
+  <div class="col-sm-11 col-lg-11 col-sm-11 text-center"  *ngIf="data=='offer'">
+    <h3>Rating for Offer</h3>
+</div>
+    <div class="col-sm-1 col-lg-1 col-sm-1" (click)="close()">
+        <img src="../../assets/cancel%20(1).svg" width="20px" alt="">
+    </div>
+</div>
+
+  <div class="row">
+    <div class="col-sm-8 col-lg-8 col-sm-8 justify-content-center offset-2">
+        <div class="media">
+            <div class="media-left">
+              <img src="../../assets/Mask Group 10.png" class="media-object" style="width:30px">
+            </div>
+            <div class="media-body ml-2">
+              <h3 class="media-heading">Rajesh Sharma</h3>
+           <div class="d-flex" style="margin-top: -20px;">
+            <img src="/assets/star.svg" alt="">
+            <img src="/assets/star.svg" class="ml-2" alt="">
+            <img src="/assets/star.svg" class="ml-2" alt="">
+            <img src="/assets/star.svg" class="ml-2" alt="">
+            <img src="/assets/star.svg" class="ml-2" alt="">
+           </div>
+            </div>
+          </div>
+        <div class="row mt-3">
+            <div class="col-md-12 col-lg-12 col-sm-12 ">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Write here</mat-label>
+                    <textarea matInput  placeholder="write here"></textarea>
+                  </mat-form-field>
+            </div>
+        </div>
+    </div>
+ </div>
+ <div class="row">
+    <div class="col-md-3 offset-5">
+        <Button class="login-button" type="submit">Save</Button>
+    </div>
+</div>

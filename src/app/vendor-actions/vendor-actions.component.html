@@ -1,0 +1,144 @@
+<div mat-dialog-content class="rounded">
+  <div *ngIf="!submitted">
+    <div class="d-flex justify-content-between">
+      <div></div>
+      <div>
+        <p class="lable-font-title">
+          {{ data.name + " " + (data.type | titlecase) }}
+        </p>
+      </div>
+      <div class="example-button-container">
+        <button
+          mat-mini-fab
+          color="warn"
+          (click)="close()"
+          style="background: #e04f5f"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+    <form
+      [formGroup]="vendorActionsForm"
+      (ngSubmit)="submit()"
+      class="m-5 pl-5"
+    >
+      <div class="row mx-5 px-5 mt-3">
+        <div class="col-sm-12" *ngIf="data.name != 'Rating'">
+          <p class="m-0 form-lable">REASON</p>
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-select formControlName="reason" placeholder="Selete Reason">
+              <mat-option value=""> Selete Reason </mat-option>
+              <mat-option value="india"> India </mat-option>
+              <mat-option value="afghanistan"> Afghanistan </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div *ngIf="data.name == 'Rating'">
+          <div class="row">
+            <div class="col-sm-12 d-flex justify-content-start">
+              <div class="px-3">
+                <img
+                  src="../../../../assets/gift.jpeg"
+                  class="rounded-circle"
+                  style="height: 100px; width: 100px"
+                />
+              </div>
+              <div class="d-flex flex-column">
+                <div>
+                  <p class="lable-font-title">Joyalukkas</p>
+                </div>
+                <div>
+                  <ul
+                    class="list-inline rating-list"
+                    *ngFor="let star of stars"
+                    style="display: inline-block"
+                  >
+                    <li
+                      (click)="countStar(star)"
+                      [ngClass]="{ selected: star <= selectedValue }"
+                    >
+                      <mat-icon *ngIf="star <= selectedValue"
+                        >star_rate</mat-icon
+                      >
+                      <mat-icon *ngIf="star > selectedValue"
+                        >star_border</mat-icon
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-12 col-sm-12 my-3">
+          <mat-form-field class="full-width" appearance="outline">
+            <textarea
+              matInput
+              formControlName="text"
+              rows="7"
+              cols="40"
+              placeholder="write here..."
+            ></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 mt-3 pt-5">
+          <div class="d-flex justify-content-around">
+            <button
+              mat-flat-button
+              color="primary"
+              class="submit-button mr-5"
+              (click)="submitForm()"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="submitted && ['Freeze', 'Approve'].includes(data.name)">
+    <div class="d-flex align-items-center flex-column">
+      <div *ngIf="data.name == 'Approve'">
+        <div class="p-5 rounded-circle" style="background-color: #e1e1e1">
+          <img
+            src="../../../../assets/thumbs-up-hand-symbol.svg"
+            class="rounded-circle"
+            style="height: 120px; width: 120px"
+          />
+        </div>
+      </div>
+      <div *ngIf="data.name == 'Freeze'">
+        <div class="p-3 rounded-circle">
+          <img
+            src="../../../../assets/prohibition-Freeze.svg"
+            class="rounded-circle"
+            style="height: 120px; width: 120px"
+          />
+        </div>
+      </div>
+      <div>
+        <p *ngIf="data.name == 'Freeze'" class="lable-font-title">
+          {{ data.name + " Freezed Successfully" }}
+        </p>
+        <p *ngIf="data.name == 'Approve'" class="lable-font-title">
+          {{ data.name + " Approved Successfully" }}
+        </p>
+      </div>
+      <div class="col-sm-12 mt-3 pt-5">
+        <div class="d-flex justify-content-around">
+          <button
+            mat-flat-button
+            color="primary"
+            class="submit-button mr-5"
+            (click)="close()"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

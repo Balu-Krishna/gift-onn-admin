@@ -1,0 +1,133 @@
+// .bgimage{
+//   background-image: url("../../../../assets/Rectangle.png") !important  ;
+//   width: 100%;
+//   height: 100%;
+// }
+
+
+.heading {
+  font-family: SF Pro Display,sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  font-size: 14px;
+  line-height: 129.84%;
+  /* or 18px */
+
+  text-transform: capitalize;
+
+  color: #2d2756;
+}
+.heading p{
+  font-size: 25px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.card-title{
+  font-family: SF Pro Display,sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 129.84%;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  color: #2D2756;
+}
+
+.balance {
+  color: #2D2756;
+  font-size: 600;
+  font-size: 24px;
+}
+
+.month {
+  position: relative;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 129.84%;
+  text-transform: capitalize;
+  color: #b2b2b3;;
+}
+
+.card-design{
+  width: 266px;
+  display: flex;
+  padding: 1rem .5rem;
+  height: 104px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 7px 0px;
+}
+
+
+.card-design2{
+  display: flex;
+  padding: 1rem .5rem;
+  width: 925px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 7px 0px;
+}
+// .mat-typography{background: url(../../../../assets/Rectangle.png) !important;}
+.sale_graph{width: 981px;padding-left: 37px;}
+.dash_board h2{font-size: 21px;font-weight: 600;color: #ae985f;padding-left: 35px;}
+.money-currency {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 129.84%;
+  color: #2d2756;
+  margin-left: 5px;
+  
+}
+.main_pg{padding-left: 34px;padding-right: 46px;}
+.dash_head  h4{padding-left: 36px;
+  font-size: 17px;
+  font-weight: 800;}
+  .example-month-picker .mat-calendar-period-button {
+    pointer-events: none;
+  }
+  
+  .example-month-picker .mat-calendar-arrow {
+    display: none;
+  }
+   .card-design img{margin-top: 0px; width: 25px;}
+   .mat-card{border-radius: 10px;box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 7px 0px;}
+  .img_setqr {
+    border-radius: 50% !important;
+    padding: 5px;
+    margin: 0px;
+  }
+
+  .img_set{
+    border-radius: 50% !important;
+    padding: 15px;
+    margin: 15px;
+  }
+  .shopping_bag{
+    background-color: #eec8c8 !important;
+  }
+  .customer{
+    background-color:  #a8e7e1 !important;
+  }
+  .product{
+    background-color:  #97aba9 !important;
+  }
+  .sales{
+    background-color:  #f3d381 !important;
+  }
+  .sent{
+    background-color:  #f77575 !important;
+  }
+  .exchange {
+    background-color:  #e7c87c !important;
+  }
+  .code{
+    background-color:  #898bdb !important;
+  }
+  .coupon{
+    background-color:  #a5269554 !important;
+  }
+  .cancel{
+    background-color: #e5a0a0 !important;
+  }

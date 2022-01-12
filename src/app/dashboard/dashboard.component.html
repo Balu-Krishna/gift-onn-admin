@@ -1,0 +1,165 @@
+
+
+<section class="mat-typography">
+  <div class="row">
+      <div class="col-md-12 dash_board">
+        <h2>Hello, Admin</h2>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 dash_head">
+      <h4>
+          Dashboard
+      </h4>
+    </div>
+    <div class="col-md-5 d-flex justify-content-end">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Monthly</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let item of Monthly" [value]="item.lable ">
+            {{item.value}} 
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>       
+    
+  <div class="row mt -5 main_pg">
+    <div class="col-md-4">
+      <mat-card class="card-design">
+        <div  class="img_set shopping_bag">
+          <img src="../../../../assets/shopping-bag%20(1).svg" style="display: inline;" width="60px" height="25px" class="icon" alt="">
+        </div>
+        <div class="d-flex flex-column w-100 m-1">
+          <div class="card-title">
+            <span>960</span>
+            <span></span>
+          </div>
+          <span class="month">Total Purchasers</span>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-md-4">
+      <mat-card class="card-design">
+        <div  class="img_set customer">
+          <img src="../../../../assets/customer.svg" style="display: inline;" width="60px" height="25px" class="icon"
+          alt="">
+        </div>
+        
+        <div class="d-flex flex-column w-100 m-1">
+          <div class="card-title">
+            <span>650</span>
+          </div>
+          <span class="month">Total Vender</span>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-md-4">
+      <mat-card class="card-design">
+        <div  class="img_set product">
+          <img src="../../../../assets/product%20(2).svg" style="display: inline;" width="60px" height="25px" class="icon" alt="">
+        </div>
+        <div class="d-flex flex-column w-100 m-1">
+          <div class="card-title">
+            <span>300</span>
+          </div>
+          <span class="month">Total Products Addede</span>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row mt-5 main_pg">
+    <div class="col-md-4">
+      <mat-card class="card-design">
+        <div  class="img_set sales">
+          <img src="../../../../assets/sales.svg" style="display: inline;" width="60px" height="25px" class="icon" alt="">
+        </div>
+        <div class="d-flex flex-column w-100 m-1">
+          <div class="card-title">
+            <span>1000</span>
+            <span></span>
+          </div>
+          <span class="month">Total Sales</span>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-md-4">
+      <mat-card class="card-design">
+        <div class="img_set sent"> 
+          <img src="../../../../assets/sent%20(2).svg" style="display: inline;" width="60px" height="25px" class="icon" alt="">
+        </div>
+        <div class="d-flex flex-column w-100 m-1">
+          <div class="card-title">
+            <span>650</span>
+          </div>
+          <span class="month">Total Order</span>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-md-4">
+      <mat-card class="card-design">
+        <div class="img_set exchange">
+          <img src="../../../../assets/exchange.svg" style="display: inline;" width="60px" height="25px" class="icon" alt="">
+        </div>
+      
+        <div class="d-flex flex-column w-100 m-1">
+          <div class="card-title">
+            <span>300</span>
+          </div>
+          <span class="month">Total Number of Replacement </span>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row mt-5 main_pg">
+      <div class="col-md-4 col-lg-4 col-4">
+            <mat-card class="card-design" >
+              <div class="img_set cancel"> 
+                <img src="../../../../assets/cancel%20(1).svg" style="display: inline;" width="45px" height="25px" class="icon" alt="">
+              </div>
+              <div class="d-flex flex-column w-1002 m-1">
+                <div class="card-title">
+                  <span>300</span>
+                </div>
+                <span class="month">Number of cancellation </span>
+              </div>
+            </mat-card>
+      </div>
+      <div class="col-md-4 col-lg-4 col-4">
+        <mat-card class="card-design" >
+          <div class="img_set code"> 
+            <img src="../../../../assets/29-qr%20code.svg" style="display: inline;" width="45px" height="25px" class="icon" alt="">
+          </div>
+          <div class="d-flex flex-column w-1002 m-1">
+            <div class="card-title">
+              <span>300</span>
+            </div>
+            <span class="month">QR Redemption </span>
+          </div>
+        </mat-card>
+  </div>
+  <div class="col-md-4 col-lg-4 col-4">
+    <mat-card class="card-design" >
+      <div class="img_set coupon"> 
+        <img src="../../../../assets/coupon%20(4).svg" style="display: inline;" width="45px" height="25px" class="icon" alt="">
+      </div>
+      <div class="d-flex flex-column w-1002 m-1">
+        <div class="card-title">
+          <span>188</span>
+        </div>
+        <span class="month">Coupon Code Redemption</span>
+      </div>
+    </mat-card>
+</div>
+  </div>
+  <div class="row mt-5 sale_graph">
+      <div class="col-md-12">
+          <h3>Sale Graph</h3>
+      </div>
+      <div class="col-md-12">
+        <mat-card>
+          <img src="../../../../assets/Column%20Chart3.svg" alt="" width="100%">
+        </mat-card>
+      </div>
+  </div>
+</section>

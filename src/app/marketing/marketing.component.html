@@ -1,0 +1,254 @@
+<div class="d-flex justify-content-between pb-4">
+  <div class="pl-5">
+    <p class="page--title">Marketing</p>
+  </div>
+  <div class="d-flex justify-content-end">
+    <div class="pr-4">
+      <button
+        mat-stroked-button
+        color="primary"
+        class="outline--button"
+        (click)="openFilter()"
+      >
+        Filter
+        <mat-icon>filter_list</mat-icon>
+      </button>
+    </div>
+    <div *ngIf="productLaunchSelected">
+      <button
+        mat-stroked-button
+        color="accent"
+        class="primary--button"
+        (click)="addProductLaunch()"
+      >
+        Add Product Launch
+      </button>
+    </div>
+  </div>
+</div>
+<div class="ml-4 shadow-lg bg-white rounded">
+  <div class="d-flex justify-content-between">
+    <div class="justify-content-center align-self-center">
+      <div class="d-flex justify-content-start">
+        <div class="text-muted pl-2 justify-content-center align-self-center">
+          <span class="font-weight-bold align-middle pr-3">Export: </span>
+        </div>
+        <div class="pr-3">
+          <button
+            mat-stroked-button
+            color="accent"
+            class="outline--export--button"
+            (click)="download('csv')"
+          >
+            CSV
+          </button>
+        </div>
+        <div class="pr-3">
+          <button
+            mat-stroked-button
+            color="accent"
+            class="outline--export--button"
+            (click)="download('xls')"
+          >
+            XLS
+          </button>
+        </div>
+        <div class="pr-3">
+          <button
+            mat-stroked-button
+            color="accent"
+            class="outline--export--button"
+            (click)="download('pdf')"
+          >
+            PDF
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex align-content-center pt-3">
+      <mat-form-field appearance="outline" style="font-size: 20px" class="pr-3">
+        <mat-icon matSuffix>search</mat-icon>
+        <input
+          matInput
+          type="search"
+          placeholder="search"
+          class="search-input"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <mat-tab-group (selectedTabChange)="myTabSelectedTabChange($event)">
+    <mat-tab
+      class="text-right tab_view"
+      label="Promotion"
+      style="padding-left: 221px"
+    >
+      <div class="table-responsive py-3">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Promo Image</th>
+              <th>Promo ID</th>
+              <th>Store ID</th>
+              <th>Category</th>
+              <th>Sub Category</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let promotion of promotions">
+              <td><img [src]="promotion.promoImage" /></td>
+              <td>
+                <a
+                  href="javascript:void(0);"
+                  (click)="viewPromotion(promotion)"
+                  style="color: #9e8656"
+                  >{{ promotion.promoId }}</a
+                >
+              </td>
+              <td>{{ promotion.storeId }}</td>
+              <td>{{ promotion.category }}</td>
+              <td>{{ promotion.subCategory }}</td>
+              <td>{{ promotion.name }}</td>
+              <td>{{ promotion.description }}</td>
+              <td>{{ promotion.startDate }}</td>
+              <td>{{ promotion.endDate }}</td>
+              <td>
+                <div
+                  class="font-weight-bold"
+                  [ngClass]="
+                    promotion.status.toUpperCase() == 'APPROVED'
+                      ? 'text-success'
+                      : promotion.status.toUpperCase() == 'PENDING'
+                      ? 'text-warning'
+                      : 'text-danger'
+                  "
+                >
+                  <span style="font-size: 16px"> {{ promotion.status }} </span>
+                </div>
+              </td>
+              <td>
+                <button
+                  mat-button
+                  [matMenuTriggerFor]="menu"
+                  mat-flat-button
+                  color="warn"
+                >
+                  Options
+                  <mat-icon>arrow_drop_down</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="denyPromotion(promotion)">
+                    Deny
+                  </button>
+                  <button mat-menu-item (click)="activePromotion(promotion)">
+                    Active
+                  </button>
+                  <button mat-menu-item (click)="inactivePromotion(promotion)">
+                    InActive
+                  </button>
+
+                  <button mat-menu-item (click)="approvePromotion(promotion)">
+                    Approve
+                  </button>
+                  <button mat-menu-item (click)="holdPromotion(promotion)">
+                    Hold
+                  </button>
+                </mat-menu>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-tab>
+    <mat-tab
+      class="text-right tab_view"
+      label="Product Launches"
+      style="padding-left: 221px"
+    >
+      <div class="table-responsive py-3">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Product Image</th>
+              <th>Product ID</th>
+              <th>Vendor ID</th>
+              <th>Partner ID</th>
+              <th>Category</th>
+              <th>Sub Category</th>
+              <th>Description</th>
+              <th>Country</th>
+              <th>Location</th>
+              <th>Launch Date</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products">
+              <td><img [src]="product.productImage" /></td>
+              <td>{{ product.productId }}</td>
+              <td>{{ product.vendorId }}</td>
+              <td>{{ product.partnerId }}</td>
+              <td>{{ product.category }}</td>
+              <td>{{ product.subCategory }}</td>
+              <td>{{ product.description }}</td>
+              <td>{{ product.country }}</td>
+              <td>{{ product.location }}</td>
+              <td>{{ product.launchDate }}</td>
+              <td>
+                <div
+                  class="font-weight-bold"
+                  [ngClass]="
+                    product.status.toUpperCase() == 'APPROVED'
+                      ? 'text-success'
+                      : product.status.toUpperCase() == 'PENDING'
+                      ? 'text-warning'
+                      : 'text-danger'
+                  "
+                >
+                  <span style="font-size: 16px"> {{ product.status }} </span>
+                </div>
+              </td>
+              <td>
+                <button
+                  mat-button
+                  [matMenuTriggerFor]="menu"
+                  mat-flat-button
+                  color="warn"
+                >
+                  Options
+                  <mat-icon>arrow_drop_down</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="denyPromotion(promotion)">
+                    Deny
+                  </button>
+                  <button mat-menu-item (click)="activePromotion(promotion)">
+                    Active
+                  </button>
+                  <button mat-menu-item (click)="inactivePromotion(promotion)">
+                    InActive
+                  </button>
+
+                  <button mat-menu-item (click)="approvePromotion(promotion)">
+                    Approve
+                  </button>
+                  <button mat-menu-item (click)="holdPromotion(promotion)">
+                    Hold
+                  </button>
+                </mat-menu>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

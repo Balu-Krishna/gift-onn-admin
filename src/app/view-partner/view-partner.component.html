@@ -1,0 +1,69 @@
+<div class="rounded">
+  <div class="d-flex justify-content-between">
+    <div></div>
+    <div>
+      <p class="lable-title">{{ data.partnerName }}</p>
+    </div>
+    <div class="example-button-container">
+      <button
+        mat-mini-fab
+        color="warn"
+        (click)="close()"
+        style="background: #e04f5f"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="row mr-5">
+    <img
+      style="height: 150px; width: 150px"
+      [src]="data.logo"
+      class="rounded-circle img-thumbnail mx-auto d-block"
+    />
+  </div>
+  <div class="row ml-5 mt-5">
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">PARTNER NAME</p>
+      <p class="m-0 form-lable">{{ data.partnerName }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">PARTNER EMAIL ID</p>
+      <p class="m-0 form-lable">{{ data.partnerEmailId }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">PARTNER ID</p>
+      <p class="m-0 form-lable">{{ data.partnerId }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">CATEGORY</p>
+      <p class="m-0 form-lable">{{ data.category }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">SUB CATEGORY</p>
+      <p class="m-0 form-lable">{{ data.subCategory }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">CONTACT NUMBER</p>
+      <p class="m-0 form-lable">{{ data.contactNumber }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">COUNTRY</p>
+      <p class="m-0 form-lable">{{ data.country }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">STATE</p>
+      <p class="m-0 form-lable">{{ data.state }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">CITY</p>
+      <p class="m-0 form-lable">{{ data.location }}</p>
+    </div>
+    <div class="col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">ADDRESS</p>
+      <p class="m-0 form-lable">
+        {{ data.address }}
+      </p>
+    </div>
+  </div>
+</div>

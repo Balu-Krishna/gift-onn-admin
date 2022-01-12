@@ -1,0 +1,59 @@
+<div class="rounded">
+  <div class="d-flex justify-content-between">
+    <div></div>
+    <div>
+      <p class="title">Promotion</p>
+    </div>
+    <div class="example-button-container">
+      <button
+        mat-mini-fab
+        color="warn"
+        (click)="close()"
+        style="background: #e04f5f"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="row mr-5">
+    <img
+      style="height: 150px; width: 150px"
+      [src]="data.promoImage"
+      class="rounded-circle img-thumbnail mx-auto d-block"
+    />
+  </div>
+  <div class="row ml-5 mt-5">
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">PROMO ID</p>
+      <p class="m-0 form-lable">{{ data.promoId }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">STORE ID</p>
+      <p class="m-0 form-lable">{{ data.storeId }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">NAME</p>
+      <p class="m-0 form-lable">{{ data.name }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">CATEGORY</p>
+      <p class="m-0 form-lable">{{ data.category }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">SUB CATEGORY</p>
+      <p class="m-0 form-lable">{{ data.subCategory }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">START DATE</p>
+      <p class="m-0 form-lable">{{ data.startDate }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-4 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">END DATE</p>
+      <p class="m-0 form-lable">{{ data.endDate }}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 mb-5">
+      <p class="mb-1 form-lable text-muted">PROMOTION DESCRIPTION</p>
+      <p class="m-0 form-lable">{{ data.description }}</p>
+    </div>
+  </div>
+</div>

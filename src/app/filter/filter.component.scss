@@ -1,0 +1,75 @@
+::ng-deep body {
+  font-family: "Montserrat", sans-serif !important;
+}
+.filter-title {
+  font: normal normal 600 20px/24px Montserrat !important;
+}
+.form-lable {
+  font: normal normal 600 16px/19px "Montserrat";
+}
+.full-width {
+  width: 100%;
+  font: normal normal medium 16px/19px "Montserrat";
+}
+.radio-btn {
+  font: normal normal normal 14px/18px "Montserrat";
+}
+.outline-button {
+  width: 150px;
+  height: 45px;
+  border: 1px solid #9e8656;
+  font-size: 18px;
+  color: #9e8656;
+}
+.rounded-button {
+  width: 150px;
+  height: 45px;
+  background: #9e8656;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  background-color: #9e8656 !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #9e8656 !important; /*inner circle color change*/
+}
+
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
+  .mat-radio-outer-circle {
+  border-color: #9e8656 !important; /*outer ring color change*/
+}
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #9e8656 !important;
+}
+::ng-deep.mat-select-arrow {
+  color: #9e8656 !important;
+}
+.full-width {
+  width: 100%;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  font-family: "Montserrat" !important;
+}
+
+::ng-deep.mat-select-arrow {
+  color: #9e8656 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #9e8656;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #9e8656;
+}
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #9e8656;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #9e8656;
+}

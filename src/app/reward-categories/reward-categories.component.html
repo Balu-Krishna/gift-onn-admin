@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-sm-11 col-lg-11 col-sm-11 text-center">
+        <h3>Reward Category</h3>
+    </div>
+    <div class="col-sm-1 col-lg-1 col-sm-1" (click)="close()">
+        <img src="../../assets/cancel%20(1).svg" width="20px" alt="">
+    </div>
+</div>
+<form [formGroup]="rewardGroup" (ngSubmit)="rewardSubmit()">
+    <div class="row">
+    <div class="col-sm-8 col-lg-8 col-sm-8 justify-content-center offset-2">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>REWARD CATEGORY</mat-label>
+                <mat-select formControlName="reward">
+                  <mat-option  value="">Selete Reward Category</mat-option>
+                  <mat-option value="accent">Accent</mat-option>
+                  <mat-option value="warn">Warn</mat-option>
+                </mat-select>
+              </mat-form-field>
+          
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-4">
+            <Button class="login-button" type="submit">Save</Button>
+        </div>
+        </div>
+</form>

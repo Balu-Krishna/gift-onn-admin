@@ -1,0 +1,68 @@
+<div class="row custom-pad m-0 p-0">
+  <div class="col-xl-6 col-lg-6 my-auto d-none d-lg-block p-0">
+    <div class="offset-lg-0 offset-xl-1 offset-xxl-3">
+      <img src="../../assets/Group 232.svg">
+    </div>
+  </div>
+  <div class="col-xl-6 col-sm-12 col-md-12 col-lg-6 my-auto p-0">
+    <div class="row p-0 m-0 ">
+      <div class="col-md-9 col-sm-12 col-lg-9 col-xl-9 p-0">
+        <img src="../../assets/Logo.svg" class="h-150">
+        <form [formGroup]="loginGroup" (submit)="loginSubmit()">
+          <div class="pt-35">
+            <mat-form-field class="full-width"
+                            appearance="standard">
+              <mat-label>EMAIL</mat-label>
+              <input matInput
+                     autofocus
+                     placeholder="Enter Email Id"
+                     formControlName="email">
+                    <mat-error *ngIf="loginGroup.get('email').hasError('required')">
+                      Email is Required!
+                    </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="pt-35">
+            <mat-form-field class="full-width"
+                            appearance="standard">
+              <mat-label>PASSWORD</mat-label>
+              <input matInput
+                     placeholder="Password"
+                     formControlName="password"
+                     [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button
+                      matSuffix
+                      type="button"
+                      (click)="hide = !hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="loginGroup.get('password').hasError('required')">
+                Email is Required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="full-width">
+            <p class="forget_text"
+               (click)="ForgetPass()">Forgot Password</p>
+          </div>
+        
+          <div class="pt-35">
+            <button type="submit"
+                    mat-raised-button
+                    [disabled]="!loginGroup.valid"
+                    class="full-width login-button"
+                    color="warn">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3 d-none d-md-block pr-0 mr-n5">
+        <div class="position-absolute top-50 end-0 translate-middle-y">
+          <img src="../../assets/Groupmap.png"
+              class="image-absolute">
+
+        </div>
+      </div>
+    </div>
+      
+  </div>
+</div>

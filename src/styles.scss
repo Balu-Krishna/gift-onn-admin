@@ -1,0 +1,335 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "./assets/scss/variables";
+@import "~compass-mixins/lib/compass";
+@import "~compass-mixins/lib/animate";
+@import "~bootstrap/scss/bootstrap";
+@import "./assets/scss/fonts";
+@import "./assets/scss/functions";
+
+/* === Icon fonts === */
+
+@import "~@mdi/font/scss/materialdesignicons";
+
+/* === Template mixins === */
+
+@import "./assets/scss/mixins/animation";
+@import "./assets/scss/mixins/badges";
+@import "./assets/scss/mixins/buttons";
+@import "./assets/scss/mixins/misc";
+@import "./assets/scss/mixins/color-functions";
+@import "./assets/scss/mixins/cards";
+@import "./assets/scss/mixins/blockqoute";
+@import "./assets/scss/mixins/popovers";
+@import "./assets/scss/mixins/tooltips";
+
+/* === Core Styles === */
+
+@import "./assets/scss/background";
+@import "./assets/scss/typography";
+@import "./assets/scss/reset";
+@import "./assets/scss/responsive";
+@import "./assets/scss/misc";
+@import "./assets/scss/utilities";
+@import "./assets/scss/demo";
+@import "./assets/scss/spinner";
+
+/* === Components === */
+
+@import "./assets/scss/components/forms";
+@import "./assets/scss/components/checkbox-radio";
+@import "./assets/scss/components/icons";
+@import "./assets/scss/components/tables";
+@import "./assets/scss/components/accordions";
+@import "./assets/scss/components/buttons";
+@import "./assets/scss/components/breadcrumbs";
+@import "./assets/scss/components/badges";
+@import "./assets/scss/components/cards";
+@import "./assets/scss/components/preview";
+@import "./assets/scss/components/tooltips";
+@import "./assets/scss/components/popovers";
+@import "./assets/scss/components/lists";
+@import "./assets/scss/components/bootstrap-progress";
+@import "./assets/scss/components/bootstrap-alerts";
+@import "./assets/scss/components/tabs";
+@import "./assets/scss/components/dropdowns";
+@import "./assets/scss/components/date-picker";
+@import "./assets/scss/components/pagination";
+@import "./assets/scss/components/portfolio";
+@import "./assets/scss/components/todo-list";
+@import "./assets/scss/components/landing-screens/auth";
+
+/* === Layout === */
+
+@import "./assets/scss/layout";
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: white !important;
+}
+
+body {
+    background-image: linear-gradient(to top, rgba(255, 0, 0, 0), #f7eeed);
+}
+
+.navbar,
+.content-wrapper {
+    background: transparent !important;
+}
+
+.page-body-wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.sidebar {
+    border-radius: 20px;
+    box-shadow: 0px 0px 3px #0000001a;
+}
+
+.sidebar .nav-profile-image img {
+    width: auto !important;
+    height: auto !important;
+    border-radius: unset !important;
+}
+
+.sidebar li.nav-item.nav-profile {
+    padding-left: 15px !important;
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    margin-bottom: 30px;
+}
+
+.sidebar li.nav-item {
+    padding: 0 15px !important;
+}
+
+.sidebar li.nav-item.active {
+    background: #faeddd;
+    border-left: 5px solid #988149;
+}
+
+.sidebar li.nav-item.active a.nav-link span.menu-title {
+    color: #988149 !important;
+}
+
+.activeIcon {
+    display: none;
+}
+
+.sidebar li.nav-item.active {
+    .activeIcon {
+        display: block;
+    }
+    .normalIcon {
+        display: none;
+    }
+}
+
+.main-panel .content-wrapper {
+    padding-top: 0;
+    padding-left: 10px;
+    .mat-select-trigger {
+        height: auto;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 16px 0px 5px;
+        border-top: none;
+    }
+    .mat-select {
+        position: relative;
+        top: 6px;
+    }
+    .mat-form-field-outline {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    .mat-form-field-outline:hover {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+}
+
+.dash_board h2 {
+    font-size: 18px !important;
+    margin-bottom: 8px;
+}
+
+.dash_head h4 {
+    color: #000000;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+}
+
+.navbar .navbar-menu-wrapper {
+    width: calc(100% - 80px) !important;
+}
+
+.navbar-menu-wrapper h4.panelTitle {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    color: #000000;
+    font-weight: 500;
+    font-size: 18px;
+    position: relative;
+}
+
+span.month.setCardValue {
+    color: #7c808b !important;
+}
+
+span.cardCount {
+    color: #000000 !important;
+}
+
+img.circleImage {
+    position: absolute;
+    left: -85%;
+    bottom: 0;
+}
+
+nav#sidebar.setPositionRelative {
+    position: relative;
+}
+
+.page-body-wrapper {
+    padding-top: 25px !important;
+}
+
+// mat-label normal state style
+::ng-deep .mat-form-field-label {
+    color: rgba(0, 0, 0, 0.6) !important;
+    // color: $mainColor!important;
+}
+
+// mat-label error style
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+// mat-input error carent color
+::ng-deep .mat-form-field-invalid .mat-input-element,
+.mat-warn .mat-input-element {
+    caret-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+// mat-input error outline color
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+    color: rgba(0, 0, 0, 0.6) !important;
+    opacity: 0.8 !important;
+}
+
+::ng-deep .mat-form-field-appearance-fill.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-fill-thick {
+    color: rgba(0, 0, 0, 0.6) !important;
+    opacity: 0.8 !important;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+::ng-deep .mat-input-invalid .mat-form-field-underline {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+
+/** Overrides underline color **/
+
+.my-form-field.mat-form-field-appearance-fill .mat-form-field-underline,
+.my-form-field.mat-form-field-appearance-fill .mat-form-field-ripple,
+.my-form-field.mat-form-field-appearance-fill.mat-focused .mat-form-field-underline,
+.my-form-field.mat-form-field-appearance-fill.mat-focused .mat-form-field-ripple {
+    background-color: white;
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-underline {
+    color: rgb(14, 13, 13) !important;
+}
+
+.mat-form-field-invalid .mat-input-element {
+    caret-color: #0c0c0c;
+}
+
+.mat-form-field-invalid .mat-input-element {
+    color: #0c0c0c;
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-underline {
+    color: #0e0d0d !important;
+}
+
+// .mat-tab-list{padding-left: 169px !important;}
+// .mat-tab-label-content:hover{color:#8b7441;}
+// .mat-ink-bar{background-color: #9e9e9e !important; color:#8b7441;}
+.page--title {
+    font: normal normal 600 20px/24px "Montserrat" !important;
+}
+
+.outline--button {
+    font: normal normal 500 16px/19px "Montserrat" !important;
+    height: 48px !important;
+    border: 2px solid #988149 !important;
+    border-radius: 6px !important;
+    color: #988149 !important;
+}
+
+.outline--export--button {
+    font: normal normal 500 16px/19px "Montserrat" !important;
+    height: 40px !important;
+    border: 0.5px solid #988149 !important;
+    border-radius: 6px !important;
+    color: #988149 !important;
+}
+
+.primary--button {
+    font: normal normal 500 16px/19px "Montserrat" !important;
+    height: 48px !important;
+    background: #988149 0% 0% no-repeat padding-box !important;
+    border-radius: 6px !important;
+    color: #ffffff !important;
+}
+
+.danger--button {
+    font: normal normal 500 16px/19px "Montserrat" !important;
+    height: 48px !important;
+    background: red 0% 0% no-repeat padding-box !important;
+    border-radius: 6px !important;
+    color: #ffffff !important;
+}
+
+.secondary--button {
+    font: normal normal 500 16px/19px "Montserrat" !important;
+    height: 48px !important;
+    background: grey 0% 0% no-repeat padding-box !important;
+    border-radius: 6px !important;
+    color: #ffffff !important;
+}
+
+.table-striped>tbody>tr:nth-child(2n + 1)>td,
+.table-striped>tbody>tr:nth-child(2n + 1)>th {
+    background-color: #f4f6f9 !important;
+}
+
+.table thead th {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+
+.table tbody tr {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}

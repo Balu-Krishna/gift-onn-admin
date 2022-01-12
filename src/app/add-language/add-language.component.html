@@ -1,0 +1,55 @@
+<section class="mb-4 mr-2">
+    <div class="row">
+        <div class="col-lg-6 admins_head">
+            <h6>Language</h6> 
+        </div>
+        <div class="col-lg-6 d-flex justify-content-end">
+            <span class="account_lable">Account </span><span class="mx-2"> / </span>  <span class="admin_lable">Language</span><span class="mx-2"> / </span> <span class="add">Add Language</span>
+        </div>
+    </div>
+  </section>
+
+  <Section style="margin-left: 20px;">
+    <mat-card>
+        <form [formGroup]="addLanguageGroup" (ngSubmit)="addLanguageSubmit()">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-6">
+                    <mat-form-field class="example-full-width"  appearance="fill">
+                      <mat-label>LANGUAGE ID</mat-label>
+                      <input matInput formControlName="languageId"  placeholder="Enter Language Id">
+                    </mat-form-field>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-6">
+                        <mat-form-field class="example-full-width"  appearance="fill">
+                          <mat-label>NAME</mat-label>
+                          <input matInput formControlName="name"  placeholder="Enter Language Name">
+                        </mat-form-field>
+                        </div>
+                <div class="col-md-6 col-lg-6 col-sm-6">
+                  <mat-form-field class="example-full-width"  appearance="fill">
+                    <mat-label>NAME</mat-label>
+                      <input matInput formControlName="value"  placeholder="Enter Language value">
+                    </mat-form-field>
+                </div>
+              <div class="col-md-6 col-lg-6 col-sm-6">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>STATUS</mat-label>
+                    <mat-select formControlName="status">
+                      <mat-option  value="">Selete Status</mat-option>
+                      <mat-option value="active">Active</mat-option>
+                      <mat-option value="inActive">In-Active</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <Button class="login-button" type="submit">Save</Button>
+                </div>
+                <div class="col-md-3">
+                    <Button class="Cancel-button">Cancel</Button>
+                </div>
+             </div>
+        </form>
+    </mat-card>
+  </Section>

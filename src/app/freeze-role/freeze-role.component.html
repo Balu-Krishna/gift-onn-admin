@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-sm-11 col-lg-11 col-sm-11 text-center" *ngIf="data=='customer'">
+        <h3>Freeze Customer</h3>
+    </div>
+    <div class="col-sm-11 col-lg-11 col-sm-11 text-center" *ngIf="data=='partner'">
+        <h3>Freeze Partner</h3>
+    </div>
+    <div class="col-sm-11 col-lg-11 col-sm-11 text-center" *ngIf="data=='offer'">
+        <h3>Freeze Offer</h3>
+    </div>
+    <div class="col-sm-11 col-lg-11 col-sm-11 text-center" *ngIf="data=='purchasersOrder'">
+        <h3>Freeze Purchasers</h3>
+    </div>
+    
+    
+    <div class="col-sm-1 col-lg-1 col-sm-1" (click)="close()">
+        <img src="../../assets/cancel%20(1).svg" width="20px" alt="">
+    </div>
+</div>
+
+
+<form [formGroup]="freezeGroup" (ngSubmit)="freezeSubmit()">
+<div class="row">
+<div class="col-sm-8 col-lg-8 col-sm-8 justify-content-center offset-2">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>DROP DOWN</mat-label>
+            <mat-select formControlName="dropDown">
+              <mat-option  value="">Selete option</mat-option>
+              <mat-option value="accent">Accent</mat-option>
+              <mat-option value="warn">Warn</mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+</div>
+<div class="col-sm-8 col-lg-8 col-sm-8 justify-content-center offset-2">
+    <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Write here</mat-label>
+        <textarea matInput formControlName="description" placeholder="write here"></textarea>
+      </mat-form-field>
+</div>
+
+</div>
+<div class="row">
+<div class="col-md-3 offset-5">
+    <Button class="login-button" type="submit">Save</Button>
+</div>
+</div>
+</form>
