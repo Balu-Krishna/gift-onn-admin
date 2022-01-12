@@ -20,6 +20,7 @@ export class FilterComponent implements OnInit {
   vendororderForm: FormGroup;
   offerForm: FormGroup;
   loyaltyForm: FormGroup;
+  paymentForm: FormGroup;
 
   constructor(
     public dialogRef: MatDialogRef<FilterComponent>,
@@ -122,6 +123,12 @@ export class FilterComponent implements OnInit {
       currency: [""],
       rewardType: [""],
     });
+    this.paymentForm = this.fb.group({
+      partnerId: [""],
+      vendor: [""],
+      Date: [""],
+    });
+
   }
   get plf() {
     return this.productLaunchForm.controls;
@@ -153,6 +160,9 @@ export class FilterComponent implements OnInit {
   get lf() {
     return this.loyaltyForm.controls;
   }
+  get pmf() {
+    return this.paymentForm.controls;
+  }
 
   submit() {
     console.log(this.userForm.value);
@@ -174,6 +184,7 @@ export class FilterComponent implements OnInit {
     this.vendororderForm.reset();
     this.offerForm.reset();
     this.loyaltyForm.reset();
+    this.paymentForm.reset();
 
   }
   close() {

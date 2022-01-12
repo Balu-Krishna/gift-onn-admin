@@ -6,6 +6,7 @@ import { ApprovedModelComponent } from '../approved-model/approved-model.compone
 import { DenyProductComponent } from '../deny-product/deny-product.component';
 import { FilterComponent } from '../filter/filter.component';
 import { FreezeRoleComponent } from '../freeze-role/freeze-role.component';
+import { OffersStoreidComponent } from '../offers-storeid/offers-storeid.component';
 import { RatingForCustomerComponent } from '../rating-for-customer/rating-for-customer.component';
 import { VendorActionsComponent } from '../vendor-actions/vendor-actions.component';
 @Component({
@@ -117,6 +118,12 @@ export class OffersComponent implements OnInit {
     const dialogRef = this.dialog.open(FilterComponent, {
       width: "50%",
       data: { filterType: "offerForm" },
+    });
+  }
+  openoffer() {
+    const dialogRef = this.dialog.open(OffersStoreidComponent, {
+      width: "50%",
+      data: { filterType: "OffersForm" },
     });
   }
 }

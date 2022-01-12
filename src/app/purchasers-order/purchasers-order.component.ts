@@ -4,6 +4,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { ApprovedModelComponent } from "../approved-model/approved-model.component";
 import { DenyProductComponent } from "../deny-product/deny-product.component";
 import { FilterComponent } from "../filter/filter.component";
+import { FreezeCategoryComponent } from "../freeze-category/freeze-category.component";
 import { FreezeRoleComponent } from "../freeze-role/freeze-role.component";
 import { SuccessfulModelComponent } from "../successful-model/successful-model.component";
 
@@ -120,6 +121,14 @@ export class PurchasersOrderComponent implements OnInit {
   }
 
   ngOnInit(): void { }
+  actionSai() {
+    const dialogRef = this.dialog.open(FreezeCategoryComponent, {
+      width: "50%"
+    });
+    dialogRef.afterClosed().subscribe(result => {
+
+    });
+  }
   myTabSelectedTabChange(event) {
     console.log(event);
     if (event.index === 1) {
@@ -163,4 +172,6 @@ export class PurchasersOrderComponent implements OnInit {
       });
     }
   }
+
 }
+

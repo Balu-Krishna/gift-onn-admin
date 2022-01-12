@@ -55,6 +55,9 @@ import { FilterComponent } from "./filter/filter.component";
 import { VendorActionsComponent } from "./vendor-actions/vendor-actions.component";
 import { ViewPartnerComponent } from "./view-partner/view-partner.component";
 import { ViewPromotionDetailsComponent } from "./view-promotion-details/view-promotion-details.component";
+import { FreezeCategoryComponent } from './freeze-category/freeze-category.component';
+import { FreezeSuccessfulComponent } from './freeze-successful/freeze-successful.component';
+import { OffersStoreidComponent } from './offers-storeid/offers-storeid.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,6 +105,9 @@ import { ViewPromotionDetailsComponent } from "./view-promotion-details/view-pro
     VendorActionsComponent,
     ViewPartnerComponent,
     ViewPromotionDetailsComponent,
+    FreezeCategoryComponent,
+    FreezeSuccessfulComponent,
+    OffersStoreidComponent,
   ],
   imports: [
     BrowserModule,

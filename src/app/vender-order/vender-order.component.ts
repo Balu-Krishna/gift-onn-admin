@@ -13,7 +13,7 @@ import { SuccessfulModelComponent } from "../successful-model/successful-model.c
   styleUrls: ['./vender-order.component.scss']
 })
 export class VenderOrderComponent implements OnInit {
-  vendorList = [
+  QrList = [
     {
       qrnumber: "21558",
       orderId: "225222",

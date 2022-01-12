@@ -934,5 +934,58 @@
         </form>
     </div>
 
+    <div *ngIf="data.filterType == 'paymentForm'">
+        <form [formGroup]="paymentForm" (ngSubmit)="submit()" class="m-5 pl-5">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="m-0 form-lable">Partner Id</p>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-select formControlName="partnerId" placeholder="Select  Partner Id">
+                            <mat-option value="20">15p</mat-option>
+                            <mat-option value="20">154y </mat-option>
+                            <mat-option value="20">1561 </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <p class="m-0 form-lable">Vendor</p>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-select formControlName="vendor" placeholder="Select Vendor">
+                            <mat-option value="Jewellary">Jewellary </mat-option>
+                            <mat-option value="Jewellary">Jewellary </mat-option>
+                            <mat-option value="Jewellary">Jewellary </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+
+
+
+                <div class="col-md-6 col-sm-12">
+                    <p class="m-0 form-lable"> Date</p>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <input matInput [matDatepicker]="picker" formControlName="Date" placeholder="Enter Date" />
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+
+
+            </div>
+            <div class="d-flex justify-content-around pt-4">
+                <div>
+                    <button type="button" mat-button class="outline--button" (click)="reset()">
+                        <span class="px-4"> Reset </span>
+                    </button>
+                </div>
+                <div>
+                    <button type="button" mat-button class="primary--button">
+                        <span class="px-4">Apply</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 
 </div>

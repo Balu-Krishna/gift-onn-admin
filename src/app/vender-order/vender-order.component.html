@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between pb-4">
     <div class="pl-5">
-        <p class="page--title">Vendor Orders</p>
+        <p class="page--title">Payments</p>
     </div>
     <div class="d-flex justify-content-end">
         <div class="pr-4">
@@ -15,8 +15,8 @@
     <div class="d-flex justify-content-between">
         <div class="justify-content-center align-self-center">
             <div class="d-flex justify-content-start">
-                <div class="text-muted pl-2 justify-content-center align-self-center">
-                    <span class="font-weight-bold align-middle pr-3">Export: </span>
+                <div class="pl-2 justify-content-center align-self-center">
+                    <span class="export--label align-middle pr-3">Export: </span>
                 </div>
                 <div class="pr-3">
                     <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('csv')">
@@ -43,65 +43,91 @@
             </mat-form-field>
         </div>
     </div>
+    <mat-tab-group (selectedTabChange)="tabChange($event)">
+        <mat-tab class="text-right tab_view" label="QR Code Transaction" style="padding-left: 221px">
+            <div class="table-responsive py-3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="th_wid">QR Number</th>
+                            <th class="th_wid">Order Id</th>
+                            <th class="th_wid">Store Id</th>
+                            <th class="th_wid">Customer Id</th>
+                            <th class="th_wid">Purchaser Name</th>
+                            <th class="th_wid">Date & Time </th>
+                            <th class="th_wid">Product Id</th>
+                            <th class="th_wid">
 
-    <div class="table-responsive py-3">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>QR NUMBER</th>
-                    <th>ORDER ID</th>
-                    <th>STORE ID</th>
-                    <th>CUSTOMER ID</th>
-                    <th>PURCHASER NAME</th>
-                    <th>DATE & TIME</th>
-                    <th>PRODUCT ID</th>
-                    <th>PRODUCT NAME</th>
-                    <th>TOTAL PRICE</th>
-                    <th>DISCOUNT</th>
-                    <th>NET PRICE</th>
+                                Product Name
+                            </th>
+                            <th class="th_wid">Total Price</th>
 
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let vendor of vendorList">
-                    <td>{{ vendor.qrnumber }}</td>
-                    <td>{{ vendor.orderId }}</td>
-                    <td>{{ vendor.storeId }}</td>
-                    <td>{{ vendor.CustomerId }}</td>
-                    <td>{{ vendor.purchaserName }}</td>
-                    <td>{{ vendor.dateTime}}</td>
-                    <td>{{ vendor.productId}}</td>
-                    <td>{{ vendor.productName}}</td>
-                    <td>{{ vendor.totalPrice}}</td>
-                    <td>{{ vendor.discount}}</td>
-                    <td>{{ vendor.netPrice}}</td>
+                            <th class="th_wid">Discount </th>
 
+                            <th class="th_wid">Net Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vendor of  QrList">
+                            <td>{{ vendor.qrnumber }}</td>
+                            <td>{{ vendor.orderId }}</td>
+                            <td>{{ vendor.storeId }}</td>
+                            <td>{{ vendor.CustomerId }}</td>
+                            <td>{{ vendor.purchaserName }}</td>
+                            <td>{{ vendor.dateTime}}</td>
+                            <td>{{ vendor.productId}}</td>
+                            <td>{{ vendor.productName}}</td>
+                            <td>{{ vendor.totalPrice }}</td>
+                            <td>{{ vendor.discount }}</td>
+                            <td>{{ vendor.netPrice}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </mat-tab>
+        <mat-tab class="text-right tab_view" label="Coupon Code Transaction" style="padding-left: 221px">
+            <div class="table-responsive py-3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="th_wid">QR Number</th>
+                            <th class="th_wid">Order Id</th>
+                            <th class="th_wid">Store Id</th>
+                            <th class="th_wid">Customer Id</th>
+                            <th class="th_wid">Purchaser Name</th>
+                            <th class="th_wid">Date & Time </th>
+                            <th class="th_wid">Product Id</th>
+                            <th class="th_wid">
 
+                                Product Name
+                            </th>
+                            <th class="th_wid">Total Price</th>
 
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                            <th class="th_wid">Discount </th>
+
+                            <th class="th_wid">Net Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vendor of  QrList">
+                            <td>{{ vendor.qrnumber }}</td>
+                            <td>{{ vendor.orderId }}</td>
+                            <td>{{ vendor.storeId }}</td>
+                            <td>{{ vendor.CustomerId }}</td>
+                            <td>{{ vendor.purchaserName }}</td>
+                            <td>{{ vendor.dateTime}}</td>
+                            <td>{{ vendor.productId}}</td>
+                            <td>{{ vendor.productName}}</td>
+                            <td>{{ vendor.totalPrice }}</td>
+                            <td>{{ vendor.discount }}</td>
+                            <td>{{ vendor.netPrice}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
