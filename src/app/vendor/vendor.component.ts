@@ -49,7 +49,7 @@ export class VendorComponent implements OnInit {
 
   ngOnInit(): void {}
   addVendor() {
-    this.router.navigate(["add-vendor"]);
+    this.router.navigate(["vendors/add-vendor"]);
   }
   openFilter() {
     const dialogRef = this.dialog.open(FilterComponent, {

@@ -1,0 +1,72 @@
+.lable-font-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.form-lable {
+  font-size: 14px;
+  font-weight: 500;
+  color: gray;
+}
+.lable-color-gray {
+  color: gray;
+}
+.font-color {
+  color: #988149;
+}
+
+.full-width {
+  width: 100%;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  font-family: "Montserrat" !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #9e8656 !important;
+}
+::ng-deep.mat-select-arrow {
+  color: #9e8656 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #9e8656;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #9e8656;
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #9e8656;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #9e8656;
+}
+.save-button {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  background: #988149;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+.cancel-button {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 10px;
+  background: #a4a4a4;
+  font-family: "Montserrat", sans-serif;
+}
+.onboarding-button {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  background: #fb8773;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+}

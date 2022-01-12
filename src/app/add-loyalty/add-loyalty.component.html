@@ -1,65 +1,66 @@
 <section class="mb-4 mr-2">
     <div class="row">
         <div class="col-lg-6 admins_head">
-            <h6>Loyalty</h6> 
+            <h6>Loyalty</h6>
         </div>
         <div class="col-lg-6 d-flex justify-content-end">
-          <span class="admin_lable">Loyalty /</span> <span class="add">Add Loyalty</span>
+
+            <span class="admin_lable">Loyalty /</span> <span class="add">Add Loyalty</span>
         </div>
     </div>
-  </section>
+</section>
 
 
-  <Section style="margin-left: 20px;">
+<Section style="margin-left: 20px;">
     <mat-card>
         <form [formGroup]="addLayalty" (ngSubmit)="addLayaltySubmit()">
             <div class="row">
-              <div class="col-md-6 col-lg-6 col-sm-6">
-              <mat-form-field class="example-full-width"  appearance="fill">
-                <mat-label>PURCHASER NAME</mat-label>
-                <input matInput  formControlName="purchaserName"   placeholder="Enter Purchaser Name">
-              </mat-form-field>
-              </div>
-              <div class="col-md-6 col-lg-6 col-sm-6">
-                <mat-form-field class="example-full-width"  appearance="fill">
-                  <mat-label>PRODUCT ID</mat-label>
-                  <input matInput  formControlName="productId"  placeholder="Enter Product Id">
-                </mat-form-field>
+                <div class="col-md-6 col-lg-6 col-sm-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>PURCHASER NAME</mat-label>
+                        <input matInput formControlName="purchaserName" placeholder="Enter Purchaser Name">
+                    </mat-form-field>
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-6">
-                    <mat-form-field class="example-full-width"  appearance="fill">
-                      <mat-label>AMOUNT</mat-label>
-                      <input matInput formControlName="amount"  placeholder="Enter Amount">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>PRODUCT ID</mat-label>
+                        <input matInput formControlName="productId" placeholder="Enter Product Id">
                     </mat-form-field>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-sm-6">
-                      <mat-form-field class="example-full-width"  appearance="fill">
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>AMOUNT</mat-label>
+                        <input matInput formControlName="amount" placeholder="Enter Amount">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
                         <mat-label>POINTS</mat-label>
-                        <input matInput formControlName="points"  placeholder="Selete Currency Code">
-                      </mat-form-field>
-                      </div>
-                      <div class="col-md-6 col-lg-6 col-sm-6">
-                        <mat-form-field class="example-full-width"  appearance="fill">
-                          <mat-label>CURRENCY CODE</mat-label>
-                          <input matInput formControlName="currencyCode"  placeholder="Enter Product Id">
-                        </mat-form-field>
-                        </div>
-                        <div class="col-md-6 col-lg-6 col-sm-6">
-                            <mat-form-field class="example-full-width" appearance="fill">
-                                <mat-label>EXPIRED DATE</mat-label>
-                                <mat-select formControlName="expiredDate">
-                                  <mat-option  value="">Enter Date</mat-option>
-                                  <mat-option value="1">2</mat-option>
-                                  <mat-option value="2">4</mat-option>
-                                </mat-select>
-                              </mat-form-field>
-                          </div>
-                          <div class="col-md-12 col-lg-12 col-sm-12">
-                            <mat-form-field class="example-full-width"  appearance="fill">
-                              <mat-label>EARN POINTS</mat-label>
-                              <input matInput formControlName="earnpoints"  placeholder="Enter Earn Points">
-                            </mat-form-field>
-                            </div>
+                        <input matInput formControlName="points" placeholder="Selete Currency Code">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>CURRENCY CODE</mat-label>
+                        <input matInput formControlName="currencyCode" placeholder="Enter Product Id">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>EXPIRED DATE</mat-label>
+                        <mat-select formControlName="expiredDate">
+                            <mat-option value="">Enter Date</mat-option>
+                            <mat-option value="1">2</mat-option>
+                            <mat-option value="2">4</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>EARN POINTS</mat-label>
+                        <input matInput formControlName="earnpoints" placeholder="Enter Earn Points">
+                    </mat-form-field>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-3">
@@ -68,13 +69,13 @@
                 <div class="col-md-3">
                     <Button class="Cancel-button">Cancel</Button>
                 </div>
-             </div>
+            </div>
         </form>
     </mat-card>
-    </Section>
+</Section>
 
 
-    <!-- <div class="col-md-6 col-lg-6 col-sm-6">
+<!-- <div class="col-md-6 col-lg-6 col-sm-6">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>OFFER CATEGORY</mat-label>
             <mat-select [(value)]="category">

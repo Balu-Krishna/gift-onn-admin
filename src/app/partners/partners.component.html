@@ -1,13 +1,13 @@
 <div class="d-flex justify-content-between pb-4">
   <div class="pl-5">
-    <p class="lable-font-title">Patners</p>
+    <p class="page-title">Patners</p>
   </div>
   <div class="d-flex justify-content-end">
     <div class="pr-4">
       <button
         mat-stroked-button
         color="primary"
-        class="filter-btn"
+        class="outline--button"
         (click)="openFilter()"
       >
         Filter
@@ -18,7 +18,7 @@
       <button
         mat-stroked-button
         color="accent"
-        class="add-user-btn"
+        class="primary--button"
         (click)="addPartner()"
       >
         Add Partner
@@ -37,7 +37,7 @@
           <button
             mat-stroked-button
             color="accent"
-            class="btn-outline-35"
+            class="outline--export--button"
             (click)="download('csv')"
           >
             CSV
@@ -47,7 +47,7 @@
           <button
             mat-stroked-button
             color="accent"
-            class="btn-outline-35"
+            class="outline--export--button"
             (click)="download('xls')"
           >
             XLS
@@ -57,7 +57,8 @@
           <button
             mat-stroked-button
             color="accent"
-            class="btn-outline-35"
+            style="font-size: 18px"
+            class="outline--export--button"
             (click)="download('pdf')"
           >
             PDF

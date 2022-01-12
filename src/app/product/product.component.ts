@@ -114,7 +114,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {}
   addProduct() {
-    this.router.navigate(["add-product"]);
+    this.router.navigate(["products/add-product"]);
   }
   openFilter() {
     const dialogRef = this.dialog.open(FilterComponent, {

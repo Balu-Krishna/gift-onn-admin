@@ -2,27 +2,26 @@
     min-width: 150px;
     max-width: 500px;
     width: 100%;
-  }
-  
-  .example-full-width {
+}
+
+.example-full-width {
     width: 100%;
-  }
+}
 
-
-
-
-  .login-button {
+.login-button {
     width: 100%;
     border: none;
     outline: none;
     height: 40px;
     font-size: 16px;
-    background: #988149;;
+    background: #988149;
+    ;
     color: #fff;
     border-radius: 4px;
     cursor: pointer;
     margin-top: 48px;
 }
+
 .Cancel-button {
     width: 100%;
     border: none;
@@ -36,26 +35,25 @@
     margin-top: 48px;
 }
 
-
 .error-block {
     color: #e35a49;
     font-size: 12px;
-  }
-
-  
-.admins_head h6{font-weight: 700;
-  text-transform: capitalize;
-  font-size: 17px;
-  margin-left: 30px;
 }
 
-
+.admins_head h6 {
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 17px;
+    margin-left: 30px;
+}
 
 .add {
-  color: #988149
+    color: #988149;
+    font-size: 17px;
+    font-weight: bold;
 }
 
 .admin_lable {
-  color: gray;
+    color: gray;
+    font-weight: bold;
 }
-

@@ -1,130 +1,98 @@
 <div>
-  <div class="d-flex justify-content-between pb-4">
-    <div class="font-weight-bold pl-5">
-      <h2>Admin</h2>
-    </div>
-    <div class="d-flex justify-content-end">
-      <div class="pr-4">
-        <button
-          mat-stroked-button
-          color="primary"
-          class="filter-btn"
-          (click)="openFilter()"
-        >
+    <div class="d-flex justify-content-between pb-4">
+        <div class="pl-5">
+            <p class="page--title">Admin</p>
+        </div>
+        <div class="d-flex justify-content-end">
+            <div class="pr-4">
+                <button mat-stroked-button color="primary" class="outline--button" (click)="openFilter()">
           Filter
           <mat-icon>filter_list</mat-icon>
         </button>
-      </div>
-      <div>
-        <button
-          mat-stroked-button
-          color="accent"
-          class="add-user-btn"
-          (click)="addUser()"
-        >
-          Add Users
+            </div>
+            <div>
+                <button mat-stroked-button color="accent" class="primary--button" (click)="addUser()">
+          Add User
         </button>
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <div class="ml-4 shadow-lg bg-white rounded">
-  <div class="d-flex justify-content-between">
-    <div class="justify-content-center align-self-center">
-      <div class="d-flex justify-content-start">
-        <div class="text-muted pl-2 justify-content-center align-self-center">
-          <span class="font-weight-bold align-middle pr-3">Export: </span>
-        </div>
-        <div class="pr-3">
-          <button
-            mat-stroked-button
-            color="accent"
-            class="btn-outline-35"
-            (click)="download('csv')"
-          >
+    <div class="d-flex justify-content-between">
+        <div class="justify-content-center align-self-center">
+            <div class="d-flex justify-content-start">
+                <div class="text-muted pl-2 justify-content-center align-self-center">
+                    <span class="font-weight-bold align-middle pr-3">Export: </span>
+                </div>
+                <div class="pr-3">
+                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('csv')">
             CSV
           </button>
-        </div>
-        <div class="pr-3">
-          <button
-            mat-stroked-button
-            color="accent"
-            class="btn-outline-35"
-            (click)="download('xls')"
-          >
+                </div>
+                <div class="pr-3">
+                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('xls')">
             XLS
           </button>
-        </div>
-        <div class="pr-3">
-          <button
-            mat-stroked-button
-            color="accent"
-            class="btn-outline-35"
-            (click)="download('pdf')"
-          >
+                </div>
+                <div class="pr-3">
+                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('pdf')">
             PDF
           </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="d-flex align-content-center pt-3">
-      <mat-form-field appearance="outline" style="font-size: 20px" class="pr-3">
-        <mat-icon matSuffix>search</mat-icon>
-        <input
-          matInput
-          type="search"
-          placeholder="search"
-          class="search-input"
-        />
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Emp ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Role</th>
-          <th>Department</th>
-          <th>Status</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of userData">
-          <td>{{ user.empid }}</td>
-          <td>{{ user.firstName + " " + user.lastName }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.role }}</td>
-          <td>{{ user.department }}</td>
-
-          <td>
-            <div
-              style="font-family: 'Montserrat'; font-size: 14px"
-              class="badge rounded"
-              [ngClass]="
-                user.status == 'ACTIVE' ? 'badge-success' : 'badge-danger'
-              "
-            >
-              <span> {{ user.status }} </span>
+                </div>
             </div>
-          </td>
-          <td>
-            <button mat-icon-button (click)="editUser(user)">
-              <i style="color:#1ccfb4;font-size:16px;" class="fas fa-edit"></i>
+        </div>
+
+        <div class="d-flex align-content-center pt-3">
+            <mat-form-field appearance="outline" style="font-size: 20px" class="pr-3">
+                <!-- <mat-icon matSuffix>search</mat-icon> -->
+
+                <input matInput type="search" placeholder="search" class="search-input" />
+                <i class="fa fa-search"></i>
+
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Emp ID</th>
+                    <th>Emolpyee Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userData">
+                    <td>{{ user.empid }}</td>
+                    <td>{{ user.firstName + " " + user.lastName }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>
+                        <div style="font-family: 'Montserrat'; font-size: 14px" class="badge rounded" [ngClass]="
+                user.status == 'ACTIVE' ? 'badge-success' : 'badge-danger'
+              ">
+                            <span> {{ user.status }} </span>
+                        </div>
+                    </td>
+                    <td>
+                        <button mat-icon-button (click)="editUser(user)">
+              <i style="color:#1ccfb4;font-size:16px;"
+                 class="fa fa-edit"></i>
             </button>
-            <button mat-icon-button (click)="deleteModel()">
+                        <button mat-icon-button (click)="deleteModel()">
               <!-- <mat-icon style="color: #fa4242">delete</mat-icon> -->
               <!-- <mat-icon fontIcon="fa-smile"></mat-icon> -->
-              <i style="color:red;font-size:16px;" class="far fa-trash-alt"></i>
+              <i style="color:red;font-size:16px;"
+                 class="fa fa-trash"></i>
 
             </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

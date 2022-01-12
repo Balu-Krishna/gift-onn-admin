@@ -1,146 +1,110 @@
 <div>
-  <div class="d-flex justify-content-between pb-4">
-    <div class="font-weight-bold pl-5">
-      <h2>Vendors</h2>
+    <div class="d-flex justify-content-between pb-4">
+        <div class="pl-5">
+            <p class="page--title">Vendor</p>
+        </div>
+        <div class="d-flex justify-content-end">
+            <div class="pr-4">
+                <button mat-stroked-button color="primary" class="outline--button" (click)="openFilter()">
+                    Filter
+                    <mat-icon>filter_list</mat-icon>
+                </button>
+            </div>
+            <div>
+                <button mat-stroked-button color="accent" class="primary--button" (click)="addVendor()">
+                    Add Vendor
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="d-flex justify-content-end">
-      <div class="pr-4">
-        <button
-          mat-stroked-button
-          color="primary"
-          class="filter-btn"
-          (click)="openFilter()"
-        >
-          Filter
-          <mat-icon>filter_list</mat-icon>
-        </button>
-      </div>
-      <div>
-        <button
-          mat-stroked-button
-          color="accent"
-          class="add-user-btn"
-          (click)="addVendor()"
-        >
-          Add Vendor
-        </button>
-      </div>
-    </div>
-  </div>
 </div>
 <div class="ml-4 shadow-lg bg-white rounded">
-  <div class="d-flex justify-content-between">
-    <div class="justify-content-center align-self-center">
-      <div class="d-flex justify-content-start">
-        <div class="text-muted pl-2 justify-content-center align-self-center">
-          <span class="font-weight-bold align-middle pr-3">Export: </span>
+    <div class="d-flex justify-content-between">
+        <div class="justify-content-center align-self-center">
+            <div class="d-flex justify-content-start">
+                <div class="text-muted pl-2 justify-content-center align-self-center">
+                    <span class="font-weight-bold align-middle pr-3">Export: </span>
+                </div>
+                <div class="pr-3">
+                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('csv')">
+                        CSV
+                    </button>
+                </div>
+                <div class="pr-3">
+                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('xls')">
+                        XLS
+                    </button>
+                </div>
+                <div class="pr-3">
+                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('pdf')">
+                        PDF
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="pr-3">
-          <button
-            mat-stroked-button
-            color="accent"
-            class="btn-outline-35"
-            (click)="download('csv')"
-          >
-            CSV
-          </button>
-        </div>
-        <div class="pr-3">
-          <button
-            mat-stroked-button
-            color="accent"
-            class="btn-outline-35"
-            (click)="download('xls')"
-          >
-            XLS
-          </button>
-        </div>
-        <div class="pr-3">
-          <button
-            mat-stroked-button
-            color="accent"
-            class="btn-outline-35"
-            (click)="download('pdf')"
-          >
-            PDF
-          </button>
-        </div>
-      </div>
-    </div>
 
-    <div class="d-flex align-content-center pt-3">
-      <mat-form-field appearance="outline" style="font-size: 20px" class="pr-3">
-        <mat-icon matSuffix>search</mat-icon>
-        <input
-          matInput
-          type="search"
-          placeholder="search"
-          class="search-input"
-        />
-      </mat-form-field>
+        <div class="d-flex align-content-center pt-3">
+            <mat-form-field appearance="outline" style="font-size: 20px" class="pr-3">
+                <!-- <mat-icon matSuffix>search</mat-icon> -->
+                <input matInput type="search" placeholder="search" class="search-input" />
+                <i class="fa fa-search"></i>
+
+            </mat-form-field>
+        </div>
     </div>
-  </div>
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Vendor Name</th>
-          <th>Store Manager</th>
-          <th>Store Id</th>
-          <th>Store Email</th>
-          <th>Phone Number</th>
-          <th>Location</th>
-          <th>Status</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let vendor of vendorList">
-          <td>{{ vendor.vendorName }}</td>
-          <td>{{ vendor.storeManager }}</td>
-          <td>{{ vendor.storeId }}</td>
-          <td>{{ vendor.storeEmail }}</td>
-          <td>{{ vendor.phoneNumber }}</td>
-          <td>{{ vendor.location }}</td>
-          <td>
-            <div
-              class="font-weight-bold"
-              [ngClass]="
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Vendor Name</th>
+                    <th>Store Manager</th>
+                    <th>Store Id</th>
+                    <th>Store Email</th>
+                    <th>Phone Number</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vendor of vendorList">
+                    <td>{{ vendor.vendorName }}</td>
+                    <td>{{ vendor.storeManager }}</td>
+                    <td>{{ vendor.storeId }}</td>
+                    <td>{{ vendor.storeEmail }}</td>
+                    <td>{{ vendor.phoneNumber }}</td>
+                    <td>{{ vendor.location }}</td>
+                    <td>
+                        <div class="font-weight-bold" [ngClass]="
                 vendor.status.toUpperCase() == 'APPROVED'
                   ? 'text-success'
                   : vendor.status.toUpperCase() == 'PENDING'
                   ? 'text-warning'
                   : 'text-danger'
-              "
-            >
-              <span style="font-size: 16px"> {{ vendor.status }} </span>
-            </div>
-          </td>
-          <td>
-            <button
-              mat-button
-              [matMenuTriggerFor]="menu"
-              mat-flat-button
-              color="warn"
-            >
-              Options
-              <mat-icon>arrow_drop_down</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item (click)="denyVendor(vendor)">Deny</button>
-              <button mat-menu-item (click)="freezeVendor(vendor)">
-                Freeze
-              </button>
-              <button mat-menu-item (click)="approveVendor(vendor)">
-                Approve
-              </button>
-              <button mat-menu-item (click)="ratingVendor(vendor)">
-                Rating
-              </button>
-            </mat-menu>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+              ">
+                            <span style="font-size: 16px"> {{ vendor.status }} </span>
+                        </div>
+                    </td>
+                    <td>
+                        <button mat-button [matMenuTriggerFor]="menu" mat-flat-button color="warn">
+                            Options
+                            <mat-icon>arrow_drop_down</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="denyVendor(vendor)">Deny</button>
+                            <button mat-menu-item (click)="freezeVendor(vendor)">
+                                Freeze
+                            </button>
+                            <button mat-menu-item (click)="approveVendor(vendor)">
+                                Approve
+                            </button>
+                            <button mat-menu-item (click)="ratingVendor(vendor)">
+                                Rating
+                            </button>
+                        </mat-menu>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

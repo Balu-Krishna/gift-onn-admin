@@ -1,15 +1,12 @@
 .add-user-btn {
-  height: 40px;
-  background: #988149;
-  color: #fff;
-  font-size: 14px;
-  font-family: "Montserrat", sans-serif;
+    height: 40px;
+    background: #988149;
+    color: #fff;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
 }
-::ng-deep .table td
-{
-  line-height: 22px !important;
-}
-.badge-success{
+
+.badge-success {
     border: 1px solid #00C292;
     color: #ffffff !important;
     background: #00C292 0% 0% no-repeat padding-box;
@@ -20,43 +17,85 @@
 }
 
 .badge-danger {
-  background: #FA4242;
-  border: 1px solid #FA4242;
-  color: #ffffff;
-  border-radius: 4px !important;
-  font-family: 'Montserrat' !important;
-  font-size: 12px !important;
-  padding: 6px 12px 6px 12px;
+    background: #FA4242;
+    border: 1px solid #FA4242;
+    color: #ffffff;
+    border-radius: 4px !important;
+    font-family: 'Montserrat' !important;
+    font-size: 12px !important;
+    padding: 6px 12px 6px 12px;
 }
+
 .filter-btn {
-  height: 40px;
-  background: transparent;
-  border: 1px solid #988149;
-  color: #988149;
-  font-size: 16px;
-  font-family: "Montserrat", sans-serif;
-  
+    height: 40px;
+    background: transparent;
+    border: 1px solid #988149;
+    color: #988149;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
 }
+
 .btn-outline-35 {
-  height: 35px;
-  background: transparent;
-  border: 1px solid #988149;
-  color: #988149;
-  font-family: "Montserrat", sans-serif;
-  margin-left: -9px;
+    height: 35px;
+    background: transparent;
+    border: 1px solid #988149;
+    color: #988149;
+    font-family: "Montserrat", sans-serif;
+    margin-left: -9px;
 }
-.table-striped > tbody > tr:nth-child(2n + 1) > td,
-.table-striped > tbody > tr:nth-child(2n + 1) > th {
-  background-color: #f4f6f9;
-}
+
 .table thead th {
-  font-family: "Montserrat", sans-serif !important;
-  font-size: 14px;
-  line-height: 20px !important;
-  font-weight: 600;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 14px;
+    line-height: 20px !important;
+    font-weight: 600;
 }
+
 .table tbody tr {
-  font-family: "Montserrat", sans-serif !important;
-  font-size: 12.5px !important;
-  font-weight: 500;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 12.5px !important;
+    font-weight: 500;
+}
+
+.table-striped>tbody>tr:nth-child(2n + 1)>td,
+.table-striped>tbody>tr:nth-child(2n + 1)>th {
+    background-color: #f4f6f9;
+}
+
+.table-striped>tbody>tr:nth-child(2n + 1)>td,
+.table-striped>tbody>tr:nth-child(2n + 1)>th {
+    background-color: #f4f6f9;
+}
+
+::ng-deep .search_informative .bi-search {
+    position: absolute;
+    right: 4px;
+    top: 5px;
+    font-size: 16px;
+    color: #9b9a9a;
+}
+
+::ng-deep .mat-form-field-infix input {
+    padding: 4px 3px !important;
+    font-size: 14px;
+}
+
+.read-only-true .mat-form-field-outline .mat-form-field-outline-start {
+    border: white !important;
+}
+
+.read-only-true .mat-form-field-outline .mat-form-field-outline-end {
+    border: white !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+    margin-top: 0.75em !important;
+}
+
+::ng-deep mat-icon.mat-icon.notranslate.material-icons.mat-icon-no-color.ng-tns-c186-48 {
+    position: absolute;
+    top: -29px;
+    font-size: 15px !important;
+    right: 0;
+    color: #a7a2a2;
 }

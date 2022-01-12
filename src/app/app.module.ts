@@ -20,15 +20,11 @@ import { UsersComponent } from "./users/users.component";
 import { VendorComponent } from "./vendor/vendor.component";
 import { ProductComponent } from "./product/product.component";
 import { CustomerComponent } from "./customer/customer.component";
-import { AddUserComponent } from "./add-user/add-user.component";
-import { AddProductComponent } from "./add-product/add-product.component";
-import { AddVendorComponent } from "./add-vendor/add-vendor.component";
 import { SuccessfulModelComponent } from "./successful-model/successful-model.component";
 import { DeleteModelComponent } from "./delete-model/delete-model.component";
 import { AddLoyaltyComponent } from "./add-loyalty/add-loyalty.component";
 import { AddOffersComponent } from "./add-offers/add-offers.component";
-import { AddPartnersComponent } from "./add-partners/add-partners.component";
-import { AddProductLaunchComponent } from "./add-product-launch/add-product-launch.component";
+import { AddPartnersComponent } from "./partners/add-partners/add-partners.component";
 import { AnalyticsComponent } from "./analytics/analytics.component";
 import { CustomersSupportComponent } from "./customers-support/customers-support.component";
 import { DenyPromotionComponent } from "./deny-promotion/deny-promotion.component";
@@ -53,29 +49,15 @@ import { TermsConditionsComponent } from "./terms-conditions/terms-conditions.co
 import { AngularEditorModule } from "@kolkov/angular-editor";
 import { HttpClientModule } from "@angular/common/http";
 import { AboutUsComponent } from "./about-us/about-us.component";
-import { VendorPoliciesViewComponent } from "./vendor-policies-view/vendor-policies-view.component";
-import { TermsConditionsViewComponent } from "./terms-conditions-view/terms-conditions-view.component";
-import { OnProductsComponent } from "./on-products/on-products.component";
-import { PickUpComponent } from "./pick-up/pick-up.component";
-import { QrRedemptionComponent } from "./qr-redemption/qr-redemption.component";
-import { CouponComponent } from "./coupon/coupon.component";
-import { CommissionsComponent } from "./commissions/commissions.component";
-import { PaymentIntervalsComponent } from "./payment-intervals/payment-intervals.component";
 import { AddESignatureComponent } from "./add-e-signature/add-e-signature.component";
 import { MaterialModule } from "./material/material.module";
 import { FilterComponent } from "./filter/filter.component";
-import { EditUserComponent } from './edit-user/edit-user.component';
-import { VendorTaxesComponent } from './vendor-taxes/vendor-taxes.component';
-import { VendorActionsComponent } from './vendor-actions/vendor-actions.component';
-import { ViewPartnerComponent } from './view-partner/view-partner.component';
-import { ContactComponent } from './customers-support/contact/contact.component';
-import { ReceivedMessageComponent } from './customers-support/received-message/received-message.component';
-import { SentMessageComponent } from './customers-support/sent-message/sent-message.component';
-
-
-
-
-
+import { VendorActionsComponent } from "./vendor-actions/vendor-actions.component";
+import { ViewPartnerComponent } from "./view-partner/view-partner.component";
+import { ViewPromotionDetailsComponent } from "./view-promotion-details/view-promotion-details.component";
+import { FreezeCategoryComponent } from './freeze-category/freeze-category.component';
+import { FreezeSuccessfulComponent } from './freeze-successful/freeze-successful.component';
+import { OffersStoreidComponent } from './offers-storeid/offers-storeid.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,15 +73,11 @@ import { SentMessageComponent } from './customers-support/sent-message/sent-mess
     VendorComponent,
     ProductComponent,
     CustomerComponent,
-    AddUserComponent,
-    AddProductComponent,
-    AddVendorComponent,
     SuccessfulModelComponent,
     DeleteModelComponent,
     AddLoyaltyComponent,
     AddOffersComponent,
     AddPartnersComponent,
-    AddProductLaunchComponent,
     AnalyticsComponent,
     CustomersSupportComponent,
     DenyPromotionComponent,
@@ -122,23 +100,14 @@ import { SentMessageComponent } from './customers-support/sent-message/sent-mess
     CustomerPoliciesComponent,
     TermsConditionsComponent,
     AboutUsComponent,
-    VendorPoliciesViewComponent,
-    TermsConditionsViewComponent,
-    OnProductsComponent,
-    PickUpComponent,
-    QrRedemptionComponent,
-    CouponComponent,
-    CommissionsComponent,
-    PaymentIntervalsComponent,
     AddESignatureComponent,
     FilterComponent,
-    EditUserComponent,
-    VendorTaxesComponent,
     VendorActionsComponent,
     ViewPartnerComponent,
-    ContactComponent,
-    ReceivedMessageComponent,
-    SentMessageComponent,
+    ViewPromotionDetailsComponent,
+    FreezeCategoryComponent,
+    FreezeSuccessfulComponent,
+    OffersStoreidComponent,
   ],
   imports: [
     BrowserModule,
@@ -151,10 +120,9 @@ import { SentMessageComponent } from './customers-support/sent-message/sent-mess
     AngularEditorModule,
     HttpClientModule,
     MaterialModule,
-    
   ],
   exports: [AngularEditorModule],
   providers: [ThemeService],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
