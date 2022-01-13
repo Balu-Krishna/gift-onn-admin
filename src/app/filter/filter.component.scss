@@ -1,110 +1,73 @@
 ::ng-deep body {
-    font-family: "Montserrat", sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
 }
-
+.filter-title {
+  font: normal normal 600 20px/24px Montserrat !important;
+}
 .form-lable {
-    font-size: 16px;
-    font-weight: 700;
+  font: normal normal 600 16px/19px "Montserrat";
 }
-
 .full-width {
-    width: 100%;
-    font-weight: 500 !important;
-    font-size: 16px !important;
-    font-family: "Montserrat" !important;
+  width: 100%;
+  font: normal normal medium 16px/19px "Montserrat";
 }
-
+.radio-btn {
+  font: normal normal normal 14px/18px "Montserrat";
+}
 .outline-button {
-    width: 140px;
-    height: 40px;
-    border: 1px solid #9e8656;
-    font-size: 15px;
-    color: #9e8656;
+  width: 150px;
+  height: 45px;
+  border: 1px solid #9e8656;
+  font-size: 18px;
+  color: #9e8656;
 }
-
 .rounded-button {
-    width: 140px;
-    height: 40px;
-    background: #9e8656;
-    font-size: 15px;
-    color: #ffffff;
-}
-
-::ng-deep .mat-radio-label-content {
-    font-weight: 600;
+  width: 150px;
+  height: 45px;
+  background: #9e8656;
+  font-size: 18px;
+  color: #ffffff;
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
-    background-color: #9e8656 !important;
+  background-color: #9e8656 !important;
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
-    background-color: #9e8656 !important;
-    /*inner circle color change*/
-    height: 17px;
-    width: 17px;
+  background-color: #9e8656 !important; /*inner circle color change*/
 }
 
-::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-    border-color: #9e8656 !important;
-    /*outer ring color change*/
-    width: 17px !important;
-    height: 17px !important;
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
+  .mat-radio-outer-circle {
+  border-color: #9e8656 !important; /*outer ring color change*/
 }
-
 ::ng-deep.mat-form-field-ripple {
-    /*change color of underline when focused*/
-    background-color: #9e8656 !important;
+  /*change color of underline when focused*/
+  background-color: #9e8656 !important;
 }
-
 ::ng-deep.mat-select-arrow {
-    color: #9e8656 !important;
+  color: #9e8656 !important;
 }
-
 .full-width {
-    width: 100%;
-    font-weight: 500 !important;
-    font-size: 16px !important;
-    font-family: "Montserrat" !important;
+  width: 100%;
+  font: normal normal medium 16px/19px "Montserrat";
+  letter-spacing: 0px;
 }
-
 ::ng-deep.mat-select-arrow {
-    color: #9e8656 !important;
+  color: #9e8656 !important;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
-    background-color: #9e8656;
+  background-color: #9e8656;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-    color: #9e8656;
+  color: #9e8656;
 }
-
 ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-    color: #9e8656;
+  color: #9e8656;
 }
 
 ::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-    color: #9e8656;
-}
-
-::ng-deep .mat-radio-button {
-    padding: 0 36px 0 0 !important;
-}
-
-::ng-deep .mat-dialog-container {
-    padding: 10px 60px 50px;
-    width: 82%;
-    position: relative;
-}
-
-::ng-deep .mat-dialog-container .button_close {
-    position: absolute;
-    right: 13px;
-    top: 9px;
-    z-index: 99999;
-}
-
-::ng-deep .mat-dialog-content {
-    overflow: hidden !important;
+  color: #9e8656;
 }

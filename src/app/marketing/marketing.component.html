@@ -30,8 +30,8 @@
   <div class="d-flex justify-content-between">
     <div class="justify-content-center align-self-center">
       <div class="d-flex justify-content-start">
-        <div class="text-muted pl-2 justify-content-center align-self-center">
-          <span class="font-weight-bold align-middle pr-3">Export: </span>
+        <div class="pl-2 justify-content-center align-self-center">
+          <span class="export--label align-middle pr-3">Export: </span>
         </div>
         <div class="pr-3">
           <button
@@ -78,7 +78,7 @@
       </mat-form-field>
     </div>
   </div>
-  <mat-tab-group (selectedTabChange)="myTabSelectedTabChange($event)">
+  <mat-tab-group (selectedTabChange)="tabChange($event)">
     <mat-tab
       class="text-right tab_view"
       label="Promotion"
@@ -107,7 +107,7 @@
               <td>
                 <a
                   href="javascript:void(0);"
-                  (click)="viewPromotion(promotion)"
+                  (click)="viewPromotionDetails(promotion)"
                   style="color: #9e8656"
                   >{{ promotion.promoId }}</a
                 >
@@ -185,7 +185,7 @@
               <th>Description</th>
               <th>Country</th>
               <th>Location</th>
-              <th>Launch Date</th>
+              <th>Start Date</th>
               <th>Status</th>
               <th>Action</th>
             </tr>
@@ -193,7 +193,14 @@
           <tbody>
             <tr *ngFor="let product of products">
               <td><img [src]="product.productImage" /></td>
-              <td>{{ product.productId }}</td>
+              <td>
+                <a
+                  href="javascript:void(0);"
+                  (click)="viewProductLaunchDetails(product)"
+                  style="color: #9e8656"
+                  >{{ product.productId }}</a
+                >
+              </td>
               <td>{{ product.vendorId }}</td>
               <td>{{ product.partnerId }}</td>
               <td>{{ product.category }}</td>
@@ -201,7 +208,7 @@
               <td>{{ product.description }}</td>
               <td>{{ product.country }}</td>
               <td>{{ product.location }}</td>
-              <td>{{ product.launchDate }}</td>
+              <td>{{ product.startDate }}</td>
               <td>
                 <div
                   class="font-weight-bold"
@@ -227,20 +234,23 @@
                   <mat-icon>arrow_drop_down</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
-                  <button mat-menu-item (click)="denyPromotion(promotion)">
+                  <button mat-menu-item (click)="denyProductLaunch(product)">
                     Deny
                   </button>
-                  <button mat-menu-item (click)="activePromotion(promotion)">
+                  <button mat-menu-item (click)="activeProductLaunch(product)">
                     Active
                   </button>
-                  <button mat-menu-item (click)="inactivePromotion(promotion)">
+                  <button
+                    mat-menu-item
+                    (click)="inactiveProductLaunch(product)"
+                  >
                     InActive
                   </button>
 
-                  <button mat-menu-item (click)="approvePromotion(promotion)">
+                  <button mat-menu-item (click)="approveProductLaunch(product)">
                     Approve
                   </button>
-                  <button mat-menu-item (click)="holdPromotion(promotion)">
+                  <button mat-menu-item (click)="holdProductLaunch(product)">
                     Hold
                   </button>
                 </mat-menu>

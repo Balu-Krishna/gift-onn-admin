@@ -22,9 +22,7 @@ import { ProductComponent } from "./product/product.component";
 import { CustomerComponent } from "./customer/customer.component";
 import { SuccessfulModelComponent } from "./successful-model/successful-model.component";
 import { DeleteModelComponent } from "./delete-model/delete-model.component";
-import { AddLoyaltyComponent } from "./add-loyalty/add-loyalty.component";
 import { AddOffersComponent } from "./add-offers/add-offers.component";
-import { AddPartnersComponent } from "./partners/add-partners/add-partners.component";
 import { AnalyticsComponent } from "./analytics/analytics.component";
 import { CustomersSupportComponent } from "./customers-support/customers-support.component";
 import { DenyPromotionComponent } from "./deny-promotion/deny-promotion.component";
@@ -54,10 +52,6 @@ import { MaterialModule } from "./material/material.module";
 import { FilterComponent } from "./filter/filter.component";
 import { VendorActionsComponent } from "./vendor-actions/vendor-actions.component";
 import { ViewPartnerComponent } from "./view-partner/view-partner.component";
-import { ViewPromotionDetailsComponent } from "./view-promotion-details/view-promotion-details.component";
-import { FreezeCategoryComponent } from './freeze-category/freeze-category.component';
-import { FreezeSuccessfulComponent } from './freeze-successful/freeze-successful.component';
-import { OffersStoreidComponent } from './offers-storeid/offers-storeid.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,9 +69,7 @@ import { OffersStoreidComponent } from './offers-storeid/offers-storeid.componen
     CustomerComponent,
     SuccessfulModelComponent,
     DeleteModelComponent,
-    AddLoyaltyComponent,
     AddOffersComponent,
-    AddPartnersComponent,
     AnalyticsComponent,
     CustomersSupportComponent,
     DenyPromotionComponent,
@@ -104,10 +96,6 @@ import { OffersStoreidComponent } from './offers-storeid/offers-storeid.componen
     FilterComponent,
     VendorActionsComponent,
     ViewPartnerComponent,
-    ViewPromotionDetailsComponent,
-    FreezeCategoryComponent,
-    FreezeSuccessfulComponent,
-    OffersStoreidComponent,
   ],
   imports: [
     BrowserModule,

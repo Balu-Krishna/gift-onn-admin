@@ -1,16 +1,21 @@
 <div>
-    <div class="d-flex justify-content-between pb-4">
-        <div class="pl-5">
-            <p class="page--title">Purches Orders</p>
-        </div>
-        <div class="d-flex justify-content-end">
-            <div class="pr-4">
-                <button mat-stroked-button color="primary" class="outline--button" (click)="openFilter()">
-                    Filter
-                    <mat-icon>filter_list</mat-icon>
-                </button>
-            </div>
-            <!-- <div>
+  <div class="d-flex justify-content-between pb-4">
+    <div class="pl-5">
+      <p class="page--title">Purches Orders</p>
+    </div>
+    <div class="d-flex justify-content-end">
+      <div class="pr-4">
+        <button
+          mat-stroked-button
+          color="primary"
+          class="outline--button"
+          (click)="openFilter()"
+        >
+          Filter
+          <mat-icon>filter_list</mat-icon>
+        </button>
+      </div>
+      <!-- <div>
         <button
           mat-stroked-button
           color="accent"
@@ -20,75 +25,101 @@
           Add User
         </button>
       </div> -->
-        </div>
     </div>
+  </div>
 </div>
 <div class="ml-4 shadow-lg bg-white rounded">
-    <div class="d-flex justify-content-between">
-        <div class="justify-content-center align-self-center">
-            <div class="d-flex justify-content-start">
-                <div class="text-muted pl-2 justify-content-center align-self-center">
-                    <span class="font-weight-bold align-middle pr-3">Export: </span>
-                </div>
-                <div class="pr-3">
-                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('csv')">
-                        CSV
-                    </button>
-                </div>
-                <div class="pr-3">
-                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('xls')">
-                        XLS
-                    </button>
-                </div>
-                <div class="pr-3">
-                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('pdf')">
-                        PDF
-                    </button>
-                </div>
-            </div>
+  <div class="d-flex justify-content-between">
+    <div class="justify-content-center align-self-center">
+      <div class="d-flex justify-content-start">
+        <div class="text-muted pl-2 justify-content-center align-self-center">
+          <span class="font-weight-bold align-middle pr-3">Export: </span>
         </div>
-
-        <div class="d-flex align-content-center pt-3">
-            <mat-form-field appearance="outline" style="font-size: 20px" class="pr-3">
-                <mat-icon matSuffix>search</mat-icon>
-                <input matInput type="search" placeholder="search" class="search-input" />
-            </mat-form-field>
+        <div class="pr-3">
+          <button
+            mat-stroked-button
+            color="accent"
+            class="outline--export--button"
+            (click)="download('csv')"
+          >
+            CSV
+          </button>
         </div>
+        <div class="pr-3">
+          <button
+            mat-stroked-button
+            color="accent"
+            class="outline--export--button"
+            (click)="download('xls')"
+          >
+            XLS
+          </button>
+        </div>
+        <div class="pr-3">
+          <button
+            mat-stroked-button
+            color="accent"
+            class="outline--export--button"
+            (click)="download('pdf')"
+          >
+            PDF
+          </button>
+        </div>
+      </div>
     </div>
-    <mat-tab-group (selectedTabChange)="myTabSelectedTabChange($event)">
-        <mat-tab class="text-right tab_view" label="Orders" style="padding-left: 221px">
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Customer ID</th>
-                            <th>Store Id</th>
-                            <th>Purchaser Name</th>
-                            <th>Category</th>
-                            <th>Sub Category</th>
-                            <th>Product</th>
-                            <th>Product Name</th>
-                            <th>Net Price</th>
-                            <th>Total Price</th>
-                            <th>Status</th>
-                            <th>Track</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let order of Orders">
-                            <td>{{ order.orderId }}</td>
-                            <td>{{ order.customerId }}</td>
-                            <td>{{ order.storeId }}</td>
-                            <td>{{ order.purchasername }}</td>
-                            <td>{{ order.category }}</td>
-                            <td>{{ order.subCategory }}</td>
-                            <td>{{ order.productId }}</td>
-                            <td>{{ order.productName }}</td>
-                            <td>{{ order.netPrice }}</td>
-                            <td>{{ order.totalPrice }}</td>
-                            <td>
-                                <div class="font-weight-bold" [ngClass]="
+
+    <div class="d-flex align-content-center pt-3">
+      <mat-form-field appearance="outline" style="font-size: 20px" class="pr-3">
+        <mat-icon matSuffix>search</mat-icon>
+        <input
+          matInput
+          type="search"
+          placeholder="search"
+          class="search-input"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <mat-tab-group (selectedTabChange)="myTabSelectedTabChange($event)">
+    <mat-tab
+      class="text-right tab_view"
+      label="Orders"
+      style="padding-left: 221px"
+    >
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer ID</th>
+              <th>Store Id</th>
+              <th>Purchaser Name</th>
+              <th>Category</th>
+              <th>Sub Category</th>
+              <th>Product</th>
+              <th>Product Name</th>
+              <th>Net Price</th>
+              <th>Total Price</th>
+              <th>Status</th>
+              <th>Track</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of Orders">
+              <td>{{ order.orderId }}</td>
+              <td>{{ order.customerId }}</td>
+              <td>{{ order.storeId }}</td>
+              <td>{{ order.purchasername }}</td>
+              <td>{{ order.category }}</td>
+              <td>{{ order.subCategory }}</td>
+              <td>{{ order.productId }}</td>
+              <td>{{ order.productName }}</td>
+              <td>{{ order.netPrice }}</td>
+              <td>{{ order.totalPrice }}</td>
+              <td>
+                <div
+                  class="font-weight-bold"
+                  [ngClass]="
                     order.status.toUpperCase() == 'CONFIRMED'
                       ? 'text-success'
                       : ['PENDING', 'REFUNDED'].includes(
@@ -96,215 +127,64 @@
                         )
                       ? 'text-warning'
                       : 'text-danger'
-                  ">
-                                    <span style="font-size: 16px"> {{ order.status }} </span>
-                                </div>
-                            </td>
-                            <td>
-                                <button mat-button [matMenuTriggerFor]="menu" mat-flat-button color="warn">
-                                    Options
-                                    <mat-icon>arrow_drop_down</mat-icon>
-                                </button>
-                                <mat-menu #menu="matMenu">
-                                    <button mat-menu-item (click)="denyVendor(vendor)">
-                                        Confirmed
-                                    </button>
-                                    <button mat-menu-item (click)="freezeVendor(vendor)">
-                                        Ready for pick-up
-                                    </button>
-                                    <button mat-menu-item (click)="approveVendor(vendor)">
-                                        Order pick-up
-                                    </button>
-                                    <button mat-menu-item (click)="ratingVendor(vendor)">
-                                        Auto Cancelled
-                                    </button>
-                                    <button mat-menu-item (click)="ratingVendor(vendor)">
-                                        Cancelled
-                                    </button>
-                                    <button mat-menu-item (click)="ratingVendor(vendor)">
-                                        Refund
-                                    </button>
-                                </mat-menu>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </mat-tab>
-        <mat-tab class="text-right tab_view" label="Generate OTP" style="padding-left: 221px">
-            <section class="Order_form">
-                <form [formGroup]="generateOpt">
-                    <div class="form-group order_text">
-                        <label for="exampleInputEmail1">Order Id</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Order Id" aria-describedby="emailHelp" formControlName="orderid">
-                    </div>
-                </form>
-                <div class="row purches_btn">
-                    <div class="request_btn">
-                        <a class="" href="">Request OTP</a>
-                    </div>
-                    <div class="cancel_btn">
-                        <a class="" href="">Cancel</a>
-                    </div>
-                    <div class="resend_btn">
-                        <a class="" href="">Resend OTP</a>
-                    </div>
+                  "
+                >
+                  <span style="font-size: 16px"> {{ order.status }} </span>
                 </div>
-            </section>
-            <section class="Order_form">
-                <form>
-                    <div class="form-group order_text">
-                        <label for="exampleInputEmail1">CONFIRM OTP</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter OTP" aria-describedby="emailHelp" formControlName="confirmedOtp">
-                    </div>
-                </form>
-                <div class="row purches_btn">
-                    <div class="submit_btn">
-                        <a class="" href="" (click)="OptSubmit()">Submit</a>
-                    </div>
-                </div>
-            </section>
-        </mat-tab>
-
-        <mat-tab class="text-right tab_view" label="Generate QR" style="padding-left: 221px">
-            <div>
-                <form [formGroup]="generateQr">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>QR NUMBER</mat-label>
-                                    <input matInput formControlName="qrNumber" placeholder="Enter Number" />
-                                </mat-form-field>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>PURCHASER NAME</mat-label>
-                                    <input matInput formControlName="purchasername" placeholder="Enter Purchaser Name" />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>PRODUCT NAME</mat-label>
-                                    <input matInput formControlName="productName" placeholder="Enter Product Name" />
-                                </mat-form-field>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>PRODUCT ID</mat-label>
-                                    <input matInput formControlName="productId" placeholder="Enter Product Id" />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>SUB CATEGORY</mat-label>
-                                    <mat-select formControlName="SubCategory">
-                                        <mat-option value="Pending"> Sub Category </mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>CATEGORY</mat-label>
-                                    <mat-select formControlName="category">
-                                        <mat-option value="Pending"> Select Category </mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>STORE ID</mat-label>
-                                    <input matInput formControlName="storeid" placeholder="Enter Store Id" />
-                                </mat-form-field>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>RECIPIENT MOBILE NUMbER</mat-label>
-                                    <input matInput formControlName="mobileNumber" placeholder=" Enter Mobile Number" />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 my-md-5">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <button mat-flat-button type="submit" class="rounded-button" (click)="QrSubmit()">
-                                        Save
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-        </mat-tab>
-        <mat-tab class="text-right tab_view" label="Vendor Related Coupons" style="padding-left: 221px">
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Code</th>
-                            <th>Store Id</th>
-                            <th>Store Name</th>
-                            <th>Coupon Type</th>
-                            <th>Amount</th>
-                            <th>Category</th>
-                            <th>Sub Category</th>
-                            <th>Discount</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let coupons of coupons">
-                            <td>{{ coupons.code }}</td>
-                            <td>{{ coupons.storeid }}</td>
-                            <td>{{ coupons.storeName }}</td>
-                            <td>{{ coupons.couponType}}</td>
-                            <td>{{ coupons.amount }}</td>
-                            <td>{{ coupons.category }}</td>
-                            <td>{{ coupons.subCategort }}</td>
-                            <td>{{ coupons.discount }}</td>
-                            <td>{{ coupons.startDate }}</td>
-                            <td>{{ coupons.endDte }}</td>
-                            <td>
-                                <div [ngClass]="
-                                            coupons.status.toUpperCase() == 'APPROVED'
-                                              ? 'text-success'
-                                              : coupons.status.toUpperCase() == 'PENDING'
-                                              ? 'text-warning'
-                                              : 'text-danger'
-                                          ">
-                                    <span> {{coupons.status }} </span>
-                                </div>
-                            </td>
-                            <td>
-                                <button mat-button [matMenuTriggerFor]="menu" mat-flat-button color="warn">
-                                    Options
-                                    <mat-icon>arrow_drop_down</mat-icon>
-                                </button>
-                                <mat-menu #menu="matMenu">
-                                    <button mat-menu-item (click)="denyVendor(vendor)">
-                                        Approve
-                                    </button>
-                                    <button mat-menu-item (click)="actionSai()">
-                                        Freeze
-                                    </button>
-
-                                </mat-menu>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </mat-tab>
-    </mat-tab-group>
+              </td>
+              <td>
+                <button
+                  mat-button
+                  [matMenuTriggerFor]="menu"
+                  mat-flat-button
+                  color="warn"
+                >
+                  Options
+                  <mat-icon>arrow_drop_down</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="denyVendor(vendor)">
+                    Confirmed
+                  </button>
+                  <button mat-menu-item (click)="freezeVendor(vendor)">
+                    Ready for pick-up
+                  </button>
+                  <button mat-menu-item (click)="approveVendor(vendor)">
+                    Order pick-up
+                  </button>
+                  <button mat-menu-item (click)="ratingVendor(vendor)">
+                    Auto Cancelled
+                  </button>
+                  <button mat-menu-item (click)="ratingVendor(vendor)">
+                    Cancelled
+                  </button>
+                  <button mat-menu-item (click)="ratingVendor(vendor)">
+                    Refund
+                  </button>
+                </mat-menu>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-tab>
+    <mat-tab
+      class="text-right tab_view"
+      label="Generate OTP"
+      style="padding-left: 221px"
+    >
+    </mat-tab>
+    <mat-tab
+      class="text-right tab_view"
+      label="Generate QR"
+      style="padding-left: 221px"
+    >
+    </mat-tab>
+    <mat-tab
+      class="text-right tab_view"
+      label="Vendor Related Coupons"
+      style="padding-left: 221px"
+    >
+    </mat-tab>
+  </mat-tab-group>
 </div>

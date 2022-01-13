@@ -1,61 +1,29 @@
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-
-
-
-
-  .login-button {
-    width: 100%;
-    border: none;
-    outline: none;
-    height: 40px;
-    font-size: 16px;
-    background: #988149;;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 48px;
+.full-width {
+  width: 100%;
+  font: normal normal medium 16px/19px "Montserrat";
+  letter-spacing: 0px;
 }
-.Cancel-button {
-    width: 100%;
-    border: none;
-    outline: none;
-    height: 40px;
-    font-size: 16px;
-    background: grey;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 48px;
+::ng-deep.mat-select-arrow {
+  color: #9e8656 !important;
 }
 
-
-.error-block {
-    color: #e35a49;
-    font-size: 12px;
-  }
-
-  
-.admins_head h6{font-weight: 700;
-  text-transform: capitalize;
-  font-size: 17px;
-  margin-left: 30px;
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #9e8656;
 }
 
-
-
-.add {
-  color: #988149
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #9e8656;
+}
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #9e8656;
 }
 
-.admin_lable {
-  color: gray;
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #9e8656;
 }
-
+.filter-title {
+  font: normal normal 600 20px/24px Montserrat !important;
+}
+.form-lable {
+  font: normal normal 600 16px/19px "Montserrat";
+}

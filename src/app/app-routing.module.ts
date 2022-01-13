@@ -5,7 +5,6 @@ import { CustomerComponent } from "./customer/customer.component";
 import { SuccessfulModelComponent } from "./successful-model/successful-model.component";
 import { DeleteModelComponent } from "./delete-model/delete-model.component";
 import { AnalyticsComponent } from "./analytics/analytics.component";
-import { LoyailtyComponent } from "./loyailty/loyailty.component";
 import { PaymentsComponent } from "./payments/payments.component";
 import { OffersComponent } from "./offers/offers.component";
 import { PurchasersOrderComponent } from "./purchasers-order/purchasers-order.component";
@@ -13,7 +12,6 @@ import { CustomersSupportComponent } from "./customers-support/customers-support
 import { FreezedModelComponent } from "./freezed-model/freezed-model.component";
 import { RatingForCustomerComponent } from "./rating-for-customer/rating-for-customer.component";
 import { AddOffersComponent } from "./add-offers/add-offers.component";
-import { AddLoyaltyComponent } from "./add-loyalty/add-loyalty.component";
 import { VenderOrderComponent } from "./vender-order/vender-order.component";
 import { DenyProductComponent } from "./deny-product/deny-product.component";
 import { RewardCategoriesComponent } from "./reward-categories/reward-categories.component";
@@ -55,13 +53,17 @@ const routes: Routes = [
     loadChildren: () =>
       import("./marketing/marketing.module").then((m) => m.MarketingModule),
   },
+  {
+    path: "loyalty",
+    loadChildren: () =>
+      import("./loyailty/loyailty.module").then((m) => m.LoyailtyModule),
+  },
   { path: "dashboard", component: DashboardComponent },
   { path: "customers", component: CustomerComponent },
   { path: "add-successful", component: SuccessfulModelComponent },
   { path: "delete-successful", component: DeleteModelComponent },
   { path: "analytics", component: AnalyticsComponent },
   { path: "venderOrder", component: VenderOrderComponent },
-  { path: "loyalty", component: LoyailtyComponent },
   { path: "Payments", component: PaymentsComponent },
   { path: "offers", component: OffersComponent },
   { path: "purchasersOrder", component: PurchasersOrderComponent },
@@ -69,7 +71,6 @@ const routes: Routes = [
   { path: "freezed", component: FreezedModelComponent },
   { path: "ratingForCustomer", component: RatingForCustomerComponent },
   { path: "add-offers", component: AddOffersComponent },
-  { path: "add-loyalty", component: AddLoyaltyComponent },
   { path: "deny-product", component: DenyProductComponent },
   { path: "reward-categories", component: RewardCategoriesComponent },
   { path: "add-language", component: AddLanguageComponent },

@@ -1,16 +1,15 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { PartnersComponent } from "./partners.component";
-import { AddPartnersComponent } from "./add-partners/add-partners.component";
-import { Routes, RouterModule } from "@angular/router";
+import { AddLoyaltyComponent } from "./add-loyalty/add-loyalty.component";
+import { LoyailtyComponent } from "./loyailty.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { Routes, RouterModule } from "@angular/router";
 import { MaterialModule } from "../material/material.module";
 
 const routes: Routes = [
-  { path: "", component: PartnersComponent },
-  { path: "add-partner", component: AddPartnersComponent },
+  { path: "", component: LoyailtyComponent },
+  { path: "add-loyalty", component: AddLoyaltyComponent },
 ];
-
 @NgModule({
   imports: [
     CommonModule,
@@ -21,6 +20,6 @@ const routes: Routes = [
   ],
   exports: [MaterialModule, FormsModule, ReactiveFormsModule],
 
-  declarations: [AddPartnersComponent],
+  declarations: [AddLoyaltyComponent],
 })
-export class PartnersModule {}
+export class LoyailtyModule {}

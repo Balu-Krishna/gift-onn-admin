@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { ViewPartnerComponent } from "../view-partner/view-partner.component";
 
 @Component({
   selector: "app-view-promotion-details",
@@ -9,7 +8,7 @@ import { ViewPartnerComponent } from "../view-partner/view-partner.component";
 })
 export class ViewPromotionDetailsComponent implements OnInit {
   constructor(
-    public dialogRef: MatDialogRef<ViewPartnerComponent>,
+    public dialogRef: MatDialogRef<ViewPromotionDetailsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 

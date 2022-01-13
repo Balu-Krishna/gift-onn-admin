@@ -10,7 +10,6 @@ import { ConfirmedValidator } from "./confirmed.validator";
 })
 export class AddUserComponent implements OnInit {
   addAdminGroup: FormGroup;
-
   submitted = false;
   hide = true;
   hide1 = true;
@@ -31,7 +30,7 @@ export class AddUserComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   addAdminSubmit() {
     this.submitted = true;
     if (this.addAdminGroup.invalid) {

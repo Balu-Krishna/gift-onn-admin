@@ -4,3 +4,16 @@
   height: 64px;
   border-radius: 4px;
 }
+::ng-deep .mat-tab-label {
+  color: gray;
+  font: normal normal 600 18px/22px "Montserrat";
+}
+::ng-deep .mat-tab-label-active {
+  color: #988149 !important;
+}
+::ng-deep .mat-ripple .mat-focus-indicator {
+  color: #988149;
+}
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
+  background-color: #988149 !important;
+}

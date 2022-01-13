@@ -1,112 +1,270 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
-    <ul class="nav">
-        <li class="nav-item nav-profile">
-            <a href="javascript:;" class="nav-link">
-                <div class="nav-profile-image">
-                    <img src="assets/Logo.svg" alt="profile" />
-                </div>
-            </a>
-        </li>
+  <ul class="nav">
+    <li class="nav-item nav-profile">
+      <a href="javascript:;" class="nav-link">
+        <div class="nav-profile-image">
+          <img src="assets/Logo.svg" alt="profile" />
+        </div>
+      </a>
+    </li>
 
-        <li class="nav-item" [ngClass]="{ active: dashboard.isActive }">
-            <a class="nav-link" routerLink="/dashboard" routerLinkActive #dashboard="routerLinkActive">
-                <img class="mr-2 normalIcon" src="/assets/dashboard.svg " width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/dashboard-active.svg " width="20px" />
-                <span class="menu-title">Dashboard</span>
-            </a>
-        </li>
-        <li class="nav-item" [ngClass]="{ active: user.isActive }">
-            <a class="nav-link" routerLink="/users" routerLinkActive #user="routerLinkActive">
-                <img class="mr-2 normalIcon" src="/assets/group.svg" width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/group-active.svg" width="20px" />
-                <span class="menu-title">Users Types</span>
-            </a>
-        </li>
-        <li class="nav-item" [ngClass]="{ active: vendor.isActive }">
-            <a class="nav-link" routerLink="/vendors" routerLinkActive #vendor="routerLinkActive">
-                <img class="mr-2 normalIcon" src="/assets/officer.svg" width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/officer-active.svg" width="20px" />
-                <span class="menu-title">Vendors</span>
-            </a>
-        </li>
-        <li class="nav-item" [ngClass]="{ active: product.isActive }">
-            <a class="nav-link" routerLink="/products" routerLinkActive #product="routerLinkActive">
-                <img class="mr-2 normalIcon" src="/assets/product%20(1).svg" width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/product-active.svg" width="20px" />
-                <span class="menu-title">Product</span>
-            </a>
-        </li>
-        <li class="nav-item" [ngClass]="{ active: customer.isActive }">
-            <a class="nav-link" routerLink="/customers" routerLinkActive #customer="routerLinkActive">
-                <img class="mr-2 normalIcon" src="/assets/customer%20(2).svg" width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/customer%20(2)-active.svg" width="20px" />
-                <span class="menu-title">Customers</span>
-            </a>
-        </li>
-        <li class="nav-item" [ngClass]="{ active: partners.isActive }">
-            <a class="nav-link" routerLink="/partners" routerLinkActive #partners="routerLinkActive">
-                <img class="mr-2 normalIcon" src="/assets/handshake%20(1).svg" width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/handshake-active.svg" width="20px" />
-                <span class="menu-title">Partners</span>
-            </a>
-        </li>
-        <li class="nav-item" [ngClass]="{ active: marketing.isActive }">
-            <a class="nav-link" routerLink="/marketing" routerLinkActive #marketing="routerLinkActive">
-                <img class="mr-2 normalIcon" src="/assets/megaphone.svg" width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/megaphone-active.svg" width="20px" />
-                <span class="menu-title">Marketing</span>
-            </a>
-        </li>
-        <li class="nav-item" [ngClass]="{ active: analytics.isActive }">
-            <a class="nav-link" routerLink="/analytics" routerLinkActive #analytics="routerLinkActive">
-                <img class="mr-2 normalIcon" src="/assets/analytics.svg" width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/analytics%20-%20active.svg" width="20px" />
-                <span class="menu-title">Analytics</span>
-            </a>
-        </li>
-        <li class="nav-item" [ngClass]="{ active: loyalty.isActive }">
-            <a class="nav-link" routerLink="/loyalty" routerLinkActive #loyalty="routerLinkActive">
-                <img class="mr-2 normalIcon" src="/assets/customer-loyalty.svg" width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/customer-loyalty-active.svg" width="20px" />
-                <span class="menu-title">Loyalty</span>
-            </a>
-        </li>
-        <li class="nav-item" [ngClass]="{ active: Payments.isActive }">
-            <a class="nav-link" routerLink="/Payments" routerLinkActive #Payments="routerLinkActive">
-                <img class="mr-2 normalIcon" src="assets/Cash%20payment.svg" width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/Cash%20payment-active.svg" width="20px" />
-                <span class="menu-title">Payments</span>
-            </a>
-        </li>
-        <li class="nav-item" [ngClass]="{ active: offers.isActive }">
-            <a class="nav-link" routerLink="/offers" routerLinkActive #offers="routerLinkActive">
-                <img class="mr-2 normalIcon" src="/assets/discount.svg" width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/discount-active.svg" width="20px" />
-                <span class="menu-title">offers</span>
-            </a>
-        </li>
-        <li class="nav-item" [ngClass]="{ active: purchasersOrder.isActive }">
-            <a class="nav-link" routerLink="/purchasersOrder" routerLinkActive #purchasersOrder="routerLinkActive">
-                <img class="mr-2 normalIcon" src="/assets/sent%20(1).svg" width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/sent%20(1)-active.svg" width="20px" />
-                <span class="menu-title">Purchasers order</span>
-            </a>
-        </li>
-        <li class="nav-item" [ngClass]="{ active: venderOrder.isActive }">
-            <a class="nav-link" routerLink="/venderOrder" routerLinkActive #venderOrder="routerLinkActive">
-                <img class="mr-2 normalIcon" src="/assets/list.svg" width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/list-active.svg" width="20px" />
-                <span class="menu-title">Vender order</span>
-            </a>
-        </li>
-        <li class="nav-item" [ngClass]="{ active: customersSupport.isActive }">
-            <a class="nav-link" routerLink="/customersSupport" routerLinkActive #customersSupport="routerLinkActive">
-                <img class="mr-2 normalIcon" src="/assets/Support_1_.svg" width="20px" />
-                <img class="mr-2 activeIcon" src="/assets/Support_1_%20-active.svg" width="20px" />
-                <span class="menu-title">Customers Support</span>
-            </a>
-        </li>
-    </ul>
+    <li class="nav-item" [ngClass]="{ active: dashboard.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/dashboard"
+        routerLinkActive
+        #dashboard="routerLinkActive"
+      >
+        <img
+          class="mr-2 normalIcon"
+          src="/assets/dashboard.svg "
+          width="20px"
+        />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/dashboard-active.svg "
+          width="20px"
+        />
+        <span class="menu-title">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: user.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/users"
+        routerLinkActive
+        #user="routerLinkActive"
+      >
+        <img class="mr-2 normalIcon" src="/assets/group.svg" width="20px" />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/group-active.svg"
+          width="20px"
+        />
+        <span class="menu-title">Users Types</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: vendor.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/vendors"
+        routerLinkActive
+        #vendor="routerLinkActive"
+      >
+        <img class="mr-2 normalIcon" src="/assets/officer.svg" width="20px" />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/officer-active.svg"
+          width="20px"
+        />
+        <span class="menu-title">Venders</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: product.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/products"
+        routerLinkActive
+        #product="routerLinkActive"
+      >
+        <img
+          class="mr-2 normalIcon"
+          src="/assets/product%20(1).svg"
+          width="20px"
+        />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/product-active.svg"
+          width="20px"
+        />
+        <span class="menu-title">Product</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: customer.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/customers"
+        routerLinkActive
+        #customer="routerLinkActive"
+      >
+        <img
+          class="mr-2 normalIcon"
+          src="/assets/customer%20(2).svg"
+          width="20px"
+        />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/customer%20(2)-active.svg"
+          width="20px"
+        />
+        <span class="menu-title">Customers</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: partners.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/partners"
+        routerLinkActive
+        #partners="routerLinkActive"
+      >
+        <img
+          class="mr-2 normalIcon"
+          src="/assets/handshake%20(1).svg"
+          width="20px"
+        />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/handshake-active.svg"
+          width="20px"
+        />
+        <span class="menu-title">Partners</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: marketing.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/marketing"
+        routerLinkActive
+        #marketing="routerLinkActive"
+      >
+        <img class="mr-2 normalIcon" src="/assets/megaphone.svg" width="20px" />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/megaphone-active.svg"
+          width="20px"
+        />
+        <span class="menu-title">Marketing</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: analytics.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/analytics"
+        routerLinkActive
+        #analytics="routerLinkActive"
+      >
+        <img class="mr-2 normalIcon" src="/assets/analytics.svg" width="20px" />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/analytics%20-%20active.svg"
+          width="20px"
+        />
+        <span class="menu-title">Analytics</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: loyalty.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/loyalty"
+        routerLinkActive
+        #loyalty="routerLinkActive"
+      >
+        <img
+          class="mr-2 normalIcon"
+          src="/assets/customer-loyalty.svg"
+          width="20px"
+        />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/customer-loyalty-active.svg"
+          width="20px"
+        />
+        <span class="menu-title">Loyalty</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: Payments.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/Payments"
+        routerLinkActive
+        #Payments="routerLinkActive"
+      >
+        <img
+          class="mr-2 normalIcon"
+          src="assets/Cash%20payment.svg"
+          width="20px"
+        />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/Cash%20payment-active.svg"
+          width="20px"
+        />
+        <span class="menu-title">Payments</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: offers.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/offers"
+        routerLinkActive
+        #offers="routerLinkActive"
+      >
+        <img class="mr-2 normalIcon" src="/assets/discount.svg" width="20px" />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/discount-active.svg"
+          width="20px"
+        />
+        <span class="menu-title">offers</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: purchasersOrder.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/purchasersOrder"
+        routerLinkActive
+        #purchasersOrder="routerLinkActive"
+      >
+        <img
+          class="mr-2 normalIcon"
+          src="/assets/sent%20(1).svg"
+          width="20px"
+        />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/sent%20(1)-active.svg"
+          width="20px"
+        />
+        <span class="menu-title">Purchasers order</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: venderOrder.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/venderOrder"
+        routerLinkActive
+        #venderOrder="routerLinkActive"
+      >
+        <img class="mr-2 normalIcon" src="/assets/list.svg" width="20px" />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/list-active.svg"
+          width="20px"
+        />
+        <span class="menu-title">Vender order</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: customersSupport.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/customersSupport"
+        routerLinkActive
+        #customersSupport="routerLinkActive"
+      >
+        <img
+          class="mr-2 normalIcon"
+          src="/assets/Support_1_.svg"
+          width="20px"
+        />
+        <img
+          class="mr-2 activeIcon"
+          src="/assets/Support_1_%20-active.svg"
+          width="20px"
+        />
+        <span class="menu-title">Customers Support</span>
+      </a>
+    </li>
+  </ul>
 </nav>
 
 <!-- <li class="nav-item" [ngClass]="{'active' : accordions.isActive || buttons.isActive || badges.isActive || breadcrumbs.isActive || dropdowns.isActive || modals.isActive || notifications.isActive || progressbar.isActive || pagination.isActive || tabs.isActive || typography.isActive || tooltips.isActive }">

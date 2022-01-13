@@ -1,283 +1,189 @@
-<div class="d-flex justify-content-between pb-4">
-    <div class="pl-5">
-        <p class="page--title">Vender Order</p>
-    </div>
-    <div class="d-flex justify-content-end">
-        <div class="pr-4">
-            <button mat-stroked-button color="primary" class="outline--button" (click)="openFilter()">
-                Filter
-                <mat-icon>filter_list</mat-icon>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="ml-4 shadow-lg bg-white rounded">
-    <div class="d-flex justify-content-between">
-        <div class="justify-content-center align-self-center">
-            <div class="d-flex justify-content-start">
-                <div class="pl-2 justify-content-center align-self-center">
-                    <span class="export--label align-middle pr-3">Export: </span>
-                </div>
-                <div class="pr-3">
-                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('csv')">
-                        CSV
-                    </button>
-                </div>
-                <div class="pr-3">
-                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('xls')">
-                        XLS
-                    </button>
-                </div>
-                <div class="pr-3">
-                    <button mat-stroked-button color="accent" class="outline--export--button" (click)="download('pdf')">
-                        PDF
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="d-flex align-content-center pt-3">
-            <mat-form-field appearance="outline" style="font-size: 20px" class="pr-3">
-                <mat-icon matSuffix>search</mat-icon>
-                <input matInput type="search" placeholder="search" class="search-input" />
-            </mat-form-field>
-        </div>
-    </div>
-    <mat-tab-group (selectedTabChange)="tabChange($event)">
-        <mat-tab class="text-right tab_view" label="QR Code Transaction" style="padding-left: 221px">
-            <div class="table-responsive py-3">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th class="th_wid">QR Number</th>
-                            <th class="th_wid">Order Id</th>
-                            <th class="th_wid">Store Id</th>
-                            <th class="th_wid">Customer Id</th>
-                            <th class="th_wid">Purchaser Name</th>
-                            <th class="th_wid">Date & Time </th>
-                            <th class="th_wid">Product Id</th>
-                            <th class="th_wid">
-
-                                Product Name
-                            </th>
-                            <th class="th_wid">Total Price</th>
-
-                            <th class="th_wid">Discount </th>
-
-                            <th class="th_wid">Net Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let vendor of  QrList">
-                            <td>{{ vendor.qrnumber }}</td>
-                            <td>{{ vendor.orderId }}</td>
-                            <td>{{ vendor.storeId }}</td>
-                            <td>{{ vendor.CustomerId }}</td>
-                            <td>{{ vendor.purchaserName }}</td>
-                            <td>{{ vendor.dateTime}}</td>
-                            <td>{{ vendor.productId}}</td>
-                            <td>{{ vendor.productName}}</td>
-                            <td>{{ vendor.totalPrice }}</td>
-                            <td>{{ vendor.discount }}</td>
-                            <td>{{ vendor.netPrice}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </mat-tab>
-        <mat-tab class="text-right tab_view" label="Coupon Code Transaction" style="padding-left: 221px">
-            <div class="table-responsive py-3">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th class="th_wid">QR Number</th>
-                            <th class="th_wid">Order Id</th>
-                            <th class="th_wid">Store Id</th>
-                            <th class="th_wid">Customer Id</th>
-                            <th class="th_wid">Purchaser Name</th>
-                            <th class="th_wid">Date & Time </th>
-                            <th class="th_wid">Product Id</th>
-                            <th class="th_wid">
-
-                                Product Name
-                            </th>
-                            <th class="th_wid">Total Price</th>
-
-                            <th class="th_wid">Discount </th>
-
-                            <th class="th_wid">Net Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let vendor of  QrList">
-                            <td>{{ vendor.qrnumber }}</td>
-                            <td>{{ vendor.orderId }}</td>
-                            <td>{{ vendor.storeId }}</td>
-                            <td>{{ vendor.CustomerId }}</td>
-                            <td>{{ vendor.purchaserName }}</td>
-                            <td>{{ vendor.dateTime}}</td>
-                            <td>{{ vendor.productId}}</td>
-                            <td>{{ vendor.productName}}</td>
-                            <td>{{ vendor.totalPrice }}</td>
-                            <td>{{ vendor.discount }}</td>
-                            <td>{{ vendor.netPrice}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </mat-tab>
-    </mat-tab-group>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<!-- <section>
-
+<section>
     <div class="row">
-        <div class="col col-lg-6 admins_head">
-            <h6>Vendor Orders</h6>
+        <div class="col-lg-6 admins_head">
+            <h6>Vendore Orders</h6> 
         </div>
-
-        <div class="d-flex justify-content-end">
-            <div class="pr-4">
-                <button mat-stroked-button color="primary" class="filter-btn" (click)="openFilter()">
-                    Filter
-                    <mat-icon>filter_list</mat-icon>
-                </button>
-            </div>
-        </div>
-
         <div class="col-lg-6 add_btn">
         </div>
     </div>
 </section>
 <section class="table_box" style="margin-left: 20px;">
     <div class="row">
-        <div class="col-lg-6 export_btn">
-            <div class="justify-content-center align-self-center">
-                <div class="d-flex justify-content-start">
-                    <div class="text-muted pl-2 justify-content-center align-self-center">
-                        <span class="font-weight-bold align-middle pr-3">Export: </span>
-                    </div>
-                    <div class="pr-3">
-                        <button mat-stroked-button color="accent" class="btn-outline-35" (click)="download('csv')">
-                            CSV
-                        </button>
-                    </div>
-                    <div class="pr-3">
-                        <button mat-stroked-button color="accent" class="btn-outline-35" (click)="download('xls')">
-                            XLS
-                        </button>
-                    </div>
-                    <div class="pr-3">
-                        <button mat-stroked-button color="accent" class="btn-outline-35" (click)="download('pdf')">
-                            PDF
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="d-flex align-content-center pt-3">
+        <div class="col-lg-6 export_btn"><h6>Export:</h6><a>csv</a><a>xls</a><a>pdf</a> </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 d-flex justify-content-end" style="margin-right:25px">
             <form class="search-form">
-                <mat-form-field class="form_field search_btn" appearance="outline">
+                <mat-form-field class="form_field search_btn"  appearance="outline">
                     <mat-icon class="form_field" matSuffix>search</mat-icon>
                     <input matInput type="search" placeholder="search" class="search-input">
                 </mat-form-field>
-            </form>
+            </form>     
         </div>
     </div>
     <mat-tab-group>
-        <mat-tab class="text-right " label="QR Code Transaction">
+        <mat-tab  class="text-right tab_view mention" label="QR Code Transaction" style="padding-left: 221px;">
             <section class="">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>QR NUMBER</th>
-                                <th>ORDER ID</th>
-                                <th>STORE ID</th>
-                                <th>CUSTOMER ID</th>
-                                <th>PURCHASER NAME</th>
-                                <th>DATE & TIME</th>
-                                <th>PRODUCT ID</th>
-                                <th>PRODUCT NAME</th>
-                                <th>TOTAL PRICE</th>
-                                <th>DISCOUNT</th>
-                                <th>NET PRICE</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let vendor of vendorList">
-                                <td>{{ vendor.qrnumber }}</td>
-                                <td>{{ vendor.orderId }}</td>
-                                <td>{{ vendor.storeId }}</td>
-                                <td>{{ vendor.CustomerId }}</td>
-                                <td>{{ vendor.purchaserName }}</td>
-                                <td>{{ vendor.dateTime}}</td>
-                                <td>{{ vendor.productId}}</td>
-                                <td>{{ vendor.productName}}</td>
-                                <td>{{ vendor.totalPrice}}</td>
-                                <td>{{ vendor.discount}}</td>
-                                <td>{{ vendor.netPrice}}</td>
-
-
-
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+                <table class="table table-striped table-hover tab_admin prod_tab">
+                    <thead>  
+                        <tr style="padding-top: 20px;">
+                            <th class="th_wid">QR Number</th>  
+                            <th class="th_wid">Order Id</th>  
+                            <th class="th_wid">Store Id</th>  
+                            <th class="th_wid">Customer</th>  
+                            <th class="th_wid">Purchaser Name</th>  
+                            <th class="th_wid">Date & Time</th>  
+                            <th class="th_wid">Product Id</th> 
+                            <th class="th_wid">Product Name</th>  
+                            <th class="th_wid">Total Price</th> 
+                            <th class="th_wid">Discount</th> 
+                            <th class="th_wid">Net Price</th>     
+                        </tr>  
+                    </thead>  
+                    <tbody>  
+                        <tr>   
+                            <td>256897</td>  
+                            <td>256897</td>  
+                            <td>895321</td> 
+                            <td>753269</td>   
+                            <td>Rakesh</td>  
+                            <td>09-12-2021 | 13.43</td>  
+                            <td>JOY56897</td>  
+                            <td>Bracelet</td>
+                            <td>15000</td>  
+                            <td>20%</td>  
+                            <td>14800</td>  
+                        </tr> 
+                        <tr>   
+                            <td>256897</td>  
+                            <td>256897</td>  
+                            <td>895321</td> 
+                            <td>753269</td>   
+                            <td>Rakesh</td>  
+                            <td>09-12-2021 | 13.43</td>  
+                            <td>JOY56897</td>  
+                            <td>Bracelet</td>
+                            <td>15000</td>  
+                            <td>20%</td>  
+                            <td>14800</td>  
+                        </tr> 
+                        <tr>   
+                            <td>256897</td>  
+                            <td>256897</td>  
+                            <td>895321</td> 
+                            <td>753269</td>   
+                            <td>Rakesh</td>  
+                            <td>09-12-2021 | 13.43</td>  
+                            <td>JOY56897</td>  
+                            <td>Bracelet</td>
+                            <td>15000</td>  
+                            <td>20%</td>  
+                            <td>14800</td>  
+                        </tr> 
+                        <tr>   
+                            <td>256897</td>  
+                            <td>256897</td>  
+                            <td>895321</td> 
+                            <td>753269</td>   
+                            <td>Rakesh</td>  
+                            <td>09-12-2021 | 13.43</td>  
+                            <td>JOY56897</td>  
+                            <td>Bracelet</td>
+                            <td>15000</td>  
+                            <td>20%</td>  
+                            <td>14800</td>  
+                        </tr> 
+                    </tbody>  
+                </table>
+            </section> 
         </mat-tab>
         <mat-tab label="Coupon Code Transaction">
             <section class="">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>QR NUMBER</th>
-                                <th>ORDER ID</th>
-                                <th>STORE ID</th>
-                                <th>CUSTOMER ID</th>
-                                <th>PURCHASER NAME</th>
-                                <th>DATE & TIME</th>
-                                <th>PRODUCT ID</th>
-                                <th>PRODUCT NAME</th>
-                                <th>TOTAL PRICE</th>
-                                <th>DISCOUNT</th>
-                                <th>NET PRICE</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let vendor of vendorList">
-                                <td>{{ vendor.qrnumber }}</td>
-                                <td>{{ vendor.orderId }}</td>
-                                <td>{{ vendor.storeId }}</td>
-                                <td>{{ vendor.CustomerId }}</td>
-                                <td>{{ vendor.purchaserName }}</td>
-                                <td>{{ vendor.dateTime}}</td>
-                                <td>{{ vendor.productId}}</td>
-                                <td>{{ vendor.productName}}</td>
-                                <td>{{ vendor.totalPrice}}</td>
-                                <td>{{ vendor.discount}}</td>
-                                <td>{{ vendor.netPrice}}</td>
-
-
-
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="table table-striped table-hover tab_admin prod_tab">
+                    <thead>  
+                        <tr style="padding-top: 20px;">
+                            <th class="th_wid">QR Number</th>  
+                            <th class="th_wid">Order Id</th>  
+                            <th class="th_wid">Store Id</th>  
+                            <th class="th_wid">Customer</th>  
+                            <th class="th_wid">Purchaser Name</th>  
+                            <th class="th_wid">Date & Time</th>  
+                            <th class="th_wid">Product Id</th> 
+                            <th class="th_wid">Product Name</th>  
+                            <th class="th_wid">Total Price</th> 
+                            <th class="th_wid">Discount</th> 
+                            <th class="th_wid">Net Price</th>     
+                        </tr>  
+                    </thead>  
+                    <tbody>  
+                        <tr>   
+                            <td>256897</td>  
+                            <td>256897</td>  
+                            <td>895321</td> 
+                            <td>753269</td>   
+                            <td>Rakesh</td>  
+                            <td>09-12-2021 | 13.43</td>  
+                            <td>JOY56897</td>  
+                            <td>Bracelet</td>
+                            <td>15000</td>  
+                            <td>20%</td>  
+                            <td>14800</td>  
+                        </tr> 
+                        <tr>   
+                            <td>256897</td>  
+                            <td>256897</td>  
+                            <td>895321</td> 
+                            <td>753269</td>   
+                            <td>Rakesh</td>  
+                            <td>09-12-2021 | 13.43</td>  
+                            <td>JOY56897</td>  
+                            <td>Bracelet</td>
+                            <td>15000</td>  
+                            <td>20%</td>  
+                            <td>14800</td>  
+                        </tr> 
+                        <tr>   
+                            <td>256897</td>  
+                            <td>256897</td>  
+                            <td>895321</td> 
+                            <td>753269</td>   
+                            <td>Rakesh</td>  
+                            <td>09-12-2021 | 13.43</td>  
+                            <td>JOY56897</td>  
+                            <td>Bracelet</td>
+                            <td>15000</td>  
+                            <td>20%</td>  
+                            <td>14800</td>  
+                        </tr> 
+                        <tr>   
+                            <td>256897</td>  
+                            <td>256897</td>  
+                            <td>895321</td> 
+                            <td>753269</td>   
+                            <td>Rakesh</td>  
+                            <td>09-12-2021 | 13.43</td>  
+                            <td>JOY56897</td>  
+                            <td>Bracelet</td>
+                            <td>15000</td>  
+                            <td>20%</td>  
+                            <td>14800</td>  
+                        </tr> 
+                        <tr>   
+                            <td>256897</td>  
+                            <td>256897</td>  
+                            <td>895321</td> 
+                            <td>753269</td>   
+                            <td>Rakesh</td>  
+                            <td>09-12-2021 | 13.43</td>  
+                            <td>JOY56897</td>  
+                            <td>Bracelet</td>
+                            <td>15000</td>  
+                            <td>20%</td>  
+                            <td>14800</td>  
+                        </tr> 
+                    </tbody>  
+                </table>
             </section>
-        </mat-tab>
+        </mat-tab>   
     </mat-tab-group>
-</section> -->
+</section>
+
+

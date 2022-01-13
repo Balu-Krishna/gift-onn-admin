@@ -11,99 +11,47 @@ import { FilterComponent } from "../filter/filter.component";
 export class PaymentsComponent implements OnInit {
   vendors = [
     {
-      storeId: "21545",
-      customerId: "Sai135",
-      orderId: "bra122",
-      productId: "bra13234",
-      vendor: "joyalukkas",
-      total: "15000",
-      toVendor: "14000",
-      due: "14000",
-      discountPrice: "0.00",
-      netSales: "2000",
-      date: "10/12/2021",
-    },
-    {
-      storeId: "21545",
-      customerId: "Sai135",
-      orderId: "bra122",
-      productId: "bra13234",
-      vendor: "joyalukkas",
-      total: "15000",
-      toVendor: "14000",
-      due: "14000",
-      discountPrice: "0.00",
-      netSales: "2000",
-      date: "10/12/2021",
-    },
-    {
-      storeId: "21545",
-      customerId: "Sai135",
-      orderId: "bra122",
-      productId: "bra13234",
-      vendor: "joyalukkas",
-      total: "15000",
-      toVendor: "14000",
-      due: "14000",
-      discountPrice: "0.00",
-      netSales: "2000",
-      date: "10/12/2021",
+      storeId: "Test",
+      customerId: "Test",
+      orderId: "Test",
+      productId: "Test",
+      vendor: "Test",
+      total: "Test",
+      toVendor: "Test",
+      due: "Test",
+      discountPrice: "Test",
+      netSales: "Test",
+      date: "Test",
     },
   ];
   partners = [
     {
-      storeId: "21545",
-      customerId: "Sai135",
-      orderId: "bra122",
-      productId: "bra13234",
-      partnerId: "joyalukkas",
-      total: "15000",
-      toVendor: "14000",
-      due: "14000",
-      discountPrice: "0.00",
-      netSales: "2000",
-      date: "10/12/2021",
-    },
-    {
-      storeId: "21545",
-      customerId: "Sai135",
-      orderId: "bra122",
-      productId: "bra13234",
-      partnerId: "joyalukkas",
-      total: "15000",
-      toVendor: "14000",
-      due: "14000",
-      discountPrice: "0.00",
-      netSales: "2000",
-      date: "10/12/2021",
-    },
-    {
-      storeId: "21545",
-      customerId: "Sai135",
-      orderId: "bra122",
-      productId: "bra13234",
-      partnerId: "joyalukkas",
-      total: "15000",
-      toVendor: "14000",
-      due: "14000",
-      discountPrice: "0.00",
-      netSales: "2000",
-      date: "10/12/2021",
+      storeId: "Test",
+      customerId: "Test",
+      orderId: "Test",
+      productId: "Test",
+      partnerId: "test",
+      total: "Test",
+      toVendor: "Test",
+      due: "Test",
+      discountPrice: "Test",
+      netSales: "Test",
+      date: "Test",
     },
   ];
   activeTabIndex = 0;
-  constructor(private router: Router, public dialog: MatDialog) { }
+  constructor(private router: Router, public dialog: MatDialog) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   tabChange(event) {
     console.log(event.index);
     this.activeTabIndex = event.index;
   }
   openFilter() {
+    let type = this.activeTabIndex === 0 ? "vendorPayment" : "partnerPayment";
     const dialogRef = this.dialog.open(FilterComponent, {
       width: "50%",
-      data: { filterType: "paymentForm" },
+      data: { filterType: type },
     });
   }
 }
-

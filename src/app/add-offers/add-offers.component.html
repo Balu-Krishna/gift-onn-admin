@@ -1,112 +1,69 @@
 <section class="mb-4 mr-2">
     <div class="row">
         <div class="col-lg-6 admins_head">
-            <h6>Offers Details</h6>
+            <h6>Offers Details</h6> 
         </div>
         <div class="col-lg-6 d-flex justify-content-end">
-            <span class="admin_lable" (click)="addUsers()" style="cursor:pointer">Offers /</span> <span class="add">Add Offers</span>
+          <span class="admin_lable">Offers /</span> <span class="add">Add Offers</span>
         </div>
     </div>
-</section>
-<Section style="margin-left: 20px;">
+  </section>
+  <Section style="margin-left: 20px;">
     <mat-card>
         <form [formGroup]="addOffersGroup" (ngSubmit)="addOffersSubmit()">
             <div class="row">
-                <div class="col-md-4 col-lg-4 col-sm-4">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>OFFER NAME</mat-label>
-                        <input matInput formControlName="offerName" placeholder="Enter Name">
-                    </mat-form-field>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-4">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>OFFER ID</mat-label>
-                        <input matInput formControlName="offerId" placeholder="Enter Offer Id">
-                    </mat-form-field>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-4">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>STORE ID</mat-label>
-                        <input matInput formControlName="storeId" placeholder="Enter Store Id ">
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-lg-6 col-sm-6">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>OFFER CATEGORY</mat-label>
-                        <mat-select formControlName="offerCategoty">
-                            <mat-option value="admin"> admin </mat-option>
-                            <mat-option value="admin"> admin </mat-option>
-                            <mat-option value="admin"> admin </mat-option>
-                        </mat-select>
-                    </mat-form-field>
+              <div class="col-md-6 col-lg-6 col-sm-6">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>OFFER CATEGORY</mat-label>
+                    <mat-select formControlName="category">
+                      <mat-option  value="">Selete Category</mat-option>
+                      <mat-option value="accent">Accent</mat-option>
+                      <mat-option value="warn">Warn</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+              </div>
+              <div class="col-md-6 col-lg-6 col-sm-6">
+              <mat-form-field class="example-full-width"  appearance="fill">
+                <mat-label>OFFER NAME</mat-label>
+                <input matInput formControlName="offerName"  placeholder="Enter Offer Name">
+              </mat-form-field>
+              </div>
+              <div class="col-md-12 col-lg-12 col-sm-12">
+                <mat-form-field class="example-full-width"  appearance="fill">
+                  <mat-label>OFFER DESCRIPTION</mat-label>
+                  <input matInput formControlName="description" placeholder="Enter Description">
+                </mat-form-field>
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-6">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label> OFFER SUB CATEGORY</mat-label>
-                        <mat-select formControlName="subCategory">
-                            <mat-option value="admin"> admin </mat-option>
-                            <mat-option value="admin"> admin </mat-option>
-                            <mat-option value="admin"> admin </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-lg-6 col-sm-6">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>COUNTRY</mat-label>
-                        <mat-select formControlName="SelectCountry">
-                            <mat-option value="India"> India </mat-option>
-                            <mat-option value="India"> India </mat-option>
-                            <mat-option value="India"> India </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-lg-6 col-sm-6">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label> LOCATION</mat-label>
-                        <mat-select formControlName="SelectLocation">
-                            <mat-option value="India"> India </mat-option>
-                            <mat-option value="India"> India </mat-option>
-                            <mat-option value="India"> India </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-
-                <div class="col-md-12 col-lg-12 col-sm-12">
-                    <p class="form-lable">ENTER DESCRIPTION</p>
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <input matInput formControlName="Description" placeholder="Enter Description" />
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-lg-6 col-sm-6">
-                    <p class="form-lable">Start Date</p>
-                    <mat-form-field appearance="fill" class="">
-                        <input matInput [matDatepicker]="picker" formControlName="startDate" placeholder="Enter Date" />
+                    <mat-form-field  class="example-full-width" appearance="fill">
+                        <mat-label>START DATE</mat-label>
+                        <input matInput  formControlName="startDate" placeholder="Enter Date" [matDatepicker]="picker" >
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-lg-6 col-sm-6">
-                    <p class="form-lable">End Date</p>
-                    <mat-form-field appearance="fill" class="">
-                        <input matInput [matDatepicker]="picker" formControlName="EndDate" placeholder="Enter Date" />
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-12 col-lg-12 col-sm-12">
-                    <h3>Upload Logo</h3>
-                </div>
-                <div class="col-md-11 col-lg-11 col-sm-11 d-flex justify-content-center p-5" style="border: dotted 2px gray; margin-left: 2pc;">
-                    <div class="row" (click)="fileInput.click()">
-                        <input #fileInput type="file" hidden (change)="handleChange($event.target.files)" />
-                        <div class="col-md-12 col-lg-12 col-sm-12" style="text-align: center;">
-                            <img src="../../../../assets/cloud-computing%20(1).svg" width="10%" alt="">
-                        </div>
-                        <div class="col-md-12 col-lg-12 col-sm-12" style="text-align: center;">
-                            <h3 style="color: gray;">Click to Upload</h3>
-                        </div>
+                      </mat-form-field>
                     </div>
-                </div>
+                    <div class="col-md-6 col-lg-6 col-sm-6">
+                        <mat-form-field  class="example-full-width" appearance="fill">
+                            <mat-label>END DATE</mat-label>
+                            <input matInput formControlName="endDate" placeholder="Enter Date" [matDatepicker]="picker1" >
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                          </mat-form-field>
+                        </div>
+                        <div class="col-md-12 col-lg-12 col-sm-12">
+                            <h3>Upload Logo</h3>
+                          </div>
+                          <div class="col-md-11 col-lg-11 col-sm-11 d-flex justify-content-center p-5" style="border: dotted 2px gray; margin-left: 2pc;">
+                            <div class="row" (click)="fileInput.click()">
+                              <input #fileInput type="file" hidden (change)="handleChange($event.target.files)"   />
+                                <div class="col-md-12 col-lg-12 col-sm-12" style="text-align: center;">
+                                 <img src="../../../../assets/cloud-computing%20(1).svg" width="10%" alt="">
+                                </div>
+                                <div class="col-md-12 col-lg-12 col-sm-12" style="text-align: center;">
+                                 <h3 style="color: gray;">Click to Upload</h3>
+                                </div>
+                            </div>
+                            </div>
             </div>
             <div class="row">
                 <div class="col-md-3">
@@ -115,7 +72,8 @@
                 <div class="col-md-3">
                     <Button class="Cancel-button">Cancel</Button>
                 </div>
-            </div>
+             </div>
         </form>
     </mat-card>
-</Section>
+  </Section>
+

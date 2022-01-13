@@ -5,6 +5,8 @@ import { MarketingComponent } from "./marketing.component";
 import { AddProductLaunchComponent } from "./add-product-launch/add-product-launch.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MaterialModule } from "../material/material.module";
+import { ViewPromotionDetailsComponent } from "./view-promotion-details/view-promotion-details.component";
+import { ViewProductLaunchDetailsComponent } from './view-product-launch-details/view-product-launch-details.component';
 
 const routes: Routes = [
   { path: "", component: MarketingComponent },
@@ -21,6 +23,6 @@ const routes: Routes = [
   ],
   exports: [MaterialModule, FormsModule, ReactiveFormsModule],
 
-  declarations: [AddProductLaunchComponent],
+  declarations: [AddProductLaunchComponent, ViewPromotionDetailsComponent, ViewProductLaunchDetailsComponent],
 })
 export class MarketingModule {}
