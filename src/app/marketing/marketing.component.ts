@@ -14,63 +14,323 @@ import { ViewPromotionDetailsComponent } from "../view-promotion-details/view-pr
   styleUrls: ["./marketing.component.scss"],
 })
 export class MarketingComponent implements OnInit {
-  promotions = [
-    {
-      promoImage: "assets/gift.jpeg",
-      promoId: "89766",
-      storeId: "JOY123",
-      category: "Jewellery",
-      subCategory: "Bracelet",
-      name: "Weekend sale",
-      description: "Test description description",
-      startDate: "01/12/2021",
-      endDate: "04/12/2021",
-      status: "pending",
-    },
-    {
-      promoImage: "assets/gift.jpeg",
-      promoId: "89766",
-      storeId: "JOY123",
-      category: "Jewellery",
-      subCategory: "Bracelet",
-      name: "Weekend sale",
-      description: "Test description description",
-      startDate: "01/12/2021",
-      endDate: "04/12/2021",
-      status: "Approved",
-    },
-  ];
-  products = [
-    {
-      productImage: "assets/gift.jpeg",
-      productId: "89766",
-      vendorId: "JOY123",
-      partnerId: "JOY123",
-      category: "Jewellery",
-      subCategory: "Bracelet",
-      country: "India",
-      description: "Test description description",
-      location: "Hyderabad",
-      launchDate: "01/12/2021",
-      status: "pending",
-    },
-    {
-      productImage: "assets/gift.jpeg",
-      productId: "89766",
-      vendorId: "JOY123",
-      category: "Jewellery",
-      subCategory: "Bracelet",
-      country: "India",
-      description: "Test description description",
-      location: "Hyderabad",
-      launchDate: "01/12/2021",
-      status: "Approved",
-    },
-  ];
+  page = 1;
+  productsCount = 12;
+  promotionsCount = 12;
+  tableSize = 4;
+  promotions = [];
+  products = [];
   productLaunchSelected: boolean;
-  constructor(private router: Router, public dialog: MatDialog) { }
+  constructor(private router: Router, public dialog: MatDialog) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.showData();
+  }
+  showData(): void {
+    this.promotions = [
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
+        status: "pending",
+      },
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
+        status: "Approved",
+      },
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
+        status: "pending",
+      },
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
+        status: "Approved",
+      },
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
+        status: "pending",
+      },
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
+        status: "Approved",
+      },
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
+        status: "pending",
+      },
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
+        status: "Approved",
+      },
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
+        status: "pending",
+      },
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
+        status: "Approved",
+      },
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
+        status: "pending",
+      },
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
+        status: "Approved",
+      },
+    ];
+    this.products = [
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
+        partnerId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "pending",
+      },
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "Approved",
+      },
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
+        partnerId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "pending",
+      },
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "Approved",
+      },
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
+        partnerId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "pending",
+      },
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "Approved",
+      },
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
+        partnerId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "pending",
+      },
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "Approved",
+      },
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
+        partnerId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "pending",
+      },
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "Approved",
+      },
+
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
+        partnerId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "pending",
+      },
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "Approved",
+      },
+    ];
+  }
+  tabSize(event) {
+    this.page = event;
+    this.showData();
+  }
   myTabSelectedTabChange(event) {
     console.log(event);
     if (event.index === 1) {
@@ -103,30 +363,30 @@ export class MarketingComponent implements OnInit {
       data: promotion,
     });
   }
-  activePromotion(promotion) { }
-  inactivePromotion(promotion) { }
+  activePromotion(promotion) {}
+  inactivePromotion(promotion) {}
   approvePromotion(promotion) {
     const dialogRef = this.dialog.open(ApprovedModelComponent, {
       width: "30%",
       data: "promotion",
     });
   }
-  holdPromotion(promotion) { }
+  holdPromotion(promotion) {}
   denyProductLaunch(productLaunch) {
     const dialogRef = this.dialog.open(VendorActionsComponent, {
       width: "50%",
       data: { name: "Denay", type: "productLaunch", data: productLaunch },
     });
   }
-  activeProductLaunch(productLaunch) { }
-  inactiveProductLaunch(productLaunch) { }
+  activeProductLaunch(productLaunch) {}
+  inactiveProductLaunch(productLaunch) {}
   approveProductLaunch(productLaunch) {
     const dialogRef = this.dialog.open(ApprovedModelComponent, {
       width: "30%",
       data: "productLauncher",
     });
   }
-  holdProductLaunch(productLaunch) { }
+  holdProductLaunch(productLaunch) {}
   action(value) {
     console.log(value);
     if (value == "deny") {

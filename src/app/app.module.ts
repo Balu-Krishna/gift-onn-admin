@@ -22,7 +22,6 @@ import { ProductComponent } from "./product/product.component";
 import { CustomerComponent } from "./customer/customer.component";
 import { SuccessfulModelComponent } from "./successful-model/successful-model.component";
 import { DeleteModelComponent } from "./delete-model/delete-model.component";
-import { AddLoyaltyComponent } from "./add-loyalty/add-loyalty.component";
 import { AddOffersComponent } from "./add-offers/add-offers.component";
 import { AddPartnersComponent } from "./partners/add-partners/add-partners.component";
 import { AnalyticsComponent } from "./analytics/analytics.component";
@@ -76,7 +75,6 @@ import { NgxPaginationModule } from "ngx-pagination";
     CustomerComponent,
     SuccessfulModelComponent,
     DeleteModelComponent,
-    AddLoyaltyComponent,
     AddOffersComponent,
     AddPartnersComponent,
     AnalyticsComponent,
