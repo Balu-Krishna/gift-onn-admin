@@ -13,7 +13,6 @@ import { CustomersSupportComponent } from "./customers-support/customers-support
 import { FreezedModelComponent } from "./freezed-model/freezed-model.component";
 import { RatingForCustomerComponent } from "./rating-for-customer/rating-for-customer.component";
 import { AddOffersComponent } from "./add-offers/add-offers.component";
-import { AddLoyaltyComponent } from "./loyailty/add-loyalty/add-loyalty.component";
 import { VenderOrderComponent } from "./vender-order/vender-order.component";
 import { DenyProductComponent } from "./deny-product/deny-product.component";
 import { RewardCategoriesComponent } from "./reward-categories/reward-categories.component";
@@ -23,6 +22,7 @@ import { CustomerPoliciesComponent } from "./customer-policies/customer-policies
 import { TermsConditionsComponent } from "./terms-conditions/terms-conditions.component";
 import { AboutUsComponent } from "./about-us/about-us.component";
 import { AddESignatureComponent } from "./add-e-signature/add-e-signature.component";
+import { OnboardingPartnersComponent } from "./partners/add-partners/onboarding-partners/onboarding-partners.component";
 const routes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
   {
@@ -66,6 +66,7 @@ const routes: Routes = [
   { path: "delete-successful", component: DeleteModelComponent },
   { path: "analytics", component: AnalyticsComponent },
   { path: "venderOrder", component: VenderOrderComponent },
+  { path: "loyalty", component: LoyailtyComponent },
   { path: "Payments", component: PaymentsComponent },
   { path: "offers", component: OffersComponent },
   { path: "purchasersOrder", component: PurchasersOrderComponent },
@@ -81,6 +82,7 @@ const routes: Routes = [
   { path: "terms-conditions", component: TermsConditionsComponent },
   { path: "about-us", component: AboutUsComponent },
   { path: "add-e-signature", component: AddESignatureComponent },
+  { path: "onBoarding_info", component: OnboardingPartnersComponent },
   {
     path: "basic-ui",
     loadChildren: () =>

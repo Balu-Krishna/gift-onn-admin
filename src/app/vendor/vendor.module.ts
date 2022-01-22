@@ -15,6 +15,7 @@ import { CouponComponent } from "./coupon/coupon.component";
 import { VendorTaxesComponent } from "./vendor-taxes/vendor-taxes.component";
 import { CommissionsComponent } from "./commissions/commissions.component";
 import { PaymentIntervalsComponent } from "../payment-intervals/payment-intervals.component";
+import { VendorJoyalukkasSubComponent } from './vendor-joyalukkas-sub/vendor-joyalukkas-sub.component';
 
 const routes: Routes = [
   { path: "", component: VendorComponent },
@@ -77,6 +78,7 @@ const routes: Routes = [
     VendorTaxesComponent,
     CommissionsComponent,
     PaymentIntervalsComponent,
+    VendorJoyalukkasSubComponent,
   ],
 })
 export class VendorModule {}

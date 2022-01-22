@@ -2,22 +2,22 @@
   border-radius: 6px;
   width: 100%;
   height: 50px;
-  border: 1px solid #9e8656;
+  border: 1px solid #988149;
   font-size: 18px;
-  color: #9e8656;
+  color: #988149;
 }
 .rounded-button {
   border-radius: 6px;
   width: 100%;
   height: 50px;
-  background: #9e8656;
+  background: #988149;
   font-size: 18px;
   color: #ffffff;
 }
 .lable-font-title {
   font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
 }
 .lable-color-gray {
   color: gray;
@@ -31,27 +31,59 @@
   font-size: 16px !important;
   font-family: "Montserrat" !important;
 }
-
 ::ng-deep.mat-form-field-ripple {
   /*change color of underline when focused*/
-  background-color: #9e8656 !important;
+  background-color: #988149 !important;
 }
 ::ng-deep.mat-select-arrow {
-  color: #9e8656 !important;
+  color: #988149 !important;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
-  background-color: #9e8656;
+  background-color: #988149;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-  color: #9e8656;
+  color: #988149;
 }
 
 ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-  color: #9e8656;
+  color: #988149;
 }
 
 ::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-  color: #9e8656;
+  color: #988149;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0 !important;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-infix {
+  padding: 0;
+}
+::ng-deep .mat-form-field-infix input {
+  font-family: "Montserrat";
+  padding: 5px 0;
+  color: #000 !important;
+  font-size: 15px;
+}
+::ng-deep .mat-select-value {
+  height: 27px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  .add_user_informative {
+    margin: 0 10px 0 0 !important;
+  }
+  .rounded-button {
+    margin-bottom: 20px;
+  }
+}
+::-webkit-input-placeholder {
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+}
+.form-lable {
+  font-size: 13px;
+  font-weight: 600;
+  color: #bbb5b5;
 }

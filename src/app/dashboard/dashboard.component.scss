@@ -3,272 +3,372 @@
 //   width: 100%;
 //   height: 100%;
 // }
+::ng-deep .navbar .navbar-menu-wrapper {
+  padding-right: 0 !important;
+  width: calc(100% - 31px) !important;
+}
 .heading {
-    font-family: SF Pro Display, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
-    font-size: 14px;
-    line-height: 129.84%;
-    /* or 18px */
-    text-transform: capitalize;
-    color: #2d2756;
+  font-family: SF Pro Display, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  font-size: 14px;
+  line-height: 129.84%;
+  /* or 18px */
+  text-transform: capitalize;
+  color: #2d2756;
 }
 
 .admin_first_head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .heading p {
-    font-size: 25px;
-    padding-top: 2%;
-    padding-bottom: 2%;
+  font-size: 25px;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .card-title {
-    font-family: SF Pro Display, sans-serif;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 129.84%;
-    display: flex;
-    justify-content: space-between;
-    text-transform: capitalize;
-    color: #2d2756;
+  font-family: SF Pro Display, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 129.84%;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  color: #2d2756;
 }
 
 .balance {
-    color: #2d2756;
-    font-size: 600;
-    font-size: 24px;
+  color: #2d2756;
+  font-size: 600;
+  font-size: 24px;
 }
 
 .month {
-    position: relative;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 125.84%;
-    text-transform: capitalize;
-    color: #9d9d9e;
-    margin-bottom: 20px;
+  position: relative;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125.84%;
+  text-transform: capitalize;
+  color: #9d9d9e;
+  margin-bottom: 0;
 }
 
 .number {
-    line-height: 90.84%;
+  line-height: 90.84%;
 }
 
 .card-design {
-    width: 100%;
-    display: flex;
-    padding: 1rem 0.5rem;
-    height: 104px;
-    border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 7px 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  height: 120px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 7px 0px;
+}
+.card-design .img_set {
 }
 
 .card-design2 {
-    display: flex;
-    padding: 1rem 0.5rem;
-    width: 925px;
-    border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 7px 0px;
+  display: flex;
+  padding: 1rem 0.5rem;
+  width: 925px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 7px 0px;
 }
 
 // .mat-typography{background: url(../../../../assets/Rectangle.png) !important;}
 .sale_graph {
-    width: 100%;
-    margin-left: 7px;
+  width: 100%;
+  margin-left: 7px;
 }
 
 .dash_board h1 {
-    font-size: 25px;
-    font-weight: 700;
-    color: #ae985f;
-    padding-left: 35px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #ae985f;
+  font-family: "Montserrat", sans-serif !important;
+
+  padding-left: 35px;
 }
 
 .dash_head h2 {
-    font-weight: 650;
-    padding-left: 35px;
-    font-size: 14px;
+  font-weight: 650;
+  padding-left: 35px;
+  font-size: 14px;
 }
 
 .sale_graph h2 {
-    font-weight: 650;
-    font-size: 15px;
+  font-weight: 650;
+  font-size: 15px;
 }
 
 .money-currency {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 129.84%;
-    color: #2d2756;
-    margin-left: 5px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 129.84%;
+  color: #2d2756;
+  margin-left: 5px;
 }
 
 .main_pg {
-    padding-left: 40px;
+  padding-left: 40px;
 }
 
 .dash_head h4 {
-    padding-left: 36px;
-    font-size: 17px;
-    font-weight: 800;
+  padding-left: 36px;
+  font-size: 17px;
+  font-weight: 800;
 }
 
 .example-month-picker .mat-calendar-period-button {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .example-month-picker .mat-calendar-arrow {
-    display: none;
+  display: none;
 }
 
 .card-design img {
-    margin-top: 0px;
-    width: 25px;
+  margin-top: 0px;
+  width: 25px;
 }
 
 .mat-card {
-    border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 7px 0px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 7px 0px;
+  margin-bottom: 10px;
 }
 
 .img_setqr {
-    border-radius: 50% !important;
-    padding: 5px;
-    margin: 0px;
+  border-radius: 50% !important;
+  padding: 5px;
+  margin: 0px;
 }
 
 .img_set {
-    border-radius: 50% !important;
-    padding: 15px;
-    margin: 15px;
+  border-radius: 50% !important;
+  width: 100px;
+  height: 67px;
+  margin: 0 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cancel,
+.code,
+.coupon {
+  width: 67px !important;
 }
 
 .shopping_bag {
-    background-color: #eec8c8 !important;
+  background-color: #eec8c8 !important;
 }
 
 .customer {
-    background-color: #a8e7e1 !important;
+  background-color: #a8e7e1 !important;
 }
 
 .product {
-    background-color: #97aba9 !important;
+  background-color: #97aba9 !important;
 }
 
 .sales {
-    background-color: #f3d381 !important;
+  background-color: #f3d381 !important;
 }
 
 .sent {
-    background-color: #f77575 !important;
+  background-color: #f77575 !important;
 }
 
 .exchange {
-    background-color: #e7c87c !important;
+  background-color: #e7c87c !important;
 }
 
 .code {
-    background-color: #898bdb !important;
+  background-color: #898bdb !important;
 }
 
 .coupon {
-    background-color: #a5269554 !important;
+  background-color: #a5269554 !important;
 }
 
 .cancel {
-    background-color: #e5a0a0 !important;
+  background-color: #e5a0a0 !important;
 }
 
 ::ng-deep .month_infos .mat-form-field-infix {
-    min-width: 75px !important;
-    top: -8px;
-    right: -20px;
-    z-index: 99999999999999999999999999;
+  min-width: 75px !important;
+  top: 3px;
+  right: -5px;
+  z-index: 99999999999999999999999999;
+  border: none !important;
+  padding: 13px 0 0 0 !important;
 }
 
 ::ng-deep .month_infos .mat-form-field-underline {
-    display: none;
+  display: none;
 }
 
 ::ng-deep .month_infos .mat-form-field {
-    border: solid 1px #c9c9cb;
-    width: 129px;
-    height: 40px;
-    border-radius: 5px;
+  border: solid 1px #c9c9cb;
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif !important;
+  position: absolute;
+  top: -22px;
 }
 
-::ng-deep .month_infos .mat-form-field-appearance-legacy .mat-form-field-wrapper {
-    padding-bottom: 0 !important;
+::ng-deep
+  .month_infos
+  .mat-form-field-appearance-legacy
+  .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
 }
 
 ::ng-deep .month_infos .mat-select-arrow {
-    position: relative;
-    right: 51px;
-    top: -6px;
-    z-index: 9999999999999;
-    color: #7c808b;
+  color: rgba(0, 0, 0, 0.54) !important;
 }
 
 ::ng-deep .month_infos .mat-label {
-    background-color: red !important;
+  background-color: red !important;
 }
-
+::ng-deep .main-panel .content-wrapper .mat-select {
+  position: relative;
+  top: -7px;
+  right: 13px;
+  z-index: 999999;
+}
 .mat-select-value {
-    position: relative;
-    top: -6px;
+  position: relative;
+  top: -6px;
 }
 
 ::ng-deep .month_infos label#mat-form-field-label-1 {
-    background: #f5eef1;
-    width: 72px;
-    padding: 0 10px 0;
+  background: #f5eef1 !important;
+  padding: 0 10px 0 5px;
+  width: 80px !important;
 }
 
 ::ng-deep .month_infos .mat-select-value-text {
-    position: absolute;
-    top: -17px;
+  margin-left: 13px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+::ng-deep .month_infos .mat-select-value-text > .month_infos .mat-select-arrow {
+  top: -11px;
+  position: relative;
+  color: #ae985f;
 }
 
-// @media (max-width: 767px) {
-//     .navbar {
-//         width: 100% !important;
-//     }
-//      ::ng-deep .navbar .navbar-toggler {
-//         position: absolute;
-//         right: 0;
-//     }
-//      ::ng-deep .page-body-wrapper {
-//         padding: 0 !important;
-//     }
-//      ::ng-deep .nav_head {
-//         margin-left: 0 !important;
-//     }
-//      ::ng-deep .ng-star-inserted .col-md-4 {
-//         padding: 0 33px 0 21px !important;
-//     }
-//     .main_pg {
-//         padding-left: 0 !important;
-//     }
-//     .mat-card {
-//         margin-bottom: 20px;
-//     }
-//     .sale_graph .ml-3 {
-//         margin-left: 0 !important;
-//     }
-//     .sale_graph .col-md-12 {
-//         padding-left: 0;
-//     }
-//     .month_infos .mat-form-field {
-//         margin-right: 15px;
-//     }
-//     .dash_head h2 {
-//         margin-bottom: 0 !important;
-//     }
-// }
+::ng-deep .mobile_dashboard_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+::ng-deep .mat-select-panel {
+  position: absolute;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  right: 0 !important;
+  top: 39px !important;
+}
+::ng-deep .mat-select-panel .mat-option {
+  color: #000;
+}
+
+::ng-deep .mat-select-panel::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(235, 235, 235, 0.3);
+}
+
+::ng-deep .mat-select-panel::-webkit-scrollbar {
+  -webkit-box-shadow: inset 0 0 6px #f1f1ef;
+  width: 5px !important;
+  height: 5px !important;
+}
+
+::ng-deep .mat-select-panel::-webkit-scrollbar-thumb {
+  background-color: #f5edef;
+  border-radius: 10px !important;
+}
+.dash_head h2 {
+  margin-bottom: 0 !important;
+}
+::ng-deep
+  .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label {
+  background: #f5edef !important;
+  padding: 0 10px !important;
+  margin-left: 2px !important;
+  width: 82px !important;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    width: 100% !important;
+  }
+  ::ng-deep .navbar .navbar-toggler {
+    position: absolute;
+    right: 0;
+  }
+  ::ng-deep .page-body-wrapper {
+    padding: 0 !important;
+  }
+  ::ng-deep .nav_head {
+    margin-left: 0 !important;
+  }
+
+  .main_pg {
+    padding-left: 0 !important;
+  }
+  .mat-card {
+    margin-bottom: 20px;
+  }
+  .sale_graph .ml-3 {
+    margin-left: 0 !important;
+  }
+  .sale_graph .col-md-12 {
+    padding-left: 0;
+  }
+  .month_infos .mat-form-field {
+    margin-right: 15px;
+  }
+  .dash_head h2 {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  ::ng-deep .navbar-menu-wrapper h4.panelTitle {
+    text-align: left !important;
+  }
+  ::ng-deep .mobile_dashboard_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  ::ng-deep .dash_board h1 {
+    padding-left: 0 !important;
+  }
+  ::ng-deep .dash_head h2 {
+    padding-left: 0 !important;
+  }
+  .card-design {
+    width: 96% !important;
+  }
+  .rounded-button {
+    margin-bottom: 12px !important;
+  }
+}

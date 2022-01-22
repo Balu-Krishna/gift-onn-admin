@@ -99,7 +99,6 @@ export class FilterComponent implements OnInit {
       startDate: [""],
       endDate: [""],
       store: [""],
-
     });
     this.vendororderForm = this.fb.group({
       storeId: [""],
@@ -119,16 +118,15 @@ export class FilterComponent implements OnInit {
       country: [""],
     });
     this.loyaltyForm = this.fb.group({
-      endDate: [""],
-      currency: [""],
-      rewardType: [""],
+      date: [""],
+      Order: [""],
+      reward: [""],
     });
     this.paymentForm = this.fb.group({
       partnerId: [""],
       vendor: [""],
       Date: [""],
     });
-
   }
   get plf() {
     return this.productLaunchForm.controls;
@@ -185,11 +183,10 @@ export class FilterComponent implements OnInit {
     this.offerForm.reset();
     this.loyaltyForm.reset();
     this.paymentForm.reset();
-
   }
   close() {
     this.dialogRef.close();
     this.reset();
   }
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 }

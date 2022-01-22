@@ -1,37 +1,42 @@
-<div mat-dialog-content class="rounded">
+<div mat-dialog-content
+     class="rounded">
   <div class="d-flex justify-content-between">
     <div></div>
     <div>
-      <p *ngIf="data == 'partner'" class="lable-font-title">Deny Partner</p>
-      <p *ngIf="data == 'product'" class="lable-font-title">Deny Product</p>
-      <p *ngIf="data == 'promotion'" class="lable-font-title">Deny Promotion</p>
-      <p *ngIf="data == 'productLauncher'" class="lable-font-title">
+      <p *ngIf="data == 'partner'"
+         class="lable-font-title">Deny Partner</p>
+      <p *ngIf="data == 'product'"
+         class="lable-font-title">Deny Product</p>
+      <p *ngIf="data == 'promotion'"
+         class="lable-font-title">Deny Promotion</p>
+      <p *ngIf="data == 'productLauncher'"
+         class="lable-font-title">
         Deny Product Launcher
       </p>
-      <p *ngIf="data == 'offer'" class="lable-font-title">Deny Offer</p>
+      <p *ngIf="data == 'offer'"
+         class="lable-font-title">Deny Offer</p>
     </div>
     <div class="example-button-container">
-      <button
-        mat-mini-fab
-        color="warn"
-        (click)="close()"
-        style="background: #e04f5f"
-      >
+      <button mat-mini-fab
+              color="warn"
+              (click)="close()"
+              style="background: #e04f5f">
         <mat-icon>close</mat-icon>
       </button>
     </div>
   </div>
   <div>
-    <form
-      [formGroup]="denyProduct"
-      (ngSubmit)="denyProductSubmit()"
-      class="m-5 pl-5"
-    >
-      <div class="row mx-5 px-5 mt-3">
-        <div class="col-sm-12" *ngIf="data != 'Rating'">
+    <form [formGroup]="denyProduct"
+          (ngSubmit)="denyProductSubmit()"
+          class="dany_vendor_info">
+      <div class="row ">
+        <div class="col-sm-12"
+             *ngIf="data != 'Rating'">
           <p class="m-0 form-lable">REASON</p>
-          <mat-form-field class="full-width" appearance="fill">
-            <mat-select formControlName="reason" placeholder="Selete Reason">
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <mat-select formControlName="reason"
+                        placeholder="Selete Reason">
               <mat-option value=""> Selete Reason </mat-option>
               <mat-option value="india"> India </mat-option>
               <mat-option value="afghanistan"> Afghanistan </mat-option>
@@ -39,21 +44,22 @@
           </mat-form-field>
         </div>
         <div class="col-md-12 col-lg-12 col-sm-12 my-3">
-          <mat-form-field class="full-width" appearance="outline">
-            <textarea
-              matInput
-              formControlName="text"
-              rows="7"
-              cols="40"
-              placeholder="write here..."
-            ></textarea>
+          <mat-form-field class="full-width"
+                          appearance="outline">
+            <textarea matInput
+                      formControlName="text"
+                      rows="5"
+                      cols="20"
+                      placeholder="write here..."></textarea>
           </mat-form-field>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-12 mt-3 pt-5">
+        <div class="col-sm-12 mt-3">
           <div class="d-flex justify-content-around">
-            <button mat-flat-button color="primary" class="submit-button mr-5">
+            <button mat-flat-button
+                    color="primary"
+                    class="submit-button mr-5">
               Submit
             </button>
           </div>

@@ -65,6 +65,21 @@
 }
 .lable-font-title {
   font-family: "Montserrat", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
+}
+::ng-deep .gift_image_info img {
+  width: 50px !important;
+  height: 50px !important;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  ::ng-deep .cdk-overlay-pane {
+    width: 80% !important;
+  }
+  .dany_vendor_info {
+    padding: 0 !important;
+  }
+  .form-lable {
+    font-size: 12px !important;
+  }
 }

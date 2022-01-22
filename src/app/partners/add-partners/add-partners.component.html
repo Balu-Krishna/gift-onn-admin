@@ -1,5 +1,5 @@
-<div class="d-flex justify-content-between pb-4">
-  <div class="pl-5">
+<div class="d-flex justify-content-between pb-4 mobile_admin_heading">
+  <div class="pl-5 page_induvidul_title">
     <p class="page-title">Partner</p>
   </div>
   <div class="d-flex justify-content-end">
@@ -8,25 +8,23 @@
   </div>
 </div>
 
-<Section style="margin-left: 20px">
+<Section style="margin-left: 20px"
+         class="add_user_informative">
   <mat-card>
     <form [formGroup]="addPartnersGroup">
       <div class="row">
         <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">PARTNERS NAME</p>
-          <mat-form-field class="full-width" appearance="fill">
-            <input
-              matInput
-              formControlName="partnersName"
-              placeholder="Enter Partners Name"
-            />
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <input matInput
+                   formControlName="partnersName"
+                   placeholder="Enter Partners Name" />
           </mat-form-field>
-          <mat-error
-            *ngIf="
+          <mat-error *ngIf="
               addPartnersGroup.get('partnersName').hasError('required') &&
               submitted
-            "
-          >
+            ">
             <div class="d-flex align-items-center">
               <div>
                 <mat-icon>error_outline</mat-icon>
@@ -39,19 +37,16 @@
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">PARTNERS EMAIL ID</p>
-          <mat-form-field class="full-width" appearance="fill">
-            <input
-              matInput
-              formControlName="partnersEmail"
-              placeholder="Enter Partners Email Id"
-            />
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <input matInput
+                   formControlName="partnersEmail"
+                   placeholder="Enter Partners Email Id" />
           </mat-form-field>
-          <mat-error
-            *ngIf="
+          <mat-error *ngIf="
               addPartnersGroup.get('partnersEmail').hasError('required') &&
               submitted
-            "
-          >
+            ">
             <div class="d-flex align-items-center">
               <div>
                 <mat-icon>error_outline</mat-icon>
@@ -64,20 +59,17 @@
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">CATEGORY</p>
-          <mat-form-field class="full-width" appearance="fill">
-            <mat-select
-              formControlName="partnersCategory"
-              placeholder="Selete Category"
-            >
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <mat-select formControlName="partnersCategory"
+                        placeholder="Selete Category">
               <mat-option value="vendor"> Vendor Category </mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-error
-            *ngIf="
+          <mat-error *ngIf="
               addPartnersGroup.get('partnersCategory').hasError('required') &&
               submitted
-            "
-          >
+            ">
             <div class="d-flex align-items-center">
               <div>
                 <mat-icon>error_outline</mat-icon>
@@ -90,21 +82,18 @@
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">SUB CATEGORY</p>
-          <mat-form-field class="full-width" appearance="fill">
-            <mat-select
-              formControlName="partnersSubCategory"
-              placeholder="Selete Sub Category"
-            >
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <mat-select formControlName="partnersSubCategory"
+                        placeholder="Selete Sub Category">
               <mat-option value="vendor"> Vendor Category </mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-error
-            *ngIf="
+          <mat-error *ngIf="
               addPartnersGroup
                 .get('partnersSubCategory')
                 .hasError('required') && submitted
-            "
-          >
+            ">
             <div class="d-flex align-items-center">
               <div>
                 <mat-icon>error_outline</mat-icon>
@@ -117,19 +106,16 @@
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">CONTACT NUMBER</p>
-          <mat-form-field class="full-width" appearance="fill">
-            <input
-              matInput
-              formControlName="contactNumber"
-              placeholder="Enter Contact Number"
-            />
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <input matInput
+                   formControlName="contactNumber"
+                   placeholder="Enter Contact Number" />
           </mat-form-field>
-          <mat-error
-            *ngIf="
+          <mat-error *ngIf="
               addPartnersGroup.get('contactNumber').hasError('required') &&
               submitted
-            "
-          >
+            ">
             <div class="d-flex align-items-center">
               <div>
                 <mat-icon>error_outline</mat-icon>
@@ -142,18 +128,15 @@
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">COUNTRY</p>
-          <mat-form-field class="full-width" appearance="fill">
-            <input
-              matInput
-              formControlName="country"
-              placeholder="Enter Country"
-            />
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <input matInput
+                   formControlName="country"
+                   placeholder="Enter Country" />
           </mat-form-field>
-          <mat-error
-            *ngIf="
+          <mat-error *ngIf="
               addPartnersGroup.get('country').hasError('required') && submitted
-            "
-          >
+            ">
             <div class="d-flex align-items-center">
               <div>
                 <mat-icon>error_outline</mat-icon>
@@ -166,14 +149,15 @@
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">STATE</p>
-          <mat-form-field class="full-width" appearance="fill">
-            <input matInput formControlName="state" placeholder="Enter State" />
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <input matInput
+                   formControlName="state"
+                   placeholder="Enter State" />
           </mat-form-field>
-          <mat-error
-            *ngIf="
+          <mat-error *ngIf="
               addPartnersGroup.get('state').hasError('required') && submitted
-            "
-          >
+            ">
             <div class="d-flex align-items-center">
               <div>
                 <mat-icon>error_outline</mat-icon>
@@ -186,14 +170,15 @@
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">CITY</p>
-          <mat-form-field class="full-width" appearance="fill">
-            <input matInput formControlName="city" placeholder="Enter City" />
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <input matInput
+                   formControlName="city"
+                   placeholder="Enter City" />
           </mat-form-field>
-          <mat-error
-            *ngIf="
+          <mat-error *ngIf="
               addPartnersGroup.get('city').hasError('required') && submitted
-            "
-          >
+            ">
             <div class="d-flex align-items-center">
               <div>
                 <mat-icon>error_outline</mat-icon>
@@ -207,44 +192,33 @@
         <div class="col-md-12 col-lg-12 col-sm-12">
           <h3>Upload Logo</h3>
         </div>
-        <div
-          class="col-md-11 col-lg-11 col-sm-11 d-flex justify-content-center p-5"
-          style="border: dotted 2px gray; margin-left: 2pc"
-        >
-          <div class="row" (click)="fileInput.click()">
-            <input
-              #fileInput
-              type="file"
-              hidden
-              (change)="handleChange($event.target.files)"
-              formControlName="productimage"
-            />
-            <div
-              class="col-md-12 col-lg-12 col-sm-12"
-              style="text-align: center"
-            >
-              <img
-                src="../../../../assets/cloud-computing%20(1).svg"
-                width="10%"
-                alt=""
-              />
+        <div class="col-md-11 col-lg-11 col-sm-11 d-flex justify-content-center p-5 mobile_images"
+             style="border: dotted 2px gray; margin-left: 2pc">
+          <div class="row"
+               (click)="fileInput.click()">
+            <input #fileInput
+                   type="file"
+                   hidden
+                   (change)="handleChange($event.target.files)"
+                   formControlName="productimage" />
+            <div class="col-md-12 col-lg-12 col-sm-12"
+                 style="text-align: center">
+              <img src="../../../../assets/cloud-computing%20(1).svg"
+                   width="10%"
+                   alt="" />
             </div>
-            <div
-              class="col-md-12 col-lg-12 col-sm-12"
-              style="text-align: center"
-            >
+            <div class="col-md-12 col-lg-12 col-sm-12"
+                 style="text-align: center">
               <h3 style="color: gray">Click to Upload</h3>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12 ml-3">
-            <mat-error
-              *ngIf="
+            <mat-error *ngIf="
                 addPartnersGroup.get('productimage').hasError('required') &&
                 submitted
-              "
-            >
+              ">
               <div class="d-flex align-items-center">
                 <div>
                   <mat-icon>error_outline</mat-icon>
@@ -260,31 +234,25 @@
       <div class="row mt-5">
         <div class="col-md-6 col-sm-12">
           <div class="d-flex justify-content-around">
-            <button
-              mat-flat-button
-              color="primary"
-              class="save-button mr-5"
-              type="button"
-              (click)="savePartner()"
-            >
+            <button mat-flat-button
+                    color="primary"
+                    class="save-button mr-5"
+                    type="button"
+                    (click)="savePartner()">
               Save
             </button>
-            <button
-              mat-flat-button
-              color="accent"
-              class="cancel-button mr-5"
-              type="button"
-              (click)="cancleOnboardPartener()"
-            >
+            <button mat-flat-button
+                    color="accent"
+                    class="cancel-button mr-5"
+                    type="button"
+                    (click)="cancleOnboardPartener()">
               Cancel
             </button>
-            <button
-              mat-flat-button
-              color="warn"
-              class="onboarding-button mr-5"
-              type="button"
-              (click)="onboardPartner()"
-            >
+            <button mat-flat-button
+                    color="warn"
+                    class="onboarding-button mr-5"
+                    type="button"
+                    (click)="onboardPartner()">
               Onboarding
             </button>
           </div>

@@ -1,13 +1,14 @@
 .lable-font-title {
   font-family: "Montserrat", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .form-lable {
-  font-size: 14px;
-  font-weight: 500;
-  color: gray;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  color: #a4a4a4 !important;
+  font-family: "Montserrat" !important;
 }
 .lable-color-gray {
   color: gray;
@@ -19,7 +20,7 @@
 .full-width {
   width: 100%;
   font-weight: 500 !important;
-  font-size: 16px !important;
+  font-size: 14px !important;
   font-family: "Montserrat" !important;
 }
 
@@ -68,4 +69,23 @@
   border-radius: 10px;
   background: #a4a4a4;
   font-family: "Montserrat", sans-serif;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-infix {
+  padding: 0.25em 0 0.75em 0 !important;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  .add_user_informative {
+    margin: 0 10px 0 0 !important;
+  }
+  ::ng-deep .mobile_images {
+    margin: 25px !important;
+    padding: 0 !important;
+  }
+
+  .page_induvidul_title {
+    padding-left: 0 !important;
+  }
+  .lable-font-title {
+    font-size: 17px !important;
+  }
 }

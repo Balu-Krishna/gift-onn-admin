@@ -1,7 +1,19 @@
-.img_set{
-    border-radius: 50% !important;
-    padding: 15px;
-    margin: 10px;
-    background-color: #d9dde9;
-    width: 20%;
+.img_set {
+  border-radius: 50% !important;
+  padding: 15px;
+  margin: 10px;
+  background-color: #d9dde9;
+  width: 20%;
+}
+.dalate_inforamtive h3 {
+  font-size: 13px;
+  font-weight: 600;
+}
+.dalate_inforamtive img {
+  width: 30%;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  ::ng-deep .cdk-overlay-pane {
+    width: 77% !important;
   }
+}

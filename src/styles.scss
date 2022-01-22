@@ -114,18 +114,31 @@ body {
   border-radius: 20px !important;
   margin-bottom: 30px;
 }
-
+.sidebar .nav-item .nav-link {
+  padding: 15px 1rem !important;
+}
 .sidebar li.nav-item {
   padding: 0 15px !important;
 }
 
 .sidebar li.nav-item.active {
   background: #faeddd;
-  border-left: 5px solid #988149;
+  position: relative;
+}
+.sidebar li.nav-item.active::after {
+  position: absolute;
+  left: 0;
+  height: auto;
+  width: 5px;
+  background-color: #988149;
+  top: 0;
+  bottom: 0;
+  content: "";
 }
 
 .sidebar li.nav-item.active a.nav-link span.menu-title {
   color: #988149 !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .activeIcon {
@@ -148,15 +161,16 @@ body {
     height: auto;
   }
   .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 16px 0px 5px;
+    padding: 10px 0px 5px;
     border-top: none;
   }
   .mat-select {
     position: relative;
-    top: 6px;
+    top: 2px;
   }
   .mat-form-field-outline {
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: 0 0 6px #00000029;
+    border-radius: 6px;
   }
   .mat-form-field-outline:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -349,9 +363,8 @@ nav#sidebar.setPositionRelative {
   right: 0;
   top: 15px;
   font-size: 16px;
-  color: #787676;
+  color: #c3bcbc;
 }
-
 .ngx-pagination .current {
   background: #988149 !important;
 }
@@ -359,4 +372,9 @@ nav#sidebar.setPositionRelative {
 .ngx-pagination button {
   font-size: 17px !important;
   font-family: "Montserrat", sans-serif !important;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  ::ng-depp .mat-form-field {
+    width: 67% !important;
+  }
 }
