@@ -9,44 +9,119 @@ import { FilterComponent } from "../filter/filter.component";
   styleUrls: ["./users.component.scss"],
 })
 export class UsersComponent implements OnInit {
-  userData = [
-    {
-      empid: 1,
-      lastName: "Nallamothu",
-      firstName: "Sudharshan",
-      role: "IT",
-      status: "ACTIVE",
-      email: "sudharshan.nallamothu@oracle.com",
-    },
-    {
-      empid: 2,
-      lastName: "Nallamothu",
-      firstName: "Sudharshan",
-      role: "IT",
-      status: "ACTIVE",
-      email: "sudharshan.nallamothu@oracle.com",
-    },
-    {
-      empid: 3,
-      lastName: "Nallamothu",
-      firstName: "Sudharshan",
-      role: "IT",
-      status: "ACTIVE",
-      email: "sudharshan.nallamothu@oracle.com",
-    },
-    {
-      empid: 4,
-      lastName: "Nallamothu",
-      firstName: "Sudharshan",
-      role: "IT",
-      status: "IN-ACTIVE",
-      email: "sudharshan.nallamothu@oracle.com",
-    },
-  ];
+  page = 1;
+  count = 12;
+  tableSize = 4;
+  userData = [];
   constructor(private router: Router, public dialog: MatDialog) {}
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    this.showData();
+  }
+  showData(): void {
+    this.userData = [
+      {
+        empid: 1,
+        lastName: "Nallamothu",
+        firstName: "Sudharshan",
+        role: "IT",
+        status: "ACTIVE",
+        email: "sudharshan.nallamothu@oracle.com",
+      },
+      {
+        empid: 2,
+        lastName: "Nallamothu",
+        firstName: "Sudharshan",
+        role: "IT",
+        status: "ACTIVE",
+        email: "sudharshan.nallamothu@oracle.com",
+      },
+      {
+        empid: 3,
+        lastName: "Nallamothu",
+        firstName: "Sudharshan",
+        role: "IT",
+        status: "ACTIVE",
+        email: "sudharshan.nallamothu@oracle.com",
+      },
+      {
+        empid: 4,
+        lastName: "Nallamothu",
+        firstName: "Sudharshan",
+        role: "IT",
+        status: "IN-ACTIVE",
+        email: "sudharshan.nallamothu@oracle.com",
+      },
+      {
+        empid: 11,
+        lastName: "Nallamothu",
+        firstName: "Sudharshan",
+        role: "IT",
+        status: "ACTIVE",
+        email: "sudharshan.nallamothu@oracle.com",
+      },
+      {
+        empid: 21,
+        lastName: "Nallamothu",
+        firstName: "Sudharshan",
+        role: "IT",
+        status: "ACTIVE",
+        email: "sudharshan.nallamothu@oracle.com",
+      },
+      {
+        empid: 31,
+        lastName: "Nallamothu",
+        firstName: "Sudharshan",
+        role: "IT",
+        status: "ACTIVE",
+        email: "sudharshan.nallamothu@oracle.com",
+      },
+      {
+        empid: 41,
+        lastName: "Nallamothu",
+        firstName: "Sudharshan",
+        role: "IT",
+        status: "IN-ACTIVE",
+        email: "sudharshan.nallamothu@oracle.com",
+      },
+      {
+        empid: 12,
+        lastName: "Nallamothu",
+        firstName: "Sudharshan",
+        role: "IT",
+        status: "ACTIVE",
+        email: "sudharshan.nallamothu@oracle.com",
+      },
+      {
+        empid: 22,
+        lastName: "Nallamothu",
+        firstName: "Sudharshan",
+        role: "IT",
+        status: "ACTIVE",
+        email: "sudharshan.nallamothu@oracle.com",
+      },
+      {
+        empid: 32,
+        lastName: "Nallamothu",
+        firstName: "Sudharshan",
+        role: "IT",
+        status: "ACTIVE",
+        email: "sudharshan.nallamothu@oracle.com",
+      },
+      {
+        empid: 42,
+        lastName: "Nallamothu",
+        firstName: "Sudharshan",
+        role: "IT",
+        status: "IN-ACTIVE",
+        email: "sudharshan.nallamothu@oracle.com",
+      },
+    ];
+  }
+  tabSize(event) {
+    this.page = event;
+    this.showData();
+  }
   addUser() {
     this.router.navigate(["users/add-user"]);
   }

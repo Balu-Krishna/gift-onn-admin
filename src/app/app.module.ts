@@ -22,7 +22,6 @@ import { ProductComponent } from "./product/product.component";
 import { CustomerComponent } from "./customer/customer.component";
 import { SuccessfulModelComponent } from "./successful-model/successful-model.component";
 import { DeleteModelComponent } from "./delete-model/delete-model.component";
-import { AddLoyaltyComponent } from "./add-loyalty/add-loyalty.component";
 import { AddOffersComponent } from "./add-offers/add-offers.component";
 import { AddPartnersComponent } from "./partners/add-partners/add-partners.component";
 import { AnalyticsComponent } from "./analytics/analytics.component";
@@ -55,9 +54,10 @@ import { FilterComponent } from "./filter/filter.component";
 import { VendorActionsComponent } from "./vendor-actions/vendor-actions.component";
 import { ViewPartnerComponent } from "./view-partner/view-partner.component";
 import { ViewPromotionDetailsComponent } from "./view-promotion-details/view-promotion-details.component";
-import { FreezeCategoryComponent } from './freeze-category/freeze-category.component';
-import { FreezeSuccessfulComponent } from './freeze-successful/freeze-successful.component';
-import { OffersStoreidComponent } from './offers-storeid/offers-storeid.component';
+import { FreezeCategoryComponent } from "./freeze-category/freeze-category.component";
+import { FreezeSuccessfulComponent } from "./freeze-successful/freeze-successful.component";
+import { OffersStoreidComponent } from "./offers-storeid/offers-storeid.component";
+import { NgxPaginationModule } from "ngx-pagination";
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +75,6 @@ import { OffersStoreidComponent } from './offers-storeid/offers-storeid.componen
     CustomerComponent,
     SuccessfulModelComponent,
     DeleteModelComponent,
-    AddLoyaltyComponent,
     AddOffersComponent,
     AddPartnersComponent,
     AnalyticsComponent,
@@ -120,6 +119,7 @@ import { OffersStoreidComponent } from './offers-storeid/offers-storeid.componen
     AngularEditorModule,
     HttpClientModule,
     MaterialModule,
+    NgxPaginationModule,
   ],
   exports: [AngularEditorModule],
   providers: [ThemeService],

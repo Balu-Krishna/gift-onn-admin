@@ -97,7 +97,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let partner of patners">
+        <tr
+          *ngFor="
+            let partner of patners
+              | paginate
+                : {
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                  }
+          "
+        >
           <!-- <td>{{ partner.logo }}</td> -->
           <td class="img_tab"><img [src]="partner.logo" /></td>
           <td>
@@ -157,5 +167,14 @@
         </tr>
       </tbody>
     </table>
+  </div>
+  <div class="d-flex justify-content-end">
+    <pagination-controls
+      responsive="true"
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="tabSize($event)"
+    >
+    </pagination-controls>
   </div>
 </div>

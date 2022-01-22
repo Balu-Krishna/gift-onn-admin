@@ -12,33 +12,155 @@ import { VendorActionsComponent } from "../vendor-actions/vendor-actions.compone
   styleUrls: ["./customer.component.scss"],
 })
 export class CustomerComponent implements OnInit {
-  customers = [
-    {
-      name: "Rajesh Sharma",
-      customerId: "12345",
-      emailId: "test@gmail.com",
-      mobileNumber: "1234567890",
-      country: "India",
-      location: "Hyderabad",
-      dateTime: "10-12-2021",
-      rating: "4.5",
-      status: "pending",
-    },
-    {
-      name: "Rajesh Sharma",
-      customerId: "12345",
-      emailId: "test@gmail.com",
-      mobileNumber: "1234567890",
-      country: "India",
-      location: "Hyderabad",
-      dateTime: "10-12-2021",
-      rating: "4.5",
-      status: "Approved",
-    },
-  ];
+  page = 1;
+  count = 12;
+  tableSize = 4;
+  customers = [];
   constructor(public dialog: MatDialog) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.showData();
+  }
+  showData(): void {
+    this.customers = [
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "pending",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "Approved",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "pending",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "Approved",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "pending",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "Approved",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "pending",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "Approved",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "pending",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "Approved",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "pending",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "Approved",
+      },
+    ];
+  }
+  tabSize(event) {
+    this.page = event;
+    this.showData();
+  }
   openFilter() {
     const dialogRef = this.dialog.open(FilterComponent, {
       width: "50%",
