@@ -365,30 +365,64 @@ export class MarketingComponent implements OnInit {
       data: promotion,
     });
   }
-  activePromotion(promotion) {}
-  inactivePromotion(promotion) {}
+  activePromotion(promotion) {
+    const dialogRef = this.dialog.open(VendorActionsComponent, {
+      width: "50%",
+      data: { name: "Activate", type: "promotion", data: promotion },
+    });
+  }
+  inactivePromotion(promotion) {
+    const dialogRef = this.dialog.open(VendorActionsComponent, {
+      width: "50%",
+      data: { name: "In-Activate", type: "promotion", data: promotion },
+    });
+  }
   approvePromotion(promotion) {
     const dialogRef = this.dialog.open(ApprovedModelComponent, {
       width: "30%",
       data: "promotion",
     });
   }
-  holdPromotion(promotion) {}
+  holdPromotion(promotion) {
+    const dialogRef = this.dialog.open(VendorActionsComponent, {
+      width: "50%",
+      data: { name: "Hold", type: "promotion", data: promotion },
+    });
+  }
   denyProductLaunch(productLaunch) {
     const dialogRef = this.dialog.open(VendorActionsComponent, {
       width: "50%",
-      data: { name: "Denay", type: "productLaunch", data: productLaunch },
+      data: { name: "Denay", type: "product Launch", data: productLaunch },
     });
   }
-  activeProductLaunch(productLaunch) {}
-  inactiveProductLaunch(productLaunch) {}
+  activeProductLaunch(productLaunch) {
+    const dialogRef = this.dialog.open(VendorActionsComponent, {
+      width: "50%",
+      data: { name: "Activate", type: "product Launch", data: productLaunch },
+    });
+  }
+  inactiveProductLaunch(productLaunch) {
+    const dialogRef = this.dialog.open(VendorActionsComponent, {
+      width: "50%",
+      data: {
+        name: "In-Activate",
+        type: "product Launch",
+        data: productLaunch,
+      },
+    });
+  }
   approveProductLaunch(productLaunch) {
     const dialogRef = this.dialog.open(ApprovedModelComponent, {
       width: "30%",
       data: "productLauncher",
     });
   }
-  holdProductLaunch(productLaunch) {}
+  holdProductLaunch(productLaunch) {
+    const dialogRef = this.dialog.open(VendorActionsComponent, {
+      width: "50%",
+      data: { name: "Hold", type: "product Launch", data: productLaunch },
+    });
+  }
   action(value) {
     console.log(value);
     if (value == "deny") {

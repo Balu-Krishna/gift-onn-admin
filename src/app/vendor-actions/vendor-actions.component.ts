@@ -17,6 +17,7 @@ export class VendorActionsComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder
   ) {
+    console.log(data);
     this.vendorActionsForm = this.fb.group({
       reason: ["", Validators.required],
       text: ["", Validators.required],
