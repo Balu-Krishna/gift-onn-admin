@@ -178,161 +178,181 @@
         </pagination-controls>
       </div>
     </mat-tab>
-    <mat-tab class="text-right tab_view"
-             label="Generate OTP"
-             style="padding-left: 221px">
-      <section class="Order_form">
+    <mat-tab label="Generate OTP">
+      <div class="px-1 py-5 my-5">
         <form [formGroup]="generateOpt">
-          <div class="form-group order_text">
-            <label for="exampleInputEmail1">Order Id</label>
-            <input type="email"
-                   class="form-control"
-                   id="exampleInputEmail1"
-                   placeholder="Enter Order Id"
-                   aria-describedby="emailHelp"
-                   formControlName="orderid">
+          <div class="row m-0">
+            <div class="col-sm-12">
+              <p class="m-0 form-lable">ORDER ID</p>
+              <mat-form-field class="full-width"
+                              appearance="fill">
+                <input matInput
+                       formControlName="orderid"
+                       placeholder="Enter Order Id" />
+              </mat-form-field>
+            </div>
           </div>
+          <div class="row mx-0 my-5 pt-5">
+            <div class="col-sm-12">
+              <div class="d-flex flex-row">
+                <button mat-stroked-button
+                        type="button"
+                        color="accent"
+                        style="height: 45px !important;"
+                        class="primary--button mr-5">
+                  Request OTP
+                </button>
+                <button mat-stroked-button
+                        color="accent"
+                        type="button"
+                        style="height: 45px !important;"
+                        class="secondary--button mr-5">
+                  Cancel
+                </button>
+                <button mat-stroked-button
+                        color="accent"
+                        type="button"
+                        style="height: 45px !important;"
+                        class="outline--button">
+                  Resend OTP
+                </button>
+              </div>
+            </div>
+          </div>
+
         </form>
-        <div class="row purches_btn">
-          <div class="request_btn">
-            <a class=""
-               href="">Request OTP</a>
-          </div>
-          <div class="cancel_btn">
-            <a class=""
-               href="">Cancel</a>
-          </div>
-          <div class="resend_btn">
-            <a class=""
-               href="">Resend OTP</a>
+        <div class="row m-0 mb-5">
+          <div class="col-sm-12">
+            <hr style="background-color: #fff;	border-top: 2px dashed #8c8b8b;">
           </div>
         </div>
-      </section>
-      <section class="Order_form">
-        <form>
-          <div class="form-group order_text">
-            <label for="exampleInputEmail1">CONFIRM OTP</label>
-            <input type="email"
-                   class="form-control"
-                   id="exampleInputEmail1"
-                   placeholder="Enter OTP"
-                   aria-describedby="emailHelp"
-                   formControlName="confirmedOtp">
+        <form [formGroup]="generateOpt">
+          <div class="row m-0">
+            <div class="col-sm-12">
+              <p class="m-0 form-lable">CONFIRM OTP</p>
+              <mat-form-field class="full-width"
+                              appearance="fill">
+                <input matInput
+                       formControlName="confirmedOtp"
+                       placeholder="Enter OTP" />
+              </mat-form-field>
+            </div>
           </div>
+          <div class="row mx-0 my-5 pt-5">
+            <div class="col-sm-12">
+              <div class="d-flex flex-row">
+                <button mat-stroked-button
+                        type="button"
+                        color="accent"
+                        style="height: 45px !important;"
+                        class="primary--button mr-5">
+                  Submit OTP
+                </button>
+              </div>
+            </div>
+          </div>
+
         </form>
-        <div class="row purches_btn">
-          <div class="submit_btn">
-            <a class=""
-               href=""
-               (click)="OptSubmit()">Submit</a>
-          </div>
-        </div>
-      </section>
+      </div>
     </mat-tab>
 
     <mat-tab class="text-right tab_view"
-             label="Generate QR"
-             style="padding-left: 221px">
-      <div>
-        <form [formGroup]="generateQr"
-              class="pt-4 mt-4">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 col-lg-6 col-sm-12">
-                <mat-form-field class="full-width"
-                                appearance="fill">
-                  <mat-label>QR NUMBER</mat-label>
-                  <input matInput
-                         formControlName="qrNumber"
-                         placeholder="Enter Number" />
-                </mat-form-field>
-              </div>
-              <div class="col-md-6 col-lg-6 col-sm-12">
-                <mat-form-field class="full-width"
-                                appearance="fill">
-                  <mat-label>PURCHASER NAME</mat-label>
-                  <input matInput
-                         formControlName="purchasername"
-                         placeholder="Enter Purchaser Name" />
-                </mat-form-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 col-lg-6 col-sm-12">
-                <mat-form-field class="full-width"
-                                appearance="fill">
-                  <mat-label>PRODUCT NAME</mat-label>
-                  <input matInput
-                         formControlName="productName"
-                         placeholder="Enter Product Name" />
-                </mat-form-field>
-              </div>
-              <div class="col-md-6 col-lg-6 col-sm-12">
-                <mat-form-field class="full-width"
-                                appearance="fill">
-                  <mat-label>PRODUCT ID</mat-label>
-                  <input matInput
-                         formControlName="productId"
-                         placeholder="Enter Product Id" />
-                </mat-form-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 col-lg-6 col-sm-12">
-                <mat-form-field class="full-width"
-                                appearance="fill">
-                  <mat-label>SUB CATEGORY</mat-label>
-                  <mat-select formControlName="SubCategory">
-                    <mat-option value="Pending"> Sub Category </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-              <div class="col-md-6 col-lg-6 col-sm-12">
-                <mat-form-field class="full-width"
-                                appearance="fill">
-                  <mat-label>CATEGORY</mat-label>
-                  <mat-select formControlName="category">
-                    <mat-option value="Pending"> Select Category </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 col-lg-6 col-sm-12">
-                <mat-form-field class="full-width"
-                                appearance="fill">
-                  <mat-label>STORE ID</mat-label>
-                  <input matInput
-                         formControlName="storeid"
-                         placeholder="Enter Store Id" />
-                </mat-form-field>
-              </div>
-              <div class="col-md-6 col-lg-6 col-sm-12">
-                <mat-form-field class="full-width"
-                                appearance="fill">
-                  <mat-label>RECIPIENT MOBILE NUMbER</mat-label>
-                  <input matInput
-                         formControlName="mobileNumber"
-                         placeholder=" Enter Mobile Number" />
-                </mat-form-field>
-              </div>
-            </div>
-            <div class="col-sm-12 my-md-5">
-              <div class="row">
-                <div class="col-md-2">
-                  <button mat-flat-button
-                          type="submit"
-                          class="rounded-button"
-                          (click)="QrSubmit()">
-                    Save
-                  </button>
-                </div>
-              </div>
+             label="Generate QR">
+      <form [formGroup]="generateQr">
+        <div class="row m-0 my-5">
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">QR NUMBER</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <input matInput
+                     formControlName="qrNumber"
+                     placeholder="Enter Number" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">PURCHASER NAME</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <input matInput
+                     formControlName="purchasername"
+                     placeholder="Enter Purchaser Name" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">PRODUCT NAME</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <input matInput
+                     formControlName="productName"
+                     placeholder="Enter Product Name" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">PRODUCT ID</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <input matInput
+                     formControlName="productId"
+                     placeholder="Enter Product Id" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">CATEGORY</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <mat-select formControlName="category"
+                          placeholder="Select Category">
+                <mat-option value=""> Select Category </mat-option>
+                <mat-option value="india"> India </mat-option>
+                <mat-option value="afghanistan"> Afghanistan </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">SUB CATEGORY</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <mat-select formControlName="SubCategory"
+                          placeholder="Select Sub Category">
+                <mat-option value=""> Select Sub Category </mat-option>
+                <mat-option value="india"> India </mat-option>
+                <mat-option value="afghanistan"> Afghanistan </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">STORE ID</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <input matInput
+                     formControlName="storeid"
+                     placeholder="Enter Store Id" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">RECIPIENT MOBILE NUMBER</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <input matInput
+                     formControlName="mobileNumber"
+                     placeholder="Enter Mobile Number" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row m-0">
+          <div class="col-sm-12">
+            <div class="d-flex flex-row">
+              <button mat-stroked-button
+                      type="button"
+                      color="accent"
+                      style="height: 45px !important;"
+                      class="primary--button mr-5">
+                Generate QR
+              </button>
             </div>
           </div>
-        </form>
-      </div>
-
+        </div>
+      </form>
     </mat-tab>
     <mat-tab class="text-right tab_view"
              label="Vendor Related Coupons"
