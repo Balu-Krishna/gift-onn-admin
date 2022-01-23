@@ -1,158 +1,156 @@
 <div class="d-flex justify-content-between pb-4 mobile_admin_heading">
-  <div class="pl-5">
-    <p class="page--title">Offers Details</p>
+  <div class="pl-5 page_induvidul_title">
+    <p class="page-title">Offers Details</p>
   </div>
   <div class="d-flex justify-content-end">
     <p class="text-muted lable-font-title">Offers /</p>
-    <p class="lable-font-title font-color">Add Offers</p>
+    <p class="lable-font-title font-color">Add Offer</p>
   </div>
 </div>
-<Section style="margin-left: 20px;"
+
+<section style="margin-left: 20px"
          class="add_user_informative">
-  <mat-card>
-    <form [formGroup]="addOffersGroup"
-          (ngSubmit)="addOffersSubmit()">
+  <mat-card style="border-radius: 12px">
+    <form [formGroup]="addOffersGroup">
       <div class="row">
-        <div class="col-md-4 col-lg-4 col-sm-4">
-          <mat-form-field class="example-full-width"
+        <div class="col-md-4 col-lg-4 col-sm-12">
+          <p class="m-0 form-lable">OFFER NAME</p>
+          <mat-form-field class="full-width"
                           appearance="fill">
-            <mat-label>OFFER NAME</mat-label>
             <input matInput
                    formControlName="offerName"
-                   placeholder="Enter Name">
+                   placeholder="Enter Offer Name" />
           </mat-form-field>
         </div>
-        <div class="col-md-4 col-lg-4 col-sm-4">
-          <mat-form-field class="example-full-width"
+        <div class="col-md-4 col-lg-4 col-sm-12">
+          <p class="m-0 form-lable">OFFER ID</p>
+          <mat-form-field class="full-width"
                           appearance="fill">
-            <mat-label>OFFER ID</mat-label>
             <input matInput
                    formControlName="offerId"
-                   placeholder="Enter Offer Id">
+                   placeholder="Enter Offer Id" />
           </mat-form-field>
         </div>
-        <div class="col-md-4 col-lg-4 col-sm-4">
-          <mat-form-field class="example-full-width"
+        <div class="col-md-4 col-lg-4 col-sm-12">
+          <p class="m-0 form-lable">STORE ID</p>
+          <mat-form-field class="full-width"
                           appearance="fill">
-            <mat-label>STORE ID</mat-label>
             <input matInput
                    formControlName="storeId"
-                   placeholder="Enter Store Id ">
+                   placeholder="Enter Store Id" />
           </mat-form-field>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <mat-form-field class="example-full-width"
+        <div class="col-md-6 col-lg-6 col-sm-12">
+          <p class="m-0 form-lable">OFFER CATEGORY</p>
+          <mat-form-field class="full-width"
                           appearance="fill">
-            <mat-label>OFFER CATEGORY</mat-label>
-            <mat-select formControlName="offerCategoty">
-              <mat-option value="admin"> admin </mat-option>
-              <mat-option value="admin"> admin </mat-option>
-              <mat-option value="admin"> admin </mat-option>
+            <mat-select formControlName="offerCategoty"
+                        placeholder="Select Category">
+              <mat-option value=""> Select Category </mat-option>
+              <mat-option value="vendor"> Vendor Category </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <mat-form-field class="example-full-width"
+        <div class="col-md-6 col-lg-6 col-sm-12">
+          <p class="m-0 form-lable">OFFER SUB CATEGORY</p>
+          <mat-form-field class="full-width"
                           appearance="fill">
-            <mat-label> OFFER SUB CATEGORY</mat-label>
-            <mat-select formControlName="subCategory">
-              <mat-option value="admin"> admin </mat-option>
-              <mat-option value="admin"> admin </mat-option>
-              <mat-option value="admin"> admin </mat-option>
+            <mat-select formControlName="offerSubCategory"
+                        placeholder="Select Sub Category">
+              <mat-option value=""> Select Sub Category </mat-option>
+              <mat-option value="vendor"> Vendor Sub Category </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <mat-form-field class="example-full-width"
+        <div class="col-md-6 col-lg-6 col-sm-12">
+          <p class="m-0 form-lable">COUNTRY</p>
+          <mat-form-field class="full-width"
                           appearance="fill">
-            <mat-label>COUNTRY</mat-label>
-            <mat-select formControlName="SelectCountry">
-              <mat-option value="India"> India </mat-option>
-              <mat-option value="India"> India </mat-option>
-              <mat-option value="India"> India </mat-option>
+            <mat-select formControlName="country"
+                        placeholder="Select Country">
+              <mat-option value=""> Select Country </mat-option>
+              <mat-option value="vendor"> India </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <mat-form-field class="example-full-width"
+        <div class="col-md-6 col-lg-6 col-sm-12">
+          <p class="m-0 form-lable">LOCATION</p>
+          <mat-form-field class="full-width"
                           appearance="fill">
-            <mat-label> LOCATION</mat-label>
-            <mat-select formControlName="SelectLocation">
-              <mat-option value="India"> India </mat-option>
-              <mat-option value="India"> India </mat-option>
-              <mat-option value="India"> India </mat-option>
+            <mat-select formControlName="location"
+                        placeholder="Select Location">
+              <mat-option value=""> Select Location </mat-option>
+              <mat-option value="vendor"> Hyderabad </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
-
-        <div class="col-md-12 col-lg-12 col-sm-12">
-          <p class="form-lable">ENTER DESCRIPTION</p>
-          <mat-form-field class="example-full-width"
+        <div class="col-sm-12">
+          <p class="m-0 form-lable">OFFER DESCRIPTION</p>
+          <mat-form-field class="full-width"
                           appearance="fill">
             <input matInput
-                   formControlName="Description"
+                   formControlName="description"
                    placeholder="Enter Description" />
           </mat-form-field>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="form-lable">Start Date</p>
+        <div class="col-md-6 col-lg-6 col-sm-12">
+          <p class="m-0 form-lable">START DATE</p>
           <mat-form-field appearance="fill"
-                          class="">
+                          class="full-width">
             <input matInput
-                   [matDatepicker]="picker"
                    formControlName="startDate"
-                   placeholder="Enter Date" />
+                   placeholder="Enter Date"
+                   [matDatepicker]="picker">
             <mat-datepicker-toggle matSuffix
+                                   style="color: #988149;"
                                    [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="form-lable">End Date</p>
+        <div class="col-md-6 col-lg-6 col-sm-12">
+          <p class="m-0 form-lable">END DATE</p>
           <mat-form-field appearance="fill"
-                          class="">
+                          class="full-width">
             <input matInput
-                   [matDatepicker]="picker"
-                   formControlName="EndDate"
-                   placeholder="Enter Date" />
+                   formControlName="endDate"
+                   placeholder="Enter Date"
+                   [matDatepicker]="picker1">
             <mat-datepicker-toggle matSuffix
-                                   [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+                                   style="color: #988149;"
+                                   [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
         </div>
-        <div class="col-md-12 col-lg-12 col-sm-12">
-          <h3>Upload Logo</h3>
-        </div>
-        <div class="col-md-11 col-lg-11 col-sm-11 d-flex justify-content-center p-5 mobile_images"
-             style="border: dotted 2px gray; margin-left: 2pc;">
-          <div class="row"
-               (click)="fileInput.click()">
-            <input #fileInput
-                   type="file"
-                   hidden
-                   (change)="handleChange($event.target.files)" />
-            <div class="col-md-12 col-lg-12 col-sm-12"
-                 style="text-align: center;">
-              <img src="../../../../assets/cloud-computing%20(1).svg"
-                   width="10%"
-                   alt="">
-            </div>
-            <div class="col-md-12 col-lg-12 col-sm-12"
-                 style="text-align: center;">
-              <h3 style="color: gray;">Click to Upload</h3>
+
+        <div class="col-sm-12 mt-2 mobile_images">
+          <p class="lable-font-title">Upload Banner Image</p>
+          <div style="border: 2px dashed #8c8b8b; text-align: center; border-radius: 10px;"
+               class="p-5">
+            <img src="assets/cloud-computing%20(1).svg"
+                 style="width: 50px;">
+            <div style="text-align: center">
+              <p style="font-size:16px"
+                 class="pb-0 pt-1">Click to Upload</p>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3">
-          <Button class="login-button"
-                  type="submit">Save</Button>
-        </div>
-        <div class="col-md-3">
-          <Button class="Cancel-button">Cancel</Button>
+
         </div>
       </div>
     </form>
+    <div class="row mt-5">
+      <div class="col-md-6 col-sm-12">
+        <button mat-flat-button
+                color="primary"
+                class="save-button mr-5 px-5"
+                type="button">
+          Save
+        </button>
+        <button mat-flat-button
+                color="accent"
+                class="cancel-button mr-5 px-5">
+          Cancel
+        </button>
+      </div>
+    </div>
   </mat-card>
-</Section>
+</section>

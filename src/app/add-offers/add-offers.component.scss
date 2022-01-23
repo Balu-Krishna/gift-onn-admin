@@ -1,67 +1,98 @@
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
-
-.example-full-width {
-  width: 100%;
-}
-
-.login-button {
-  width: 100%;
-  border: none;
-  outline: none;
-  height: 40px;
+.lable-font-title {
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  background: #988149;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 48px;
+  font-weight: 500;
 }
-.Cancel-button {
-  width: 100%;
-  border: none;
-  outline: none;
-  height: 40px;
-  font-size: 16px;
-  background: grey;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 48px;
+.form-lable {
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  color: #a4a4a4 !important;
+  font-family: "Montserrat" !important;
 }
-
-.error-block {
-  color: #e35a49;
-  font-size: 12px;
+.lable-color-gray {
+  color: #a4a4a4;
 }
-
-.admins_head h6 {
-  font-weight: 700;
-  text-transform: capitalize;
-  font-size: 17px;
-  margin-left: 30px;
-}
-
-.add {
+.font-color {
   color: #988149;
 }
 
-.admin_lable {
-  color: gray;
+.full-width {
+  width: 100%;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  font-family: "Montserrat" !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #9e8656 !important;
+}
+::ng-deep.mat-select-arrow {
+  color: #9e8656 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #9e8656 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #9e8656 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #9e8656 !important;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #9e8656 !important;
+}
+
+.save-button {
+  height: 45px;
+  font-size: 16px;
+  background: #988149;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+.cancel-button {
+  height: 45px;
+  font-size: 16px;
+  border-radius: 10px;
+  background: #a4a4a4;
+  font-family: "Montserrat", sans-serif;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
   .add_user_informative {
     margin: 0 10px 0 0 !important;
   }
-  .rounded-button {
-    margin-bottom: 20px;
-  }
-  .mobile_images {
+  ::ng-deep .mobile_images {
     margin: 25px !important;
     padding: 0 !important;
+  }
+  .onboarding-button {
+    height: 45px;
+    font-size: 12px;
+  }
+  .page_induvidul_title {
+    padding-left: 0 !important;
+  }
+  .lable-font-title {
+    font-size: 17px !important;
+  }
+  .onboarding-button {
+    min-width: 95px !important;
+    height: 40px !important;
+    margin-right: 0 !important;
+  }
+  .cancel-button {
+    min-width: 80px !important;
+    height: 40px;
+    margin-right: 8px !important;
+  }
+  .save-button {
+    min-width: 80px !important;
+    height: 40px;
+    margin-right: 8px !important;
   }
 }
