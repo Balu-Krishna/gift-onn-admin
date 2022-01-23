@@ -39,7 +39,7 @@ export class OffersComponent implements OnInit {
 
   constructor(public dialog: MatDialog, private router: Router) {}
   addVendor() {
-    this.router.navigate(["add-offers"]);
+    this.router.navigate(["offers/add-offer"]);
   }
   ngOnInit(): void {
     this.showData();

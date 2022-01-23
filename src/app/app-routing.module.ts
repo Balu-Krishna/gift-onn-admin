@@ -12,7 +12,6 @@ import { PurchasersOrderComponent } from "./purchasers-order/purchasers-order.co
 import { CustomersSupportComponent } from "./customers-support/customers-support.component";
 import { FreezedModelComponent } from "./freezed-model/freezed-model.component";
 import { RatingForCustomerComponent } from "./rating-for-customer/rating-for-customer.component";
-import { AddOffersComponent } from "./add-offers/add-offers.component";
 import { VenderOrderComponent } from "./vender-order/vender-order.component";
 import { DenyProductComponent } from "./deny-product/deny-product.component";
 import { RewardCategoriesComponent } from "./reward-categories/reward-categories.component";
@@ -60,6 +59,11 @@ const routes: Routes = [
     loadChildren: () =>
       import("./loyailty/loyailty.module").then((m) => m.LoyailtyModule),
   },
+  {
+    path: "offers",
+    loadChildren: () =>
+      import("./offers/offers.module").then((m) => m.OffersModule),
+  },
   { path: "dashboard", component: DashboardComponent },
   { path: "customers", component: CustomerComponent },
   { path: "add-successful", component: SuccessfulModelComponent },
@@ -73,7 +77,6 @@ const routes: Routes = [
   { path: "customersSupport", component: CustomersSupportComponent },
   { path: "freezed", component: FreezedModelComponent },
   { path: "ratingForCustomer", component: RatingForCustomerComponent },
-  { path: "add-offers", component: AddOffersComponent },
   { path: "deny-product", component: DenyProductComponent },
   { path: "reward-categories", component: RewardCategoriesComponent },
   { path: "add-language", component: AddLanguageComponent },
