@@ -361,7 +361,7 @@ export class MarketingComponent implements OnInit {
   viewPromotion(promotion) {
     const dialogRef = this.dialog.open(ViewPromotionDetailsComponent, {
       width: "60%",
-      height: "70%",
+      height: "60%",
       data: promotion,
     });
   }
