@@ -177,7 +177,7 @@ export class LoyailtyComponent implements OnInit {
   openFilter() {
     const dialogRef = this.dialog.open(FilterComponent, {
       width: "50%",
-      data: { filterType: "loyaltyFilter" },
+      data: { filterType: "loyaltyForm" },
     });
   }
   addLoyalty() {
