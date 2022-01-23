@@ -1,19 +1,19 @@
 <div class="d-flex justify-content-between pb-4 mobile_admin_heading">
-  <div class="pl-5">
-    <p class="page--title">User</p>
+  <div class="pl-5 page_induvidul_title">
+    <p class="page-title">User</p>
   </div>
   <div class="d-flex justify-content-end">
     <p class="text-muted lable-font-title">Users Types /</p>
     <p class="lable-font-title font-color">Add User</p>
   </div>
 </div>
-<Section style="margin-left: 20px"
+
+<section style="margin-left: 20px"
          class="add_user_informative">
-  <mat-card>
-    <form [formGroup]="addAdminGroup"
-          (ngSubmit)="addAdminSubmit()">
+  <mat-card style="border-radius: 12px">
+    <form [formGroup]="addAdminGroup">
       <div class="row">
-        <div class="col-md-6 col-lg-6 col-sm-12">
+        <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">FIRST NAME</p>
           <mat-form-field class="full-width"
                           appearance="fill">
@@ -21,81 +21,38 @@
                    formControlName="firstName"
                    placeholder="Enter First Name" />
           </mat-form-field>
-          <mat-error *ngIf="
-              addAdminGroup.get('firstName').hasError('required') && submitted
-            ">
-            <div class="d-flex align-items-center">
-              <div>
-                <mat-icon>error_outline</mat-icon>
-              </div>
-              <div class="pl-2">
-                <span>Please Enter First Name</span>
-              </div>
-            </div>
-          </mat-error>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-12">
+        <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">SECOND NAME</p>
           <mat-form-field class="full-width"
                           appearance="fill">
-            <!-- <mat-label>SECOND NAME</mat-label> -->
             <input matInput
                    formControlName="lastName"
                    placeholder="Enter Second Name" />
           </mat-form-field>
-          <mat-error *ngIf="
-              addAdminGroup.get('lastName').hasError('required') && submitted
-            ">
-            <div class="d-flex align-items-center">
-              <div>
-                <mat-icon>error_outline</mat-icon>
-              </div>
-              <div class="pl-2">
-                <span>Please Enter Second Name</span>
-              </div>
-            </div>
-          </mat-error>
         </div>
-        <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="col-sm-12">
           <p class="m-0 form-lable">EMAIL ID</p>
           <mat-form-field class="full-width"
                           appearance="fill">
             <input matInput
                    formControlName="email"
-                   placeholder="Enter email id" />
+                   placeholder="Enter Email Id" />
           </mat-form-field>
-          <mat-error *ngIf="addAdminGroup.get('email').hasError('required') && submitted">
-            <div class="d-flex align-items-center">
-              <div>
-                <mat-icon>error_outline</mat-icon>
-              </div>
-              <div class="pl-2">
-                <span>Please Enter Email Id</span>
-              </div>
-            </div>
-          </mat-error>
         </div>
-
-        <div class="col-md-6 col-lg-6 col-sm-12">
+        <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">ROLE</p>
           <mat-form-field class="full-width"
                           appearance="fill">
-            <mat-select formControlName="role">
-              <mat-option value="vendor"> Vendor </mat-option>
+            <mat-select formControlName="role"
+                        placeholder="Select Role">
+              <mat-option value=""> Select Role </mat-option>
+              <mat-option value="vendor"> Junior </mat-option>
+              <mat-option value="vendor"> Senior </mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-error *ngIf="addAdminGroup.get('role').hasError('required') && submitted">
-            <div class="d-flex align-items-center">
-              <div>
-                <mat-icon>error_outline</mat-icon>
-              </div>
-              <div class="pl-2">
-                <span>Please Select Role</span>
-              </div>
-            </div>
-          </mat-error>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-12">
+        <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">EMP ID</p>
           <mat-form-field class="full-width"
                           appearance="fill">
@@ -103,138 +60,64 @@
                    formControlName="id"
                    placeholder="Enter Id" />
           </mat-form-field>
-          <mat-error *ngIf="addAdminGroup.get('id').hasError('required') && submitted">
-            <div class="d-flex align-items-center">
-              <div>
-                <mat-icon>error_outline</mat-icon>
-              </div>
-              <div class="pl-2">
-                <span>Please Enter Emp Id</span>
-              </div>
-            </div>
-          </mat-error>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-12">
+        <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">DEPARTMENT</p>
           <mat-form-field class="full-width"
                           appearance="fill">
-            <mat-select formControlName="department">
-              <mat-option value="Pending"> Pending </mat-option>
+            <mat-select formControlName="department"
+                        placeholder="Select Department">
+              <mat-option value=""> Select Department </mat-option>
+              <mat-option value="vendor"> Junior </mat-option>
+              <mat-option value="vendor"> Senior </mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-error *ngIf="
-              addAdminGroup.get('department').hasError('required') && submitted
-            ">
-            <div class="d-flex align-items-center">
-              <div>
-                <mat-icon>error_outline</mat-icon>
-              </div>
-              <div class="pl-2">
-                <span>Please Enter Department Id</span>
-              </div>
-            </div>
-          </mat-error>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-12">
+        <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">STATUS</p>
           <mat-form-field class="full-width"
                           appearance="fill">
-            <mat-select formControlName="status">
-              <mat-option value="Pending"> Pending </mat-option>
+            <mat-select formControlName="status"
+                        placeholder="Select Department">
+              <mat-option value=""> Select Status </mat-option>
+              <mat-option value="active"> Active </mat-option>
+              <mat-option value="vendor"> In-Active </mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-error *ngIf="
-              addAdminGroup.get('status').hasError('required') && submitted
-            ">
-            <div class="d-flex align-items-center">
-              <div>
-                <mat-icon>error_outline</mat-icon>
-              </div>
-              <div class="pl-2">
-                <span>Please Select Status</span>
-              </div>
-            </div>
-          </mat-error>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-12">
+        <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">PASSWORD</p>
           <mat-form-field class="full-width"
                           appearance="fill">
-            <!-- <mat-label>PASSWORD</mat-label> -->
             <input matInput
-                   placeholder="Enter Password"
                    formControlName="password"
-                   [type]="hide ? 'password' : 'text'" />
-            <button mat-icon-button
-                    matSuffix
-                    type="button"
-                    (click)="hide = !hide">
-              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-            </button>
+                   placeholder="Enter Password" />
           </mat-form-field>
-          <mat-error *ngIf="
-              addAdminGroup.get('password').hasError('required') && submitted
-            ">
-            <div class="d-flex align-items-center">
-              <div>
-                <mat-icon>error_outline</mat-icon>
-              </div>
-              <div class="pl-2">
-                <span>Please Enter Password</span>
-              </div>
-            </div>
-          </mat-error>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-6 col-sm-12">
+        <div class="col-md-6 col-lg-6 col-sm-6">
           <p class="m-0 form-lable">CONFIRM PASSWORD</p>
           <mat-form-field class="full-width"
                           appearance="fill">
             <input matInput
-                   placeholder="Enter Password"
                    formControlName="confirm"
-                   [type]="hide1 ? 'password' : 'text'" />
-            <button mat-icon-button
-                    matSuffix
-                    type="button"
-                    (click)="hide1 = !hide1">
-              <mat-icon>{{ hide1 ? "visibility_off" : "visibility" }}</mat-icon>
-            </button>
+                   placeholder="Re-Enter Password" />
           </mat-form-field>
-          <mat-error *ngIf="
-              addAdminGroup.get('confirm').hasError('required') && submitted
-            ">
-            <div class="d-flex align-items-center">
-              <div>
-                <mat-icon>error_outline</mat-icon>
-              </div>
-              <div class="pl-2">
-                <span>Please Re-Enter Password</span>
-              </div>
-            </div>
-          </mat-error>
-        </div>
-
-        <div class="col-sm-12 my-md-5">
-          <div class="">
-            <div class="row">
-              <div class="col-md-2">
-                <button mat-flat-button
-                        type="submit"
-                        class="rounded-button">
-                  Save
-                </button>
-              </div>
-              <div class="col-md-2">
-                <button mat-flat-button
-                        type="button"
-                        class="outline-button">
-                  Cancel
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </form>
+    <div class="row mt-5">
+      <div class="col-md-6 col-sm-12">
+        <button mat-flat-button
+                color="primary"
+                class="save-button mr-5 px-5">
+          Save
+        </button>
+        <button mat-flat-button
+                color="accent"
+                class="cancel-button mr-5 px-5">
+          Cancel
+        </button>
+      </div>
+    </div>
   </mat-card>
-</Section>
+</section>

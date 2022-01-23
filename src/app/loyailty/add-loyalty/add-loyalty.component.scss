@@ -5,3 +5,31 @@
   width: 100%;
   font: normal normal medium 16px/19px "Montserrat";
 }
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #9e8656 !important;
+}
+::ng-deep.mat-select-arrow {
+  color: #9e8656 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #9e8656;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #9e8656;
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #9e8656;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #9e8656;
+}
+.form--lable {
+  font-size: 14px;
+  font-weight: 500;
+  color: gray;
+}
