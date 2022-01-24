@@ -22,9 +22,14 @@ export class AddOffersComponent implements OnInit {
       description: [""],
       startDate: [""],
       endDate: [""],
+      image: [""],
     });
   }
 
   ngOnInit(): void {}
   addOffersSubmit() {}
+  openImageFile() {
+    const input = <any>document.querySelector("#offer-banner");
+    input.click();
+  }
 }

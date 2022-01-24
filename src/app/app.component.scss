@@ -169,10 +169,11 @@ tr {
   background-color: #ef5d5d !important;
   font-family: "Montserrat", sans-serif !important;
 }
-.lable-font-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
+::ng-deep .lable-font-title {
+  font: normal normal normal 20px/24px Montserrat !important;
+}
+.lable-color-gray {
+  color: gray;
 }
 ::ng-deep .mat-ink-bar {
   background-color: #9c8550 !important;

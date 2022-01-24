@@ -3,8 +3,8 @@
     <p class="page--title">Loyalty</p>
   </div>
   <div class="d-flex justify-content-end">
-    <p class="text-muted page--title">Loyalty /</p>
-    <p class="page--title font-color">Add Loyalty</p>
+    <p class="text-muted lable-font-title">Loyalty /</p>
+    <p class="lable-font-title font-color">Add Loyalty</p>
   </div>
 </div>
 
@@ -58,17 +58,21 @@
                    placeholder="Enter Product Id" />
           </mat-form-field>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form--lable">EXPIRED DATE</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <mat-select formControlName="expiredDate">
-              <mat-option value="">Enter Date</mat-option>
-              <mat-option value="1">2</mat-option>
-              <mat-option value="2">4</mat-option>
-            </mat-select>
+        <div class="col-md-6 col-lg-6 col-sm-12">
+          <p class="m-0 form-lable">EXPIRED DATE</p>
+          <mat-form-field appearance="fill"
+                          class="full-width">
+            <input matInput
+                   formControlName="expiredDate"
+                   placeholder="Enter Date"
+                   [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix
+                                   style="color: #988149;"
+                                   [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
         </div>
+
         <div class="col-md-12 col-lg-12 col-sm-12">
           <p class="m-0 form--lable">EARN POINTS</p>
           <mat-form-field class="full-width"

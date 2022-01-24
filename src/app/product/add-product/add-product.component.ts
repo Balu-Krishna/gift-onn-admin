@@ -36,6 +36,14 @@ export class AddProductComponent implements OnInit {
   get f() {
     return this.addProductGroup.controls;
   }
+  openImageFile() {
+    const input = <any>document.querySelector("#product-images");
+    input.click();
+  }
+  openVideoFile() {
+    const input = <any>document.querySelector("#product-video");
+    input.click();
+  }
   addProductSubmit() {
     this.submitted = true;
     if (this.addProductGroup.invalid) {
