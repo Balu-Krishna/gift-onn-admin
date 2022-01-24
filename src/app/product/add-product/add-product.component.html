@@ -355,88 +355,53 @@
             </div>
           </mat-error>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2 col-lg-2 col-sm-2">
-          <p class="lable-font-title">Upload Product</p>
-        </div>
-        <!-- <div class="col-md-1 col-lg-1 col-sm-1"></div> -->
-        <div class="col-md-3 col-lg-3 col-sm-3 d-flex justify-content-end">
-          <p class="lable-font-title">(Max 6 Image)</p>
-        </div>
-        <div class="col-md-1 col-lg-1 col-sm-1"></div>
-        <div class="col-md-3 col-lg-3 col-sm-3">
-          <p class="lable-font-title">Upload Product Video</p>
-        </div>
-        <!-- <div class="col-md-1 col-lg-1 col-sm-1"></div> -->
-        <div class="col-md-2 col-lg-2 col-sm-2 d-flex justify-content-end">
-          <p class="lable-font-title">(Optional)</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-5 col-lg-5 col-sm-5 d-flex justify-content-center p-5 mobile_images"
-             style="border: dotted 2px gray; margin-left: 2pc">
-          <input #fileInput
-                 type="file"
-                 hidden
-                 (change)="handleChange($event.target.files)"
-                 formControlName="productimage" />
-          <div class="row"
-               (click)="fileInput.click()">
-            <div class="col-md-12 col-lg-12 col-sm-12"
-                 style="text-align: center">
-              <img src="../../../../assets/cloud-computing%20(1).svg"
-                   width="10%"
-                   alt="" />
-            </div>
-            <div class="col-md-12 col-lg-12 col-sm-12"
-                 style="text-align: center">
-              <h3 style="color: gray">Click to Upload</h3>
-            </div>
-          </div>
-        </div>
+        <div class="col-sm-12 mt-2 mobile_images">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <div class="d-flex d-flex justify-content-between">
+                <p class="lable-font-title">Upload Product</p>
+                <p class="lable-font-title">(max 6 images)</p>
+              </div>
 
-        <div class="col-md-1 col-lg-1 col-sm-1"></div>
-        <div class="col-md-5 col-lg-5 col-sm-5 d-flex justify-content-center p-5 mobile_images"
-             style="border: dotted 2px gray">
-          <input #fileInput2
-                 type="file"
-                 hidden
-                 (change)="handleChange($event.target.files)"
-                 formControlName="productvedio" />
-          <div class="row"
-               (click)="fileInput2.click()">
-            <div class="col-md-12 col-lg-12 col-sm-12"
-                 style="text-align: center">
-              <img src="../../../../assets/cloud-computing%20(1).svg"
-                   width="10%"
-                   alt="" />
-            </div>
-            <div class="col-md-12 col-lg-12 col-sm-12"
-                 style="text-align: center">
-              <h3 style="color: gray">Click to Upload</h3>
-            </div>
-          </div>
-        </div>
-        <div class="row m-2">
-          <div class="col-md-12 col-lg-12 col-sm-12">
-            <mat-error *ngIf="
-                addProductGroup.get('productimage').hasError('required') &&
-                submitted
-              "
-                       class="">
-              <div class="d-flex align-items-center">
-                <div>
-                  <mat-icon>error_outline</mat-icon>
-                </div>
-                <div class="pl-2">
-                  <span>Please Upload Complete Images</span>
+              <div style="border: 2px dashed #8c8b8b; text-align: center; border-radius: 10px;"
+                   class="p-5">
+                <input #fileInput
+                       type="file"
+                       hidden
+                       (change)="handleChange($event.target.files)"
+                       formControlName="productimage" />
+                <img src="assets/cloud-computing%20(1).svg"
+                     style="width: 50px;">
+                <div style="text-align: center">
+                  <p style="font-size:16px"
+                     class="pb-0 pt-1">Click to Upload</p>
                 </div>
               </div>
-            </mat-error>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="d-flex d-flex justify-content-between">
+                <p class="lable-font-title">Upload Product Video</p>
+                <p class="lable-font-title">(optional)</p>
+              </div>
+              <div style="border: 2px dashed #8c8b8b; text-align: center; border-radius: 10px;"
+                   class="p-5">
+                <input #fileInput
+                       type="file"
+                       hidden
+                       (change)="handleChange($event.target.files)"
+                       formControlName="productvedio" />
+                <img src="assets/cloud-computing%20(1).svg"
+                     style="width: 50px;">
+                <div style="text-align: center">
+                  <p style="font-size:16px"
+                     class="pb-0 pt-1">Click to Upload</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="row mt-5">
         <div class="col-sm-12">
           <button mat-flat-button

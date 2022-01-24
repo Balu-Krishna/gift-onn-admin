@@ -365,12 +365,17 @@ nav#sidebar.setPositionRelative {
   font-size: 16px;
   color: #c3bcbc;
 }
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
 .ngx-pagination .current {
   background: #988149 !important;
+  border-radius: 4px;
 }
 .ngx-pagination a,
 .ngx-pagination button {
-  font-size: 17px !important;
+  font-size: 13px !important;
+  font-weight: 500;
   font-family: "Montserrat", sans-serif !important;
 }
 
