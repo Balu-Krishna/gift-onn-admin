@@ -353,9 +353,11 @@ export class PaymentsComponent implements OnInit {
     this.activeTabIndex = event.index;
   }
   openFilter() {
+    let filterType =
+      this.activeTabIndex === 0 ? "paymentVendorForm" : "paymentPartnerForm";
     const dialogRef = this.dialog.open(FilterComponent, {
       width: "50%",
-      data: { filterType: "paymentForm" },
+      data: { filterType: filterType },
     });
   }
 }

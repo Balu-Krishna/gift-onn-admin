@@ -1,17 +1,21 @@
-::ng-deep body {
-  font-family: "Montserrat", sans-serif !important;
+::ng-deep .mat-dialog-container {
+  border-radius: 10px;
 }
-
+.title {
+  font: normal normal 600 20px/24px Montserrat !important;
+}
+.filter-form-content {
+  margin: 40px 60px;
+}
 .form-lable {
-  font-size: 15px;
-  font-weight: 700;
+  font: normal normal 600 16px/19px Montserrat !important;
 }
-
+.form-radio {
+  font: normal normal 500 14px/18px Montserrat;
+}
 .full-width {
   width: 100%;
-  font-weight: 500 !important;
-  font-size: 16px !important;
-  font-family: "Montserrat" !important;
+  font: normal normal medium 16px/19px Montserrat !important;
 }
 
 .outline-button {
@@ -28,16 +32,6 @@
   background: #9e8656;
   font-size: 15px;
   color: #ffffff;
-}
-::ng-deep .model_form {
-  max-width: 100% !important;
-  width: 100% !important;
-  height: 100vh !important;
-  padding: 50px 0 0 50px;
-  position: relative;
-}
-::ng-deep .mat-radio-label-content {
-  font-weight: 600;
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
@@ -68,13 +62,6 @@
   color: #9e8656 !important;
 }
 
-.full-width {
-  width: 100%;
-  font-weight: 500 !important;
-  font-size: 16px !important;
-  font-family: "Montserrat" !important;
-}
-
 ::ng-deep.mat-select-arrow {
   color: #9e8656 !important;
 }
@@ -97,7 +84,7 @@
 
 ::ng-deep .mat-radio-button {
   width: 129px;
-  font-size: 13px;
+  font: normal normal 500 14px/18px Montserrat;
 }
 .mat-select-placeholder {
   color: #000;
@@ -137,19 +124,11 @@
   margin-top: 7px;
 }
 
-::ng-deep .mat-dialog-content {
-  overflow: scroll !important;
-  max-height: 100% !important;
-}
-// ::ng-deep .cdk-overlay-pane {
-//   max-width: 100vw !important;
-//   height: 83vh !important;
-//   width: 57% !important;
+// ::ng-deep .mat-dialog-content {
+//   overflow: scroll !important;
+//   max-height: 100% !important;
 // }
-::ng-deep .filter_popup_heading h2 {
-  font: normal normal 700 20px/16px Montserrat !important;
-  font-family: "Montserrat" !important;
-}
+
 .mat-form-field-infix {
   border-top: hidden !important;
 }
@@ -159,25 +138,15 @@
 ::ng-deep .mat-form-field-appearance-fill .mat-select-arrow-wrapper {
   transform: translateY(-30%) !important;
 }
-.form_bottom_buttons {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  position: absolute;
-  bottom: 66px;
-  z-index: 9999999999999999999999 !important;
-  width: 357px;
-  /* overflow: auto; */
-  margin: 0 100px;
-}
-// ::ng-deep .padding_topFour {
-//   margin-top: 50px !important;
-// }
-::ng-deep .padding_topThree {
-  padding-top: 10px;
-}
-::ng-deep .padding_topTwo {
-  padding-top: 10px;
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+  ::ng-deep .cdk-overlay-pane {
+    min-width: 90vw !important;
+    min-height: 75vh !important;
+  }
+  .mat-dialog-content {
+    max-height: 70vh !important;
+  }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
   // ::ng-deep .cdk-overlay-pane {
@@ -186,9 +155,7 @@
   //   height: 70vh !important;
   //   margin: 0 12px;
   // }
-  .model_form {
-    padding: 0 !important;
-  }
+
   ::ng-deep .mat-dialog-container {
     padding: 30px !important;
     min-height: auto;
