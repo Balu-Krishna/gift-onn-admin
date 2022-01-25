@@ -1,62 +1,77 @@
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
+.title {
+  font: normal normal 600 20px/24px Montserrat;
+}
+.full-width {
   width: 100%;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  font-family: "Montserrat" !important;
+}
+::ng-deep .mat-dialog-container {
+  // max-width: 560px;
+  // min-height: 500px;
+  // padding: 50px 70px;
+  position: relative;
+  z-index: 99999999999;
 }
 
-.example-full-width {
-  width: 100%;
-}
-
-.login-button {
-  width: 100%;
-  border: none;
-  outline: none;
-  height: 40px;
-  font-size: 16px;
-  background: #988149;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 48px;
-}
-.Cancel-button {
-  width: 100%;
-  border: none;
-  outline: none;
-  height: 40px;
-  font-size: 16px;
-  background: grey;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 48px;
-}
-
-.error-block {
-  color: #e35a49;
-  font-size: 12px;
-}
-
-.admins_head h6 {
-  font-weight: 700;
-  text-transform: capitalize;
+::ng-deep .mat-dialog-container .button_close {
+  position: absolute;
+  right: 13px;
+  top: 10px;
+  z-index: 999999999999999999999 !important;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
   font-size: 17px;
-  margin-left: 30px;
+  line-height: -11px;
+  justify-content: center;
+  background: #e04f5f;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  padding-bottom: 2px;
+}
+::ng-deep .mat-dialog-container .button_close .mat-icon {
+  font-size: 15px !important;
+  font-weight: 700;
+  margin-top: 7px;
 }
 
-.add {
-  color: #988149;
-}
-
-.admin_lable {
+.form-lable {
+  font-size: 14px;
+  font-weight: 500;
   color: gray;
 }
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: #988149 !important;
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #9e8656 !important;
 }
-::ng-deep
-  .mat-form-field-appearance-outline.mat-focused
-  .mat-form-field-outline-thick {
-  color: #988149 !important;
+::ng-deep.mat-select-arrow {
+  color: #9e8656 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #9e8656;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #9e8656;
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #9e8656;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #9e8656;
+}
+.submit-button {
+  min-width: 50%;
+  height: 50px;
+  font-size: 16px;
+  background: #988149;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
 }
