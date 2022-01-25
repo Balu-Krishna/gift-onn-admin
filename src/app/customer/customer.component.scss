@@ -1,53 +1,86 @@
-.lable-font-title {
-    font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-}
-
 .filter-btn {
-    height: 40px;
-    background: transparent;
-    border: 1px solid #9e8656;
-    color: #9e8656;
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
+  height: 40px;
+  background: transparent;
+  border: 1px solid #9e8656;
+  color: #9e8656;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .btn-outline-35 {
-    background: transparent;
-    border: 1px solid #9e8656;
-    color: #9e8656;
-    font-family: "Montserrat", sans-serif;
+  background: transparent;
+  border: 1px solid #9e8656;
+  color: #9e8656;
+  font-family: "Montserrat", sans-serif;
 }
 
-.table-striped>tbody>tr:nth-child(2n + 1)>td,
-.table-striped>tbody>tr:nth-child(2n + 1)>th {
-    background-color: #f4f6f9;
+.table-striped > tbody > tr:nth-child(2n + 1) > td,
+.table-striped > tbody > tr:nth-child(2n + 1) > th {
+  background-color: #f4f6f9;
 }
 
 .table thead th {
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    padding: 5px 7px !important;
-    text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 5px 7px !important;
 }
 
 .table tbody tr {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .table th img,
 .table td img {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
 }
 
 ::ng-deep .form_icon_search {
-    position: absolute;
-    top: -14px;
-    right: -8px;
+  position: absolute;
+  top: -14px;
+  right: -8px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  .search_mobile_inforamtive {
+    display: block !important;
+  }
+  ::ng-deep .page-body-wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  ::ng-deep .page_title_info {
+    padding-left: 0 !important;
+  }
+  ::ng-deep .mobile_userInfo {
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+
+  ::ng-deep .search_mobile_inforamtive .mat-form-field-wrapper {
+    padding: 0 !important;
+  }
+  ::ng-deep .export_informative {
+    text-align: start;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    display: flex;
+  }
+  ::ng-deep .search_mobile {
+    text-align: start;
+    margin: 5px auto;
+    padding: 0 !important;
+    justify-content: center;
+    display: flex !important;
+  }
+  ::ng-deep .search_mobile .mat-form-field-wrapper {
+    padding: 0 !important;
+  }
+  .page_induvidul_title {
+    padding-left: 0 !important;
+  }
 }

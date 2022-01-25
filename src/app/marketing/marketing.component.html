@@ -1,89 +1,93 @@
-<div class="d-flex justify-content-between pb-4">
-  <div class="pl-5">
+<div class="d-flex justify-content-between pb-4 mobile_admin_heading">
+  <div class="pl-5 page_title_info">
     <p class="page--title">Marketing</p>
   </div>
   <div class="d-flex justify-content-end">
     <div class="pr-4">
-      <button
-        mat-stroked-button
-        color="primary"
-        class="outline--button"
-        (click)="openFilter()"
-      >
+      <button mat-stroked-button
+              color="primary"
+              style="height: 38px;"
+              class="outline--button"
+              (click)="openFilter()">
         Filter
-        <mat-icon>filter_list</mat-icon>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             id="Layer_1"
+             enable-background="new 0 0 32 32"
+             height="19"
+             viewBox="0 0 32 32"
+             width="19">
+          <g fill="#988149">
+            <path
+                  d="m4 9h4c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2h14c.552 0 1-.447 1-1s-.448-1-1-1h-14c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2h-4c-.552 0-1 .447-1 1s.448 1 1 1z" />
+            <path
+                  d="m28 15h-6c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2h-12c-.552 0-1 .447-1 1s.448 1 1 1h12c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2h6c.552 0 1-.447 1-1s-.448-1-1-1z" />
+            <path
+                  d="m28 23h-14c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2h-4c-.552 0-1 .447-1 1s.448 1 1 1h4c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2h14c.552 0 1-.447 1-1s-.448-1-1-1z" />
+          </g>
+        </svg>
       </button>
     </div>
     <div *ngIf="productLaunchSelected">
-      <button
-        mat-stroked-button
-        color="accent"
-        class="primary--button"
-        (click)="addProductLaunch()"
-      >
+      <button mat-stroked-button
+              color="accent"
+              style="height: 38px;"
+              class="primary--button"
+              (click)="addProductLaunch()">
         Add Product Launch
       </button>
     </div>
   </div>
 </div>
-<div class="ml-4 shadow-lg bg-white rounded">
-  <div class="d-flex justify-content-between">
-    <div class="justify-content-center align-self-center">
+<div class="ml-4 shadow-lg bg-white rounded h-100 mobile_userInfo">
+  <div class="search_mobile_inforamtive d-flex justify-content-between">
+    <div class="justify-content-center align-self-center export_informative">
       <div class="d-flex justify-content-start">
         <div class="text-muted pl-2 justify-content-center align-self-center">
           <span class="font-weight-bold align-middle pr-3">Export: </span>
         </div>
         <div class="pr-3">
-          <button
-            mat-stroked-button
-            color="accent"
-            class="outline--export--button"
-            (click)="download('csv')"
-          >
+          <button mat-stroked-button
+                  color="accent"
+                  class="outline--export--button btn-outline-35"
+                  (click)="download('csv')">
             CSV
           </button>
         </div>
         <div class="pr-3">
-          <button
-            mat-stroked-button
-            color="accent"
-            class="outline--export--button"
-            (click)="download('xls')"
-          >
+          <button mat-stroked-button
+                  color="accent"
+                  class="outline--export--button btn-outline-35"
+                  (click)="download('xls')">
             XLS
           </button>
         </div>
         <div class="pr-3">
-          <button
-            mat-stroked-button
-            color="accent"
-            class="outline--export--button"
-            (click)="download('pdf')"
-          >
+          <button mat-stroked-button
+                  color="accent"
+                  class="outline--export--button btn-outline-35"
+                  (click)="download('pdf')">
             PDF
           </button>
         </div>
       </div>
     </div>
 
-    <div class="d-flex align-content-center pt-3">
-      <mat-form-field appearance="outline" style="font-size: 20px" class="pr-3">
-        <mat-icon matSuffix>search</mat-icon>
-        <input
-          matInput
-          type="search"
-          placeholder="search"
-          class="search-input"
-        />
+    <div class="d-flex align-content-center search_mobile">
+      <mat-form-field appearance="outline"
+                      style="font-size: 20px"
+                      class="pr-3">
+        <input matInput
+               type="search"
+               placeholder="search"
+               class="search-input" />
+        <i class="fa fa-search"></i>
       </mat-form-field>
     </div>
   </div>
   <mat-tab-group (selectedTabChange)="myTabSelectedTabChange($event)">
-    <mat-tab
-      class="text-right tab_view"
-      label="Promotion"
-      style="padding-left: 221px"
-    >
+    <mat-tab class="text-right tab_view"
+             label="Promotion"
+             style="padding-left: 221px">
       <div class="table-responsive py-3">
         <table class="table table-striped">
           <thead>
@@ -97,31 +101,23 @@
               <th>Description</th>
               <th>Start Date</th>
               <th>End Date</th>
-              <th>Status</th>
+              <th style="cursor: pointer;"><span>Status <i class="fa fa-sort"></i></span></th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr
-              *ngFor="
-                let promotion of promotions
-                  | paginate
-                    : {
-                        id: 'promotions',
-                        itemsPerPage: tableSize,
-                        currentPage: page,
-                        totalItems: promotionsCount
-                      }
-              "
-            >
+            <tr *ngFor="let promotion of promotions | paginate
+                : {
+                    id: 'promotions',
+                    itemsPerPage: tableSize,
+                    currentPage: promotionsPage,
+                    totalItems: prmotionsCount
+                  }">
               <td><img [src]="promotion.promoImage" /></td>
               <td>
-                <a
-                  href="javascript:void(0);"
-                  (click)="viewPromotion(promotion)"
-                  style="color: #9e8656"
-                  >{{ promotion.promoId }}</a
-                >
+                <a href="javascript:void(0);"
+                   (click)="viewPromotion(promotion)"
+                   style="color: #9e8656">{{ promotion.promoId }}</a>
               </td>
               <td>{{ promotion.storeId }}</td>
               <td>{{ promotion.category }}</td>
@@ -131,44 +127,45 @@
               <td>{{ promotion.startDate }}</td>
               <td>{{ promotion.endDate }}</td>
               <td>
-                <div
-                  class="font-weight-bold"
-                  [ngClass]="
+                <div class="font-weight-bold"
+                     [ngClass]="
                     promotion.status.toUpperCase() == 'APPROVED'
                       ? 'text-success'
                       : promotion.status.toUpperCase() == 'PENDING'
                       ? 'text-warning'
                       : 'text-danger'
-                  "
-                >
+                  ">
                   <span style="font-size: 16px"> {{ promotion.status }} </span>
                 </div>
               </td>
               <td>
-                <button
-                  mat-button
-                  [matMenuTriggerFor]="menu"
-                  mat-flat-button
-                  color="warn"
-                >
+                <button mat-button
+                        [matMenuTriggerFor]="menu"
+                        mat-flat-button
+                        color="warn">
                   Options
                   <mat-icon>arrow_drop_down</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
-                  <button mat-menu-item (click)="denyPromotion(promotion)">
+                  <button mat-menu-item
+                          (click)="denyPromotion(promotion)">
                     Deny
                   </button>
-                  <button mat-menu-item (click)="activePromotion(promotion)">
+                  <button mat-menu-item
+                          (click)="activePromotion(promotion)">
                     Active
                   </button>
-                  <button mat-menu-item (click)="inactivePromotion(promotion)">
+                  <button mat-menu-item
+                          (click)="inactivePromotion(promotion)">
                     InActive
                   </button>
 
-                  <button mat-menu-item (click)="approvePromotion(promotion)">
+                  <button mat-menu-item
+                          (click)="approvePromotion(promotion)">
                     Approve
                   </button>
-                  <button mat-menu-item (click)="holdPromotion(promotion)">
+                  <button mat-menu-item
+                          (click)="holdPromotion(promotion)">
                     Hold
                   </button>
                 </mat-menu>
@@ -178,21 +175,17 @@
         </table>
       </div>
       <div class="d-flex justify-content-end">
-        <pagination-controls
-          id="promotions"
-          responsive="true"
-          previousLabel="Prev"
-          nextLabel="Next"
-          (pageChange)="tabSize($event)"
-        >
+        <pagination-controls responsive="true"
+                             previousLabel="Prev"
+                             id="promotions"
+                             nextLabel="Next"
+                             (pageChange)="promotionsPageChange($event)">
         </pagination-controls>
       </div>
     </mat-tab>
-    <mat-tab
-      class="text-right tab_view"
-      label="Product Launches"
-      style="padding-left: 221px"
-    >
+    <mat-tab class="text-right tab_view"
+             label="Product Launches"
+             style="padding-left: 221px">
       <div class="table-responsive py-3">
         <table class="table table-striped">
           <thead>
@@ -207,23 +200,18 @@
               <th>Country</th>
               <th>Location</th>
               <th>Launch Date</th>
-              <th>Status</th>
+              <th style="cursor: pointer;"><span>Status <i class="fa fa-sort"></i></span></th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr
-              *ngFor="
-                let product of products
-                  | paginate
-                    : {
-                        id: 'pl',
-                        itemsPerPage: tableSize,
-                        currentPage: page,
-                        totalItems: promotionsCount
-                      }
-              "
-            >
+            <tr *ngFor="let product of products | paginate
+                : {
+                    id: 'products',
+                    itemsPerPage: tableSize,
+                    currentPage: productsPage,
+                    totalItems: productsCount
+                  }">
               <td><img [src]="product.productImage" /></td>
               <td>{{ product.productId }}</td>
               <td>{{ product.vendorId }}</td>
@@ -235,44 +223,45 @@
               <td>{{ product.location }}</td>
               <td>{{ product.launchDate }}</td>
               <td>
-                <div
-                  class="font-weight-bold"
-                  [ngClass]="
+                <div class="font-weight-bold"
+                     [ngClass]="
                     product.status.toUpperCase() == 'APPROVED'
                       ? 'text-success'
                       : product.status.toUpperCase() == 'PENDING'
                       ? 'text-warning'
                       : 'text-danger'
-                  "
-                >
+                  ">
                   <span style="font-size: 16px"> {{ product.status }} </span>
                 </div>
               </td>
               <td>
-                <button
-                  mat-button
-                  [matMenuTriggerFor]="menu"
-                  mat-flat-button
-                  color="warn"
-                >
+                <button mat-button
+                        [matMenuTriggerFor]="menu"
+                        mat-flat-button
+                        color="warn">
                   Options
                   <mat-icon>arrow_drop_down</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
-                  <button mat-menu-item (click)="denyPromotion(promotion)">
+                  <button mat-menu-item
+                          (click)="denyProductLaunch(product)">
                     Deny
                   </button>
-                  <button mat-menu-item (click)="activePromotion(promotion)">
+                  <button mat-menu-item
+                          (click)="activeProductLaunch(product)">
                     Active
                   </button>
-                  <button mat-menu-item (click)="inactivePromotion(promotion)">
+                  <button mat-menu-item
+                          (click)="inactiveProductLaunch(product)">
                     InActive
                   </button>
 
-                  <button mat-menu-item (click)="approvePromotion(promotion)">
+                  <button mat-menu-item
+                          (click)="approveProductLaunch(product)">
                     Approve
                   </button>
-                  <button mat-menu-item (click)="holdPromotion(promotion)">
+                  <button mat-menu-item
+                          (click)="holdProductLaunch(product)">
                     Hold
                   </button>
                 </mat-menu>
@@ -280,17 +269,17 @@
             </tr>
           </tbody>
         </table>
+
       </div>
       <div class="d-flex justify-content-end">
-        <pagination-controls
-          id="pl"
-          responsive="true"
-          previousLabel="Prev"
-          nextLabel="Next"
-          (pageChange)="tabSize($event)"
-        >
+        <pagination-controls responsive="true"
+                             previousLabel="Prev"
+                             nextLabel="Next"
+                             id="products"
+                             (pageChange)="productsPageChange($event)">
         </pagination-controls>
       </div>
     </mat-tab>
+
   </mat-tab-group>
 </div>

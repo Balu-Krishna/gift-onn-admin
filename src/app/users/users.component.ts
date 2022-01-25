@@ -13,6 +13,7 @@ export class UsersComponent implements OnInit {
   count = 12;
   tableSize = 4;
   userData = [];
+
   constructor(private router: Router, public dialog: MatDialog) {}
 
   ngOnInit(): void {
@@ -25,6 +26,7 @@ export class UsersComponent implements OnInit {
         lastName: "Nallamothu",
         firstName: "Sudharshan",
         role: "IT",
+        department: "Test",
         status: "ACTIVE",
         email: "sudharshan.nallamothu@oracle.com",
       },
@@ -33,6 +35,7 @@ export class UsersComponent implements OnInit {
         lastName: "Nallamothu",
         firstName: "Sudharshan",
         role: "IT",
+        department: "Test",
         status: "ACTIVE",
         email: "sudharshan.nallamothu@oracle.com",
       },
@@ -41,6 +44,7 @@ export class UsersComponent implements OnInit {
         lastName: "Nallamothu",
         firstName: "Sudharshan",
         role: "IT",
+        department: "Test",
         status: "ACTIVE",
         email: "sudharshan.nallamothu@oracle.com",
       },
@@ -58,6 +62,7 @@ export class UsersComponent implements OnInit {
         firstName: "Sudharshan",
         role: "IT",
         status: "ACTIVE",
+        department: "Test",
         email: "sudharshan.nallamothu@oracle.com",
       },
       {
@@ -118,7 +123,7 @@ export class UsersComponent implements OnInit {
       },
     ];
   }
-  tabSize(event) {
+  pageChange(event) {
     this.page = event;
     this.showData();
   }

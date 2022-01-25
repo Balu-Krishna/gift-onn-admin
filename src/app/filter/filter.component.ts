@@ -20,7 +20,8 @@ export class FilterComponent implements OnInit {
   vendororderForm: FormGroup;
   offerForm: FormGroup;
   loyaltyForm: FormGroup;
-  paymentForm: FormGroup;
+  paymentVendorForm: FormGroup;
+  paymentPartnerForm: FormGroup;
 
   constructor(
     public dialogRef: MatDialogRef<FilterComponent>,
@@ -99,7 +100,7 @@ export class FilterComponent implements OnInit {
       startDate: [""],
       endDate: [""],
       store: [""],
-
+      status: [""],
     });
     this.vendororderForm = this.fb.group({
       storeId: [""],
@@ -119,16 +120,20 @@ export class FilterComponent implements OnInit {
       country: [""],
     });
     this.loyaltyForm = this.fb.group({
-      endDate: [""],
-      currency: [""],
-      rewardType: [""],
+      date: [""],
+      Order: [""],
+      reward: [""],
     });
-    this.paymentForm = this.fb.group({
+    this.paymentVendorForm = this.fb.group({
+      storeId: [""],
+      vendor: [""],
+      Date: [""],
+    });
+    this.paymentPartnerForm = this.fb.group({
       partnerId: [""],
       vendor: [""],
       Date: [""],
     });
-
   }
   get plf() {
     return this.productLaunchForm.controls;
@@ -161,9 +166,11 @@ export class FilterComponent implements OnInit {
     return this.loyaltyForm.controls;
   }
   get pmf() {
-    return this.paymentForm.controls;
+    return this.paymentVendorForm.controls;
   }
-
+  get ppf() {
+    return this.paymentPartnerForm.controls;
+  }
   submit() {
     console.log(this.userForm.value);
   }
@@ -184,12 +191,12 @@ export class FilterComponent implements OnInit {
     this.vendororderForm.reset();
     this.offerForm.reset();
     this.loyaltyForm.reset();
-    this.paymentForm.reset();
-
+    this.paymentVendorForm.reset();
+    this.paymentPartnerForm.reset();
   }
   close() {
     this.dialogRef.close();
     this.reset();
   }
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 }

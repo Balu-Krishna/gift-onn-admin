@@ -1,11 +1,9 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
-
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ChartsModule, ThemeService } from "ng2-charts";
-
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { SidebarComponent } from "./shared/sidebar/sidebar.component";
@@ -22,7 +20,6 @@ import { ProductComponent } from "./product/product.component";
 import { CustomerComponent } from "./customer/customer.component";
 import { SuccessfulModelComponent } from "./successful-model/successful-model.component";
 import { DeleteModelComponent } from "./delete-model/delete-model.component";
-import { AddOffersComponent } from "./add-offers/add-offers.component";
 import { AddPartnersComponent } from "./partners/add-partners/add-partners.component";
 import { AnalyticsComponent } from "./analytics/analytics.component";
 import { CustomersSupportComponent } from "./customers-support/customers-support.component";
@@ -57,7 +54,12 @@ import { ViewPromotionDetailsComponent } from "./view-promotion-details/view-pro
 import { FreezeCategoryComponent } from "./freeze-category/freeze-category.component";
 import { FreezeSuccessfulComponent } from "./freeze-successful/freeze-successful.component";
 import { OffersStoreidComponent } from "./offers-storeid/offers-storeid.component";
+import { ContactComponent } from "./customers-support/contact/contact.component";
+
+import { ReceivedMessageComponent } from "./customers-support/received-message/received-message.component";
+import { SentMessageComponent } from "./customers-support/sent-message/sent-message.component";
 import { NgxPaginationModule } from "ngx-pagination";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +77,6 @@ import { NgxPaginationModule } from "ngx-pagination";
     CustomerComponent,
     SuccessfulModelComponent,
     DeleteModelComponent,
-    AddOffersComponent,
     AddPartnersComponent,
     AnalyticsComponent,
     CustomersSupportComponent,
@@ -107,6 +108,9 @@ import { NgxPaginationModule } from "ngx-pagination";
     FreezeCategoryComponent,
     FreezeSuccessfulComponent,
     OffersStoreidComponent,
+    ContactComponent,
+    ReceivedMessageComponent,
+    SentMessageComponent,
   ],
   imports: [
     BrowserModule,

@@ -32,6 +32,10 @@ export class AddVendorComponent implements OnInit {
       managerPhone: ["", Validators.required],
       storeId: ["", Validators.required],
       aboutstore: ["", Validators.required],
+      managerImage: ["", Validators.required],
+      logo: ["", Validators.required],
+      storeImage: ["", Validators.required],
+      storeCertifications: ["", Validators.required],
     });
   }
 
@@ -48,5 +52,21 @@ export class AddVendorComponent implements OnInit {
   }
   onBoarding() {
     this.router.navigate(["vendors/vendor-policies-view"]);
+  }
+  openManagerImage() {
+    const input = <any>document.querySelector("#manager-image");
+    input.click();
+  }
+  openLogoFile() {
+    const input = <any>document.querySelector("#logo");
+    input.click();
+  }
+  openStoreImageFile() {
+    const input = <any>document.querySelector("#store-image");
+    input.click();
+  }
+  openCerificationsFile() {
+    const input = <any>document.querySelector("#store-cerifications");
+    input.click();
   }
 }

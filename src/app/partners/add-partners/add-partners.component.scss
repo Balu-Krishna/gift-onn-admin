@@ -1,9 +1,3 @@
-.lable-font-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-}
-
 .form-lable {
   font-size: 14px;
   font-weight: 500;
@@ -47,26 +41,46 @@
   color: #9e8656;
 }
 .save-button {
-  width: 100%;
-  height: 50px;
+  // width: 100%;
+  height: 45px;
   font-size: 16px;
   background: #988149;
   border-radius: 10px;
   font-family: "Montserrat", sans-serif;
 }
 .cancel-button {
-  width: 100%;
-  height: 50px;
+  // width: 100%;
+  height: 45px;
   font-size: 16px;
   border-radius: 10px;
   background: #a4a4a4;
   font-family: "Montserrat", sans-serif;
 }
 .onboarding-button {
-  width: 100%;
-  height: 50px;
+  min-width: 126px;
+  height: 45px;
   font-size: 16px;
   background: #fb8773;
   border-radius: 10px;
   font-family: "Montserrat", sans-serif;
+}
+
+::ng-deep .mat-dialog-container {
+  padding: 20px 70px !important;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  .add_user_informative {
+    margin: 0 10px 0 0 !important;
+  }
+  ::ng-deep .mobile_images {
+    margin: 25px !important;
+    padding: 0 !important;
+  }
+  .onboarding-button {
+    height: 45px;
+    font-size: 12px;
+  }
+  .page_induvidul_title {
+    padding-left: 0 !important;
+  }
 }

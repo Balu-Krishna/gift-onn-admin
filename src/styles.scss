@@ -114,18 +114,31 @@ body {
   border-radius: 20px !important;
   margin-bottom: 30px;
 }
-
+.sidebar .nav-item .nav-link {
+  padding: 15px 1rem !important;
+}
 .sidebar li.nav-item {
   padding: 0 15px !important;
 }
 
 .sidebar li.nav-item.active {
   background: #faeddd;
-  border-left: 5px solid #988149;
+  position: relative;
+}
+.sidebar li.nav-item.active::after {
+  position: absolute;
+  left: 0;
+  height: auto;
+  width: 5px;
+  background-color: #988149;
+  top: 0;
+  bottom: 0;
+  content: "";
 }
 
 .sidebar li.nav-item.active a.nav-link span.menu-title {
   color: #988149 !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .activeIcon {
@@ -148,15 +161,16 @@ body {
     height: auto;
   }
   .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 16px 0px 5px;
+    padding: 10px 0px 5px;
     border-top: none;
   }
   .mat-select {
     position: relative;
-    top: 6px;
+    top: 2px;
   }
   .mat-form-field-outline {
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: 0 0 6px #00000029;
+    border-radius: 6px;
   }
   .mat-form-field-outline:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -289,15 +303,15 @@ nav#sidebar.setPositionRelative {
 
 .outline--button {
   font: normal normal 500 16px/19px "Montserrat" !important;
-  height: 48px !important;
-  border: 2px solid #988149 !important;
+  height: 38px !important;
+  border: 1px solid #988149 !important;
   border-radius: 6px !important;
   color: #988149 !important;
 }
 
 .outline--export--button {
   font: normal normal 500 16px/19px "Montserrat" !important;
-  height: 40px !important;
+  height: 33px !important;
   border: 0.5px solid #988149 !important;
   border-radius: 6px !important;
   color: #988149 !important;
@@ -305,7 +319,7 @@ nav#sidebar.setPositionRelative {
 
 .primary--button {
   font: normal normal 500 16px/19px "Montserrat" !important;
-  height: 48px !important;
+  height: 38px !important;
   background: #988149 0% 0% no-repeat padding-box !important;
   border-radius: 6px !important;
   color: #ffffff !important;
@@ -313,7 +327,7 @@ nav#sidebar.setPositionRelative {
 
 .danger--button {
   font: normal normal 500 16px/19px "Montserrat" !important;
-  height: 48px !important;
+  height: 38px !important;
   background: red 0% 0% no-repeat padding-box !important;
   border-radius: 6px !important;
   color: #ffffff !important;
@@ -321,7 +335,7 @@ nav#sidebar.setPositionRelative {
 
 .secondary--button {
   font: normal normal 500 16px/19px "Montserrat" !important;
-  height: 48px !important;
+  height: 38px !important;
   background: grey 0% 0% no-repeat padding-box !important;
   border-radius: 6px !important;
   color: #ffffff !important;
@@ -349,14 +363,38 @@ nav#sidebar.setPositionRelative {
   right: 0;
   top: 15px;
   font-size: 16px;
-  color: #787676;
+  color: #c3bcbc;
 }
-
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
 .ngx-pagination .current {
   background: #988149 !important;
+  border-radius: 4px;
 }
 .ngx-pagination a,
 .ngx-pagination button {
-  font-size: 17px !important;
+  font-size: 13px !important;
+  font-weight: 500;
   font-family: "Montserrat", sans-serif !important;
+}
+
+::-webkit-scrollbar {
+  height: 20px;
+  width: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px !important;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #988149;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  ::ng-depp .mat-form-field {
+    width: 67% !important;
+  }
 }

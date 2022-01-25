@@ -142,7 +142,7 @@ export class CustomerComponent implements OnInit {
         location: "Hyderabad",
         dateTime: "10-12-2021",
         rating: "4.5",
-        status: "pending",
+        status: "Approved",
       },
       {
         name: "Rajesh Sharma",
@@ -157,7 +157,7 @@ export class CustomerComponent implements OnInit {
       },
     ];
   }
-  tabSize(event) {
+  pageChange(event) {
     this.page = event;
     this.showData();
   }

@@ -10,13 +10,14 @@ export class AddLoyaltyComponent implements OnInit {
   addLayalty: FormGroup;
   constructor(private fb: FormBuilder) {
     this.addLayalty = this.fb.group({
-      purchaserName: ["Enter Purchaser Name", Validators.required],
-      productId: ["Enter Product Id", Validators.required],
-      amount: ["Enter Amount", Validators.required],
-      points: ["Selete Currency Code", Validators.required],
-      currencyCode: ["Enter Currency Code", Validators.required],
+      purchaserName: ["", Validators.required],
+      productId: ["", Validators.required],
+      amount: ["", Validators.required],
+      points: ["", Validators.required],
+      currencyCode: ["", Validators.required],
       expiredDate: ["", Validators.required],
-      earnpoints: ["Enter Earn Points", Validators.required],
+      earnpoints: ["", Validators.required],
+      rewardType: [""],
     });
   }
 

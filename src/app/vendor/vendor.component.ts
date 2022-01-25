@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { ApprovedModelComponent } from "../approved-model/approved-model.component";
 import { FilterComponent } from "../filter/filter.component";
 import { VendorActionsComponent } from "../vendor-actions/vendor-actions.component";
+import { VendorJoyalukkasSubComponent } from "./vendor-joyalukkas-sub/vendor-joyalukkas-sub.component";
 @Component({
   selector: "app-vendor",
   templateUrl: "./vendor.component.html",
@@ -11,9 +12,9 @@ import { VendorActionsComponent } from "../vendor-actions/vendor-actions.compone
 })
 export class VendorComponent implements OnInit {
   page = 1;
-  count = 9;
+  count = 12;
   tableSize = 4;
-  vendorList = [];
+  vendorList;
   foods = [
     { value: "deny", viewValue: "Deny" },
     { value: "freeze", viewValue: "Freeze" },
@@ -57,20 +58,11 @@ export class VendorComponent implements OnInit {
       {
         vendorName: "Joyalukkas",
         storeManager: "Rakesh",
-        storeId: "JO569",
+        storeId: "JO568",
         storeEmail: "joyalukkas@gmail.com",
         phoneNumber: "9945912312",
         location: "Hyderbad",
-        status: "approved",
-      },
-      {
-        vendorName: "Joyalukkas",
-        storeManager: "Rakesh",
-        storeId: "JO567",
-        storeEmail: "joyalukkas@gmail.com",
-        phoneNumber: "9945912312",
-        location: "Hyderbad",
-        status: "freezed",
+        status: "pending",
       },
       {
         vendorName: "Joyalukkas",
@@ -89,6 +81,42 @@ export class VendorComponent implements OnInit {
         phoneNumber: "9945912312",
         location: "Hyderbad",
         status: "freezed",
+      },
+      {
+        vendorName: "Joyalukkas",
+        storeManager: "Rakesh",
+        storeId: "JO568",
+        storeEmail: "joyalukkas@gmail.com",
+        phoneNumber: "9945912312",
+        location: "Hyderbad",
+        status: "pending",
+      },
+      {
+        vendorName: "Joyalukkas",
+        storeManager: "Rakesh",
+        storeId: "JO569",
+        storeEmail: "joyalukkas@gmail.com",
+        phoneNumber: "9945912312",
+        location: "Hyderbad",
+        status: "approved",
+      },
+      {
+        vendorName: "Joyalukkas",
+        storeManager: "Rakesh",
+        storeId: "JO567",
+        storeEmail: "joyalukkas@gmail.com",
+        phoneNumber: "9945912312",
+        location: "Hyderbad",
+        status: "freezed",
+      },
+      {
+        vendorName: "Joyalukkas",
+        storeManager: "Rakesh",
+        storeId: "JO568",
+        storeEmail: "joyalukkas@gmail.com",
+        phoneNumber: "9945912312",
+        location: "Hyderbad",
+        status: "pending",
       },
       {
         vendorName: "Joyalukkas",
@@ -110,7 +138,7 @@ export class VendorComponent implements OnInit {
       },
     ];
   }
-  tabSize(event) {
+  pageChange(event) {
     this.page = event;
     this.showData();
   }
@@ -126,7 +154,7 @@ export class VendorComponent implements OnInit {
   denyVendor(vendor) {
     const dialogRef = this.dialog.open(VendorActionsComponent, {
       width: "50%",
-      data: { name: "Denay", type: "vendor", data: vendor },
+      data: { name: "Deny", type: "vendor", data: vendor },
     });
     console.log("denyVendor : " + vendor.storeId);
   }
@@ -141,6 +169,13 @@ export class VendorComponent implements OnInit {
     const dialogRef = this.dialog.open(ApprovedModelComponent, {
       width: "30%",
       data: "vendor",
+    });
+  }
+  viewPromotion(promotion) {
+    const dialogRef = this.dialog.open(VendorJoyalukkasSubComponent, {
+      width: "60%",
+      height: "70%",
+      data: promotion,
     });
   }
   ratingVendor(vendor) {

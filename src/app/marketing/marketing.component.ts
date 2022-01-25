@@ -14,9 +14,10 @@ import { ViewPromotionDetailsComponent } from "../view-promotion-details/view-pr
   styleUrls: ["./marketing.component.scss"],
 })
 export class MarketingComponent implements OnInit {
-  page = 1;
-  productsCount = 12;
+  promotionsPage = 1;
   promotionsCount = 12;
+  productsPage = 1;
+  productsCount = 12;
   tableSize = 4;
   promotions = [];
   products = [];
@@ -62,7 +63,31 @@ export class MarketingComponent implements OnInit {
         description: "Test description description",
         startDate: "01/12/2021",
         endDate: "04/12/2021",
+        status: "Approved",
+      },
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
         status: "pending",
+      },
+      {
+        promoImage: "assets/gift.jpeg",
+        promoId: "89766",
+        storeId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        name: "Weekend sale",
+        description: "Test description description",
+        startDate: "01/12/2021",
+        endDate: "04/12/2021",
+        status: "Approved",
       },
       {
         promoImage: "assets/gift.jpeg",
@@ -110,18 +135,6 @@ export class MarketingComponent implements OnInit {
         description: "Test description description",
         startDate: "01/12/2021",
         endDate: "04/12/2021",
-        status: "pending",
-      },
-      {
-        promoImage: "assets/gift.jpeg",
-        promoId: "89766",
-        storeId: "JOY123",
-        category: "Jewellery",
-        subCategory: "Bracelet",
-        name: "Weekend sale",
-        description: "Test description description",
-        startDate: "01/12/2021",
-        endDate: "04/12/2021",
         status: "Approved",
       },
       {
@@ -147,18 +160,6 @@ export class MarketingComponent implements OnInit {
         startDate: "01/12/2021",
         endDate: "04/12/2021",
         status: "Approved",
-      },
-      {
-        promoImage: "assets/gift.jpeg",
-        promoId: "89766",
-        storeId: "JOY123",
-        category: "Jewellery",
-        subCategory: "Bracelet",
-        name: "Weekend sale",
-        description: "Test description description",
-        startDate: "01/12/2021",
-        endDate: "04/12/2021",
-        status: "pending",
       },
       {
         promoImage: "assets/gift.jpeg",
@@ -203,6 +204,18 @@ export class MarketingComponent implements OnInit {
         productImage: "assets/gift.jpeg",
         productId: "89766",
         vendorId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "Approved",
+      },
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
         partnerId: "JOY123",
         category: "Jewellery",
         subCategory: "Bracelet",
@@ -211,6 +224,18 @@ export class MarketingComponent implements OnInit {
         location: "Hyderabad",
         launchDate: "01/12/2021",
         status: "pending",
+      },
+      {
+        productImage: "assets/gift.jpeg",
+        productId: "89766",
+        vendorId: "JOY123",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        country: "India",
+        description: "Test description description",
+        location: "Hyderabad",
+        launchDate: "01/12/2021",
+        status: "Approved",
       },
       {
         productImage: "assets/gift.jpeg",
@@ -253,19 +278,6 @@ export class MarketingComponent implements OnInit {
         productImage: "assets/gift.jpeg",
         productId: "89766",
         vendorId: "JOY123",
-        partnerId: "JOY123",
-        category: "Jewellery",
-        subCategory: "Bracelet",
-        country: "India",
-        description: "Test description description",
-        location: "Hyderabad",
-        launchDate: "01/12/2021",
-        status: "pending",
-      },
-      {
-        productImage: "assets/gift.jpeg",
-        productId: "89766",
-        vendorId: "JOY123",
         category: "Jewellery",
         subCategory: "Bracelet",
         country: "India",
@@ -298,20 +310,6 @@ export class MarketingComponent implements OnInit {
         location: "Hyderabad",
         launchDate: "01/12/2021",
         status: "Approved",
-      },
-
-      {
-        productImage: "assets/gift.jpeg",
-        productId: "89766",
-        vendorId: "JOY123",
-        partnerId: "JOY123",
-        category: "Jewellery",
-        subCategory: "Bracelet",
-        country: "India",
-        description: "Test description description",
-        location: "Hyderabad",
-        launchDate: "01/12/2021",
-        status: "pending",
       },
       {
         productImage: "assets/gift.jpeg",
@@ -327,8 +325,12 @@ export class MarketingComponent implements OnInit {
       },
     ];
   }
-  tabSize(event) {
-    this.page = event;
+  productsPageChange(event) {
+    this.productsPage = event;
+    this.showData();
+  }
+  promotionsPageChange(event) {
+    this.promotionsPage = event;
     this.showData();
   }
   myTabSelectedTabChange(event) {
@@ -353,40 +355,74 @@ export class MarketingComponent implements OnInit {
   denyPromotion(promotion) {
     const dialogRef = this.dialog.open(VendorActionsComponent, {
       width: "50%",
-      data: { name: "Denay", type: "promotion", data: promotion },
+      data: { name: "Deny", type: "promotion", data: promotion },
     });
   }
   viewPromotion(promotion) {
     const dialogRef = this.dialog.open(ViewPromotionDetailsComponent, {
       width: "60%",
-      height: "70%",
+      height: "65%",
       data: promotion,
     });
   }
-  activePromotion(promotion) {}
-  inactivePromotion(promotion) {}
+  activePromotion(promotion) {
+    const dialogRef = this.dialog.open(VendorActionsComponent, {
+      width: "50%",
+      data: { name: "Activate", type: "promotion", data: promotion },
+    });
+  }
+  inactivePromotion(promotion) {
+    const dialogRef = this.dialog.open(VendorActionsComponent, {
+      width: "50%",
+      data: { name: "In-Activate", type: "promotion", data: promotion },
+    });
+  }
   approvePromotion(promotion) {
     const dialogRef = this.dialog.open(ApprovedModelComponent, {
       width: "30%",
       data: "promotion",
     });
   }
-  holdPromotion(promotion) {}
+  holdPromotion(promotion) {
+    const dialogRef = this.dialog.open(VendorActionsComponent, {
+      width: "50%",
+      data: { name: "Hold", type: "promotion", data: promotion },
+    });
+  }
   denyProductLaunch(productLaunch) {
     const dialogRef = this.dialog.open(VendorActionsComponent, {
       width: "50%",
-      data: { name: "Denay", type: "productLaunch", data: productLaunch },
+      data: { name: "Deny", type: "product Launch", data: productLaunch },
     });
   }
-  activeProductLaunch(productLaunch) {}
-  inactiveProductLaunch(productLaunch) {}
+  activeProductLaunch(productLaunch) {
+    const dialogRef = this.dialog.open(VendorActionsComponent, {
+      width: "50%",
+      data: { name: "Activate", type: "product Launch", data: productLaunch },
+    });
+  }
+  inactiveProductLaunch(productLaunch) {
+    const dialogRef = this.dialog.open(VendorActionsComponent, {
+      width: "50%",
+      data: {
+        name: "In-Activate",
+        type: "product Launch",
+        data: productLaunch,
+      },
+    });
+  }
   approveProductLaunch(productLaunch) {
     const dialogRef = this.dialog.open(ApprovedModelComponent, {
       width: "30%",
       data: "productLauncher",
     });
   }
-  holdProductLaunch(productLaunch) {}
+  holdProductLaunch(productLaunch) {
+    const dialogRef = this.dialog.open(VendorActionsComponent, {
+      width: "50%",
+      data: { name: "Hold", type: "product Launch", data: productLaunch },
+    });
+  }
   action(value) {
     console.log(value);
     if (value == "deny") {

@@ -1,492 +1,1217 @@
-<div mat-dialog-content class="rounded">
-    <div class="d-flex justify-content-between">
-        <div></div>
-        <div class="font-weight-bold">
-            <p style="font-size: 24px">Filter</p>
-        </div>
-        <div class="example-button-container">
-            <button class="button_close" mat-mini-fab color="warn" (click)="close()" style="background: #e04f5f">
-                <mat-icon>close</mat-icon>
-            </button>
-        </div>
+<div mat-dialog-content
+     class="rounded">
+  <div class="text-center">
+    <p class="title">Filter</p>
+    <div class="example-button-container">
+      <button class="button_close"
+              (click)="close()"
+              style="background: #e04f5f">
+        <i class="fa fa-times"
+           aria-hidden="true"></i>
+      </button>
     </div>
+  </div>
+  <div class="filter-form-content">
     <div *ngIf="data.filterType == 'user'">
-        <form [formGroup]="userForm" (ngSubmit)="submit()" class="">
-            <div>
-                <div class="py-2">
-                    <p class="form-lable">Role</p>
-                </div>
-                <mat-radio-group formControlName="role">
-                    <mat-radio-button value="senior" class="">Senior</mat-radio-button>
-                    <mat-radio-button value="mideLevel" class="">Mid level</mat-radio-button>
-                    <mat-radio-button value="junior" class="">Junior</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div>
-                <div class="py-2">
-                    <p class="form-lable">Department</p>
-                </div>
-                <mat-radio-group formControlName="department">
-                    <mat-radio-button value="it" class="">IT</mat-radio-button>
-                    <mat-radio-button value="sales" class="">Sales</mat-radio-button>
-                    <mat-radio-button value="marketing" class="">Marketing</mat-radio-button>
-                    <mat-radio-button value="finance" class="">Finance</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div>
-                <div class="py-2">
-                    <p class="form-lable">Status</p>
-                </div>
-                <mat-radio-group formControlName="status">
-                    <mat-radio-button value="active" class="">Active</mat-radio-button>
-                    <mat-radio-button value="inactive" class="">In-Active</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="d-flex justify-content-around pt-4 mt-3">
-                <div>
-                    <button type="button" mat-button class="outline-button" (click)="reset()">
-                        Reset
-                    </button>
-                </div>
-                <div>
-                    <button type="button" mat-button class="rounded-button">Apply</button>
-                </div>
-            </div>
-        </form>
+      <form [formGroup]="userForm"
+            (ngSubmit)="submit()">
+        <div class="pt-2">
+          <div class="py-2">
+            <p class="form-lable">Role</p>
+          </div>
+          <mat-radio-group formControlName="role">
+            <mat-radio-button class="form-radio pr-5 mr-5"
+                              value="senior"
+                              class="">Senior</mat-radio-button>
+            <mat-radio-button class="form-radio pr-5 mr-5"
+                              value="mideLevel"
+                              class="">Mid level</mat-radio-button>
+            <mat-radio-button class="form-radio pr-5 mr-5"
+                              value="junior"
+                              class="">Junior</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="pt-2">
+          <div class="py-2">
+            <p class="form-lable">Department</p>
+          </div>
+          <mat-radio-group formControlName="department">
+            <mat-radio-button class="form-radio pr-5 mr-5"
+                              value="it"
+                              class="">IT</mat-radio-button>
+            <mat-radio-button class="form-radio pr-5 mr-5"
+                              value="sales"
+                              class="">Sales</mat-radio-button>
+            <mat-radio-button class="form-radio pr-5 mr-5"
+                              value="marketing"
+                              class="">Marketing</mat-radio-button>
+            <mat-radio-button class="form-radio pr-5 mr-5"
+                              value="finance"
+                              class="">Finance</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="pt-2">
+          <div class="py-2">
+            <p class="form-lable">Status</p>
+          </div>
+          <mat-radio-group formControlName="status">
+            <mat-radio-button class="form-radio pr-5 mr-5"
+                              value="active"
+                              class="">Active</mat-radio-button>
+            <mat-radio-button class="form-radio pr-5 mr-5"
+                              value="inactive"
+                              class="">In-Active</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </form>
     </div>
     <div *ngIf="data.filterType == 'vendor'">
-        <form [formGroup]="vendorForm" (ngSubmit)="submit()" class="">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p class="form-lable">Location</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-label>Select Location</mat-label>
-                        <mat-select formControlName="location">
-                            <mat-option value="hyderabad"> Hyderabad </mat-option>
-                            <mat-option value="banglore"> Banglore </mat-option>
-                            <mat-option value="chenni"> Chenni </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="form-lable">Vendor Name</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-label>Select Name</mat-label>
-                        <mat-select formControlName="vendorName">
-                            <mat-option value="hyderabad"> Joyalukkas </mat-option>
-                            <mat-option value="banglore"> Malabar Gold </mat-option>
-                            <mat-option value="chenni"> Kalyan </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="form-lable">Store Id</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-label>Select Store Id</mat-label>
-                        <mat-select formControlName="storeId">
-                            <mat-option value="hyderabad"> JOS543 </mat-option>
-                            <mat-option value="banglore"> MG0222 </mat-option>
-                            <mat-option value="chenni"> KA123 </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-12">
-                    <p class="form-lable">Status</p>
-                    <mat-radio-group formControlName="status">
-                        <mat-radio-button value="active" class="">Pending</mat-radio-button>
-                        <mat-radio-button value="inactive" class="">Approved</mat-radio-button>
-                        <mat-radio-button value="inactive" class="">Freeze</mat-radio-button>
-                        <mat-radio-button value="inactive" class="">Rating</mat-radio-button>
-                    </mat-radio-group>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-around pt-4">
-                <div>
-                    <button type="button" mat-button class="outline-button" (click)="reset()">
-                        Reset
-                    </button>
-                </div>
-                <div>
-                    <button type="button" mat-button class="rounded-button">Apply</button>
-                </div>
-            </div>
-        </form>
+      <form [formGroup]="vendorForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
+          <div class="col-sm-12 pt-2">
+            <p class="form-lable">Location</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="location"
+                          placeholder="Select Location">
+                <mat-option value="hyderabad"> Hyderabad </mat-option>
+                <mat-option value="banglore"> Banglore </mat-option>
+                <mat-option value="Chennai"> Chennai </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="form-lable">Vendor Name</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="vendorName"
+                          placeholder="Select Name">
+                <mat-option value="hyderabad"> Joyalukkas </mat-option>
+                <mat-option value="banglore"> Malabar Gold </mat-option>
+                <mat-option value="Chennai"> Kalyan </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="form-lable">Store Id</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="storeId"
+                          placeholder="Select Store Id">
+                <mat-option value="hyderabad"> JOS543 </mat-option>
+                <mat-option value="banglore"> MG0222 </mat-option>
+                <mat-option value="Chennai"> KA123 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12">
+            <p class="form-lable">Status</p>
+            <mat-radio-group formControlName="status">
+              <mat-radio-button class="form-radio pr-5 mr-5"
+                                value="active"
+                                class="">Pending</mat-radio-button>
+              <mat-radio-button class="form-radio pr-5 mr-5"
+                                value="inactive"
+                                class="">Approved</mat-radio-button>
+              <mat-radio-button class="form-radio pr-5 mr-5"
+                                value="inactive"
+                                class="">Freeze</mat-radio-button>
+              <mat-radio-button class="form-radio pr-5 mr-5"
+                                value="inactive"
+                                class="">Rating</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </form>
     </div>
     <div *ngIf="data.filterType == 'product'">
-        <form [formGroup]="productForm" (ngSubmit)="submit()" class="">
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <p class="m-0 form-lable">Product ID</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="productId" placeholder="Select Product Id">
-                            <mat-option value="hyderabad"> Hyderabad </mat-option>
-                            <mat-option value="banglore"> Banglore </mat-option>
-                            <mat-option value="chenni"> Chenni </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">STORE ID</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="storeId" placeholder="Select Store Id">
-                            <mat-option value="hyderabad"> Joyalukkas </mat-option>
-                            <mat-option value="banglore"> Malabar Gold </mat-option>
-                            <mat-option value="chenni"> Kalyan </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Category</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="category" placeholder="Select Category">
-                            <mat-option value="hyderabad"> Joyalukkas </mat-option>
-                            <mat-option value="banglore"> Malabar Gold </mat-option>
-                            <mat-option value="chenni"> Kalyan </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Sub Category</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="subCategory" placeholder="Select Sub Category">
-                            <mat-option value="hyderabad"> Joyalukkas </mat-option>
-                            <mat-option value="banglore"> Malabar Gold </mat-option>
-                            <mat-option value="chenni"> Kalyan </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Gender</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="gender" placeholder="Select Gender">
-                            <mat-option value="male"> Male </mat-option>
-                            <mat-option value="female"> Female </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Taxes</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="taxes" placeholder="Select Taxes">
-                            <mat-option value="male"> Male </mat-option>
-                            <mat-option value="female"> Female </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-12">
-                    <p class="form-lable">Status</p>
-                    <mat-radio-group formControlName="status">
-                        <mat-radio-button value="active" class="pr-5 mr-5">Pending</mat-radio-button>
-                        <mat-radio-button value="inactive" class="pr-5 mr-5">Approved</mat-radio-button>
-                        <mat-radio-button value="inactive" class="pr-5 mr-5">Freeze</mat-radio-button>
-                        <mat-radio-button value="inactive" class="pr-5 mr-5">Rating</mat-radio-button>
-                    </mat-radio-group>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-around pt-4">
-                <div>
-                    <button type="button" mat-button class="outline-button" (click)="reset()">
-                        Reset
-                    </button>
-                </div>
-                <div>
-                    <button type="button" mat-button class="rounded-button">Apply</button>
-                </div>
-            </div>
-        </form>
+      <form [formGroup]="productForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <p class="m-0 form-lable">Product ID</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="productId"
+                          placeholder="Select Product Id">
+                <mat-option value="hyderabad"> Hyderabad </mat-option>
+                <mat-option value="banglore"> Banglore </mat-option>
+                <mat-option value="Chennai"> Chennai </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">STORE ID</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="storeId"
+                          placeholder="Select Store Id">
+                <mat-option value="hyderabad"> Joyalukkas </mat-option>
+                <mat-option value="banglore"> Malabar Gold </mat-option>
+                <mat-option value="Chennai"> Kalyan </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="category"
+                          placeholder="Select Category">
+                <mat-option value="hyderabad"> Joyalukkas </mat-option>
+                <mat-option value="banglore"> Malabar Gold </mat-option>
+                <mat-option value="Chennai"> Kalyan </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Sub Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="subCategory"
+                          placeholder="Select Sub Category">
+                <mat-option value="hyderabad"> Joyalukkas </mat-option>
+                <mat-option value="banglore"> Malabar Gold </mat-option>
+                <mat-option value="Chennai"> Kalyan </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Gender</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="gender"
+                          placeholder="Select Gender">
+                <mat-option value="male"> Male </mat-option>
+                <mat-option value="female"> Female </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Taxes</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="taxes"
+                          placeholder="Select Taxes">
+                <mat-option value="male"> Male </mat-option>
+                <mat-option value="female"> Female </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12">
+            <p class="form-lable">Status</p>
+            <mat-radio-group formControlName="status">
+              <mat-radio-button class="form-radio pr-5 mr-5"
+                                value="active">Pending</mat-radio-button>
+              <mat-radio-button class="form-radio pr-5 mr-5"
+                                value="inactive">Approved</mat-radio-button>
+              <mat-radio-button class="form-radio pr-5 mr-5"
+                                value="inactive">Freeze</mat-radio-button>
+              <mat-radio-button class="form-radio pr-5 mr-5"
+                                value="inactive">Rating</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </form>
     </div>
     <div *ngIf="data.filterType == 'customer'">
-        <form [formGroup]="customerForm" (ngSubmit)="submit()" class="">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p class="m-0 form-lable">CUSTOMER ID</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="customerId" placeholder="Select Customer Id">
-                            <mat-option value="hyderabad"> 1234 </mat-option>
-                            <mat-option value="banglore"> 124AD </mat-option>
-                            <mat-option value="chenni"> 123 </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">COUNTRY</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="country" placeholder="Select Country">
-                            <mat-option value="hyderabad"> Joyalukkas </mat-option>
-                            <mat-option value="banglore"> Malabar Gold </mat-option>
-                            <mat-option value="chenni"> Kalyan </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">LOCATION</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="location" placeholder="Select Location">
-                            <mat-option value="hyderabad"> hyderabad </mat-option>
-                            <mat-option value="banglore"> banglore </mat-option>
-                            <mat-option value="chenni"> chenni </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">RATING</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="rating" placeholder="Select Rating">
-                            <mat-option value="hyderabad"> 1 </mat-option>
-                            <mat-option value="banglore"> 2 </mat-option>
-                            <mat-option value="chenni"> 3 </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">DATE</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <input matInput formControlName="date" placeholder="Enter Date" />
-                    </mat-form-field>
-                </div>
-
-                <div class="col-sm-12">
-                    <p class="form-lable">Status</p>
-                    <mat-radio-group formControlName="status">
-                        <mat-radio-button value="inactive" class="pr-5 mr-5">Approved</mat-radio-button>
-                        <mat-radio-button value="inactive" class="pr-5 mr-5">Freeze</mat-radio-button>
-                    </mat-radio-group>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-around pt-4">
-                <div>
-                    <button type="button" mat-button class="outline-button" (click)="reset()">
-                        Reset
-                    </button>
-                </div>
-                <div>
-                    <button type="button" mat-button class="rounded-button">Apply</button>
-                </div>
-            </div>
-        </form>
+      <form [formGroup]="customerForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="m-0 form-lable">CUSTOMER ID</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="customerId"
+                          placeholder="Select Customer Id">
+                <mat-option value="hyderabad"> 1234 </mat-option>
+                <mat-option value="banglore"> 124AD </mat-option>
+                <mat-option value="Chennai"> 123 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">COUNTRY</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="country"
+                          placeholder="Select Country">
+                <mat-option value="hyderabad"> Joyalukkas </mat-option>
+                <mat-option value="banglore"> Malabar Gold </mat-option>
+                <mat-option value="Chennai"> Kalyan </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">LOCATION</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="location"
+                          placeholder="Select Location">
+                <mat-option value="hyderabad"> hyderabad </mat-option>
+                <mat-option value="banglore"> banglore </mat-option>
+                <mat-option value="Chennai"> Chennai </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">RATING</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="rating"
+                          placeholder="Select Rating">
+                <mat-option value="hyderabad"> 1 </mat-option>
+                <mat-option value="banglore"> 2 </mat-option>
+                <mat-option value="Chennai"> 3 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">DATE</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     formControlName="date"
+                     placeholder="Enter Date"
+                     [matDatepicker]="picker1">
+              <mat-datepicker-toggle matSuffix
+                                     style="color: #988149;"
+                                     [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12">
+            <p class="form-lable">Status</p>
+            <mat-radio-group formControlName="status">
+              <mat-radio-button class="form-radio pr-5 mr-5"
+                                value="inactive"
+                                c>Approved</mat-radio-button>
+              <mat-radio-button class="form-radio pr-5 mr-5"
+                                value="inactive">Freeze</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </form>
     </div>
-
-
     <div *ngIf="data.filterType == 'partner'">
-        <form [formGroup]="partnerForm" (ngSubmit)="submit()" class="">
-            <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Partner Name</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="partnerName" placeholder="Select Partner Name">
-                            <mat-option value="hyderabad"> 1234 </mat-option>
-                            <mat-option value="banglore"> 124AD </mat-option>
-                            <mat-option value="chenni"> 123 </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Partner ID</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="partnerId" placeholder="Select Partner ID">
-                            <mat-option value="hyderabad"> Joyalukkas </mat-option>
-                            <mat-option value="banglore"> Malabar Gold </mat-option>
-                            <mat-option value="chenni"> Kalyan </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Category</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="category" placeholder="Select Category">
-                            <mat-option value="hyderabad"> hyderabad </mat-option>
-                            <mat-option value="banglore"> banglore </mat-option>
-                            <mat-option value="chenni"> chenni </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Sub Category</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="subCategory" placeholder="Select Sub Category">
-                            <mat-option value="hyderabad"> 1 </mat-option>
-                            <mat-option value="banglore"> 2 </mat-option>
-                            <mat-option value="chenni"> 3 </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Country</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="country" placeholder="Select Country">
-                            <mat-option value="hyderabad"> 1 </mat-option>
-                            <mat-option value="banglore"> 2 </mat-option>
-                            <mat-option value="chenni"> 3 </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Location</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="location" placeholder="Select Location">
-                            <mat-option value="hyderabad"> 1 </mat-option>
-                            <mat-option value="banglore"> 2 </mat-option>
-                            <mat-option value="chenni"> 3 </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-12">
-                    <p class="form-lable">Status</p>
-                    <mat-radio-group formControlName="status">
-                        <mat-radio-button value="active" class="pr-5 mr-5">Active</mat-radio-button>
-                        <mat-radio-button value="inactive" class="pr-5 mr-5">In-Active</mat-radio-button>
-                        <mat-radio-button value="deny" class="pr-5 mr-5">Deny</mat-radio-button>
-                        <mat-radio-button value="rating" class="pr-5 mr-5">Rating</mat-radio-button>
-                        <mat-radio-button value="freezed" class="pr-5 mr-5">Freezed</mat-radio-button>
-                    </mat-radio-group>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-around pt-4">
-                <div>
-                    <button type="button" mat-button class="outline-button" (click)="reset()">
-                        Reset
-                    </button>
-                </div>
-                <div>
-                    <button type="button" mat-button class="rounded-button">Apply</button>
-                </div>
-            </div>
-        </form>
+      <form [formGroup]="partnerForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Partner Name</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="partnerName"
+                          placeholder="Select Partner Name">
+                <mat-option value="hyderabad"> 1234 </mat-option>
+                <mat-option value="banglore"> 124AD </mat-option>
+                <mat-option value="Chennai"> 123 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Partner ID</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="partnerId"
+                          placeholder="Select Partner ID">
+                <mat-option value="hyderabad"> Joyalukkas </mat-option>
+                <mat-option value="banglore"> Malabar Gold </mat-option>
+                <mat-option value="Chennai"> Kalyan </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="category"
+                          placeholder="Select Category">
+                <mat-option value="hyderabad"> hyderabad </mat-option>
+                <mat-option value="banglore"> banglore </mat-option>
+                <mat-option value="Chennai"> Chennai </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Sub Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="subCategory"
+                          placeholder="Select Sub Category">
+                <mat-option value="hyderabad"> 1 </mat-option>
+                <mat-option value="banglore"> 2 </mat-option>
+                <mat-option value="Chennai"> 3 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Country</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="country"
+                          placeholder="Select Country">
+                <mat-option value="hyderabad"> 1 </mat-option>
+                <mat-option value="banglore"> 2 </mat-option>
+                <mat-option value="Chennai"> 3 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Location</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="location"
+                          placeholder="Select Location">
+                <mat-option value="hyderabad"> 1 </mat-option>
+                <mat-option value="banglore"> 2 </mat-option>
+                <mat-option value="Chennai"> 3 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12">
+            <p class="form-lable">Status</p>
+            <mat-radio-group formControlName="status">
+              <mat-radio-button class="pr-5 mr-5 form-radio"
+                                value="active">Active</mat-radio-button>
+              <mat-radio-button class="pr-5 mr-5 form-radio"
+                                value="inactive">In-Active</mat-radio-button>
+              <mat-radio-button class="pr-5 mr-5 form-radio"
+                                value="deny">Deny</mat-radio-button>
+              <mat-radio-button class="pr-5 mr-5 form-radio"
+                                value="rating">Rating</mat-radio-button>
+              <mat-radio-button class="pr-5 mr-5 form-radio"
+                                value="freezed">Freezed</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </form>
     </div>
-
-
-
-
     <div *ngIf="data.filterType == 'vendorordeForm'">
-        <form [formGroup]="vendorordeForm" (ngSubmit)="submit()" class="">
-            <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Select Id</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="Selectid" placeholder="Select Id">
-                            <mat-option value="1717"> 1717 </mat-option>
-                            <mat-option value="17"> 17</mat-option>
-                            <mat-option value="7"> 7 </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Date</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <input matInput formControlName="date" placeholder="Enter Date" />
-                    </mat-form-field>
-                </div>
-                <div class=" col-sm-12">
-                    <p class="m-0 form-lable">Set Time</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <input matInput formControlName="time" placeholder="Set Time" />
-                    </mat-form-field>
-                </div>
-                <div class=" col-sm-12">
-                    <p class="m-0 form-lable">Discount</p>
+      <form [formGroup]="vendorordeForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Select Id</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="Selectid"
+                          placeholder="Select Id">
+                <mat-option value="1717"> 1717 </mat-option>
+                <mat-option value="17"> 17</mat-option>
+                <mat-option value="7"> 7 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Date</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     formControlName="date"
+                     placeholder="Enter Date" />
+            </mat-form-field>
+          </div>
+          <div class=" col-sm-12">
+            <p class="m-0 form-lable">Set Time</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     formControlName="time"
+                     placeholder="Set Time" />
+            </mat-form-field>
+          </div>
+          <div class=" col-sm-12">
+            <p class="m-0 form-lable">Discount</p>
 
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="discount" placeholder="Discount">
-                            <mat-option value="50"> 50%</mat-option>
-                            <mat-option value="50"> 20%</mat-option>
-                            <mat-option value="50"> 20% </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Order Id</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="discount"
+                          placeholder="Discount">
+                <mat-option value="50"> 50%</mat-option>
+                <mat-option value="50"> 20%</mat-option>
+                <mat-option value="50"> 20% </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Order Id</p>
 
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="Order" placeholder="Select Order Id">
-                            <mat-option value="1"> 1</mat-option>
-                            <mat-option value="1"> 2</mat-option>
-                            <mat-option value="1"> 3 </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Customer Id</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="Customer" placeholder="Customer">
-                            <mat-option value="123"> 1717 </mat-option>
-                            <mat-option value="123"> 1717</mat-option>
-                            <mat-option value="123"> 1717 </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-            </div>
-            <div class="d-flex justify-content-around pt-4">
-                <div>
-                    <button type="button" mat-button class="outline-button" (click)="reset()">
-                        Reset
-                    </button>
-                </div>
-                <div>
-                    <button type="button" mat-button class="rounded-button">Apply</button>
-                </div>
-            </div>
-        </form>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="Order"
+                          placeholder="Select Order Id">
+                <mat-option value="1"> 1</mat-option>
+                <mat-option value="1"> 2</mat-option>
+                <mat-option value="1"> 3 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Customer Id</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="Customer"
+                          placeholder="Customer">
+                <mat-option value="123"> 1717 </mat-option>
+                <mat-option value="123"> 1717</mat-option>
+                <mat-option value="123"> 1717 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
     </div>
-
-
-
-
     <div *ngIf="data.filterType == 'loyaltyForm'">
-        <form [formGroup]="loyaltyForm" (ngSubmit)="submit()" class="">
-            <div class="row">
+      <form [formGroup]="loyaltyForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
+          <div class=" col-sm-12">
+            <p class="m-0 form-lable">Reward Type</p>
 
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="reward"
+                          placeholder="Select Reward Type">
+                <mat-option value="reward"> 50%</mat-option>
+                <mat-option value="reward"> 20%</mat-option>
+                <mat-option value="reward"> 20% </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Currency</p>
 
-                <div class=" col-sm-12">
-                    <p class="m-0 form-lable">Reward Type</p>
-
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="reward" placeholder="Select Reward Type">
-                            <mat-option value="reward"> 50%</mat-option>
-                            <mat-option value="reward"> 20%</mat-option>
-                            <mat-option value="reward"> 20% </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Currency</p>
-
-                    <mat-form-field appearance="fill" class="full-width">
-                        <mat-select formControlName="Order" placeholder="Select Order Id">
-                            <mat-option value="100"> 100</mat-option>
-                            <mat-option value="500"> 500</mat-option>
-                            <mat-option value="2000"> 2000 </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-
-                <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form-lable">Loyalty End Date</p>
-                    <mat-form-field appearance="fill" class="full-width">
-                        <input matInput formControlName="date" placeholder="Enter Date" />
-                    </mat-form-field>
-                </div>
-
-
-            </div>
-            <div class="d-flex justify-content-around pt-4">
-                <div>
-                    <button type="button" mat-button class="outline-button" (click)="reset()">
-                        Reset
-                    </button>
-                </div>
-                <div>
-                    <button type="button" mat-button class="rounded-button">Apply</button>
-                </div>
-            </div>
-        </form>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="Order"
+                          placeholder="Select Order Id">
+                <mat-option value="100"> 100</mat-option>
+                <mat-option value="500"> 500</mat-option>
+                <mat-option value="2000"> 2000 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Loyalty End Date</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     [matDatepicker]="picker3"
+                     formControlName="date"
+                     placeholder="Enter Date" />
+              <mat-datepicker-toggle matSuffix
+                                     style="color: #988149;"
+                                     [for]="picker3"></mat-datepicker-toggle>
+              <mat-datepicker #picker3></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
     </div>
+    <div *ngIf="data.filterType == 'paymentVendorForm'">
+      <form [formGroup]="paymentVendorForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="m-0 form-lable">Store Id</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="storeId"
+                          placeholder="Select  Store Id">
+                <mat-option value="20">15p</mat-option>
+                <mat-option value="20">154y </mat-option>
+                <mat-option value="20">1561 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Vendor</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="vendor"
+                          placeholder="Select Vendor">
+                <mat-option value="Jewellary">Jewellary </mat-option>
+                <mat-option value="Jewellary">Jewellary </mat-option>
+                <mat-option value="Jewellary">Jewellary </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable"> Date</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     [matDatepicker]="picker"
+                     formControlName="Date"
+                     placeholder="Enter Date" />
+              <mat-datepicker-toggle matSuffix
+                                     style="color: #988149;"
+                                     [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="data.filterType == 'paymentPartnerForm'">
+      <form [formGroup]="paymentPartnerForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="m-0 form-lable">Partner Id</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="partnerId"
+                          placeholder="Select  Store Id">
+                <mat-option value="20">15p</mat-option>
+                <mat-option value="20">154y </mat-option>
+                <mat-option value="20">1561 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Vendor</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="vendor"
+                          placeholder="Select Vendor">
+                <mat-option value="Jewellary">Jewellary </mat-option>
+                <mat-option value="Jewellary">Jewellary </mat-option>
+                <mat-option value="Jewellary">Jewellary </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable"> Date</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     [matDatepicker]="picker"
+                     formControlName="Date"
+                     placeholder="Enter Date" />
+              <mat-datepicker-toggle matSuffix
+                                     style="color: #988149;"
+                                     [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="data.filterType == 'offerForm'"
+         style="max-height: 90vh  !important;">
+      <form [formGroup]="offerForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="m-0 form-lable">Store Id</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="storeId"
+                          placeholder="Select Store Id">
+                <mat-option value="20">15p</mat-option>
+                <mat-option value="20">154y </mat-option>
+                <mat-option value="20">1561 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="category"
+                          placeholder="Select Category">
+                <mat-option value="Jewellary">Jewellary </mat-option>
+                <mat-option value="Jewellary">Jewellary </mat-option>
+                <mat-option value="Jewellary">Jewellary </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Sub Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="SubCategory"
+                          placeholder="Select Sub Category">
+                <mat-option value="Jewellary">Jewellary </mat-option>
+                <mat-option value="Jewellary">Jewellary </mat-option>
+                <mat-option value="Jewellary">Jewellary </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Country</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="country"
+                          placeholder="Select country">
+                <mat-option value="India">India</mat-option>
+                <mat-option value="India">India</mat-option>
+                <mat-option value="India">India</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Location</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="location"
+                          placeholder="Select location">
+                <mat-option value="India">India</mat-option>
+                <mat-option value="India">India</mat-option>
+                <mat-option value="India">India</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Start Date</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     [matDatepicker]="picker"
+                     formControlName="startDate"
+                     placeholder="Enter Start  Date" />
+              <mat-datepicker-toggle matSuffix
+                                     style="color: #988149;"
+                                     [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">End Date</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     [matDatepicker]="picker"
+                     formControlName="endDate"
+                     placeholder="Enter End  Date" />
+              <mat-datepicker-toggle matSuffix
+                                     style="color: #988149;"
+                                     [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12">
+            <p class="form-lable">Status</p>
+            <mat-radio-group formControlName="status">
+              <div class="d-flex justify-content-between">
+                <mat-radio-button class="form-radio"
+                                  value="approved"
+                                  class=" mr-4 radio-btn">Approved</mat-radio-button>
+                <mat-radio-button class="form-radio"
+                                  value="active"
+                                  class=" mr-4 radio-btn">Deny</mat-radio-button>
+                <mat-radio-button class="form-radio"
+                                  value="pending"
+                                  class=" mr-4 radio-btn">Pending</mat-radio-button>
+                <mat-radio-button class="form-radio"
+                                  value="inactive"
+                                  class=" mr-4 radio-btn">Freezed</mat-radio-button>
+              </div>
+            </mat-radio-group>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="data.filterType == 'vendororder'">
+      <form [formGroup]="vendororderForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Store Id</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     placeholder="Select Store id"
+                     formControlName="storeId"
+                     placeholder="Select Store id" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Date</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     [matDatepicker]="picker"
+                     formControlName="Date"
+                     placeholder="Enter Date" />
+              <mat-datepicker-toggle matSuffix
+                                     [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12">
+            <p class="form-lable">Time</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     placeholder="Enter Time"
+                     formControlName="time"
+                     placeholder="Enter Time" />
+              <mat-icon matSuffix>schedule</mat-icon>
+            </mat-form-field>
+          </div>
 
+          <div class="col-sm-12">
+            <p class="m-0 form-lable">Discount</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="discount"
+                          placeholder="Select discount">
+                <mat-option value="20">20% </mat-option>
+                <mat-option value="20">20% </mat-option>
+                <mat-option value="20">20% </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Order Id</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="orderId"
+                          placeholder="Select Order Id">
+                <mat-option value="1234"> 1234 </mat-option>
+                <mat-option value="1234"> 124AD </mat-option>
+                <mat-option value="1234"> 123 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Customer Id</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="customerId"
+                          placeholder="Select Customer ID">
+                <mat-option value="1234"> 1234 </mat-option>
+                <mat-option value="1234"> 124AD </mat-option>
+                <mat-option value="1234"> 123 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="data.filterType == 'order'">
+      <form [formGroup]="orderForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
 
+          <div class="col-sm-12">
+            <p class="form-lable">Store Id</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-label>Select Store Id</mat-label>
+              <mat-select formControlName="storeId">
+                <mat-option value="123"> 123 </mat-option>
+                <mat-option value="123"> 123 </mat-option>
+                <mat-option value="123"> 123 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
 
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="category"
+                          placeholder="Select Category">
+                <mat-option value="Jewellery"> Jewellery</mat-option>
+                <mat-option value="Jewellery"> Jewellery</mat-option>
+                <mat-option value="Jewellery"> Jewellery </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
 
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Sub Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="subCategory"
+                          placeholder="Select Sub Category">
+                <mat-option value="bracelet">bracelet </mat-option>
+                <mat-option value="bracelet"> bracelet </mat-option>
+                <mat-option value="bracelet">bracelet </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12">
+            <p class="form-lable">Status</p>
+            <mat-radio-group formControlName="status">
+              <mat-radio-button class="form-radio"
+                                value="pending"
+                                class=" mr-4 radio-btn">Pending</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="approved"
+                                class=" mr-4 radio-btn">Confirmed</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="active"
+                                class=" mr-4 radio-btn">Pick Up</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="inactive"
+                                class=" mr-4 radio-btn">Refunded</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="deny"
+                                class=" mr-4 radio-btn">Cancelled</mat-radio-button>
 
+            </mat-radio-group>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="data.filterType == 'coupons'">
+      <form [formGroup]="couponsForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Store Name</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="storeName"
+                          placeholder="Select Product ID">
+                <mat-option value="1"> 1234 </mat-option>
+                <mat-option value="2"> 124AD </mat-option>
+                <mat-option value="3"> 123 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Coupon Type</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="couponType"
+                          placeholder="Select Store Id">
+                <mat-option value="1234"> 1234 </mat-option>
+                <mat-option value="1234"> 124AD </mat-option>
+                <mat-option value="1234"> 123 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="category"
+                          placeholder="Select Category">
+                <mat-option value="Jewellery"> Jewellery</mat-option>
+                <mat-option value="Jewellery"> Jewellery</mat-option>
+                <mat-option value="Jewellery"> Jewellery </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Sub Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="subCategory"
+                          placeholder="Select Sub Category">
+                <mat-option value="bracelet">bracelet </mat-option>
+                <mat-option value="bracelet"> bracelet </mat-option>
+                <mat-option value="bracelet">bracelet </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Start Date</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     [matDatepicker]="picker"
+                     formControlName="startDate"
+                     placeholder="Enter Date" />
+              <mat-datepicker-toggle matSuffix
+                                     style="color: #988149;"
+                                     [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">End Date</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     [matDatepicker]="picker1"
+                     formControlName="endDate"
+                     placeholder="Enter Date" />
+              <mat-datepicker-toggle matSuffix
+                                     style="color: #988149;"
+                                     [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12">
+            <p class="form-lable">%</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-label>Select %</mat-label>
+              <mat-select formControlName="store">
+                <mat-option value="123"> 123 </mat-option>
+                <mat-option value="123"> 123 </mat-option>
+                <mat-option value="123"> 123 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12">
+            <p class="form-lable">Status</p>
+            <mat-radio-group formControlName="status">
+              <div class="d-flex justify-content-between">
+                <mat-radio-button class="form-radio"
+                                  value="pending"
+                                  class="radio-btn">Pending</mat-radio-button>
+                <mat-radio-button class="form-radio"
+                                  value="approved"
+                                  class="radio-btn">Approved</mat-radio-button>
+                <mat-radio-button class="form-radio"
+                                  value="active"
+                                  class="radio-btn">Freezed</mat-radio-button>
+              </div>
+
+            </mat-radio-group>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="data.filterType == 'productLaunch'">
+      <form [formGroup]="productLaunchForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Promo ID</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="promoId"
+                          placeholder="Select Promo ID">
+                <mat-option value="hyderabad"> 1234 </mat-option>
+                <mat-option value="banglore"> 124AD </mat-option>
+                <mat-option value="chennai"> 123 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Store Id</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="storeId"
+                          placeholder="Select Store Id">
+                <mat-option value="hyderabad"> Joyalukkas </mat-option>
+                <mat-option value="banglore"> Malabar Gold </mat-option>
+                <mat-option value="chennai"> Kalyan </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="category"
+                          placeholder="Select Category">
+                <mat-option value="hyderabad"> hyderabad </mat-option>
+                <mat-option value="banglore"> banglore </mat-option>
+                <mat-option value="chennai"> chennai </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Sub Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="subCategory"
+                          placeholder="Select Sub Category">
+                <mat-option value="hyderabad"> 1 </mat-option>
+                <mat-option value="banglore"> 2 </mat-option>
+                <mat-option value="chennai"> 3 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Launch Date</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     [matDatepicker]="picker3"
+                     formControlName="launchDate"
+                     placeholder="Enter Date" />
+              <mat-datepicker-toggle matSuffix
+                                     style="color: #988149;"
+                                     [for]="picker3"></mat-datepicker-toggle>
+              <mat-datepicker #picker3></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Time</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     placeholder="Placeholder"
+                     formControlName="time"
+                     placeholder="Enter Time" />
+              <mat-icon matSuffix
+                        style="color: #988149;">schedule</mat-icon>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12">
+            <p class="form-lable">Status</p>
+            <mat-radio-group formControlName="status">
+              <mat-radio-button class="form-radio"
+                                value="pending"
+                                class="pr-5 mr-5 radio-btn">Pending</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="approved"
+                                class="pr-5 mr-5 radio-btn">Approved</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="active"
+                                class="pr-5 mr-5 radio-btn">Active</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="inactive"
+                                class="pr-5 mr-5 radio-btn">In-Active</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="deny"
+                                class="pr-5 mr-5 radio-btn">Deny</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="hold"
+                                class="pr-5 mr-5 radio-btn">Hold</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="data.filterType == 'promotion'">
+      <form [formGroup]="promotionForm"
+            (ngSubmit)="submit()"
+            class="">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Promo ID</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="promoId"
+                          placeholder="Select Promo ID">
+                <mat-option value="hyderabad"> 1234 </mat-option>
+                <mat-option value="banglore"> 124AD </mat-option>
+                <mat-option value="chennai"> 123 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Store Id</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="storeId"
+                          placeholder="Select Store Id">
+                <mat-option value="hyderabad"> Joyalukkas </mat-option>
+                <mat-option value="banglore"> Malabar Gold </mat-option>
+                <mat-option value="chennai"> Kalyan </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="category"
+                          placeholder="Select Category">
+                <mat-option value="hyderabad"> hyderabad </mat-option>
+                <mat-option value="banglore"> banglore </mat-option>
+                <mat-option value="chennai"> chennai </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p class="m-0 form-lable">Sub Category</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <mat-select formControlName="subCategory"
+                          placeholder="Select Sub Category">
+                <mat-option value="hyderabad"> 1 </mat-option>
+                <mat-option value="banglore"> 2 </mat-option>
+                <mat-option value="chennai"> 3 </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">Start Date</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     formControlName="startDate"
+                     placeholder="Enter Date"
+                     [matDatepicker]="picker1">
+              <mat-datepicker-toggle matSuffix
+                                     style="color: #988149;"
+                                     [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">End Date</p>
+            <mat-form-field appearance="fill"
+                            class="full-width">
+              <input matInput
+                     formControlName="endDate"
+                     placeholder="Enter Date"
+                     [matDatepicker]="picker2">
+              <mat-datepicker-toggle matSuffix
+                                     style="color: #988149;"
+                                     [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12">
+            <p class="form-lable">Status</p>
+            <mat-radio-group formControlName="status">
+              <mat-radio-button class="form-radio"
+                                value="pending"
+                                class="pr-5 mr-5 radio-btn">Pending</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="approved"
+                                class="pr-5 mr-5 radio-btn">Approved</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="active"
+                                class="pr-5 mr-5 radio-btn">Active</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="inactive"
+                                class="pr-5 mr-5 radio-btn">In-Active</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="deny"
+                                class="pr-5 mr-5 radio-btn">Deny</mat-radio-button>
+              <mat-radio-button class="form-radio"
+                                value="hold"
+                                class="pr-5 mr-5 radio-btn">Hold</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mt-5 mb-4 pt-4">
+    <div class="d-flex flex-row ">
+      <div class="padding_topFour">
+        <button type="button"
+                mat-button
+                class="outline-button mr-4"
+                (click)="reset()">
+          Reset
+        </button>
+      </div>
+      <div class="padding_topFour">
+        <button type="button"
+                mat-button
+                class="rounded-button">Apply</button>
+      </div>
+    </div>
+  </div>
 </div>
