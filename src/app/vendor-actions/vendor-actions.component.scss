@@ -4,6 +4,42 @@
   font-size: 16px !important;
   font-family: "Montserrat" !important;
 }
+.title {
+  font: normal normal 600 20px/24px Montserrat;
+}
+
+::ng-deep .mat-dialog-container {
+  // max-width: 560px;
+  // min-height: 500px;
+  // padding: 50px 70px;
+  position: relative;
+  z-index: 99999999999;
+}
+
+::ng-deep .mat-dialog-container .button_close {
+  position: absolute;
+  right: 13px;
+  top: 10px;
+  z-index: 999999999999999999999 !important;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  line-height: -11px;
+  justify-content: center;
+  background: #e04f5f;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  padding-bottom: 2px;
+}
+::ng-deep .mat-dialog-container .button_close .mat-icon {
+  font-size: 15px !important;
+  font-weight: 700;
+  margin-top: 7px;
+}
+
 .form-lable {
   font-size: 14px;
   font-weight: 500;
@@ -62,6 +98,9 @@
 ::ng-deep .gift_image_info img {
   width: 50px !important;
   height: 50px !important;
+}
+::ng-deep .mat-dialog-container {
+  border-radius: 10px;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
   ::ng-deep .cdk-overlay-pane {

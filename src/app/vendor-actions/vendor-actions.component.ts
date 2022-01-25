@@ -1,6 +1,12 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from "@angular/material/dialog";
+import { ApprovedModelComponent } from "../approved-model/approved-model.component";
+import { FreezedModelComponent } from "../freezed-model/freezed-model.component";
 
 @Component({
   selector: "app-vendor-actions",
@@ -15,6 +21,7 @@ export class VendorActionsComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<VendorActionsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
+    public dialog: MatDialog,
     private fb: FormBuilder
   ) {
     console.log(data);
@@ -30,10 +37,14 @@ export class VendorActionsComponent implements OnInit {
     this.dialogRef.close();
   }
   submitForm() {
-    if (["Approve", "Freeze"].includes(this.data)) {
+    console.log(this.data);
+    this.close();
+    if (["Approve", "Freeze"].includes(this.data.name)) {
       this.submitted = true;
-    } else {
-      close();
+      const dialogRef = this.dialog.open(FreezedModelComponent, {
+        width: "30%",
+        data: this.data.type,
+      });
     }
   }
   countStar(star) {

@@ -355,7 +355,7 @@ export class MarketingComponent implements OnInit {
   denyPromotion(promotion) {
     const dialogRef = this.dialog.open(VendorActionsComponent, {
       width: "50%",
-      data: { name: "Denay", type: "promotion", data: promotion },
+      data: { name: "Deny", type: "promotion", data: promotion },
     });
   }
   viewPromotion(promotion) {
@@ -392,7 +392,7 @@ export class MarketingComponent implements OnInit {
   denyProductLaunch(productLaunch) {
     const dialogRef = this.dialog.open(VendorActionsComponent, {
       width: "50%",
-      data: { name: "Denay", type: "product Launch", data: productLaunch },
+      data: { name: "Deny", type: "product Launch", data: productLaunch },
     });
   }
   activeProductLaunch(productLaunch) {

@@ -1,27 +1,23 @@
 <div mat-dialog-content
      class="rounded">
   <div *ngIf="!submitted">
-    <div class="d-flex justify-content-between">
-      <div></div>
-      <div>
-        <p class="lable-font-title">
-          {{ data.name + " " + (data.type | titlecase) }}
-        </p>
-      </div>
+    <div class="text-center">
+      <p class="title">{{ data.name + " " + (data.type | titlecase) }}</p>
       <div class="example-button-container">
-        <button mat-mini-fab
-                color="warn"
+        <button class="button_close"
                 (click)="close()"
                 style="background: #e04f5f">
-          <mat-icon>close</mat-icon>
+          <i class="fa fa-times"
+             aria-hidden="true"></i>
         </button>
       </div>
     </div>
+
     <form [formGroup]="vendorActionsForm"
-          (ngSubmit)="submit()"
-          class="dany_vendor_info">
+          style="width: 60%;"
+          class="dany_vendor_info mx-auto">
       <div class="row ">
-        <div class="col-sm-12"
+        <div class="col-sm-12 pb-4"
              *ngIf="data.name != 'Rating'">
           <p class="m-0 form-lable">REASON</p>
           <mat-form-field class="full-width"
@@ -65,17 +61,19 @@
                           appearance="outline">
             <textarea matInput
                       formControlName="text"
-                      rows="3"
+                      rows="6"
                       cols="20"
                       placeholder="write here..."></textarea>
           </mat-form-field>
         </div>
       </div>
-      <div class="row">
+      <div class="row pt-5 pb-3">
         <div class="col-sm-12">
           <div class="d-flex justify-content-around">
             <button mat-flat-button
                     color="primary"
+                    type="button"
+                    style="height: 38px;"
                     class="submit-button mr-5"
                     (click)="submitForm()">
               Submit

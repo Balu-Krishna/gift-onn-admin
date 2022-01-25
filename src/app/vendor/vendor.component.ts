@@ -154,7 +154,7 @@ export class VendorComponent implements OnInit {
   denyVendor(vendor) {
     const dialogRef = this.dialog.open(VendorActionsComponent, {
       width: "50%",
-      data: { name: "Denay", type: "vendor", data: vendor },
+      data: { name: "Deny", type: "vendor", data: vendor },
     });
     console.log("denyVendor : " + vendor.storeId);
   }

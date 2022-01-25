@@ -249,7 +249,7 @@ export class PartnersComponent implements OnInit {
   denyPatner(partner) {
     const dialogRef = this.dialog.open(VendorActionsComponent, {
       width: "50%",
-      data: { name: "Denay", type: "partner", data: partner },
+      data: { name: "Deny", type: "partner", data: partner },
     });
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
