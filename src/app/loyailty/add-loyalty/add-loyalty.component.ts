@@ -17,6 +17,7 @@ export class AddLoyaltyComponent implements OnInit {
       currencyCode: ["", Validators.required],
       expiredDate: ["", Validators.required],
       earnpoints: ["", Validators.required],
+      rewardType: [""],
     });
   }
 

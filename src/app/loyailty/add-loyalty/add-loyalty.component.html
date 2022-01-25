@@ -73,13 +73,25 @@
           </mat-form-field>
         </div>
 
-        <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="col-md-6 col-sm-12">
           <p class="m-0 form--lable">EARN POINTS</p>
           <mat-form-field class="full-width"
                           appearance="fill">
             <input matInput
                    formControlName="earnpoints"
                    placeholder="Enter Earn Points" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <p class="m-0 form--lable">REWARD TYPE</p>
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <mat-select formControlName="rewardType"
+                        placeholder="Enter Type">
+              <mat-option value=""> Select Location </mat-option>
+              <mat-option value="vendor"> Bonus </mat-option>
+            </mat-select>
+
           </mat-form-field>
         </div>
       </div>
