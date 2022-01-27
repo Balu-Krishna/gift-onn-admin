@@ -59,6 +59,8 @@ import { ContactComponent } from "./customers-support/contact/contact.component"
 import { ReceivedMessageComponent } from "./customers-support/received-message/received-message.component";
 import { SentMessageComponent } from "./customers-support/sent-message/sent-message.component";
 import { NgxPaginationModule } from "ngx-pagination";
+import { AdminEditComponent } from './admin-edit/admin-edit.component';
+import { AdminChangePasswordComponent } from './admin-change-password/admin-change-password.component';
 
 @NgModule({
   declarations: [
@@ -111,6 +113,8 @@ import { NgxPaginationModule } from "ngx-pagination";
     ContactComponent,
     ReceivedMessageComponent,
     SentMessageComponent,
+    AdminEditComponent,
+    AdminChangePasswordComponent,
   ],
   imports: [
     BrowserModule,

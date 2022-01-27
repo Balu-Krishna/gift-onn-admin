@@ -1,0 +1,65 @@
+<div class="d-flex justify-content-between pb-4 mobile_admin_heading">
+    <div class="pl-5 page_induvidul_title">
+        <p class="page--title">Edit Details</p>
+    </div>
+    <div class="d-flex justify-content-end">
+        <p class="text-muted lable-font-title">Account /</p>
+        <p class="lable-font-title font-color">Edit Details</p>
+    </div>
+</div>
+
+
+<div class="ml-4 shadow-lg bg-white rounded h-88 mobile_userInfo">
+    <div class="edit-img">
+        <div>
+            <img src="assets/images/admin.svg">
+        </div>
+        <div class="edit-p">
+            <p>Edit
+                <span><img src="assets//images/pencil.svg"> </span>
+            </p>
+        </div>
+    </div>
+    <form class="form-header">
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-sm-6">
+                <p class="m-0 form-lable">FULL NAME</p>
+                <mat-form-field class="full-width"
+                                appearance="fill">
+                    <input matInput
+                           placeholder="Enter Full Name" />
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6">
+                <p class="m-0 form-lable">EMAIL</p>
+                <mat-form-field class="full-width"
+                                appearance="fill">
+                    <input matInput
+                           placeholder="Enter Email" />
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+
+    <div class="row mt-5">
+        <div class="col-sm-12">
+            <div class="mobile_button_group">
+                <button mat-flat-button
+                        color="primary"
+                        style="height: 38px;"
+                        class="save-button  px-5"
+                        (click)="addVendorSubmit()">
+                    Save
+                </button>
+                <button mat-flat-button
+                        color="accent"
+                        style="height: 38px;"
+                        class="cancel-button  px-5">
+                    Cancel
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+</div>
