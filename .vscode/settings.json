@@ -1,0 +1,17 @@
+{
+    "files.autoSave": "off",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.cursorBlinking": "smooth",
+    "workbench.editor.highlightModifiedTabs": true,
+    "html.format.indentInnerHtml": true,
+    "html.format.wrapAttributes": "force-aligned",
+    "html.format.endWithNewline": true,
+    "eslint.validate": [
+        "javascript",
+        {
+          "language": "typescript"
+        }
+    ],
+    "debug.node.autoAttach": "on"
+}

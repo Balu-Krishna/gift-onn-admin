@@ -45,4 +45,25 @@
   background: #988149;
   border-radius: 10px;
   font-family: "Montserrat", sans-serif;
+  margin-right: 20px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  // ::ng-deep .cdk-overlay-pane {
+  //   width: 80% !important;
+  // }
+  ::ng-deep .dany_vendor_info {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  .form-lable {
+    font-size: 12px !important;
+  }
+
+  .mat-dialog-content {
+    padding: 0 !important;
+  }
+  .deny_inforation {
+    padding: 100px !important;
+  }
 }

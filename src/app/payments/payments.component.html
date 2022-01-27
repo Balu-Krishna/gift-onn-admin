@@ -1,188 +1,191 @@
-<section>
-    <div class="row">
-        <div class="col-lg-6 admins_head">
-            <h6>Payments</h6> 
-        </div>
-        <div class="col-lg-6 add_btn">
-        </div>
+<div class="d-flex justify-content-between pb-4 mobile_admin_heading">
+  <div class="pl-5 page_title_info">
+    <p class="page--title">Payments</p>
+  </div>
+  <div class="d-flex justify-content-end">
+    <div class="pr-4">
+      <button mat-stroked-button
+              color="primary"
+              class="outline--button filter-btn"
+              (click)="openFilter()">
+        Filter
+        <svg xmlns="http://www.w3.org/2000/svg"
+             id="Layer_1"
+             enable-background="new 0 0 32 32"
+             height="19"
+             viewBox="0 0 32 32"
+             width="19">
+          <g fill="#988149">
+            <path
+                  d="m4 9h4c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2h14c.552 0 1-.447 1-1s-.448-1-1-1h-14c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2h-4c-.552 0-1 .447-1 1s.448 1 1 1z" />
+            <path
+                  d="m28 15h-6c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2h-12c-.552 0-1 .447-1 1s.448 1 1 1h12c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2h6c.552 0 1-.447 1-1s-.448-1-1-1z" />
+            <path
+                  d="m28 23h-14c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2h-4c-.552 0-1 .447-1 1s.448 1 1 1h4c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2h14c.552 0 1-.447 1-1s-.448-1-1-1z" />
+          </g>
+        </svg>
+      </button>
     </div>
-</section>
-<section class="table_box" style="margin-left: 20px;">
-    <div class="row">
-        <div class="col-lg-6 export_btn"><h6>Export:</h6><a>csv</a><a>xls</a><a>pdf</a> </div>
-        <div class="col-lg-5 col-md-5 col-sm-5 d-flex justify-content-end" style="margin-right:25px">
-            <form class="search-form">
-                <mat-form-field class="form_field search_btn"  appearance="outline">
-                    <mat-icon class="form_field" matSuffix>search</mat-icon>
-                    <input matInput type="search" placeholder="search" class="search-input">
-                </mat-form-field>
-            </form>     
+  </div>
+</div>
+<div class="ml-4 shadow-lg bg-white rounded h-100 mobile_userInfo">
+  <div class="search_mobile_inforamtive d-flex justify-content-between">
+    <div class="justify-content-center align-self-center export_informative">
+      <div class="d-flex justify-content-start">
+        <div class="pl-2 justify-content-center align-self-center">
+          <span class="export--label align-middle pr-3">Export: </span>
         </div>
+        <div class="pr-3">
+          <button mat-stroked-button
+                  color="accent"
+                  class="outline--export--button btn-outline-35"
+                  (click)="download('csv')">
+            CSV
+          </button>
+        </div>
+        <div class="pr-3">
+          <button mat-stroked-button
+                  color="accent"
+                  class="outline--export--button btn-outline-35"
+                  (click)="download('xls')">
+            XLS
+          </button>
+        </div>
+        <div class="pr-3">
+          <button mat-stroked-button
+                  color="accent"
+                  class="outline--export--button btn-outline-35"
+                  (click)="download('pdf')">
+            PDF
+          </button>
+        </div>
+      </div>
     </div>
-    <mat-tab-group>
-        <mat-tab  class="text-right tab_view mention" label="Vendors" style="padding-left: 221px;">
-            <section class="">
-                <table class="table table-striped table-hover tab_admin prod_tab">
-                    <thead>  
-                        <tr style="padding-top: 20px;">
-                            <th class="th_wid">Store Id</th>  
-                            <th class="th_wid">Customer Id</th>  
-                            <th class="th_wid">Order Id</th>  
-                            <th class="th_wid">Product Id</th>  
-                            <th class="th_wid">Vendor</th>  
-                            <th class="th_wid">Total<p class="tax_para">(Incl of taxes)</p></th>  
-                            <th class="th_wid">To Vendor</th> 
-                            <th class="th_wid">Due</th>  
-                            <th class="th_wid">Offer/Discount price</th> 
-                            <th class="th_wid">Net sale Value</th> 
-                            <th class="th_wid">Date</th>     
-                        </tr>  
-                    </thead>  
-                    <tbody>  
-                        <tr>   
-                            <td>897123</td>  
-                            <td>Rajesh236</td>  
-                            <td>brace8976</td> 
-                            <td>brace8976</td>   
-                            <td>joyalukkas</td>  
-                            <td>15000</td>  
-                            <td>14000</td>  
-                            <td>14000</td>
-                            <td>14000</td>  
-                            <td>20000</td>  
-                            <td>10/12/2021</td>  
-                        </tr> 
-                        <tr>   
-                            <td>897123</td>  
-                            <td>Rajesh236</td>  
-                            <td>brace8976</td> 
-                            <td>brace8976</td>   
-                            <td>joyalukkas</td>  
-                            <td>15000</td>  
-                            <td>14000</td>  
-                            <td>14000</td>
-                            <td>14000</td>  
-                            <td>20000</td>  
-                            <td>10/12/2021</td>  
-                        </tr> 
-                        <tr>   
-                            <td>897123</td>  
-                            <td>Rajesh236</td>  
-                            <td>brace8976</td> 
-                            <td>brace8976</td>   
-                            <td>joyalukkas</td>  
-                            <td>15000</td>  
-                            <td>14000</td>  
-                            <td>14000</td>
-                            <td>14000</td>  
-                            <td>20000</td>  
-                            <td>10/12/2021</td>  
-                        </tr> 
-                        <tr>   
-                            <td>897123</td>  
-                            <td>Rajesh236</td>  
-                            <td>brace8976</td> 
-                            <td>brace8976</td>   
-                            <td>joyalukkas</td>  
-                            <td>15000</td>  
-                            <td>14000</td>  
-                            <td>14000</td>
-                            <td>14000</td>  
-                            <td>20000</td>  
-                            <td>10/12/2021</td>  
-                        </tr> 
-                    </tbody>  
-                </table>
-            </section> 
-        </mat-tab>
-        <mat-tab label="Partners">
-            <section class="">
-                <table class="table table-striped table-hover tab_admin prod_tab">
-                    <thead>  
-                        <tr style="padding-top: 20px;">
-                            <th class="th_wid">Store Id</th>  
-                            <th class="th_wid">Customer Id</th>  
-                            <th class="th_wid">Order Id</th>  
-                            <th class="th_wid">Product Id</th>  
-                            <th class="th_wid">Vendor</th>  
-                            <th class="th_wid">Total <p class="tax_para">Incl of taxes</p></th>  
-                            <th class="th_wid">To Vendor</th> 
-                            <th class="th_wid">Due</th>  
-                            <th class="th_wid">Offer/Discount price</th> 
-                            <th class="th_wid">Net sale Value</th> 
-                            <th class="th_wid">Date</th>     
-                        </tr>  
-                    </thead>  
-                    <tbody>  
-                        <tr>   
-                            <td>897123</td>  
-                            <td>Rajesh236</td>  
-                            <td>brace8976</td> 
-                            <td>brace8976</td>   
-                            <td>joyalukkas</td>  
-                            <td>15000</td>  
-                            <td>14000</td>  
-                            <td>14000</td>
-                            <td>14000</td>  
-                            <td>20000</td>  
-                            <td>10/12/2021</td>  
-                        </tr> 
-                        <tr>   
-                            <td>897123</td>  
-                            <td>Rajesh236</td>  
-                            <td>brace8976</td> 
-                            <td>brace8976</td>   
-                            <td>joyalukkas</td>  
-                            <td>15000</td>  
-                            <td>14000</td>  
-                            <td>14000</td>
-                            <td>14000</td>  
-                            <td>20000</td>  
-                            <td>10/12/2021</td>  
-                        </tr> 
-                        <tr>   
-                            <td>897123</td>  
-                            <td>Rajesh236</td>  
-                            <td>brace8976</td> 
-                            <td>brace8976</td>   
-                            <td>joyalukkas</td>  
-                            <td>15000</td>  
-                            <td>14000</td>  
-                            <td>14000</td>
-                            <td>14000</td>  
-                            <td>20000</td>  
-                            <td>10/12/2021</td>  
-                        </tr> 
-                        <tr>   
-                            <td>897123</td>  
-                            <td>Rajesh236</td>  
-                            <td>brace8976</td> 
-                            <td>brace8976</td>   
-                            <td>joyalukkas</td>  
-                            <td>15000</td>  
-                            <td>14000</td>  
-                            <td>14000</td>
-                            <td>14000</td>  
-                            <td>20000</td>  
-                            <td>10/12/2021</td>  
-                        </tr> 
-                        <tr>   
-                            <td>897123</td>  
-                            <td>Rajesh236</td>  
-                            <td>brace8976</td> 
-                            <td>brace8976</td>   
-                            <td>joyalukkas</td>  
-                            <td>15000</td>  
-                            <td>14000</td>  
-                            <td>14000</td>
-                            <td>14000</td>  
-                            <td>20000</td>  
-                            <td>10/12/2021</td>  
-                        </tr> 
-                    </tbody>  
-                </table>
-            </section>
-        </mat-tab>   
-    </mat-tab-group>
-</section>
 
+    <div class="d-flex align-content-center  search_mobile">
+      <mat-form-field appearance="outline"
+                      style="font-size: 20px"
+                      class="pr-3">
+        <input matInput
+               type="search"
+               placeholder="search"
+               class="search-input" />
+        <i class="fa fa-search"></i>
+      </mat-form-field>
+    </div>
+  </div>
+  <mat-tab-group (selectedTabChange)="tabChange($event)">
+    <mat-tab class="text-right tab_view"
+             label="Vendors"
+             style="padding-left: 221px">
+      <div class="table-responsive py-3">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th class="th_wid">Store Id</th>
+              <th class="th_wid">Customer Id</th>
+              <th class="th_wid">Order Id</th>
+              <th class="th_wid">Product Id</th>
+              <th class="th_wid">Vendor</th>
+              <th class="th_wid">
+                Total
+                <p class="tax_para">(Incl of taxes)</p>
+              </th>
+              <th class="th_wid">To Vendor</th>
+              <th class="th_wid">Due</th>
+              <th class="th_wid">Offer/Discount price</th>
+              <th class="th_wid">Net sale Value</th>
+              <th class="th_wid">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let vendor of vendors | paginate
+                : {
+                    id:'vendors',
+                    itemsPerPage: tableSize,
+                    currentPage: vendorsPage,
+                    totalItems: vendorsCount
+                  }">
+              <td>{{ vendor.storeId }}</td>
+              <td>{{ vendor.customerId }}</td>
+              <td>{{ vendor.orderId }}</td>
+              <td>{{ vendor.productId }}</td>
+              <td>{{ vendor.vendor }}</td>
+              <td>{{ vendor.total }}</td>
+              <td>{{ vendor.toVendor }}</td>
+              <td>{{ vendor.due }}</td>
+              <td>{{ vendor.discountPrice }}</td>
+              <td>{{ vendor.netSales }}</td>
+              <td>{{ vendor.date }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="d-flex justify-content-end">
+        <pagination-controls responsive="true"
+                             id="vendors"
+                             previousLabel="Prev"
+                             nextLabel="Next"
+                             (pageChange)="vendorsPageChange($event)">
+        </pagination-controls>
+      </div>
+    </mat-tab>
+
+    <mat-tab class="text-right tab_view"
+             label="Partners"
+             style="padding-left: 221px">
+      <div class="table-responsive py-3">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th class="th_wid">Store Id</th>
+              <th class="th_wid">Customer Id</th>
+              <th class="th_wid">Order Id</th>
+              <th class="th_wid">Product Id</th>
+              <th class="th_wid">Partner Id</th>
+              <th class="th_wid">
+                Total
+                <p class="tax_para">(Incl of taxes)</p>
+              </th>
+              <th class="th_wid">To Vendor</th>
+              <th class="th_wid">Due</th>
+              <th class="th_wid">Offer/Discount price</th>
+              <th class="th_wid">Net sale Value</th>
+              <th class="th_wid">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let partner of partners | paginate
+                : {
+                    id: 'partners',
+                    itemsPerPage: tableSize,
+                    currentPage: partnersPage,
+                    totalItems: partnersCount
+                  }">
+              <td>{{ partner.storeId }}</td>
+              <td>{{ partner.customerId }}</td>
+              <td>{{ partner.orderId }}</td>
+              <td>{{ partner.productId }}</td>
+              <td>{{ partner.partnerId }}</td>
+              <td>{{ partner.total }}</td>
+              <td>{{ partner.toVendor }}</td>
+              <td>{{ partner.due }}</td>
+              <td>{{ partner.discountPrice }}</td>
+              <td>{{ partner.netSales }}</td>
+              <td>{{ partner.date }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="d-flex justify-content-end">
+        <pagination-controls responsive="true"
+                             previousLabel="Prev"
+                             nextLabel="Next"
+                             (pageChange)="partnersPageChange($event)">
+        </pagination-controls>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

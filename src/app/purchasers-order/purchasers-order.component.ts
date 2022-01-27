@@ -1,42 +1,434 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { ApprovedModelComponent } from '../approved-model/approved-model.component';
-import { DenyProductComponent } from '../deny-product/deny-product.component';
-import { FreezeRoleComponent } from '../freeze-role/freeze-role.component';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { MatDialog } from "@angular/material/dialog";
+import { ApprovedModelComponent } from "../approved-model/approved-model.component";
+import { DenyProductComponent } from "../deny-product/deny-product.component";
+import { FilterComponent } from "../filter/filter.component";
+import { FreezeCategoryComponent } from "../freeze-category/freeze-category.component";
+import { FreezeRoleComponent } from "../freeze-role/freeze-role.component";
+import { SuccessfulModelComponent } from "../successful-model/successful-model.component";
 
 @Component({
-  selector: 'app-purchasers-order',
-  templateUrl: './purchasers-order.component.html',
-  styleUrls: ['./purchasers-order.component.scss']
+  selector: "app-purchasers-order",
+  templateUrl: "./purchasers-order.component.html",
+  styleUrls: ["./purchasers-order.component.scss"],
 })
 export class PurchasersOrderComponent implements OnInit {
+  ordersPage = 1;
+  ordersCount = 12;
+  couponsPage = 1;
+  couponsCount = 12;
+  tableSize = 4;
+  generateOpt: FormGroup;
+  generateQr: FormGroup;
+  submitted = false;
+  showFilter = true;
+  Orders = [];
+  coupons = [];
+  venderRelatedCouponsSelected: boolean;
 
-  constructor(public dialog: MatDialog) { }
-
-  ngOnInit(): void {
+  constructor(public dialog: MatDialog, private fb: FormBuilder) {
+    this.generateOpt = this.fb.group({
+      orderid: ["", Validators.required],
+      confirmedOtp: ["", Validators.required],
+    });
+    this.generateQr = this.fb.group({
+      qrNumber: ["", Validators.required],
+      purchasername: ["", Validators.required],
+      productName: ["", Validators.required],
+      productId: ["", Validators.required],
+      SubCategory: ["", Validators.required],
+      category: ["", Validators.required],
+      storeid: ["", Validators.required],
+      mobileNumber: ["", Validators.required],
+    });
   }
 
-
-  action(value){
-    console.log(value)
-    if(value=='freeze'){
-      const dialogRef = this.dialog.open(FreezeRoleComponent,{
-        width:"50%",
-        data:"purchasersOrder"
-       });
-       dialogRef.afterClosed().subscribe(result => {
-         console.log(`Dialog result: ${result}`);
-       });
-     }
-     if(value=='approve'){
-      const dialogRef = this.dialog.open(ApprovedModelComponent,{
-        width:"30%",
-        data:"purchasersOrder"
-       });
-       dialogRef.afterClosed().subscribe(result => {
-         console.log(`Dialog result: ${result}`);
-       });
-     }
+  ngOnInit(): void {
+    this.showData();
+  }
+  showData(): void {
+    this.Orders = [
+      {
+        orderId: "258664",
+        customerId: "258586",
+        storeId: "225466",
+        purchasername: "Sai Krishna",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        productId: "JOY56882",
+        productName: "Bracelet",
+        netPrice: "15000",
+        totalPrice: "16000",
+        status: "Pending",
+      },
+      {
+        orderId: "258664",
+        customerId: "258586",
+        storeId: "225466",
+        purchasername: "Sai Krishna",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        productId: "JOY56882",
+        productName: "Bracelet",
+        netPrice: "15000",
+        totalPrice: "16000",
+        status: "Refunded",
+      },
+      {
+        orderId: "258664",
+        customerId: "258586",
+        storeId: "225466",
+        purchasername: "Sai Krishna",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        productId: "JOY56882",
+        productName: "Bracelet",
+        netPrice: "15000",
+        totalPrice: "16000",
+        status: "Confirmed",
+      },
+      {
+        orderId: "258664",
+        customerId: "258586",
+        storeId: "225466",
+        purchasername: "Sai Krishna",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        productId: "JOY56882",
+        productName: "Bracelet",
+        netPrice: "15000",
+        totalPrice: "16000",
+        status: "Pending",
+      },
+      {
+        orderId: "258664",
+        customerId: "258586",
+        storeId: "225466",
+        purchasername: "Sai Krishna",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        productId: "JOY56882",
+        productName: "Bracelet",
+        netPrice: "15000",
+        totalPrice: "16000",
+        status: "Refunded",
+      },
+      {
+        orderId: "258664",
+        customerId: "258586",
+        storeId: "225466",
+        purchasername: "Sai Krishna",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        productId: "JOY56882",
+        productName: "Bracelet",
+        netPrice: "15000",
+        totalPrice: "16000",
+        status: "Confirmed",
+      },
+      {
+        orderId: "258664",
+        customerId: "258586",
+        storeId: "225466",
+        purchasername: "Sai Krishna",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        productId: "JOY56882",
+        productName: "Bracelet",
+        netPrice: "15000",
+        totalPrice: "16000",
+        status: "Pending",
+      },
+      {
+        orderId: "258664",
+        customerId: "258586",
+        storeId: "225466",
+        purchasername: "Sai Krishna",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        productId: "JOY56882",
+        productName: "Bracelet",
+        netPrice: "15000",
+        totalPrice: "16000",
+        status: "Refunded",
+      },
+      {
+        orderId: "258664",
+        customerId: "258586",
+        storeId: "225466",
+        purchasername: "Sai Krishna",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        productId: "JOY56882",
+        productName: "Bracelet",
+        netPrice: "15000",
+        totalPrice: "16000",
+        status: "Confirmed",
+      },
+      {
+        orderId: "258664",
+        customerId: "258586",
+        storeId: "225466",
+        purchasername: "Sai Krishna",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        productId: "JOY56882",
+        productName: "Bracelet",
+        netPrice: "15000",
+        totalPrice: "16000",
+        status: "Pending",
+      },
+      {
+        orderId: "258664",
+        customerId: "258586",
+        storeId: "225466",
+        purchasername: "Sai Krishna",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        productId: "JOY56882",
+        productName: "Bracelet",
+        netPrice: "15000",
+        totalPrice: "16000",
+        status: "Refunded",
+      },
+      {
+        orderId: "258664",
+        customerId: "258586",
+        storeId: "225466",
+        purchasername: "Sai Krishna",
+        category: "Jewellery",
+        subCategory: "Bracelet",
+        productId: "JOY56882",
+        productName: "Bracelet",
+        netPrice: "15000",
+        totalPrice: "16000",
+        status: "Confirmed",
+      },
+    ];
+    this.coupons = [
+      {
+        code: "ASDVM56",
+        storeid: "JOY2255",
+        storeName: "Joyalukkas",
+        couponType: "flat",
+        amount: "500",
+        category: "jewellary",
+        subCategort: "Bracelet",
+        discount: "25%",
+        startDate: "01/12/2021",
+        endDte: "12/12/2016",
+        status: "Pending",
+      },
+      {
+        code: "ASDVM56",
+        storeid: "JOY2255",
+        storeName: "Joyalukkas",
+        couponType: "flat",
+        amount: "500",
+        category: "jewellary",
+        subCategort: "Bracelet",
+        discount: "25%",
+        startDate: "01/12/2021",
+        endDte: "12/12/2016",
+        status: "Approved",
+      },
+      {
+        code: "ASDVM56",
+        storeid: "JOY2255",
+        storeName: "Joyalukkas",
+        couponType: "flat",
+        amount: "500",
+        category: "jewellary",
+        subCategort: "Bracelet",
+        discount: "25%",
+        startDate: "01/12/2021",
+        endDte: "12/12/2016",
+        status: "Pending",
+      },
+      {
+        code: "ASDVM56",
+        storeid: "JOY2255",
+        storeName: "Joyalukkas",
+        couponType: "flat",
+        amount: "500",
+        category: "jewellary",
+        subCategort: "Bracelet",
+        discount: "25%",
+        startDate: "01/12/2021",
+        endDte: "12/12/2016",
+        status: "Pending",
+      },
+      {
+        code: "ASDVM56",
+        storeid: "JOY2255",
+        storeName: "Joyalukkas",
+        couponType: "flat",
+        amount: "500",
+        category: "jewellary",
+        subCategort: "Bracelet",
+        discount: "25%",
+        startDate: "01/12/2021",
+        endDte: "12/12/2016",
+        status: "Approved",
+      },
+      {
+        code: "ASDVM56",
+        storeid: "JOY2255",
+        storeName: "Joyalukkas",
+        couponType: "flat",
+        amount: "500",
+        category: "jewellary",
+        subCategort: "Bracelet",
+        discount: "25%",
+        startDate: "01/12/2021",
+        endDte: "12/12/2016",
+        status: "Pending",
+      },
+      {
+        code: "ASDVM56",
+        storeid: "JOY2255",
+        storeName: "Joyalukkas",
+        couponType: "flat",
+        amount: "500",
+        category: "jewellary",
+        subCategort: "Bracelet",
+        discount: "25%",
+        startDate: "01/12/2021",
+        endDte: "12/12/2016",
+        status: "Pending",
+      },
+      {
+        code: "ASDVM56",
+        storeid: "JOY2255",
+        storeName: "Joyalukkas",
+        couponType: "flat",
+        amount: "500",
+        category: "jewellary",
+        subCategort: "Bracelet",
+        discount: "25%",
+        startDate: "01/12/2021",
+        endDte: "12/12/2016",
+        status: "Approved",
+      },
+      {
+        code: "ASDVM56",
+        storeid: "JOY2255",
+        storeName: "Joyalukkas",
+        couponType: "flat",
+        amount: "500",
+        category: "jewellary",
+        subCategort: "Bracelet",
+        discount: "25%",
+        startDate: "01/12/2021",
+        endDte: "12/12/2016",
+        status: "Pending",
+      },
+      {
+        code: "ASDVM56",
+        storeid: "JOY2255",
+        storeName: "Joyalukkas",
+        couponType: "flat",
+        amount: "500",
+        category: "jewellary",
+        subCategort: "Bracelet",
+        discount: "25%",
+        startDate: "01/12/2021",
+        endDte: "12/12/2016",
+        status: "Pending",
+      },
+      {
+        code: "ASDVM56",
+        storeid: "JOY2255",
+        storeName: "Joyalukkas",
+        couponType: "flat",
+        amount: "500",
+        category: "jewellary",
+        subCategort: "Bracelet",
+        discount: "25%",
+        startDate: "01/12/2021",
+        endDte: "12/12/2016",
+        status: "Approved",
+      },
+      {
+        code: "ASDVM56",
+        storeid: "JOY2255",
+        storeName: "Joyalukkas",
+        couponType: "flat",
+        amount: "500",
+        category: "jewellary",
+        subCategort: "Bracelet",
+        discount: "25%",
+        startDate: "01/12/2021",
+        endDte: "12/12/2016",
+        status: "Pending",
+      },
+    ];
+  }
+  ordersPageChange(event) {
+    this.ordersPage = event;
+    this.showData();
+  }
+  couponsPageChange(event) {
+    this.couponsPage = event;
+    this.showData();
+  }
+  actionSai() {
+    const dialogRef = this.dialog.open(FreezeCategoryComponent, {
+      width: "673px",
+      height: "513px",
+    });
+    dialogRef.afterClosed().subscribe((result) => {});
+  }
+  myTabSelectedTabChange(event) {
+    console.log(event);
+    if (event.index === 0 || event.index === 3) {
+      this.showFilter = true;
+    } else {
+      this.showFilter = false;
     }
+    if (event.index === 3) {
+      this.venderRelatedCouponsSelected = true;
+    } else {
+      this.venderRelatedCouponsSelected = false;
+    }
+  }
+  openFilter() {
+    let type = this.venderRelatedCouponsSelected ? "coupons" : "order";
+    const dialogRef = this.dialog.open(FilterComponent, {
+      width: "673px",
+      height: "513px",
+      data: { filterType: type },
+    });
+  }
 
+  QrSubmit() {
+    console.log("this.generateQr.value", this.generateQr.value);
+  }
+  OptSubmit() {
+    console.log("this.generateOpt.value", this.generateOpt.value);
+  }
+  action(value) {
+    console.log(value);
+    if (value == "freeze") {
+      const dialogRef = this.dialog.open(FreezeRoleComponent, {
+        width: "673px",
+        height: "513px",
+        data: "purchasersOrder",
+      });
+      dialogRef.afterClosed().subscribe((result) => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
+    if (value == "approve") {
+      const dialogRef = this.dialog.open(ApprovedModelComponent, {
+        width: "330px",
+        height: "246px",
+        data: "purchasersOrder",
+      });
+      dialogRef.afterClosed().subscribe((result) => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
+  }
 }

@@ -1,0 +1,151 @@
+<!-- <div class="d-flex justify-content-end">
+    <h2><span>Customers support</span>/<span>Chat</span>/<span>Peter Parker</span></h2>
+</div> -->
+
+<div class="font-weight-bold  mt-4 header"
+     style="color: black;">
+
+  <h2>Customers Support</h2>
+</div>
+
+<div class="shadow-lg bg-white rounded">
+
+  <ul ngbNav
+      #nav="ngbNav"
+      class="nav-tabs">
+    <li [ngbNavItem]="1"
+        class="first">
+      <a ngbNavLink> Contact Support</a>
+      <ng-template ngbNavContent>
+
+        <div class="container">
+          <div class="row"
+               style="margin-top: 20px;">
+            <div class="col">
+              <img src="../../assets/undraw_contact.svg">
+            </div>
+            <div class="col info-second mt-4 ml-4">
+              <div class="customer-help-info">
+                <h2 style="color: black; font-weight: 500;">How Can We Help You ?</h2>
+                <img src="../../assets/phone-symbol.svg"> <span class="mobile "> + 91
+                  454357495</span>
+                <br>
+                <br>
+                <img src="../../assets/email.svg"> <span class="email "> giftonn.info@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2"
+        class="second">
+      <a ngbNavLink>Chat</a>
+      <ng-template ngbNavContent>
+        <div class="main-container">
+          <div class="container app">
+            <div class="row app-container">
+              <!--Contact list section-->
+              <div class="col-12 col-md-4 side">
+                <div class="side-mainArea">
+                  <div class="row heading">
+                  </div>
+                  <!--navigation buttons-->
+                  <div class="row tabsContainer">
+                    <div class="col-sm-12 tabsContainer-inner">
+                      <div class="form-group has-feedback">
+
+                        <!-- Nav tabs -->
+                        <ul class="nav  tabs-container search_barChat">
+                          <li class="nav-item">
+                            <a class="nav-link"
+                               data-toggle="tab"
+                               href="#search">
+                            </a>
+                            <i class="bi bi-search"></i>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!--contacts section-->
+                  <div class="tab-content left_custom_tab">
+                    <div class="tab-pane active"
+                         id="chat">
+                      <div class="row sideBar custom_sidebarInfo">
+                        <!--contact component-->
+                        <app-contact></app-contact>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade"
+                         id="contacts">
+                      All Contacts Section
+                    </div>
+                    <div class="tab-pane fade"
+                         id="search">
+                      <!--contact component-->
+                      <app-contact></app-contact>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--main chat section-->
+              <div class="col-12 col-md-8 conversation">
+                <!--header section-->
+                <div class="row heading heading-container">
+                  <div class="col-sm-10 col-md-10 col-xs-10">
+                    <div class="heading-contact-container">
+                      <div class="heading-avatar">
+                        <div class="heading-avatar-icon">
+                          <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
+                        </div>
+                      </div>
+                      <div class="heading-name">
+                        <a class="heading-name-details">John Doe
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Settings-->
+                  <div class="col-sm-1 col-md-1 col-xs-1  heading-dot float-right">
+                    <fa-icon [icon]="faSetting"
+                             class="faIcon"></fa-icon>
+                  </div>
+                </div>
+                <!--messages section-->
+                <div class="row message"
+                     id="conversation">
+                  <div class="col-12 col-md-12">
+                    <!--Messages-->
+                    <!--received message component-->
+                    <app-received-message></app-received-message>
+                    <!--sent message component-->
+                    <app-sent-message></app-sent-message>
+                    <!--received message component-->
+                    <!--sent message component-->
+                  </div>
+                </div>
+                <!--reply section-->
+                <div class="row reply">
+                  <div class="col-9 col-sm-9 reply-main">
+                    <i class="bi bi-plus"></i>
+
+                    <div class="send_textarea">
+                      <textarea class="form-control write_message"
+                                rows="1"
+                                id="comment"
+                                placeholder="Add Text to this message..."></textarea>
+                      <i class="bi bi-send-fill"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"
+       class="mt-2"></div>
+</div>

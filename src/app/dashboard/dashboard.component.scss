@@ -3,6 +3,10 @@
 //   width: 100%;
 //   height: 100%;
 // }
+::ng-deep .navbar .navbar-menu-wrapper {
+  padding-right: 0 !important;
+  width: calc(100% - 31px) !important;
+}
 .heading {
   font-family: SF Pro Display, sans-serif;
   font-style: normal;
@@ -14,11 +18,13 @@
   text-transform: capitalize;
   color: #2d2756;
 }
+
 .admin_first_head {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .heading p {
   font-size: 25px;
   padding-top: 2%;
@@ -51,7 +57,7 @@
   line-height: 125.84%;
   text-transform: capitalize;
   color: #9d9d9e;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .number {
@@ -59,12 +65,15 @@
 }
 
 .card-design {
-  width: 322px;
+  width: 100%;
   display: flex;
+  align-items: center;
   padding: 1rem 0.5rem;
-  height: 104px;
+  height: 120px;
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 7px 0px;
+}
+.card-design .img_set {
 }
 
 .card-design2 {
@@ -84,17 +93,16 @@
 .dash_board h1 {
   font-size: 25px;
   font-weight: 700;
-  color: #988149;
+  color: #ae985f;
+  font-family: "Montserrat", sans-serif !important;
+
   padding-left: 35px;
 }
 
 .dash_head h2 {
-  color: #000 !important;
-  font-family: 'Montserrat' !important;
-  font-weight: 600;
-  text-transform: capitalize;
-  font-size: 18px;
-  margin-left:30px !important;
+  font-weight: 650;
+  padding-left: 35px;
+  font-size: 14px;
 }
 
 .sale_graph h2 {
@@ -137,6 +145,7 @@
 .mat-card {
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 7px 0px;
+  margin-bottom: 10px;
 }
 
 .img_setqr {
@@ -147,8 +156,17 @@
 
 .img_set {
   border-radius: 50% !important;
-  padding: 15px;
-  margin: 15px;
+  width: 100px;
+  height: 67px;
+  margin: 0 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cancel,
+.code,
+.coupon {
+  width: 67px !important;
 }
 
 .shopping_bag {
@@ -185,4 +203,171 @@
 
 .cancel {
   background-color: #e5a0a0 !important;
+}
+
+::ng-deep .month_infos .mat-form-field-infix {
+  min-width: 75px !important;
+  top: 3px;
+  right: -5px;
+  z-index: 99999999999999999999999999;
+  border: none !important;
+  padding: 13px 0 0 0 !important;
+}
+
+::ng-deep .month_infos .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .month_infos .mat-form-field {
+  border: solid 1px #c9c9cb;
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif !important;
+  position: absolute;
+  top: -22px;
+}
+
+::ng-deep
+  .month_infos
+  .mat-form-field-appearance-legacy
+  .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+
+::ng-deep .month_infos .mat-select-arrow {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+
+::ng-deep .month_infos .mat-label {
+  background-color: red !important;
+}
+::ng-deep .main-panel .content-wrapper .mat-select {
+  position: relative;
+  top: -7px;
+  z-index: 999999;
+}
+.mat-select-value {
+  position: relative;
+  top: -6px;
+}
+
+::ng-deep .month_infos label#mat-form-field-label-1 {
+  background: #f5eef1 !important;
+  padding: 0 10px 0 5px;
+  width: 80px !important;
+}
+
+::ng-deep .month_infos .mat-select-value-text {
+  margin-left: 13px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+::ng-deep .month_infos .mat-select-value-text > .month_infos .mat-select-arrow {
+  top: -11px;
+  position: relative;
+  color: #ae985f;
+}
+
+::ng-deep .mobile_dashboard_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+::ng-deep .mat-select-panel {
+  position: absolute;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  right: 0 !important;
+  top: 39px !important;
+}
+::ng-deep .mat-select-panel .mat-option {
+  color: #000;
+}
+
+::ng-deep .mat-select-panel::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(224, 24, 24, 0.3);
+}
+
+::ng-deep .mat-select-panel::-webkit-scrollbar {
+  -webkit-box-shadow: inset 0 0 6px #f0f011;
+  width: 5px !important;
+  height: 5px !important;
+}
+
+::ng-deep .mat-select-panel::-webkit-scrollbar-thumb {
+  background-color: #e02352;
+  border-radius: 10px !important;
+}
+.dash_head h2 {
+  margin-bottom: 0 !important;
+}
+::ng-deep
+  .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label {
+  background: #f5edef !important;
+  padding: 0 10px !important;
+  margin-left: 2px !important;
+  width: 82px !important;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    width: 100% !important;
+  }
+  ::ng-deep .navbar .navbar-toggler {
+    position: absolute;
+    right: 0;
+  }
+  ::ng-deep .page-body-wrapper {
+    padding: 0 !important;
+  }
+  ::ng-deep .nav_head {
+    margin-left: 0 !important;
+  }
+
+  .main_pg {
+    padding-left: 0 !important;
+  }
+  .mat-card {
+    margin-bottom: 20px;
+  }
+  .sale_graph .ml-3 {
+    margin-left: 0 !important;
+  }
+  .sale_graph .col-md-12 {
+    padding-left: 0;
+  }
+  .month_infos .mat-form-field {
+    margin-right: 15px;
+  }
+  .dash_head h2 {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  ::ng-deep .navbar-menu-wrapper h4.panelTitle {
+    text-align: left !important;
+  }
+  ::ng-deep .mobile_dashboard_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  ::ng-deep .dash_board h1 {
+    padding-left: 0 !important;
+  }
+  ::ng-deep .dash_head h2 {
+    padding-left: 0 !important;
+  }
+  .card-design {
+    width: 96% !important;
+  }
+  .rounded-button {
+    margin-bottom: 12px !important;
+  }
 }

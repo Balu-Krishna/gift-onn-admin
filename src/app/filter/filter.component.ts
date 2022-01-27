@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from "@angular/core";
-import { FormGroup, Validators, FormBuilder, FormControl } from "@angular/forms";
+import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 @Component({
@@ -13,9 +13,15 @@ export class FilterComponent implements OnInit {
   productForm: FormGroup;
   customerForm: FormGroup;
   partnerForm: FormGroup;
-  vendorordeForm: FormGroup;
+  promotionForm: FormGroup;
+  productLaunchForm: FormGroup;
+  orderForm: FormGroup;
+  couponsForm: FormGroup;
+  vendororderForm: FormGroup;
+  offerForm: FormGroup;
   loyaltyForm: FormGroup;
-
+  paymentVendorForm: FormGroup;
+  paymentPartnerForm: FormGroup;
 
   constructor(
     public dialogRef: MatDialogRef<FilterComponent>,
@@ -60,23 +66,78 @@ export class FilterComponent implements OnInit {
       location: [""],
       status: [""],
     });
-
-    this.vendorordeForm = this.fb.group({
-      Selectid: [""],
-      date: [""],
-      time: [""],
-      discount: [""],
-      Order: [""],
-      Customer: [""],
-
-
+    this.promotionForm = this.fb.group({
+      promoId: [""],
+      storeId: [""],
+      category: [""],
+      subCategory: [""],
+      country: [""],
+      startDate: [""],
+      endDate: [""],
+      status: [""],
     });
-
+    this.productLaunchForm = this.fb.group({
+      promoId: [""],
+      storeId: [""],
+      category: [""],
+      subCategory: [""],
+      country: [""],
+      launchDate: [""],
+      time: [""],
+      status: [""],
+    });
+    this.orderForm = this.fb.group({
+      storeId: [""],
+      category: [""],
+      subCategory: [""],
+      status: [""],
+    });
+    this.couponsForm = this.fb.group({
+      storeName: [""],
+      couponType: [""],
+      category: [""],
+      subCategory: [""],
+      startDate: [""],
+      endDate: [""],
+      store: [""],
+      status: [""],
+    });
+    this.vendororderForm = this.fb.group({
+      storeId: [""],
+      Date: [""],
+      customerId: [""],
+      orderId: [""],
+      discount: [""],
+      time: [""],
+    });
+    this.offerForm = this.fb.group({
+      endDate: [""],
+      startDate: [""],
+      SubCategory: [""],
+      category: [""],
+      storeId: [""],
+      location: [""],
+      country: [""],
+    });
     this.loyaltyForm = this.fb.group({
-
+      date: [""],
+      Order: [""],
+      reward: [""],
+    });
+    this.paymentVendorForm = this.fb.group({
+      storeId: [""],
+      vendor: [""],
+      Date: [""],
+    });
+    this.paymentPartnerForm = this.fb.group({
+      partnerId: [""],
+      vendor: [""],
+      Date: [""],
     });
   }
-
+  get plf() {
+    return this.productLaunchForm.controls;
+  }
   get uf() {
     return this.userForm.controls;
   }
@@ -86,13 +147,30 @@ export class FilterComponent implements OnInit {
   get pf() {
     return this.productForm.controls;
   }
-  get of() {
-    return this.vendorordeForm.controls;
+  get cf() {
+    return this.customerForm.controls;
+  }
+  get mpf() {
+    return this.productForm.controls;
+  }
+  get orf() {
+    return this.orderForm.controls;
+  }
+  get vof() {
+    return this.vendororderForm.controls;
+  }
+  get off() {
+    return this.offerForm.controls;
   }
   get lf() {
     return this.loyaltyForm.controls;
   }
-
+  get pmf() {
+    return this.paymentVendorForm.controls;
+  }
+  get ppf() {
+    return this.paymentPartnerForm.controls;
+  }
   submit() {
     console.log(this.userForm.value);
   }
@@ -107,16 +185,18 @@ export class FilterComponent implements OnInit {
     this.productForm.reset();
     this.customerForm.reset();
     this.partnerForm.reset();
-    this.vendorordeForm.reset();
+    this.promotionForm.reset();
+    this.productLaunchForm.reset();
+    this.orderForm.reset();
+    this.vendororderForm.reset();
+    this.offerForm.reset();
     this.loyaltyForm.reset();
-
+    this.paymentVendorForm.reset();
+    this.paymentPartnerForm.reset();
   }
   close() {
     this.dialogRef.close();
     this.reset();
   }
-  ngOnInit(): void { }
-
-
+  ngOnInit(): void {}
 }
-

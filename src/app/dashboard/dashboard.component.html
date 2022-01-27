@@ -1,27 +1,34 @@
 <section class="mat-typography">
 
   <div class="row justify-content-start">
-    <div class="col-md-12 dash_board">
-      <h1>Hello, Admin</h1>
+    <div class="col-md-12 ">
+      <div class="dash_board">
+        <h1>Hello, Admin</h1>
+      </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-9 dash_head">
-      <h2>
-        Dashboard
-      </h2>
-    </div>
-    <div class="col-md-3 d-flex justify-content-end">
-      <mat-form-field class="example-full-width"
-                      appearance="outline">
-        <mat-label class="monthly_info">Monthly</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let item of Monthly"
-                      [value]="item.lable ">
-            {{item.value}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+    <div class="mobile_dashboard_head">
+      <div class="col-md-9">
+        <div class="dash_head">
+          <h2>
+            Dashboard
+          </h2>
+        </div>
+      </div>
+      <div class="col-md-3 d-flex justify-content-end month_infos"
+           id="test">
+        <mat-form-field>
+          <mat-label>Monthly</mat-label>
+          <mat-select style="right: 15px;">
+            <mat-option id="months_informations"
+                        *ngFor="let item of Monthly"
+                        [value]="item.lable ">
+              {{item.value}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
     </div>
   </div>
 
@@ -142,13 +149,11 @@
     </div>
   </div>
   <div class="row mt-3 main_pg">
-    <div class="col-md-4 col-lg-4 col-4">
+    <div class="col-md-4">
       <mat-card class="card-design">
         <div class="img_set cancel">
           <img src="../../../../assets/cancel%20(1).svg"
                style="display: inline;"
-               width="45px"
-               height="25px"
                class="icon"
                alt="">
         </div>
@@ -160,7 +165,7 @@
         </div>
       </mat-card>
     </div>
-    <div class="col-md-4 col-lg-4 col-4">
+    <div class="col-md-4">
       <mat-card class="card-design">
         <div class="img_set code">
           <img src="../../../../assets/29-qr%20code.svg"
@@ -178,7 +183,7 @@
         </div>
       </mat-card>
     </div>
-    <div class="col-md-4 col-lg-4 col-4">
+    <div class="col-md-4">
       <mat-card class="card-design">
         <div class="img_set coupon">
           <img src="../../../../assets/coupon%20(4).svg"
@@ -199,13 +204,15 @@
   </div>
   <div class="row mt-3 sale_graph">
 
-    <div class="ml-3">
-      <h2>Sale Graph</h2>
-      <mat-card>
-        <img src="../../../../assets/Column%20Chart3.svg"
-             alt=""
-             width="100%">
-      </mat-card>
+    <div class="col-md-12">
+      <div class="ml-3">
+        <h2>Sale Graph</h2>
+        <mat-card>
+          <img src="../../../../assets/Column%20Chart3.svg"
+               alt=""
+               width="100%">
+        </mat-card>
+      </div>
     </div>
   </div>
 </section>

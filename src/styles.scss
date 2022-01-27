@@ -10,13 +10,13 @@
 @import "./assets/scss/functions";
 
 /* === Icon fonts === */
+
+@import "~@mdi/font/scss/materialdesignicons";
+@import "material-icons/iconfont/material-icons.css";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 @import "~@mdi/font/scss/materialdesignicons";
-@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/regular";
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~font-awesome/css/font-awesome.css";
+@import "~font-awesome/scss/font-awesome";
 
 /* === Template mixins === */
 
@@ -73,24 +73,20 @@ html,
 body {
   height: 100%;
 }
+
 body {
-  font-family: 'Montserrat' !important;
   margin: 0;
-  background-image: linear-gradient(to top, rgba(255, 0, 0, 0), #f7eeed);
+  font-family: "Montserrat", sans-serif !important;
 }
-::ng-deep .mat-error
-{
-  font-size: 12px !important;
 
-}
-.mat-card>:last-child:not(.mat-card-footer), .mat-card-content>:last-child:not(.mat-card-footer)
-{
-  font-family: 'Montserrat' !important;
-
-  }
 .mat-form-field-appearance-fill .mat-form-field-flex {
   background-color: white !important;
 }
+
+body {
+  background-image: linear-gradient(to top, rgba(255, 0, 0, 0), #f7eeed);
+}
+
 .navbar,
 .content-wrapper {
   background: transparent !important;
@@ -99,14 +95,13 @@ body {
 .page-body-wrapper {
   padding-left: 30px;
   padding-right: 30px;
-  padding-bottom: 20px;
 }
-.sidebar
-{
-  font-family: 'Montserrat' !important;
+
+.sidebar {
   border-radius: 20px;
   box-shadow: 0px 0px 3px #0000001a;
 }
+
 .sidebar .nav-profile-image img {
   width: auto !important;
   height: auto !important;
@@ -118,22 +113,32 @@ body {
   background: #ffffff !important;
   border-radius: 20px !important;
   margin-bottom: 30px;
-  font-family: 'Montserrat' !important;
 }
-   
+.sidebar .nav-item .nav-link {
+  padding: 15px 1rem !important;
+}
 .sidebar li.nav-item {
   padding: 0 15px !important;
-  font-family: 'Montserrat' !important;
 }
 
 .sidebar li.nav-item.active {
   background: #faeddd;
-  border-left: 5px solid #988149;
+  position: relative;
+}
+.sidebar li.nav-item.active::after {
+  position: absolute;
+  left: 0;
+  height: auto;
+  width: 5px;
+  background-color: #988149;
+  top: 0;
+  bottom: 0;
+  content: "";
 }
 
 .sidebar li.nav-item.active a.nav-link span.menu-title {
   color: #988149 !important;
-  font-family: 'Montserrat' !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .activeIcon {
@@ -156,15 +161,16 @@ body {
     height: auto;
   }
   .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 7px 25px 13px;
+    padding: 10px 0px 5px;
     border-top: none;
   }
   .mat-select {
     position: relative;
-    top: 6px;
+    top: 2px;
   }
   .mat-form-field-outline {
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: 0 0 6px #00000029;
+    border-radius: 6px;
   }
   .mat-form-field-outline:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -224,30 +230,12 @@ nav#sidebar.setPositionRelative {
   color: rgba(0, 0, 0, 0.6) !important;
   // color: $mainColor!important;
 }
-::ng-deep .mat-form-field {
-  margin-bottom: -14px;
-}
+
 // mat-label error style
 ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
   color: rgba(0, 0, 0, 0.6) !important;
 }
-::ng-deep .mat-typography h2
-{
-    color: #000 !important;
-    font-family: 'Montserrat' !important;
-    font-weight: 600;
-    text-transform: capitalize;
-    font-size: 18px;
-}
-::ng-deep .mat-typography p {
-  font-size: 12px !important;
-  font-family: 'Montserrat' !important;
-}
-::ng-deep .mat-typography{
-  color: #A4A4A4 !important;
-  font-size: 14px !important;
-  font-family: 'Montserrat' !important;
-}
+
 // mat-input error carent color
 ::ng-deep .mat-form-field-invalid .mat-input-element,
 .mat-warn .mat-input-element {
@@ -309,24 +297,144 @@ nav#sidebar.setPositionRelative {
 // .mat-tab-list{padding-left: 169px !important;}
 // .mat-tab-label-content:hover{color:#8b7441;}
 // .mat-ink-bar{background-color: #9e9e9e !important; color:#8b7441;}
-.mat-tab-label-active {
+.page--title {
+  font: normal normal 600 20px/24px "Montserrat" !important;
+}
+
+.outline--button {
+  font: normal normal 500 16px/19px "Montserrat" !important;
+  height: 38px !important;
+  border: 1px solid #988149 !important;
+  border-radius: 6px !important;
   color: #988149 !important;
 }
 
-.mat-tab-group.mat-primary .mat-ink-bar,
-.mat-tab-nav-bar.mat-primary .mat-ink-bar {
-  background-color: #988149;
+.outline--export--button {
+  font: normal normal 500 16px/19px "Montserrat" !important;
+  height: 33px !important;
+  border: 0.5px solid #988149 !important;
+  border-radius: 6px !important;
+  color: #988149 !important;
 }
 
-.mat-tab-labels {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 150px;
+.primary--button {
+  font: normal normal 500 16px/19px "Montserrat" !important;
+  height: 38px !important;
+  background: #988149 0% 0% no-repeat padding-box !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
 }
-::ng-deep .mat-form-field-infix {
-  width: 100px !important;
+
+.danger--button {
+  font: normal normal 500 16px/19px "Montserrat" !important;
+  height: 38px !important;
+  background: red 0% 0% no-repeat padding-box !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
 }
-::ng-deep .mat-dialog-content {
-  overflow: hidden;
+
+.secondary--button {
+  font: normal normal 500 16px/19px "Montserrat" !important;
+  height: 38px !important;
+  background: grey 0% 0% no-repeat padding-box !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
 }
+
+.table-striped > tbody > tr:nth-child(2n + 1) > td,
+.table-striped > tbody > tr:nth-child(2n + 1) > th {
+  background-color: #f4f6f9 !important;
+}
+
+.table thead th {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+.table tbody tr {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.fa-search {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  font-size: 16px;
+  color: #c3bcbc;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+.ngx-pagination .current {
+  background: #988149 !important;
+  border-radius: 4px;
+}
+.ngx-pagination a,
+.ngx-pagination button {
+  font-size: 13px !important;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+::-webkit-scrollbar {
+  height: 20px;
+  width: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #988149;
+  border-radius: 20px !important;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #988149;
+}
+button.mat-focus-indicator.primary--button.mat-stroked-button.mat-button-base.mat-accent,
+.filter-btn {
+  font-size: 14px !important;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  ::ng-depp .mat-form-field {
+    width: 67% !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .modal .mat-grid-tile {
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+  }
+  .modal .mat-form-field {
+    width: 100%;
+  }
+  .modal .mat-radio-button {
+    padding: 10px;
+  }
+  .modal .mat-raised-button.mat-warn {
+    margin: 5px;
+  }
+  .form-lable {
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (min-device-width: 700px) and (max-device-width: 1024px) {
+  .form-lable {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+  }
+  .mat-dialog-container {
+    padding: 0px !important;
+  }
+}
+
+// .myMatOptions{  position: absolute;  top: 30vh;  left: 30vw; }
+// ::ng-deep .cdk-overlay-container{right: 0;left:0}
+
+// ::ng-deep .mat-select-panel{left: 0}

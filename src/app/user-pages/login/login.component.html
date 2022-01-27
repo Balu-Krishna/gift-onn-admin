@@ -7,28 +7,31 @@
   <div class="col-xl-6 col-sm-12 col-md-12 col-lg-6 my-auto p-0">
     <div class="row p-0 m-0 ">
       <div class="col-md-9 col-sm-12 col-lg-9 col-xl-9 p-0">
-        <img src="../../assets/Logo.svg" class="h-150">
-        <form [formGroup]="loginGroup" (submit)="loginSubmit()">
-          <div class="pt-35">
+        <img src="../../assets/Logo.svg"
+             class="h-150">
+        <form [formGroup]="loginGroup"
+              (submit)="loginSubmit()">
+          <div class="pt-35 login_info">
+            <p class="m-0 form-lable">EMAIL</p>
             <mat-form-field class="full-width"
                             appearance="standard">
-              <mat-label>EMAIL</mat-label>
               <input matInput
-                     autofocus
-                     placeholder="Enter Email Id"
-                     formControlName="email">
-                    <mat-error *ngIf="loginGroup.get('email').hasError('required')">
-                      Email is Required!
-                    </mat-error>
+                    
+                     placeholder="Enter Email Id" />
+              <!-- <mat-error *ngIf="loginGroup.get('email').hasError('required')">
+                Email is Required!
+              </mat-error> -->
             </mat-form-field>
           </div>
           <div class="pt-35">
+            <p class="m-0 form-lable">PASSWORD</p>
+
             <mat-form-field class="full-width"
                             appearance="standard">
-              <mat-label>PASSWORD</mat-label>
               <input matInput
+                     class="password_info"
                      placeholder="Password"
-                     formControlName="password"
+                    
                      [type]="hide ? 'password' : 'text'">
               <button mat-icon-button
                       matSuffix
@@ -36,20 +39,19 @@
                       (click)="hide = !hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
-              <mat-error *ngIf="loginGroup.get('password').hasError('required')">
-                Email is Required!
-              </mat-error>
+              <!-- <mat-error *ngIf="loginGroup.get('password').hasError('required')">
+                Password is Required!
+              </mat-error> -->
             </mat-form-field>
           </div>
           <div class="full-width">
             <p class="forget_text"
                (click)="ForgetPass()">Forgot Password</p>
           </div>
-        
+
           <div class="pt-35">
             <button type="submit"
                     mat-raised-button
-                    [disabled]="!loginGroup.valid"
                     class="full-width login-button"
                     color="warn">Submit</button>
           </div>
@@ -58,11 +60,11 @@
       <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3 d-none d-md-block pr-0 mr-n5">
         <div class="position-absolute top-50 end-0 translate-middle-y">
           <img src="../../assets/Groupmap.png"
-              class="image-absolute">
+               class="image-absolute">
 
         </div>
       </div>
     </div>
-      
+
   </div>
 </div>

@@ -12,55 +12,181 @@ import { VendorActionsComponent } from "../vendor-actions/vendor-actions.compone
   styleUrls: ["./customer.component.scss"],
 })
 export class CustomerComponent implements OnInit {
-  customers = [
-    {
-      name: "Rajesh Sharma",
-      customerId: "12345",
-      emailId: "test@gmail.com",
-      mobileNumber: "1234567890",
-      country: "India",
-      location: "Hyderabad",
-      dateTime: "10-12-2021",
-      rating: "4.5",
-      status: "pending",
-    },
-    {
-      name: "Rajesh Sharma",
-      customerId: "12345",
-      emailId: "test@gmail.com",
-      mobileNumber: "1234567890",
-      country: "India",
-      location: "Hyderabad",
-      dateTime: "10-12-2021",
-      rating: "4.5",
-      status: "Approved",
-    },
-  ];
+  page = 1;
+  count = 12;
+  tableSize = 4;
+  customers = [];
   constructor(public dialog: MatDialog) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.showData();
+  }
+  showData(): void {
+    this.customers = [
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "pending",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "Approved",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "pending",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "Approved",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "pending",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "Approved",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "pending",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "Approved",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "pending",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "Approved",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "Approved",
+      },
+      {
+        name: "Rajesh Sharma",
+        customerId: "12345",
+        emailId: "test@gmail.com",
+        mobileNumber: "1234567890",
+        country: "India",
+        location: "Hyderabad",
+        dateTime: "10-12-2021",
+        rating: "4.5",
+        status: "Approved",
+      },
+    ];
+  }
+  pageChange(event) {
+    this.page = event;
+    this.showData();
+  }
   openFilter() {
     const dialogRef = this.dialog.open(FilterComponent, {
-      width: "50%",
+      width: "673px",
+      height: "513px",
       data: { filterType: "customer" },
     });
   }
   approveCustomer() {
     const dialogRef = this.dialog.open(ApprovedModelComponent, {
-      width: "30%",
+      width: "330px",
+      height: "246px",
       data: "customer",
     });
   }
   freezeCustomer(customer) {
     const dialogRef = this.dialog.open(VendorActionsComponent, {
-      width: "50%",
+      width: "673px",
+      height: "513px",
       data: { name: "Freeze", type: "customer", data: customer },
     });
     console.log("freezeVendor : " + customer.storeId);
   }
   ratingCustomer(customer) {
     const dialogRef = this.dialog.open(VendorActionsComponent, {
-      width: "50%",
+      width: "673px",
+      height: "513px",
       data: { name: "Rating", type: "customer", data: customer },
     });
     console.log("ratingVendor : " + customer.storeId);
@@ -69,7 +195,8 @@ export class CustomerComponent implements OnInit {
     console.log(value);
     if (value == "rating") {
       const dialogRef = this.dialog.open(RatingForCustomerComponent, {
-        width: "50%",
+        width: "673px",
+        height: "513px",
         data: "customer",
       });
       dialogRef.afterClosed().subscribe((result) => {
@@ -78,7 +205,8 @@ export class CustomerComponent implements OnInit {
     }
     if (value == "freeze") {
       const dialogRef = this.dialog.open(FreezeRoleComponent, {
-        width: "50%",
+        width: "673px",
+        height: "513px",
         data: "customer",
       });
       dialogRef.afterClosed().subscribe((result) => {
