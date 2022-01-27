@@ -1,60 +1,18 @@
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-
-
-
-
-  .login-button {
-    width: 100%;
-    border: none;
-    outline: none;
-    height: 40px;
-    font-size: 16px;
-    background: #988149;;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 48px;
+.lable-color-gray {
+  color: #a4a4a4;
 }
-.Cancel-button {
-    width: 100%;
-    border: none;
-    outline: none;
-    height: 40px;
-    font-size: 16px;
-    background: grey;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 48px;
+.font-color {
+  color: #988149;
 }
-
-
-.error-block {
-    color: #e35a49;
-    font-size: 12px;
-  }
-
-  
-.admins_head h6{font-weight: 700;
-  text-transform: capitalize;
-  font-size: 15px;
+::ng-deep .ck-toolbar {
+  border: none !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
 }
-
-
-
-.add {
-  color: #988149
+::ng-deep .ck-editor__editable {
+  min-height: 500px !important;
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 4px !important;
 }
-
-.admin_lable {
-  color: #A4A4A4;
-}
-

@@ -59,7 +59,7 @@ import { ContactComponent } from "./customers-support/contact/contact.component"
 import { ReceivedMessageComponent } from "./customers-support/received-message/received-message.component";
 import { SentMessageComponent } from "./customers-support/sent-message/sent-message.component";
 import { NgxPaginationModule } from "ngx-pagination";
-
+import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 @NgModule({
   declarations: [
     AppComponent,
@@ -124,6 +124,7 @@ import { NgxPaginationModule } from "ngx-pagination";
     HttpClientModule,
     MaterialModule,
     NgxPaginationModule,
+    CKEditorModule,
   ],
   exports: [AngularEditorModule],
   providers: [ThemeService],
