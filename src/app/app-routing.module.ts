@@ -22,7 +22,9 @@ import { TermsConditionsComponent } from "./terms-conditions/terms-conditions.co
 import { AboutUsComponent } from "./about-us/about-us.component";
 import { AddESignatureComponent } from "./add-e-signature/add-e-signature.component";
 import { OnboardingPartnersComponent } from "./partners/add-partners/onboarding-partners/onboarding-partners.component";
+import { AdminEditComponent } from "./admin-edit/admin-edit.component";
 import { LanguageComponent } from "./language/language.component";
+import { AdminChangePasswordComponent } from "./admin-change-password/admin-change-password.component";
 const routes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
   {
@@ -88,6 +90,8 @@ const routes: Routes = [
   { path: "about-us", component: AboutUsComponent },
   { path: "add-e-signature", component: AddESignatureComponent },
   { path: "onBoarding_info", component: OnboardingPartnersComponent },
+  { path: "edit", component: AdminEditComponent },
+  { path: "change-password", component: AdminChangePasswordComponent },
   {
     path: "basic-ui",
     loadChildren: () =>
@@ -137,4 +141,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
