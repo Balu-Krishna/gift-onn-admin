@@ -60,6 +60,7 @@ import { ReceivedMessageComponent } from "./customers-support/received-message/r
 import { SentMessageComponent } from "./customers-support/sent-message/sent-message.component";
 import { NgxPaginationModule } from "ngx-pagination";
 import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
+import { LanguageComponent } from './language/language.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,6 +112,7 @@ import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
     ContactComponent,
     ReceivedMessageComponent,
     SentMessageComponent,
+    LanguageComponent,
   ],
   imports: [
     BrowserModule,

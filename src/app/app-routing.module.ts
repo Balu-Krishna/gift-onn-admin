@@ -22,6 +22,7 @@ import { TermsConditionsComponent } from "./terms-conditions/terms-conditions.co
 import { AboutUsComponent } from "./about-us/about-us.component";
 import { AddESignatureComponent } from "./add-e-signature/add-e-signature.component";
 import { OnboardingPartnersComponent } from "./partners/add-partners/onboarding-partners/onboarding-partners.component";
+import { LanguageComponent } from "./language/language.component";
 const routes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
   {
@@ -80,6 +81,7 @@ const routes: Routes = [
   { path: "deny-product", component: DenyProductComponent },
   { path: "reward-categories", component: RewardCategoriesComponent },
   { path: "add-language", component: AddLanguageComponent },
+  { path: "languages", component: LanguageComponent },
   { path: "vendor-policies", component: VendorPoliciesComponent },
   { path: "customer-policies", component: CustomerPoliciesComponent },
   { path: "terms-conditions", component: TermsConditionsComponent },

@@ -1,64 +1,59 @@
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
+.font-color {
+  color: #988149;
+}
+.lable-font-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.full-width {
+  width: 100%;
+  font: normal normal medium 16px/19px "Montserrat";
+}
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #9e8656 !important;
+}
+::ng-deep.mat-select-arrow {
+  color: #9e8656 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #9e8656;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #9e8656;
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #9e8656;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #9e8656;
+}
+.form--lable {
+  font-size: 14px;
+  font-weight: 500;
+  color: gray;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex:hover {
+  border-bottom: 1px solid #ddd !important;
+}
+.mat-form-field-ripple {
+  border-bottom: 1px solid #ddd !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: var(--app-priamry-color);
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  ::ng-deep .mobile_button_group {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
-  
-  .example-full-width {
-    width: 100%;
-  }
-
-
-
-
-  .login-button {
-    width: 100%;
-    border: none;
-    outline: none;
-    height: 40px;
-    font-size: 16px;
-    background: #988149;;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 48px;
 }
-.Cancel-button {
-    width: 100%;
-    border: none;
-    outline: none;
-    height: 40px;
-    font-size: 16px;
-    background: grey;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 48px;
-}
-
-
-.error-block {
-    color: #e35a49;
-    font-size: 12px;
-  }
-
-  
-.admins_head h6{font-weight: 700;
-  text-transform: capitalize;
-  font-size: 15px;
-  margin-left: 30px;
-}
-
-
-
-.add {
-  color: #988149
-}
-
-.admin_lable {
-  color: #A4A4A4;
-}
-.account_lable {
-    color: #7C808B;
-  }
-

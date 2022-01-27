@@ -1,55 +1,79 @@
-<section class="mb-4 mr-2">
-    <div class="row">
-        <div class="col-lg-6 admins_head">
-            <h6>Language</h6> 
-        </div>
-        <div class="col-lg-6 d-flex justify-content-end">
-            <span class="account_lable">Account </span><span class="mx-2"> / </span>  <span class="admin_lable">Language</span><span class="mx-2"> / </span> <span class="add">Add Language</span>
-        </div>
-    </div>
-  </section>
+<div class="d-flex justify-content-between pb-4">
+  <div class="pl-4">
+    <p class="page--title">Language</p>
+  </div>
+  <div class="d-flex justify-content-end">
+    <p class="text-muted lable-font-title">Account /</p>
+    <p class="text-muted lable-font-title">Language /</p>
+    <p class="lable-font-title font-color">Add Language</p>
+  </div>
+</div>
 
-  <Section style="margin-left: 20px;">
-    <mat-card>
-        <form [formGroup]="addLanguageGroup" (ngSubmit)="addLanguageSubmit()">
-            <div class="row">
-                <div class="col-md-6 col-lg-6 col-sm-6">
-                    <mat-form-field class="example-full-width"  appearance="fill">
-                      <mat-label>LANGUAGE ID</mat-label>
-                      <input matInput formControlName="languageId"  placeholder="Enter Language Id">
-                    </mat-form-field>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-sm-6">
-                        <mat-form-field class="example-full-width"  appearance="fill">
-                          <mat-label>NAME</mat-label>
-                          <input matInput formControlName="name"  placeholder="Enter Language Name">
-                        </mat-form-field>
-                        </div>
-                <div class="col-md-6 col-lg-6 col-sm-6">
-                  <mat-form-field class="example-full-width"  appearance="fill">
-                    <mat-label>NAME</mat-label>
-                      <input matInput formControlName="value"  placeholder="Enter Language value">
-                    </mat-form-field>
-                </div>
-              <div class="col-md-6 col-lg-6 col-sm-6">
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>STATUS</mat-label>
-                    <mat-select formControlName="status">
-                      <mat-option  value="">select Status</mat-option>
-                      <mat-option value="active">Active</mat-option>
-                      <mat-option value="inActive">In-Active</mat-option>
-                    </mat-select>
-                  </mat-form-field>
-              </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <Button class="login-button" type="submit">Save</Button>
-                </div>
-                <div class="col-md-3">
-                    <Button class="Cancel-button">Cancel</Button>
-                </div>
-             </div>
-        </form>
-    </mat-card>
-  </Section>
+<Section style="margin-left: 20px">
+  <mat-card>
+    <form [formGroup]="addLanguageGroup">
+      <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-6">
+          <p class="m-0 form--lable">LANGUAGE ID</p>
+
+
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <input matInput
+                   formControlName="langId"
+                   placeholder="Enter Language Id" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6">
+          <p class="m-0 form--lable">NAME</p>
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <input matInput
+                   formControlName="name"
+                   placeholder="Enter Language Name" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6">
+          <p class="m-0 form--lable">VALUE</p>
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <input matInput
+                   formControlName="value"
+                   placeholder="Enter Value" />
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+          <p class="m-0 form--lable">STATUS</p>
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <mat-select placeholder="Enter Status">
+              <mat-option value=""> Select Status </mat-option>
+              <mat-option value="active"> Active </mat-option>
+              <mat-option value="in-active"> In-Active </mat-option>
+            </mat-select>
+
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-sm-12">
+          <div class="mobile_userInfo">
+            <button mat-flat-button
+                    color="primary"
+                    type="submit"
+                    class="primary--button px-5 mr-5 save-button">
+              Save
+            </button>
+            <button mat-flat-button
+                    color="accent"
+                    class="secondary--button px-5 cancel-button">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</Section>

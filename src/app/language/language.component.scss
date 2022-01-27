@@ -1,0 +1,42 @@
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  .search_mobile_inforamtive {
+    display: block !important;
+  }
+  ::ng-deep .page-body-wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  ::ng-deep .page_title_info {
+    padding-left: 0 !important;
+  }
+  ::ng-deep .mobile_userInfo {
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+
+  ::ng-deep .search_mobile_inforamtive .mat-form-field-wrapper {
+    padding: 0 !important;
+  }
+  ::ng-deep .export_informative {
+    text-align: start;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    display: flex;
+  }
+  ::ng-deep .search_mobile {
+    text-align: start;
+    margin: 5px auto;
+    padding: 0 !important;
+    justify-content: center;
+    display: flex !important;
+  }
+  ::ng-deep .search_mobile .mat-form-field-wrapper {
+    padding: 0 !important;
+  }
+  .page_induvidul_title {
+    padding-left: 0 !important;
+  }
+  ::ng-deep .mobile_admin_heading {
+    margin: 0 12px 0 0 !important;
+  }
+}

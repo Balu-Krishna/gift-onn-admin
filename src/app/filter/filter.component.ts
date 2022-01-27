@@ -22,7 +22,7 @@ export class FilterComponent implements OnInit {
   loyaltyForm: FormGroup;
   paymentVendorForm: FormGroup;
   paymentPartnerForm: FormGroup;
-
+  languageForm: FormGroup;
   constructor(
     public dialogRef: MatDialogRef<FilterComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -134,6 +134,14 @@ export class FilterComponent implements OnInit {
       vendor: [""],
       Date: [""],
     });
+    this.languageForm = this.fb.group({
+      name: [""],
+      value: [""],
+      status: [""],
+    });
+  }
+  get langf() {
+    return this.languageForm.controls;
   }
   get plf() {
     return this.productLaunchForm.controls;
@@ -193,6 +201,7 @@ export class FilterComponent implements OnInit {
     this.loyaltyForm.reset();
     this.paymentVendorForm.reset();
     this.paymentPartnerForm.reset();
+    this.languageForm.reset();
   }
   close() {
     this.dialogRef.close();
