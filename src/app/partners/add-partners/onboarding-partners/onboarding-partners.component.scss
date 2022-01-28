@@ -1,65 +1,40 @@
-.e_signature_info {
-  background: #fff;
-  width: 96%;
-  margin: 20px 40px 20px 20px;
-  height: auto;
-  font-family: "Montserrat", sans-serif !important;
-  padding: 28px;
-  box-shadow: 0px 0px 6px #00000029;
-  border-radius: 5px;
+.font-color {
+  color: #988149;
 }
-.onbording_head .lable_title {
-  font-weight: 600;
-  color: #918f8f;
+.form-lable {
+  font-size: 14px;
+  font-weight: 500;
+  color: gray;
 }
-.signature {
-  font-weight: 600;
+.text-style {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Montserrat";
 }
-.border_dotted {
-  border: dotted 2px #918f8f;
-  border-radius: 10px;
-  width: 400px;
-  height: 220px;
+.file-uploader {
+  border: 2px dashed #8c8b8b;
   text-align: center;
-  padding-top: 64px;
+  border-radius: 10px;
+  cursor: pointer;
 }
-.onbording_button {
-  border: none;
-  padding: 10px 15px;
+
+.accept-button {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
   background: #988149;
-  margin-top: 50px;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 600;
-  margin: 120px 20px 20px;
-  color: #fff;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
 }
-.cancel_button {
-  border: none;
-  padding: 10px 15px;
-  background: #918f8f;
-  margin-top: 50px;
-  border-radius: 5px;
-  margin: 120px 20px 20px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
+.cancel-button {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 10px;
+  background: gray;
+  font-family: "Montserrat", sans-serif;
 }
-.onbording_head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.onborging_inforamtive .lable_title {
-  padding-left: 20px;
-}
-.onbordinG-right {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.onbordinG-right p {
-  margin-bottom: 0;
-  font-weight: 600;
-  padding: 0 5px;
+
+.box {
+  padding: 5pc;
 }

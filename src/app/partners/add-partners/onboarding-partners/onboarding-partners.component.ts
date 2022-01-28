@@ -37,6 +37,10 @@ export class OnboardingPartnersComponent implements OnInit {
   get f() {
     return this.addProductGroup.controls;
   }
+  openSignature() {
+    const input = <any>document.querySelector("#signature");
+    input.click();
+  }
   addProductSubmit() {
     this.submitted = true;
     if (this.addProductGroup.invalid) {

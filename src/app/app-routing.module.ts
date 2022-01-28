@@ -89,7 +89,6 @@ const routes: Routes = [
   { path: "terms-conditions", component: TermsConditionsComponent },
   { path: "about-us", component: AboutUsComponent },
   { path: "add-e-signature", component: AddESignatureComponent },
-  { path: "onBoarding_info", component: OnboardingPartnersComponent },
   { path: "edit", component: AdminEditComponent },
   { path: "change-password", component: AdminChangePasswordComponent },
   {
@@ -141,4 +140,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

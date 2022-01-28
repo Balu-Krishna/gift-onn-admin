@@ -38,9 +38,9 @@ export class AddPartnersComponent implements OnInit {
   }
   onboardPartner() {
     this.submitForm();
-    if (this.addPartnersGroup.valid) {
-      this.router.navigate(["add-e-signature"]);
-    }
+    // if (this.addPartnersGroup.valid) {
+    this.router.navigate(["partners/add-e-sign"]);
+    // }
   }
   handleChange(files: FileList) {}
 }

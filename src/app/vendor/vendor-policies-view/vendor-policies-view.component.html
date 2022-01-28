@@ -78,23 +78,23 @@
       </div>
     </div>
     <div class="row mt-5">
-      <div class="col-md-6 col-sm-12">
-        <div class="d-flex justify-content-around">
-          <button
-            mat-flat-button
-            color="primary"
-            class="accept-button mr-5"
-            (click)="accept()"
-          >
-            Accept
-          </button>
-          <button mat-flat-button color="accent" class="clarify-button mr-5">
-            Clarify
-          </button>
-          <button mat-flat-button class="next-button mr-5" (click)="next()">
-            Next
-          </button>
-        </div>
+      <div class="col-sm-12">
+        <button mat-flat-button
+                color="primary"
+                class="primary--button mr-5"
+                (click)="accept()">
+          Accept
+        </button>
+        <button mat-flat-button
+                color="accent"
+                class="clarify--button mr-5">
+          Clarify
+        </button>
+        <button mat-flat-button
+                class="outline--button mr-5"
+                (click)="next()">
+          Next
+        </button>
       </div>
     </div>
   </mat-card>

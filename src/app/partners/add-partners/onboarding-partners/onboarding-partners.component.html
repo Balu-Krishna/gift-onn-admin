@@ -1,31 +1,52 @@
-<div class="onborging_inforamtive">
-  <div class="onbording_head">
-    <p class="lable_title">E-Signature</p>
-    <div class="onbordinG-right">
-      <p>Partner</p>
-      <p>/</p>
-      <p class="signature">E-Signature</p>
-    </div>
+<div class="d-flex justify-content-between pb-4">
+  <div class="pl-5">
+    <p class="page-title">E-Signature</p>
   </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="e_signature_info">
-
-        <div class="row">
-          <div class="col-md-12">
-            <p class="lable-font-title">Add E-Signature</p>
-            <div class="border_dotted">
-              <img src="../../../../assets/cloud-computing%20(1).svg"
-                   width="10%"
-                   alt="" />
-              <p>Click to Upload</p>
-            </div>
-          </div>
-
-          <button class="onbording_button">Finshing OnBording</button>
-          <button class="cancel_button">Cancel</button>
-        </div>
-      </div>
-    </div>
+  <div class="d-flex justify-content-end">
+    <p class="text-muted lable-font-title">Partner /</p>
+    <p class="lable-font-title font-color">E-Signature</p>
   </div>
 </div>
+<Section style="margin-left: 20px">
+  <mat-card>
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="lable-font-title">Add E-Signature</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="p-5 file-uploader"
+             (click)="openSignature()">
+          <input #fileInput
+                 id="signature"
+                 type="file"
+                 hidden
+                 (change)="handleChange($event.target.files)" />
+          <img src="assets/cloud-computing%20(1).svg"
+               style="width: 50px;">
+          <div style="text-align: center">
+            <p style="font-size:16px"
+               class="pb-0 pt-1">Click to Upload</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 mt-5">
+        <button mat-flat-button
+                color="primary"
+                class="primary--button mr-5">
+          Finished Onboarding
+        </button>
+        <button mat-flat-button
+                color="accent"
+                class="secondary--button mr-5 px-5">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</Section>
