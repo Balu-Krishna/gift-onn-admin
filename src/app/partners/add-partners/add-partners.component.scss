@@ -9,7 +9,12 @@
 .font-color {
   color: #988149;
 }
-
+.file-uploader {
+  border: 2px dashed #8c8b8b;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
 .full-width {
   width: 100%;
   font-weight: 500 !important;

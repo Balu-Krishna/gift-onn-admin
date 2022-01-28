@@ -43,4 +43,8 @@ export class AddPartnersComponent implements OnInit {
     // }
   }
   handleChange(files: FileList) {}
+  openLogoFile() {
+    const input = <any>document.querySelector("#logo");
+    input.click();
+  }
 }
