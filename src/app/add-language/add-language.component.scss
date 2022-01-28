@@ -57,3 +57,12 @@
     justify-content: center !important;
   }
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 424px) {
+  .lable-font-title {
+    font: normal normal normal 0.7rem/24px Montserrat !important;
+    font-weight: 600 !important;
+  }
+  .display-none {
+    display: none;
+  }
+}

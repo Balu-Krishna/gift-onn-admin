@@ -36,7 +36,7 @@ export class ProductComponent implements OnInit {
         totalPrice: "1100",
         noOfUnits: "30",
         status: "Pending",
-        image: "../../../../assets/gift.jpeg",
+        image: "../../assets/gift.jpeg",
         video: "https://www.youtube.com/embed/n2Tl_eECPIM",
       },
       {
@@ -52,7 +52,7 @@ export class ProductComponent implements OnInit {
         totalPrice: "1100",
         noOfUnits: "30",
         status: "Approved",
-        image: "../../../../assets/gift.jpeg",
+        image: "../../assets/gift.jpeg",
         video: "https://www.youtube.com/embed/n2Tl_eECPIM",
       },
       {
@@ -68,7 +68,7 @@ export class ProductComponent implements OnInit {
         totalPrice: "1100",
         noOfUnits: "30",
         status: "Denied",
-        image: "../../../../assets/gift.jpeg",
+        image: "../../assets/gift.jpeg",
         video: "https://www.youtube.com/embed/n2Tl_eECPIM",
       },
       {
@@ -84,7 +84,7 @@ export class ProductComponent implements OnInit {
         totalPrice: "1100",
         noOfUnits: "30",
         status: "Pending",
-        image: "../../../../assets/gift.jpeg",
+        image: "../../assets/gift.jpeg",
         video: "https://www.youtube.com/embed/n2Tl_eECPIM",
       },
       {
@@ -100,7 +100,7 @@ export class ProductComponent implements OnInit {
         totalPrice: "1100",
         noOfUnits: "30",
         status: "Approved",
-        image: "../../../../assets/gift.jpeg",
+        image: "../../assets/gift.jpeg",
         video: "https://www.youtube.com/embed/n2Tl_eECPIM",
       },
       {
@@ -116,7 +116,7 @@ export class ProductComponent implements OnInit {
         totalPrice: "1100",
         noOfUnits: "30",
         status: "Denied",
-        image: "../../../../assets/gift.jpeg",
+        image: "../../assets/gift.jpeg",
         video: "https://www.youtube.com/embed/n2Tl_eECPIM",
       },
       {
@@ -132,7 +132,7 @@ export class ProductComponent implements OnInit {
         totalPrice: "1100",
         noOfUnits: "30",
         status: "Approved",
-        image: "../../../../assets/gift.jpeg",
+        image: "../../assets/gift.jpeg",
         video: "https://www.youtube.com/embed/n2Tl_eECPIM",
       },
       {
@@ -148,7 +148,7 @@ export class ProductComponent implements OnInit {
         totalPrice: "1100",
         noOfUnits: "30",
         status: "Denied",
-        image: "../../../../assets/gift.jpeg",
+        image: "../../assets/gift.jpeg",
         video: "https://www.youtube.com/embed/n2Tl_eECPIM",
       },
       {
@@ -164,7 +164,7 @@ export class ProductComponent implements OnInit {
         totalPrice: "1100",
         noOfUnits: "30",
         status: "Approved",
-        image: "../../../../assets/gift.jpeg",
+        image: "../../assets/gift.jpeg",
         video: "https://www.youtube.com/embed/n2Tl_eECPIM",
       },
       {
@@ -180,7 +180,7 @@ export class ProductComponent implements OnInit {
         totalPrice: "1100",
         noOfUnits: "30",
         status: "Denied",
-        image: "../../../../assets/gift.jpeg",
+        image: "../../assets/gift.jpeg",
         video: "https://www.youtube.com/embed/n2Tl_eECPIM",
       },
       {
@@ -196,7 +196,7 @@ export class ProductComponent implements OnInit {
         totalPrice: "1100",
         noOfUnits: "30",
         status: "Approved",
-        image: "../../../../assets/gift.jpeg",
+        image: "../../assets/gift.jpeg",
         video: "https://www.youtube.com/embed/n2Tl_eECPIM",
       },
       {
@@ -212,7 +212,7 @@ export class ProductComponent implements OnInit {
         totalPrice: "1100",
         noOfUnits: "30",
         status: "Denied",
-        image: "../../../../assets/gift.jpeg",
+        image: "../../assets/gift.jpeg",
         video: "https://www.youtube.com/embed/n2Tl_eECPIM",
       },
     ];

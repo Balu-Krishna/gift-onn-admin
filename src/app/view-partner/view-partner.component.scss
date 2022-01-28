@@ -8,3 +8,11 @@
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
 }
+.padding-left {
+  padding-left: 3rem !important;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  .padding-left {
+    padding-left: 0px !important;
+  }
+}
