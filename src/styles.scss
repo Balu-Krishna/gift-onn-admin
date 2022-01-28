@@ -84,6 +84,11 @@ body {
 }
 
 body {
+  background-image: -webkit-linear-gradient(
+    to top,
+    rgba(255, 0, 0, 0),
+    #f7eeed
+  );
   background-image: linear-gradient(to top, rgba(255, 0, 0, 0), #f7eeed);
 }
 
