@@ -236,7 +236,7 @@
 }
 
 ::ng-deep .month_infos .mat-select-arrow {
-  color: rgba(0, 0, 0, 0.54) !important;
+  color: #f8b8b7 !important;
 }
 
 ::ng-deep .month_infos .mat-label {
@@ -267,7 +267,7 @@
 ::ng-deep .month_infos .mat-select-value-text > .month_infos .mat-select-arrow {
   top: -11px;
   position: relative;
-  color: #ae985f;
+  color: #f8b8b7;
 }
 
 ::ng-deep .mobile_dashboard_head {
@@ -307,10 +307,39 @@
 ::ng-deep
   .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float
   .mat-form-field-label {
-  background: #f5edef !important;
+  background: #f8b8b7 !important;
   padding: 0 10px !important;
   margin-left: 2px !important;
   width: 82px !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #f8b8b7 !important;
+}
+
+::ng-deep.mat-select-arrow {
+  color: #f8b8b7 !important;
+}
+
+::ng-deep.mat-select-arrow {
+  color: #f8b8b7 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #f8b8b7;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #f8b8b7;
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #f8b8b7;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #f8b8b7;
 }
 
 @media (max-width: 767px) {
