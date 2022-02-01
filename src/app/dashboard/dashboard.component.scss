@@ -307,7 +307,7 @@
 ::ng-deep
   .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float
   .mat-form-field-label {
-  background: #f8b8b7 !important;
+  background: transparent !important;
   padding: 0 10px !important;
   margin-left: 2px !important;
   width: 82px !important;
@@ -327,19 +327,19 @@
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
-  background-color: #f8b8b7;
+  background-color: #f8b8b7 !important;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-  color: #f8b8b7;
+  color: #f8b8b7 !important;
 }
 
 ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-  color: #f8b8b7;
+  color: #f8b8b7 !important;
 }
 
 ::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-  color: #f8b8b7;
+  color: #f8b8b7 !important;
 }
 
 @media (max-width: 767px) {
