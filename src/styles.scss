@@ -445,11 +445,16 @@ button.mat-focus-indicator.primary--button.mat-stroked-button.mat-button-base.ma
     font-size: 11px !important;
     font-weight: 600 !important;
   }
+}
+@media only screen and (min-device-width: 767px) {
   .mat-dialog-container {
-    padding: 0px !important;
+    padding: 24px;
+    overflow: hidden !important;
+  }
+  .mat-dialog-content {
+    overflow: hidden !important;
   }
 }
-
 // .myMatOptions{  position: absolute;  top: 30vh;  left: 30vw; }
 // ::ng-deep .cdk-overlay-container{right: 0;left:0}
 

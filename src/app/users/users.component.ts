@@ -149,8 +149,8 @@ export class UsersComponent implements OnInit {
   }
   openFilter() {
     const dialogRef = this.dialog.open(FilterComponent, {
-      width: "673px",
-      height: "513px",
+      width: "700px",
+      height: "545px",
       data: { filterType: "user" },
     });
   }

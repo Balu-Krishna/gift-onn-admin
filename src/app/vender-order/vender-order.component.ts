@@ -407,7 +407,6 @@ export class VenderOrderComponent implements OnInit {
   openFilter() {
     const dialogRef = this.dialog.open(FilterComponent, {
       width: "673px",
-      height: "513px",
       data: { filterType: "vendororder" },
     });
   }

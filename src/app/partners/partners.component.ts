@@ -225,7 +225,7 @@ export class PartnersComponent implements OnInit {
   openFilter() {
     const dialogRef = this.dialog.open(FilterComponent, {
       width: "673px",
-      height: "513px",
+      height: "620px",
       data: { filterType: "partner" },
     });
   }

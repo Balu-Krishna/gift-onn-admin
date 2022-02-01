@@ -806,7 +806,7 @@ export class OffersComponent implements OnInit {
   openFilter() {
     const dialogRef = this.dialog.open(FilterComponent, {
       width: "673px",
-      height: "513px",
+      height: "680px",
       data: { filterType: "offerForm" },
     });
   }
