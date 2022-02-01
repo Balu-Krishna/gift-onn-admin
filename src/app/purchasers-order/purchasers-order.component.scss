@@ -15,28 +15,28 @@
 }
 ::ng-deep.mat-form-field-ripple {
   /*change color of underline when focused*/
-  background-color: #9e8656 !important;
+  background-color: #f8b8b7 !important;
 }
 ::ng-deep.mat-select-arrow {
-  color: #9e8656 !important;
+  color: #f8b8b7 !important;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
-  background-color: #9e8656 !important;
+  background-color: #f8b8b7 !important;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-  color: #9e8656 !important;
+  color: #f8b8b7 !important;
 }
 ::ng-deep .mat-select-value {
   font-weight: 500;
 }
 ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-  color: #9e8656 !important;
+  color: #f8b8b7 !important;
 }
 
 ::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-  color: #9e8656 !important;
+  color: #f8b8b7 !important;
   font-weight: 500 !important;
 }
 .mat-tab label {
@@ -65,10 +65,7 @@
 ::ng-deep .mat-ink-bar {
   background-color: #988149 !important;
 }
-.purchase_info_buttons {
-}
-.submit_purchase {
-}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
   .search_mobile_inforamtive {
     display: block !important;

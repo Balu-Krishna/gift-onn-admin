@@ -35,11 +35,11 @@
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
-  background-color: #9e8656 !important;
+  background-color: #f8b8b7 !important;
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
-  background-color: #9e8656 !important;
+  background-color: #f8b8b7 !important;
   /*inner circle color change*/
   height: 17px;
   width: 17px;
@@ -47,7 +47,7 @@
 
 ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
   .mat-radio-outer-circle {
-  border-color: #9e8656 !important;
+  border-color: #f8b8b7 !important;
   /*outer ring color change*/
   width: 17px !important;
   height: 17px !important;
@@ -55,31 +55,31 @@
 
 ::ng-deep.mat-form-field-ripple {
   /*change color of underline when focused*/
-  background-color: #9e8656 !important;
+  background-color: #f8b8b7 !important;
 }
 
 ::ng-deep.mat-select-arrow {
-  color: #9e8656 !important;
+  color: #f8b8b7 !important;
 }
 
 ::ng-deep.mat-select-arrow {
-  color: #9e8656 !important;
+  color: #f8b8b7 !important;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
-  background-color: #9e8656;
+  background-color: #f8b8b7;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-  color: #9e8656;
+  color: #f8b8b7;
 }
 
 ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-  color: #9e8656;
+  color: #f8b8b7;
 }
 
 ::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-  color: #9e8656;
+  color: #f8b8b7;
 }
 
 ::ng-deep .mat-radio-button {
