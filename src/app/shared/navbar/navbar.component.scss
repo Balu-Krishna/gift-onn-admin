@@ -15,7 +15,6 @@
     $action-transition-timing-function;
   -ms-transition: background $action-transition-duration
     $action-transition-timing-function;
-
   .navbar-brand {
     width: 110px;
   }
@@ -35,7 +34,6 @@
     background: $navbar-bg;
     width: $sidebar-width-lg;
     height: $navbar-height;
-
     @media (max-width: 991px) {
       width: 55px;
     }
@@ -46,13 +44,11 @@
       margin-right: 0;
       padding: 0.25rem 0;
       width: 100%;
-
       &:active,
       &:focus,
       &:hover {
         color: lighten(color(gray-dark), 10%);
       }
-
       img {
         width: calc(#{$sidebar-width-lg} - 120px);
         max-width: 100%;
@@ -90,7 +86,6 @@
       padding-left: 15px;
       padding-right: 15px;
     }
-
     .navbar-toggler {
       border: 0;
       color: inherit;
@@ -112,7 +107,6 @@
         }
       }
     }
-
     .search-field {
       .input-group {
         input {
@@ -138,10 +132,8 @@
         @extend .mr-4;
       }
     }
-
     .count-indicator {
       position: relative;
-
       .count-symbol,
       .count-number {
         position: absolute;
@@ -171,6 +163,7 @@
       flex-direction: row;
       align-items: center;
       .nav-item {
+        padding-right: 20px;
         .nav-link {
           color: inherit;
           font-size: $navbar-font-size;
@@ -212,18 +205,15 @@
                 left: 0;
               }
               padding: 0;
-
               .dropdown-item {
                 @extend .d-flex;
                 @extend .align-items-center;
                 margin-bottom: 0;
                 padding: 11px 13px;
                 cursor: pointer;
-
                 i {
                   font-size: 17px;
                 }
-
                 .ellipsis {
                   max-width: 200px;
                   overflow: hidden;
@@ -236,7 +226,6 @@
                   }
                 }
               }
-
               .dropdown-divider {
                 margin: 0;
               }
@@ -265,13 +254,17 @@
             @extend .d-flex;
             .nav-profile-img {
               position: relative;
-              width: 32px;
-              height: 32px;
+              width: 35px;
+              height: 35px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               img {
-                width: 32px;
-                height: 32px;
+                width: 28px;
+                height: 25px;
                 border-radius: 100%;
               }
+
               .availability-status {
                 position: absolute;
                 width: 10px;
@@ -324,6 +317,13 @@
     }
   }
 }
+.text-black {
+  font-weight: 600;
+  font-family: "Montserrat" !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media (max-width: 991px) {
   .navbar {
     flex-direction: row;
@@ -339,7 +339,6 @@
       }
     }
   }
-
   .navbar-collapse {
     display: flex;
     margin-top: 0.5rem;
@@ -358,6 +357,7 @@
 }
 
 /* Navbar color variations */
+
 @each $color, $value in $theme-gradient-colors {
   .navbar {
     &.navbar-#{$color} {
@@ -404,15 +404,71 @@
     }
   }
 }
+
 .nav_head {
-  margin-left: 59px;
+  margin-left: 76px;
 }
+
 .nav_img {
   margin-right: -12px;
 }
+
 .nav_text {
   margin-right: -37px;
 }
+
 ::ng-deep .notifications_see h6 {
   cursor: pointer;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  .nav_head {
+    margin-left: 0px;
+  }
+  .navbar-toggler {
+    position: absolute;
+    right: 13px;
+    font-size: 30px;
+    top: -3px;
+  }
+  .navbar-menu-wrapper h4.panelTitle {
+    text-align: left !important;
+  }
+}
+::ng-deep .manage_admin_details .dropdown-item {
+  padding: 8px 13px !important;
+}
+.admin_user_profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #988149 !important;
+  color: #fff;
+  padding: 0.5rem;
+  text-align: left;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+}
+.admin_user_profile img {
+  width: 27px;
+}
+.admin_user_profile h6 {
+  margin-bottom: 0;
+  padding-left: 15px;
+  font-family: "Montserrat" !important;
+  color: #fff;
+  font-weight: 600;
+}
+.admin_user_profile_list h6 {
+  font-size: 13px;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #050505;
+  font-family: "Montserrat" !important;
+}
+.manage_admin_details a:hover {
+  background-color: #988149 !important;
+}
+.manage_admin_details a:hover > .admin_user_profile_list h6 {
+  color: #fff !important;
 }

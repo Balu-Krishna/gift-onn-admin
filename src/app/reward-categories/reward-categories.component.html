@@ -1,28 +1,48 @@
-<div class="row">
-    <div class="col-sm-11 col-lg-11 col-sm-11 text-center">
-        <h3>Reward Category</h3>
+<div mat-dialog-content>
+  <div class="text-center">
+    <p class="title">Reward Category</p>
+    <div class="example-button-container">
+      <button class="button_close"
+              (click)="close()"
+              style="background: #e04f5f">
+        <i class="fa fa-times"
+           aria-hidden="true"></i>
+      </button>
     </div>
-    <div class="col-sm-1 col-lg-1 col-sm-1" (click)="close()">
-        <img src="../../assets/cancel%20(1).svg" width="20px" alt="">
+  </div>
+  <form [formGroup]="rewardGroup"
+        style="width: 60%;"
+        class="mx-auto"
+        (ngSubmit)="rewardSubmit()">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="reward_informative">
+          <p class="m-0 form-lable">Reward Type</p>
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <mat-select formControlName="reward"
+                        placeholder="select Reward Type">
+              <mat-option value=""> Select Reason </mat-option>
+              <mat-option value="india"> India </mat-option>
+              <mat-option value="afghanistan"> Afghanistan </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </div>
     </div>
+    <div class="row pt-5 pb-3">
+      <div class="col-sm-12">
+        <div class="d-flex justify-content-around reward_button">
+          <button mat-flat-button
+                  color="primary"
+                  type="submit"
+                  style="height: 38px;"
+                  class="submit-button mr-5">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
-<form [formGroup]="rewardGroup" (ngSubmit)="rewardSubmit()">
-    <div class="row">
-    <div class="col-sm-8 col-lg-8 col-sm-8 justify-content-center offset-2">
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>REWARD CATEGORY</mat-label>
-                <mat-select formControlName="reward">
-                  <mat-option  value="">Selete Reward Category</mat-option>
-                  <mat-option value="accent">Accent</mat-option>
-                  <mat-option value="warn">Warn</mat-option>
-                </mat-select>
-              </mat-form-field>
-          
-    </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3 offset-4">
-            <Button class="login-button" type="submit">Save</Button>
-        </div>
-        </div>
-</form>

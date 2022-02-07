@@ -1,0 +1,72 @@
+<div class="d-flex justify-content-between pb-4 mobile_admin_heading">
+    <div class="pl-4 page_induvidul_title">
+        <p class="page--title">Edit Details</p>
+    </div>
+    <div class="d-flex justify-content-end">
+        <p class="text-muted lable-font-title">Account /</p>
+        <p class="lable-font-title font-color">Edit Details</p>
+    </div>
+</div>
+<div class="ml-4 shadow-lg bg-white rounded h-100 mobile_userInfo">
+    <div class="py-5">
+        <div>
+            <img src="assets/images/admin.svg"
+                 class="rounded mx-auto d-block"
+                 alt="lock"
+                 style="background: #F7EEEE; height: 100px; width: 100px; border-radius: 50% !important;">
+        </div>
+        <div style="text-align: center; font-size: 18px; color: #988149; font-weight: 500;"
+             class="py-2">
+            <span>Edit</span>
+            <span class="px-2">
+                <img src="assets/images/pencil.svg"
+                     alt="lock">
+            </span>
+        </div>
+
+    </div>
+    <div class="px-3">
+        <form [formGroup]="addAdminEditGroup">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <p class="m-0 form--lable">FULL NAME</p>
+                    <mat-form-field class="full-width"
+                                    appearance="fill">
+                        <input matInput
+                               formControlName="fullName"
+                               placeholder="Enter Name" />
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <p class="m-0 form--lable">EMAIL</p>
+                    <mat-form-field class="full-width"
+                                    appearance="fill">
+                        <input matInput
+                               formControlName="email"
+                               placeholder="Enter Email" />
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div class="row mt-5"
+                 style="padding-top: 150px;">
+                <div class="col-sm-12">
+                    <div class="mobile_userInfo">
+                        <button mat-flat-button
+                                color="primary"
+                                type="submit"
+                                class="primary--button px-5 mr-5 save-button">
+                            Save
+                        </button>
+                        <button mat-flat-button
+                                color="accent"
+                                class="secondary--button px-5 cancel-button">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

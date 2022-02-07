@@ -1,0 +1,84 @@
+<div class="rounded">
+  <div class="d-flex justify-content-between">
+    <div></div>
+    <div>
+      <p class="filter-title ml-5 mb-4"
+         style="font-weight: bold;">Offer</p>
+      <img class="offersimg"
+           src="assets/gift.jpeg">
+    </div>
+    <div class="example-button-container">
+      <button mat-mini-fab
+              color="warn"
+              (click)="close()"
+              style="background: #e04f5f">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div *ngIf="data.filterType == 'OffersForm'">
+    <form [formGroup]="OffersForm"
+          (ngSubmit)="submit()"
+          class="offcer_forming">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm">
+            <p class="category_head">OFFER NAME</p>
+            <p class="category_parent">Weekend Sale</p>
+          </div>
+          <div class="col-sm">
+            <p class="category_head">OFFER ID</p>
+            <p class="category_parent">JOY873</p>
+          </div>
+          <div class="col-sm">
+            <p class="category_head">STORE ID</p>
+            <p class="category_parent">89736</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm">
+            <p class="category_head">CATEGORY</p>
+            <p class="category_parent">Jewellary</p>
+          </div>
+          <div class="col-sm">
+            <p class="category_head">SUB CATEGORY</p>
+            <p class="category_parent">Bracelet</p>
+          </div>
+          <div class="col-sm">
+            <p class="category_head">COUNTRY</p>
+            <p class="category_parent">India</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm">
+            <p class="category_head">LOCATION</p>
+            <p class="category_parent">Hyderabad</p>
+          </div>
+          <div class="col-sm">
+            <p class="category_head">START DATE</p>
+            <p class="category_parent">01/12/2021</p>
+          </div>
+          <div class="col-sm">
+            <p class="category_head">END DATE</p>
+            <p class="category_parent">01/1/2021</p>
+          </div>
+        </div>
+      </div>
+      <div class="offer_informative">
+        <p class="category_head">OFFER DESCRIPTION</p>
+        <p class="category_parent">Contrary to popular balief, Lorem ipsum is not simply <br> roots in place of
+          classical Latin Professor
+          at Hampden-Sydney</p>
+      </div>
+
+    </form>
+  </div>
+</div>

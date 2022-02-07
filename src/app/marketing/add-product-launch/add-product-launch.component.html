@@ -1,0 +1,176 @@
+<div class="d-flex justify-content-between pb-4 mobile_admin_heading">
+  <div class="pl-5 page_induvidul_title">
+    <p class="page-title">Marketing</p>
+  </div>
+  <div class="d-flex justify-content-end">
+    <p class="text-muted lable-font-title">Marketing /</p>
+    <p class="lable-font-title font-color">Add Product Launch</p>
+  </div>
+</div>
+
+<section style="margin-left: 20px"
+         class="add_user_informative">
+  <mat-card style="border-radius: 12px">
+    <form [formGroup]="addproductlanch">
+      <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-6">
+          <p class="m-0 form-lable">VENDOR ID</p>
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <input matInput
+                   placeholder="Enter Vendor Id" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6">
+          <p class="m-0 form-lable">PRODUCT ID</p>
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <input matInput
+                   placeholder="Enter Product Id" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6">
+          <p class="m-0 form-lable">PARTNER ID</p>
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <input matInput
+                   placeholder="Enter Partner Id" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6">
+          <p class="m-0 form-lable">PRODUCT CATEGORY</p>
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <mat-select placeholder="Select Category">
+              <mat-option value=""> Select Category </mat-option>
+              <mat-option value="vendor"> Vendor Category </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6">
+          <p class="m-0 form-lable">PRODUCT SUB CATEGORY</p>
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <mat-select placeholder="Select Sub Category">
+              <mat-option value=""> Select Sub Category </mat-option>
+              <mat-option value="vendor"> Vendor Sub Category </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6">
+          <p class="m-0 form-lable">COUNTRY</p>
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <mat-select placeholder="Select Country">
+              <mat-option value=""> Select Country </mat-option>
+              <mat-option value="vendor"> India </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6">
+          <p class="m-0 form-lable">LOCATION</p>
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <mat-select placeholder="Select Location">
+              <mat-option value=""> Select Location </mat-option>
+              <mat-option value="vendor"> Hyderabad </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6">
+          <p class="m-0 form-lable">LAUNCHING DATE</p>
+          <mat-form-field appearance="fill"
+                          class="full-width">
+            <input matInput
+                   placeholder="Enter Date"
+                   [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix
+                                   style="color: #f8b8b7;"
+                                   [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-12">
+          <p class="m-0 form-lable">TIME</p>
+          <mat-form-field class="full-width"
+                          appearance="fill">
+            <input matInput
+                   placeholder="Select Time" />
+            <mat-icon matSuffix
+                      style="color:#f8b8b7">schedule</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-12 col-lg-12 col-sm-12">
+          <p class="lable-font-title">PRODUCT DESCRIPTION</p>
+          <mat-form-field class="full-width"
+                          appearance="outline">
+            <textarea matInput
+                      rows="7"
+                      cols="20"
+                      placeholder="write here..."></textarea>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-5 col-lg-5 col-sm-5 mt-2 mobile_images"
+             style="margin-left: 1pc">
+          <p class="lable-font-title">Upload Product Image</p>
+        </div>
+        <div class="col-md-5 col-lg-5 col-sm-5 mt-2"
+             style="margin-left: 6pc">
+          <p class="lable-font-title">Upload Product Video</p>
+        </div>
+
+        <div class="col-md-5 col-lg-5 col-sm-5 d-flex justify-content-center p-5 mobile_images"
+             style="border: dotted 2px gray; margin-left: 2pc">
+          <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12"
+                 style="text-align: center">
+              <img src="../../assets/cloud-computing%20(1).svg"
+                   width="10%"
+                   alt="" />
+            </div>
+            <div class="col-md-12 col-lg-12 col-sm-12"
+                 style="text-align: center">
+              <h3 style="color: gray">Click to Upload</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1 col-lg-1 col-sm-1"></div>
+
+        <div class="col-md-5 col-lg-5 col-sm-5 d-flex justify-content-center p-5 mobile_images"
+             style="border: dotted 2px gray">
+          <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12"
+                 style="text-align: center">
+              <img src="../../assets/cloud-computing%20(1).svg"
+                   width="10%"
+                   alt="" />
+            </div>
+            <div class="col-md-12 col-lg-12 col-sm-12"
+                 style="text-align: center">
+              <h3 style="color: gray">Click to Upload</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row mt-5">
+      <div class="col-sm-12">
+        <button mat-flat-button
+                color="primary"
+                style="height: 38px;"
+                class="save-button  px-5"
+                type="button">
+          Save
+        </button>
+        <button mat-flat-button
+                color="accent"
+                style="height: 38px;"
+                class="cancel-button  px-5">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</section>

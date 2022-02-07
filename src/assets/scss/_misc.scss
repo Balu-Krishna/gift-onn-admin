@@ -20,8 +20,8 @@ body {
   padding-top: $navbar-height;
   @include display-flex();
   @include flex-direction(row);
-  padding-left: 54px;
-  padding-right: 3px;
+  padding-left: 0;
+  padding-right: 0;
 
   &.full-page-wrapper {
     width: 100%;

@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between pb-4">
   <div class="pl-5">
-    <p class="lable-font-title">E-Signature</p>
+    <p class="page-title">E-Signature</p>
   </div>
   <div class="d-flex justify-content-end">
     <p class="text-muted lable-font-title">Vendors /</p>
@@ -15,41 +15,37 @@
       </div>
     </div>
     <div class="row">
-      <div
-        class="col-md-7 col-lg-7 col-sm-7 d-flex justify-content-center box"
-        style="border: dotted 2px gray; margin-left: 2pc"
-      >
-        <input
-          #fileInput
-          type="file"
-          hidden
-          (change)="handleChange($event.target.files)"
-        />
-        <div class="row" (click)="fileInput.click()">
-          <div class="col-md-12 col-lg-12 col-sm-12" style="text-align: center">
-            <img
-              src="../../../../assets/cloud-computing%20(1).svg"
-              width="10%"
-              alt=""
-            />
-          </div>
-          <div class="col-md-12 col-lg-12 col-sm-12" style="text-align: center">
-            <h3 style="color: gray">Click to Upload</h3>
+      <div class="col-md-6 col-sm-12">
+        <div class="p-5 file-uploader"
+             (click)="openSignature()">
+          <input #fileInput
+                 id="signature"
+                 type="file"
+                 hidden
+                 (change)="handleChange($event.target.files)" />
+          <img src="assets/cloud-computing%20(1).svg"
+               style="width: 50px;">
+          <div style="text-align: center">
+            <p style="font-size:16px"
+               class="pb-0 pt-1">Click to Upload</p>
           </div>
         </div>
       </div>
+
     </div>
 
     <div class="row">
-      <div class="col-md-6 col-sm-12 mt-5">
-        <div class="d-flex justify-content-around">
-          <button mat-flat-button color="primary" class="accept-button mr-5">
-            Finished Onboarding
-          </button>
-          <button mat-flat-button color="accent" class="cancel-button mr-5">
-            Cancel
-          </button>
-        </div>
+      <div class="col-sm-12 mt-5">
+        <button mat-flat-button
+                color="primary"
+                class="primary--button mr-5">
+          Finished Onboarding
+        </button>
+        <button mat-flat-button
+                color="accent"
+                class="secondary--button mr-5 px-5">
+          Cancel
+        </button>
       </div>
     </div>
   </mat-card>

@@ -1,583 +1,465 @@
-<section>
-<div class="d-flex justify-content-between pb-4">
-    <div class="pl-5">
-        <p class="page-title">Offers</p>
+<div class="d-flex justify-content-between pb-4 mobile_admin_heading">
+  <div class="pl-5 page_title_info">
+    <p class="page--title">Offers</p>
+  </div>
+  <div class="d-flex justify-content-end">
+    <div class="pr-4">
+      <button mat-stroked-button
+              color="primary"
+              style="height: 38px;"
+              class="outline--button"
+              (click)="openFilter()">
+        Filter
+        <svg xmlns="http://www.w3.org/2000/svg"
+             id="Layer_1"
+             enable-background="new 0 0 32 32"
+             height="19"
+             viewBox="0 0 32 32"
+             width="19">
+          <g fill="#988149">
+            <path
+                  d="m4 9h4c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2h14c.552 0 1-.447 1-1s-.448-1-1-1h-14c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2h-4c-.552 0-1 .447-1 1s.448 1 1 1z" />
+            <path
+                  d="m28 15h-6c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2h-12c-.552 0-1 .447-1 1s.448 1 1 1h12c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2h6c.552 0 1-.447 1-1s-.448-1-1-1z" />
+            <path
+                  d="m28 23h-14c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2h-4c-.552 0-1 .447-1 1s.448 1 1 1h4c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2h14c.552 0 1-.447 1-1s-.448-1-1-1z" />
+          </g>
+        </svg>
+      </button>
+
     </div>
-    <div class="d-flex justify-content-end">
-        <div class="pr-4">
-            <button mat-stroked-button
-                    color="primary"
-                    class="outline--button"
-                    (click)="openFilter()">
-                Filter
-                <mat-icon>filter_list</mat-icon>
-            </button>
-        </div>
-        <div>
-            <button mat-stroked-button
-                    color="accent"
-                    class="primary--button"
-                    (click)="addOffers()">
-                Add Offers
-            </button>
-        </div>
+    <div>
+      <button mat-stroked-button
+              color="accent"
+              style="height: 38px;"
+              class="primary--button"
+              (click)="addVendor()">
+        Add Offer
+      </button>
     </div>
+    <div *ngIf="productLaunchSelected">
+      <button mat-stroked-button
+              color="accent"
+              class="primary--button add-user-btn"
+              (click)="addProductLaunch()">
+        Add Product Launch
+      </button>
+    </div>
+  </div>
 </div>
-</section>
-<section class="table_box" style="margin-left: 20px;">
-    <div class="row">
-        <div class="col-lg-6 export_btn"><h6>Export:</h6><a>csv</a><a>xls</a><a>pdf</a> </div>
-        <div class="col-lg-5 col-md-5 col-sm-5 d-flex justify-content-end" style="margin-right:25px">
-            <form class="search-form">
-                <mat-form-field class="form_field search_btn"  appearance="outline">
-                    <mat-icon class="form_field" matSuffix>search</mat-icon>
-                    <input matInput type="search" placeholder="search" class="search-input">
-                </mat-form-field>
-            </form>     
+<div class="ml-4 shadow-lg bg-white rounded h-100 mobile_userInfo">
+  <div class="search_mobile_inforamtive d-flex justify-content-between">
+    <div class="justify-content-center align-self-center export_informative">
+      <div class="d-flex justify-content-start">
+        <div class="text-muted pl-2 justify-content-center align-self-center">
+          <span class="font-weight-bold align-middle pr-3">Export: </span>
         </div>
+        <div class="pr-3">
+          <button mat-stroked-button
+                  color="accent"
+                  class="outline--export--button btn-outline-35"
+                  (click)="
+                  download('csv')">
+            CSV
+          </button>
+        </div>
+        <div class="pr-3">
+          <button mat-stroked-button
+                  color="accent"
+                  class="outline--export--button btn-outline-35"
+                  (click)="
+                  download('xls')">
+            XLS
+          </button>
+        </div>
+        <div class="pr-3">
+          <button mat-stroked-button
+                  color="accent"
+                  class="outline--export--button btn-outline-35"
+                  (click)="download('pdf')">
+            PDF
+          </button>
+        </div>
+      </div>
     </div>
-    <mat-tab-group>
-        <mat-tab  class="text-right tab_view mention" label="Occasional Offers" style="padding-left: 221px;">
-            <section class="">
-                <table class="table table-striped table-hover tab_admin prod_tab">
-                    <thead>  
-                        <tr style="padding-top: 20px;">
-                            <th class="th_wid">Banner Image</th>  
-                            <th class="th_wid">Store ID</th>  
-                            <th class="th_wid">Offer ID</th>  
-                            <th class="th_wid">Category</th>  
-                            <th class="th_wid">Sub Category</th>  
-                            <th class="th_wid">Name</th>  
-                            <th class="th_wid">Description</th> 
-                            <th class="th_wid">Country</th>  
-                            <th class="th_wid">Location</th> 
-                            <th class="th_wid">Start Date</th> 
-                            <th class="th_wid"> End Date</th>  
-                            <th class="th_wid">Status</th> 
-                            <th class="th_wid">Action</th>     
-                        </tr>  
-                    </thead>  
-                    <tbody>  
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                                <select class="form-select" aria-label="Default select example">
-                                  <option disabled selected>Option </option>
-                                    <option value="deny">Deny</option>
-                                    <option value="freeze">Freeze</option>
-                                    <option value="Approve">Approve</option>
-                                </select>
-                            </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.  </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.</td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option">
-                                <select class="form-select" aria-label="Default select example">
-                                  <option disabled selected>Option </option>
-                                    <option value="1">Deny</option>
-                                    <option value="2">InActive</option>
-                                    <option value="3">Approve</option>
-                                </select>
-                            </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.  </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td> 
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.</td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                    </tbody>  
-                </table>
-            </section> 
-        </mat-tab>
-        <mat-tab label="Regular Offer">
-            <section class="">
-                <table class="table table-striped table-hover tab_admin prod_tab">
-                    <thead>  
-                        <tr style="padding-top: 20px;">
-                            <th class="th_wid">Banner Image</th>  
-                            <th class="th_wid">Store ID</th>  
-                            <th class="th_wid">Offer ID</th>  
-                            <th class="th_wid">Category</th>  
-                            <th class="th_wid">Sub Category</th>  
-                            <th class="th_wid">Name</th>  
-                            <th class="th_wid">Description</th> 
-                            <th class="th_wid">Country</th>  
-                            <th class="th_wid">Location</th> 
-                            <th class="th_wid">Start Date</th> 
-                            <th class="th_wid"> End Date</th>  
-                            <th class="th_wid">Status</th> 
-                            <th class="th_wid">Action</th>     
-                        </tr>  
-                    </thead>  
-                    <tbody>  
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.  </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.  </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.  </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.</td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                    </tbody>  
-                </table>
-            </section>
-        </mat-tab>   
-        <mat-tab label="Seasonal offer">
-            <section class="">
-                <table class="table table-striped table-hover tab_admin prod_tab">
-                    <thead>  
-                        <tr style="padding-top: 20px;">
-                            <th class="th_wid">Banner Image</th>  
-                            <th class="th_wid">Store ID</th>  
-                            <th class="th_wid">Offer ID</th>  
-                            <th class="th_wid">Category</th>  
-                            <th class="th_wid">Sub Category</th>  
-                            <th class="th_wid">Name</th>  
-                            <th class="th_wid">Description</th> 
-                            <th class="th_wid">Country</th>  
-                            <th class="th_wid">Location</th> 
-                            <th class="th_wid">Start Date</th> 
-                            <th class="th_wid"> End Date</th>  
-                            <th class="th_wid">Status</th> 
-                            <th class="th_wid">Action</th>     
-                        </tr>  
-                    </thead>  
-                    <tbody>  
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.</td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                    </tbody>  
-                </table>
-            </section>
-        </mat-tab>  
-        <mat-tab label="Bank offer">
-            <section class="">
-                <table class="table table-striped table-hover tab_admin prod_tab">
-                    <thead>  
-                        <tr style="padding-top: 20px;">
-                            <th class="th_wid">Banner Image</th>  
-                            <th class="th_wid">Store ID</th>  
-                            <th class="th_wid">Offer ID</th>  
-                            <th class="th_wid">Category</th>  
-                            <th class="th_wid">Sub Category</th>  
-                            <th class="th_wid">Name</th>  
-                            <th class="th_wid">Description</th> 
-                            <th class="th_wid">Country</th>  
-                            <th class="th_wid">Location</th> 
-                            <th class="th_wid">Start Date</th> 
-                            <th class="th_wid"> End Date</th>  
-                            <th class="th_wid">Status</th> 
-                            <th class="th_wid">Action</th>     
-                        </tr>  
-                    </thead>  
-                    <tbody>  
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.</td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.</td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing. </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicin. </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                        <tr>   
-                            <td><img src="../../assets/gift.jpeg"></td>  
-                            <td>89736</td>  
-                            <td>JOY873</td> 
-                            <td>Jewellary</td>   
-                            <td>Bracelet</td>  
-                            <td>Weekend Sale</td>  
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing.  </td>  
-                            <td>India</td>
-                            <td>Hyderabad</td>  
-                            <td>01/12/2021</td>  
-                            <td>01/12/2021</td>  
-                            <td>Pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                    <select class="form-select" aria-label="Default select example">
-                      <option disabled selected>Option </option>
-                        <option value="deny">Deny</option>
-                        <option value="freeze">Freeze</option>
-                        <option value="Approve">Approve</option>
-                    </select>
-                </td>
-                        </tr> 
-                    </tbody>  
-                </table>
-            </section>
-        </mat-tab>   
-    </mat-tab-group>
-</section>
 
+    <div class="d-flex align-content-center  search_mobile">
+      <mat-form-field appearance="outline"
+                      style="font-size: 20px"
+                      class="pr-3">
+        <input matInput
+               type="search"
+               placeholder="search"
+               class="search-input" />
+        <i class="fa fa-search"></i>
+      </mat-form-field>
+    </div>
+  </div>
+  <mat-tab-group>
+    <mat-tab class="text-right tab_view"
+             label="Occasional Offers"
+             style="padding-left: 221px">
+      <div class="table-responsive py-3">
+        <table class="table table-striped">
+          <thead>
+            <tr style="padding-top: 20px;">
+              <th>Banner Image</th>
+              <th>Store ID</th>
+              <th>Offer ID</th>
+              <th>Category</th>
+              <th style="width: 100px !important;">Sub Category</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Country</th>
+              <th>Location</th>
+              <th>Start Date</th>
+              <th> End Date</th>
+              <th style="cursor: pointer;"><span>Status <i class="fa fa-sort"></i></span></th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let occasional of occasionalOffers | paginate
+                : {
+                    'id': 'occasional',
+                    itemsPerPage: tableSize,
+                    currentPage: occasionalPage,
+                    totalItems: occasionalCount
+                  }">
+              <td><img [src]="occasional.image"></td>
+              <td (click)="openoffer()">{{occasional.storeId}}</td>
+              <td>{{occasional.offerId}}</td>
+              <td>{{occasional.category}}</td>
+              <td>{{occasional.subCategory}}</td>
+              <td>{{occasional.name}}</td>
+              <td class="text-break"
+                  style="width: 100px; !important">{{occasional.description}}</td>
+              <td>{{occasional.country}}</td>
+              <td>{{occasional.location}}</td>
+              <td>{{occasional.startDate}}</td>
+              <td>{{occasional.endDate}}</td>
+              <td>
+                <div class="font-weight-bold"
+                     [ngClass]="occasional.status.toUpperCase() == 'APPROVED'
+                                      ? 'text-success'
+                                      : occasional.status.toUpperCase() == 'PENDING'
+                                      ? 'text-warning'
+                                      : 'text-danger'
+                                  ">
+                  <span style="font-size: 16px"> {{ occasional.status }} </span>
+                </div>
+              </td>
+              <td>
+                <button mat-button
+                        [matMenuTriggerFor]="menu"
+                        mat-flat-button
+                        color="warn">
+                  Options
+                  <mat-icon>arrow_drop_down</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item
+                          (click)="denyVendor(vendor)">Deny</button>
+                  <button mat-menu-item
+                          (click)="freezeVendor(vendor)">
+                    Freeze
+                  </button>
+                  <button mat-menu-item
+                          (click)="approveVendor(vendor)">
+                    Approve
+                  </button>
+                  <button mat-menu-item
+                          (click)="ratingVendor(vendor)">
+                    Rating
+                  </button>
+                </mat-menu>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="d-flex justify-content-end">
+        <pagination-controls responsive="true"
+                             id="occasional"
+                             previousLabel="Prev"
+                             nextLabel="Next"
+                             (pageChange)="occasionalOffersPageChange($event)">
+        </pagination-controls>
+      </div>
+    </mat-tab>
 
+    <mat-tab class="text-right tab_view"
+             label="Regular Offers"
+             style="padding-left: 221px">
+      <div class="table-responsive py-3">
+        <table class="table table-striped">
+          <thead>
+            <tr style="padding-top: 20px;">
+              <th>Banner Image</th>
+              <th>Store ID</th>
+              <th>Offer ID</th>
+              <th>Category</th>
+              <th>Sub Category</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Country</th>
+              <th>Location</th>
+              <th>Start Date</th>
+              <th> End Date</th>
+              <th style="cursor: pointer;"><span>Status <i class="fa fa-sort"></i></span></th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let regular of regularOffers | paginate
+                        : {
+                            'id': 'regular',
+                            itemsPerPage: tableSize,
+                            currentPage: regularPage,
+                            totalItems: regularCount
+                          }">
+              <td><img [src]="regular.image"></td>
+              <td (click)="openoffer()">{{regular.storeId}}</td>
+              <td>{{regular.offerId}}</td>
+              <td>{{regular.category}}</td>
+              <td>{{regular.subCategory}}</td>
+              <td>{{regular.name}}</td>
+              <td>{{regular.description}}</td>
+              <td>{{regular.country}}</td>
+              <td>{{regular.location}}</td>
+              <td>{{regular.startDate}}</td>
+              <td>{{regular.endDate}}</td>
+              <td>
+                <div class="font-weight-bold"
+                     [ngClass]="regular.status.toUpperCase() == 'APPROVED'
+                                              ? 'text-success'
+                                              : regular.status.toUpperCase() == 'PENDING'
+                                              ? 'text-warning'
+                                              : 'text-danger'
+                                          ">
+                  <span style="font-size: 16px"> {{ regular.status }} </span>
+                </div>
+              </td>
+              <td>
+                <button mat-button
+                        [matMenuTriggerFor]="menu"
+                        mat-flat-button
+                        color="warn">
+                  Options
+                  <mat-icon>arrow_drop_down</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item
+                          (click)="denyVendor(vendor)">Deny</button>
+                  <button mat-menu-item
+                          (click)="freezeVendor(vendor)">
+                    Freeze
+                  </button>
+                  <button mat-menu-item
+                          (click)="approveVendor(vendor)">
+                    Approve
+                  </button>
+                  <button mat-menu-item
+                          (click)="ratingVendor(vendor)">
+                    Rating
+                  </button>
+                </mat-menu>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="d-flex justify-content-end">
+        <pagination-controls responsive="true"
+                             id="regular"
+                             previousLabel="Prev"
+                             nextLabel="Next"
+                             (pageChange)="regularOffersPageChange($event)">
+        </pagination-controls>
+      </div>
+    </mat-tab>
+
+    <mat-tab class="text-right tab_view"
+             label="Seasonal Offers"
+             style="padding-left: 221px">
+      <div class="table-responsive py-3">
+        <table class="table table-striped">
+          <thead>
+            <tr style="padding-top: 20px;">
+              <th>Banner Image</th>
+              <th>Store ID</th>
+              <th>Offer ID</th>
+              <th>Category</th>
+              <th>Sub Category</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Country</th>
+              <th>Location</th>
+              <th>Start Date</th>
+              <th> End Date</th>
+              <th style="cursor: pointer;"><span>Status <i class="fa fa-sort"></i></span></th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let seasonal of seasonalOffers | paginate
+                              : {
+                                  'id': 'seasonal',
+                                  itemsPerPage: tableSize,
+                                  currentPage: seasonalPage,
+                                  totalItems: seasonalCount
+                                }">
+              <td><img [src]="seasonal.image"></td>
+              <td (click)="openoffer()">{{seasonal.storeId}}</td>
+              <td>{{seasonal.offerId}}</td>
+              <td>{{seasonal.category}}</td>
+              <td>{{seasonal.subCategory}}</td>
+              <td>{{seasonal.name}}</td>
+              <td>{{seasonal.description}}</td>
+              <td>{{seasonal.country}}</td>
+              <td>{{seasonal.location}}</td>
+              <td>{{seasonal.startDate}}</td>
+              <td>{{seasonal.endDate}}</td>
+              <td>
+                <div class="font-weight-bold"
+                     [ngClass]="seasonal.status.toUpperCase() == 'APPROVED'
+                                                    ? 'text-success'
+                                                    : seasonal.status.toUpperCase() == 'PENDING'
+                                                    ? 'text-warning'
+                                                    : 'text-danger'
+                                                ">
+                  <span style="font-size: 16px"> {{ seasonal.status }} </span>
+                </div>
+              </td>
+              <td>
+                <button mat-button
+                        [matMenuTriggerFor]="menu"
+                        mat-flat-button
+                        color="warn">
+                  Options
+                  <mat-icon>arrow_drop_down</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item
+                          (click)="denyVendor(vendor)">Deny</button>
+                  <button mat-menu-item
+                          (click)="freezeVendor(vendor)">
+                    Freeze
+                  </button>
+                  <button mat-menu-item
+                          (click)="approveVendor(vendor)">
+                    Approve
+                  </button>
+                  <button mat-menu-item
+                          (click)="ratingVendor(vendor)">
+                    Rating
+                  </button>
+                </mat-menu>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="d-flex justify-content-end">
+        <pagination-controls responsive="true"
+                             id="seasonal"
+                             previousLabel="Prev"
+                             nextLabel="Next"
+                             (pageChange)="seasonalOffersPageChange($event)">
+        </pagination-controls>
+      </div>
+    </mat-tab>
+
+    <mat-tab class="text-right tab_view"
+             label="Bank offer"
+             style="padding-left: 221px">
+      <div class="table-responsive py-3">
+        <table class="table table-striped">
+          <thead>
+            <tr style="padding-top: 20px;">
+              <th>Banner Image</th>
+              <th>Store ID</th>
+              <th>Offer ID</th>
+              <th>Category</th>
+              <th>Sub Category</th>
+              <th>Name</th>
+              <th style="width: 300px !important;">Description</th>
+              <th>Country</th>
+              <th>Location</th>
+              <th>Start Date</th>
+              <th> End Date</th>
+              <th style="cursor: pointer;"><span>Status <i class="fa fa-sort"></i></span></th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let bank of bankOffers | paginate
+                                    : {
+                                        'id': 'bank',
+                                        itemsPerPage: tableSize,
+                                        currentPage: bankPage,
+                                        totalItems: bankCount
+                                      }">
+              <td><img [src]="bank.image"></td>
+              <td (click)="openoffer()">{{bank.storeId}}</td>
+              <td>{{bank.offerId}}</td>
+              <td>{{bank.category}}</td>
+              <td>{{bank.subCategory}}</td>
+              <td>{{bank.name}}</td>
+              <td class="text-break"
+                  style="width: 300px !important">{{bank.description}}</td>
+              <td>{{bank.country}}</td>
+              <td>{{bank.location}}</td>
+              <td>{{bank.startDate}}</td>
+              <td>{{bank.endDate}}</td>
+              <td>
+                <div class="font-weight-bold"
+                     [ngClass]="bank.status.toUpperCase() == 'APPROVED'
+                                                          ? 'text-success'
+                                                          : bank.status.toUpperCase() == 'PENDING'
+                                                          ? 'text-warning'
+                                                          : 'text-danger'
+                                                      ">
+                  <span style="font-size: 16px"> {{ bank.status }} </span>
+                </div>
+              </td>
+              <td>
+                <button mat-button
+                        [matMenuTriggerFor]="menu"
+                        mat-flat-button
+                        color="warn">
+                  Options
+                  <mat-icon>arrow_drop_down</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item
+                          (click)="denyVendor(vendor)">Deny</button>
+                  <button mat-menu-item
+                          (click)="freezeVendor(vendor)">
+                    Freeze
+                  </button>
+                  <button mat-menu-item
+                          (click)="approveVendor(vendor)">
+                    Approve
+                  </button>
+                  <button mat-menu-item
+                          (click)="ratingVendor(vendor)">
+                    Rating
+                  </button>
+                </mat-menu>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="d-flex justify-content-end">
+        <pagination-controls responsive="true"
+                             id="bank"
+                             previousLabel="Prev"
+                             nextLabel="Next"
+                             (pageChange)="bankOffersPageChange($event)">
+        </pagination-controls>
+      </div>>
+    </mat-tab>
+  </mat-tab-group>
+</div>

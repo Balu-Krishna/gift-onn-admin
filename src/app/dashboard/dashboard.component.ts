@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
     document.querySelector("body").classList.toggle("removeProbanner");
   }
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.Monthly = [
@@ -44,6 +44,26 @@ export class DashboardComponent implements OnInit {
       {
         lable: "July",
         value: "July",
+      },
+      {
+        lable: "August",
+        value: "August",
+      },
+      {
+        lable: "September",
+        value: "September",
+      },
+      {
+        lable: "October",
+        value: "October",
+      },
+      {
+        lable: "November",
+        value: "November",
+      },
+      {
+        lable: "December",
+        value: "December",
       },
     ];
   }

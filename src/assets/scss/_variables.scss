@@ -92,6 +92,7 @@ $type1-light: "ubuntu-light", sans-serif;
 $type1-regular: "ubuntu-regular", sans-serif;
 $type1-medium: "ubuntu-medium", sans-serif;
 $type1-bold: "ubuntu-bold", sans-serif;
+$type1-normal: "Montserrat", sans-serif;
 
 $default-font-size: 0.875rem; // 14px as base font size
 
@@ -106,7 +107,7 @@ $sidebar-width-mini: 185px;
 $sidebar-width-icon: 70px;
 
 $sidebar-bg: $white;
-$sidebar-menu-color: #3e4b5b;
+$sidebar-menu-color: #a4a4a4;
 $sidebar-submenu-color: #888;
 $sidebar-menu-active-bg: $white;
 $sidebar-menu-active-color: theme-color(primary);

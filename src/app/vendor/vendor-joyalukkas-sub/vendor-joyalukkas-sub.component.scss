@@ -1,0 +1,28 @@
+.vendor_contient img {
+  width: 40px !important;
+}
+.vendor_contient {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.vendor_contient h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+.vendor_inforamtive {
+  text-align: center;
+  margin-top: 57px;
+}
+.page_title_jayalukkas .title {
+  font-weight: 600;
+}
+.vendor_inforamtive .content_vendor {
+  background: #f3f3f3;
+  padding: 20px 35px;
+  margin: 10px;
+  border-radius: 4px;
+}
+.content_vendor:hover {
+  background-color: #e7d6bb !important;
+}

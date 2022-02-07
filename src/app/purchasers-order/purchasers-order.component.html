@@ -1,457 +1,435 @@
-<section>
-    <div class="row">
-        <div class="col-lg-6 admins_head">
-            <h6>Purchaser Orders</h6>
-        </div>
-        <div class="col-lg-6 add_btn">
-        </div>
+<div>
+  <div class="d-flex justify-content-between pb-4 mobile_admin_heading">
+    <div class="pl-5 page_title_info">
+      <p class="page--title">Purchase Orders</p>
     </div>
-</section>
-<section class="table_box" style="margin-left: 20px;">
-    <div class="row">
-        <div class="col-lg-6 export_btn">
-            <h6>Export:</h6><a>csv</a><a>xls</a><a>pdf</a>
-        </div>
-        <div class="col-lg-5 col-md-5 col-sm-5 d-flex justify-content-end" style="margin-right:25px">
-            <form class="search-form">
-                <mat-form-field class="form_field search_btn" appearance="outline">
-                    <mat-icon class="form_field" matSuffix>search</mat-icon>
-                    <input matInput type="search" placeholder="search" class="search-input">
-                </mat-form-field>
-            </form>
-        </div>
+    <div class="d-flex justify-content-end">
+      <div class="pr-4"
+           *ngIf="showFilter">
+        <button mat-stroked-button
+                color="primary"
+                style="height: 38px;"
+                class="outline--button"
+                (click)="openFilter()">
+          Filter
+          <svg xmlns="http://www.w3.org/2000/svg"
+               id="Layer_1"
+               enable-background="new 0 0 32 32"
+               height="22"
+               viewBox="0 0 32 32"
+               width="22">
+            <g fill="#988149">
+              <path
+                    d="m4 9h4c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2h14c.552 0 1-.447 1-1s-.448-1-1-1h-14c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2h-4c-.552 0-1 .447-1 1s.448 1 1 1z" />
+              <path
+                    d="m28 15h-6c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2h-12c-.552 0-1 .447-1 1s.448 1 1 1h12c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2h6c.552 0 1-.447 1-1s-.448-1-1-1z" />
+              <path
+                    d="m28 23h-14c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2h-4c-.552 0-1 .447-1 1s.448 1 1 1h4c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2h14c.552 0 1-.447 1-1s-.448-1-1-1z" />
+            </g>
+          </svg>
+        </button>
+      </div>
     </div>
-    <mat-tab-group>
+  </div>
+</div>
+<div class="ml-4 shadow-lg bg-white rounded h-100 mobile_userInfo">
+  <div class="search_mobile_inforamtive d-flex justify-content-between">
+    <div class="justify-content-center align-self-center export_informative">
+      <div class="d-flex justify-content-start">
+        <div class="text-muted pl-2 justify-content-center align-self-center">
+          <span class="font-weight-bold align-middle pr-3">Export: </span>
+        </div>
+        <div class="pr-3">
+          <button mat-stroked-button
+                  color="accent"
+                  class="outline--export--button btn-outline-35"
+                  (click)="download('csv')">
+            CSV
+          </button>
+        </div>
+        <div class="pr-3">
+          <button mat-stroked-button
+                  color="accent"
+                  class="outline--export--button btn-outline-35"
+                  (click)="download('xls')">
+            XLS
+          </button>
+        </div>
+        <div class="pr-3">
+          <button mat-stroked-button
+                  color="accent"
+                  class="outline--export--button btn-outline-35"
+                  (click)="download('pdf')">
+            PDF
+          </button>
+        </div>
+      </div>
+    </div>
 
-        <mat-tab class="text-right tab_view" label="Orders" style="padding-left: 221px;">
-            <section class="">
-
-                <table class="table table-striped table-hover tab_admin prod_tab">
-                    <thead class="purches_ord">
-                        <tr style="padding-top: 20px;">
-                            <th class="th_wid">Order ID</th>
-                            <th class="th_wid">Customer ID</th>
-                            <th class="th_wid">Store ID</th>
-                            <th class="th_wid">Purchaser Name</th>
-                            <th class="th_wid">Product Id</th>
-                            <th class="th_wid">Product Name</th>
-                            <th class="th_wid">Net Price</th>
-                            <th class="th_wid">Total Price</th>
-                            <th class="th_wid">Status</th>
-                            <th class="th_wid">Track</th>
-                        </tr>
-                    </thead>
-                    <tbody class="purche_data">
-                        <tr>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>Rakesh</td>
-                            <td>JOY56897</td>
-                            <td>Bracelet</td>
-                            <td>15000</td>
-                            <td>16000</td>
-                            <td>pending</td>
-                            <td class="selec_option">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Option </option>
-                                    <option value="1">Confirmed</option>
-                                    <option value="2">Ready for price-up</option>
-                                    <option value="3">Order Picked-up</option>
-                                    <option value="4">Auto Cancelled</option>
-                                    <option value="5">Cancelled</option>
-                                    <option value="6">Refunded</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>Rakesh</td>
-                            <td>JOY56897</td>
-                            <td>Bracelet</td>
-                            <td>15000</td>
-                            <td>16000</td>
-                            <td>pending</td>
-                            <td class="selec_option">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Option </option>
-                                    <option value="1">Confirmed</option>
-                                    <option value="2">Ready for price-up</option>
-                                    <option value="3">Order Picked-up</option>
-                                    <option value="4">Auto Cancelled</option>
-                                    <option value="5">Cancelled</option>
-                                    <option value="6">Refunded</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>Rakesh</td>
-                            <td>JOY56897</td>
-                            <td>Bracelet</td>
-                            <td>15000</td>
-                            <td>16000</td>
-                            <td>pending</td>
-                            <td class="selec_option">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Option </option>
-                                    <option value="1">Confirmed</option>
-                                    <option value="2">Ready for price-up</option>
-                                    <option value="3">Order Picked-up</option>
-                                    <option value="4">Auto Cancelled</option>
-                                    <option value="5">Cancelled</option>
-                                    <option value="6">Refunded</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>Rakesh</td>
-                            <td>JOY56897</td>
-                            <td>Bracelet</td>
-                            <td>15000</td>
-                            <td>16000</td>
-                            <td>pending</td>
-                            <td class="selec_option">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Option </option>
-                                    <option value="1">Confirmed</option>
-                                    <option value="2">Ready for price-up</option>
-                                    <option value="3">Order Picked-up</option>
-                                    <option value="4">Auto Cancelled</option>
-                                    <option value="5">Cancelled</option>
-                                    <option value="6">Refunded</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </section>
-        </mat-tab>
-        <mat-tab label="Generate OTP">
-            <section class="Order_form">
-                <form>
-                    <div class="form-group order_text">
-                        <label for="exampleInputEmail1">Order Id</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Order Id" aria-describedby="emailHelp">
-                    </div>
-                </form>
-                <div class="row purches_btn">
-                    <div class="request_btn">
-                        <a class="" href="">Request OTP</a>
-                    </div>
-                    <div class="cancel_btn">
-                        <a class="" href="">Cancel</a>
-                    </div>
-                    <div class="resend_btn">
-                        <a class="" href="">Resend OTP</a>
-                    </div>
+    <div class="d-flex align-content-center  search_mobile">
+      <mat-form-field appearance="outline"
+                      style="font-size: 20px"
+                      class="pr-3">
+        <input matInput
+               type="search"
+               placeholder="search"
+               class="search-input" />
+        <i class="fa fa-search"></i>
+      </mat-form-field>
+    </div>
+  </div>
+  <mat-tab-group (selectedTabChange)="myTabSelectedTabChange($event)">
+    <mat-tab class="text-right tab_view"
+             label="Orders"
+             style="padding-left: 221px">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer ID</th>
+              <th>Store Id</th>
+              <th>Purchaser Name</th>
+              <th>Category</th>
+              <th>Sub Category</th>
+              <th>Product</th>
+              <th>Product Name</th>
+              <th>Net Price</th>
+              <th>Total Price</th>
+              <th style="cursor: pointer;"><span>Status <i class="fa fa-sort"></i></span></th>
+              <th>Track</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of Orders  | paginate
+                : {
+                    id:'orders',
+                    itemsPerPage: tableSize,
+                    currentPage: ordersPage,
+                    totalItems: ordersCount
+                  }">
+              <td>{{ order.orderId }}</td>
+              <td>{{ order.customerId }}</td>
+              <td>{{ order.storeId }}</td>
+              <td>{{ order.purchasername }}</td>
+              <td>{{ order.category }}</td>
+              <td>{{ order.subCategory }}</td>
+              <td>{{ order.productId }}</td>
+              <td>{{ order.productName }}</td>
+              <td>{{ order.netPrice }}</td>
+              <td>{{ order.totalPrice }}</td>
+              <td>
+                <div class="font-weight-bold"
+                     [ngClass]="
+                    order.status.toUpperCase() == 'CONFIRMED'
+                      ? 'text-success'
+                      : ['PENDING', 'REFUNDED'].includes(
+                          order.status.toUpperCase()
+                        )
+                      ? 'text-warning'
+                      : 'text-danger'
+                  ">
+                  <span style="font-size: 16px"> {{ order.status }} </span>
                 </div>
-            </section>
-            <section class="Order_form">
-                <form>
-                    <div class="form-group order_text">
-                        <label for="exampleInputEmail1">CONFIRM OTP</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter OTP" aria-describedby="emailHelp">
-                    </div>
-                </form>
-                <div class="row purches_btn">
-                    <div class="submit_btn">
-                        <a class="" href="">Submit</a>
-                    </div>
-                </div>
-            </section>
-        </mat-tab>
-        <mat-tab label="Generate QR">
-            <!-- <section class="">
-                <table class="table table-striped table-hover tab_admin prod_tab">
-                    <thead>
-                        <tr style="padding-top: 20px;">
-                            <th class="th_wid">Order ID</th>
-                            <th class="th_wid">Customer ID</th>
-                            <th class="th_wid">Store ID</th>
-                            <th class="th_wid">Purchaser Name</th>
-                            <th class="th_wid">Product Id</th>
-                            <th class="th_wid">Product Name</th>
-                            <th class="th_wid">Net Price</th>
-                            <th class="th_wid">Total Price</th>
-                            <th class="th_wid">Status</th>
-                            <th class="th_wid">Track</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>Rakesh</td>
-                            <td>JOY56897</td>
-                            <td>Bracelet</td>
-                            <td>15000</td>
-                            <td>16000</td>
-                            <td>pending</td>
-                            <td class="selec_option">
-                                <select class="form-select"
-                                        aria-label="Default select example">
-                                    <option selected>Option </option>
-                                    <option value="1">Confirmed</option>
-                                    <option value="2">Ready for price-up</option>
-                                    <option value="3">Order Picked-up</option>
-                                    <option value="4">Auto Cancelled</option>
-                                    <option value="5">Cancelled</option>
-                                    <option value="6">Refunded</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>Rakesh</td>
-                            <td>JOY56897</td>
-                            <td>Bracelet</td>
-                            <td>15000</td>
-                            <td>16000</td>
-                            <td>pending</td>
-                            <td class="selec_option">
-                                <select class="form-select"
-                                        aria-label="Default select example">
-                                    <option selected>Option </option>
-                                    <option value="1">Confirmed</option>
-                                    <option value="2">Ready for price-up</option>
-                                    <option value="3">Order Picked-up</option>
-                                    <option value="4">Auto Cancelled</option>
-                                    <option value="5">Cancelled</option>
-                                    <option value="6">Refunded</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>Rakesh</td>
-                            <td>JOY56897</td>
-                            <td>Bracelet</td>
-                            <td>15000</td>
-                            <td>16000</td>
-                            <td>pending</td>
-                            <td class="selec_option">
-                                <select class="form-select"
-                                        aria-label="Default select example">
-                                    <option selected>Option </option>
-                                    <option value="1">Confirmed</option>
-                                    <option value="2">Ready for price-up</option>
-                                    <option value="3">Order Picked-up</option>
-                                    <option value="4">Auto Cancelled</option>
-                                    <option value="5">Cancelled</option>
-                                    <option value="6">Refunded</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>Rakesh</td>
-                            <td>JOY56897</td>
-                            <td>Bracelet</td>
-                            <td>15000</td>
-                            <td>16000</td>
-                            <td>pending</td>
-                            <td class="selec_option">
-                                <select class="form-select"
-                                        aria-label="Default select example">
-                                    <option selected>Option </option>
-                                    <option value="1">Confirmed</option>
-                                    <option value="2">Ready for price-up</option>
-                                    <option value="3">Order Picked-up</option>
-                                    <option value="4">Auto Cancelled</option>
-                                    <option value="5">Cancelled</option>
-                                    <option value="6">Refunded</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section> -->
-
-            <div>
-                <form>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>QR NUMBER</mat-label>
-                                    <input matInput formControlName="firstName" placeholder="Enter Number" />
-                                </mat-form-field>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>PURCHASER NAME</mat-label>
-                                    <input matInput formControlName="lastName" placeholder="Enter Purchaser Name" />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>PRODUCT NAME</mat-label>
-                                    <input matInput formControlName="lastName" placeholder="Enter Product Name" />
-                                </mat-form-field>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>PRODUCT ID</mat-label>
-                                    <input matInput formControlName="id" placeholder="Enter Product Id" />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>SUB CATEGORY</mat-label>
-                                    <mat-select formControlName="Sub Category">
-                                        <mat-option value="Pending"> Sub Category </mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>CATEGORY</mat-label>
-                                    <mat-select formControlName="status">
-                                        <mat-option value="Pending"> Select Category </mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>PRODUCT ID</mat-label>
-                                    <input matInput formControlName="id" placeholder="Enter Product Id" />
-                                </mat-form-field>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>PRODUCT ID</mat-label>
-                                    <input matInput formControlName="id" placeholder="Enter Product Id" />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 my-md-5">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <button mat-flat-button type="submit" class="rounded-button">
-                                        Save
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+              </td>
+              <td>
+                <button mat-button
+                        [matMenuTriggerFor]="menu"
+                        mat-flat-button
+                        color="warn">
+                  Options
+                  <mat-icon>arrow_drop_down</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item
+                          (click)="denyVendor(vendor)">
+                    Confirmed
+                  </button>
+                  <button mat-menu-item
+                          (click)="freezeVendor(vendor)">
+                    Ready for pick-up
+                  </button>
+                  <button mat-menu-item
+                          (click)="approveVendor(vendor)">
+                    Order pick-up
+                  </button>
+                  <button mat-menu-item
+                          (click)="ratingVendor(vendor)">
+                    Auto Cancelled
+                  </button>
+                  <button mat-menu-item
+                          (click)="ratingVendor(vendor)">
+                    Cancelled
+                  </button>
+                  <button mat-menu-item
+                          (click)="ratingVendor(vendor)">
+                    Refund
+                  </button>
+                </mat-menu>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="d-flex justify-content-end">
+        <pagination-controls responsive="true"
+                             id="orders"
+                             previousLabel="Prev"
+                             nextLabel="Next"
+                             (pageChange)="ordersPageChange($event)">
+        </pagination-controls>
+      </div>
+    </mat-tab>
+    <mat-tab label="Generate OTP">
+      <div class="px-1 py-5 my-5">
+        <form [formGroup]="generateOpt">
+          <div class="row m-0">
+            <div class="col-sm-12">
+              <p class="m-0 form-lable">ORDER ID</p>
+              <mat-form-field class="full-width"
+                              appearance="fill">
+                <input matInput
+                       placeholder="Enter Order Id" />
+              </mat-form-field>
             </div>
-        </mat-tab>
-        <mat-tab label="Vendor Related Coupons">
-            <section class="">
-                <table class="table table-striped table-hover tab_admin prod_tab">
-                    <thead>
-                        <tr style="padding-top: 20px;">
-                            <th class="th_wid">Order ID</th>
-                            <th class="th_wid">Customer ID</th>
-                            <th class="th_wid">Store ID</th>
-                            <th class="th_wid">Purchaser Name</th>
-                            <th class="th_wid">Product Id</th>
-                            <th class="th_wid">Product Name</th>
-                            <th class="th_wid">Net Price</th>
-                            <th class="th_wid">Total Price</th>
-                            <th class="th_wid">Status</th>
-                            <th class="th_wid">Track</th>
-                        </tr>
-                    </thead>
-                    <tbody class="purche_data">
-                        <tr>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>Rakesh</td>
-                            <td>JOY56897</td>
-                            <td>Bracelet</td>
-                            <td>15000</td>
-                            <td>16000</td>
-                            <td>pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Option </option>
-                                    <option value="approve">Approved</option>
-                                    <option value="freeze">Freeze</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>Rakesh</td>
-                            <td>JOY56897</td>
-                            <td>Bracelet</td>
-                            <td>15000</td>
-                            <td>16000</td>
-                            <td>pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Option </option>
-                                    <option value="approve">Approved</option>
-                                    <option value="freeze">Freeze</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>Rakesh</td>
-                            <td>JOY56897</td>
-                            <td>Bracelet</td>
-                            <td>15000</td>
-                            <td>16000</td>
-                            <td>pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Option </option>
-                                    <option value="approve">Approved</option>
-                                    <option value="freeze">Freeze</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>256897</td>
-                            <td>Rakesh</td>
-                            <td>JOY56897</td>
-                            <td>Bracelet</td>
-                            <td>15000</td>
-                            <td>16000</td>
-                            <td>pending</td>
-                            <td class="selec_option" (change)="action($event.target.value)">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Option </option>
-                                    <option value="approve">Approved</option>
-                                    <option value="freeze">Freeze</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </mat-tab>
-    </mat-tab-group>
-</section>
+          </div>
+          <div class="row mx-0 ">
+            <div class="col-sm-12">
+              <div class="d-flex flex-row">
+                <div class="purchase_info_buttons my-5 pt-5">
+                  <button mat-stroked-button
+                          type="button"
+                          color="accent"
+                          class="primary--button mr-5 requist_button">
+                    Request OTP
+                  </button>
+                  <button mat-stroked-button
+                          color="accent"
+                          type="button"
+                          class="secondary--button mr-5 cancel-button">
+                    Cancel
+                  </button>
+                  <button mat-stroked-button
+                          color="accent"
+                          type="button"
+                          class="outline--button requist_button">
+                    Resend OTP
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </form>
+        <div class="row m-0 mb-5">
+          <div class="col-sm-12">
+            <hr style="background-color: #fff;	border-top: 2px dashed #8c8b8b;">
+          </div>
+        </div>
+        <form [formGroup]="generateOpt">
+          <div class="row m-0">
+            <div class="col-sm-12">
+              <p class="m-0 form-lable">CONFIRM OTP</p>
+              <mat-form-field class="full-width"
+                              appearance="fill">
+                <input matInput
+                       placeholder="Enter OTP" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row mx-0 ">
+            <div class="col-sm-12">
+              <div class="d-flex flex-row">
+                <div class="my-5 pt-5 submit_purchase">
+                  <button mat-stroked-button
+                          type="button"
+                          color="accent"
+                          style="height: 45px !important;"
+                          class="primary--button mr-5">
+                    Submit OTP
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </mat-tab>
+
+    <mat-tab class="text-right tab_view"
+             label="Generate QR">
+      <form [formGroup]="generateQr">
+        <div class="row m-0 my-5">
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">QR NUMBER</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <input matInput
+                     placeholder="Enter Number" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">PURCHASER NAME</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <input matInput
+                     placeholder="Enter Purchaser Name" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">PRODUCT NAME</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <input matInput
+                     placeholder="Enter Product Name" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">PRODUCT ID</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <input matInput
+                     placeholder="Enter Product Id" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">CATEGORY</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <mat-select placeholder="Select Category">
+                <mat-option value=""> Select Category </mat-option>
+                <mat-option value="india"> India </mat-option>
+                <mat-option value="afghanistan"> Afghanistan </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">SUB CATEGORY</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <mat-select placeholder="Select Sub Category">
+                <mat-option value=""> Select Sub Category </mat-option>
+                <mat-option value="india"> India </mat-option>
+                <mat-option value="afghanistan"> Afghanistan </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">STORE ID</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <input matInput
+                     placeholder="Enter Store Id" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12">
+            <p class="m-0 form-lable">RECIPIENT MOBILE NUMBER</p>
+            <mat-form-field class="full-width"
+                            appearance="fill">
+              <input matInput
+                     placeholder="Enter Mobile Number" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row m-0">
+          <div class="col-sm-12">
+            <div class="d-flex flex-row">
+              <button mat-stroked-button
+                      type="button"
+                      color="accent"
+                      style="height: 45px !important;"
+                      class="primary--button mr-5">
+                Generate QR
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-tab>
+    <mat-tab class="text-right tab_view"
+             label="Vendor Related Coupons"
+             style="padding-left: 221px">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Store Id</th>
+              <th>Store Name</th>
+              <th>Coupon Type</th>
+              <th>Amount</th>
+              <th>Category</th>
+              <th>Sub Category</th>
+              <th>Discount</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th style="cursor: pointer;"><span>Status <i class="fa fa-sort"></i></span></th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let coupons of coupons  | paginate
+                : {
+                    id: 'coupons',
+                    itemsPerPage: tableSize,
+                    currentPage: couponsPage,
+                    totalItems: couponsCount
+                  }">
+              <td>{{ coupons.code }}</td>
+              <td>{{ coupons.storeid }}</td>
+              <td>{{ coupons.storeName }}</td>
+              <td>{{ coupons.couponType}}</td>
+              <td>{{ coupons.amount }}</td>
+              <td>{{ coupons.category }}</td>
+              <td>{{ coupons.subCategort }}</td>
+              <td>{{ coupons.discount }}</td>
+              <td>{{ coupons.startDate }}</td>
+              <td>{{ coupons.endDte }}</td>
+              <td>
+                <div [ngClass]="coupons.status.toUpperCase() == 'APPROVED'
+                                              ? 'text-success'
+                                              : coupons.status.toUpperCase() == 'PENDING'
+                                              ? 'text-warning'
+                                              : 'text-danger'
+                                          ">
+                  <span> {{coupons.status }} </span>
+                </div>
+              </td>
+              <td>
+                <button mat-button
+                        [matMenuTriggerFor]="menu"
+                        mat-flat-button
+                        color="warn">
+                  Options
+                  <mat-icon>arrow_drop_down</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item
+                          (click)="denyVendor(vendor)">
+                    Approve
+                  </button>
+                  <button mat-menu-item
+                          (click)="actionSai()">
+                    Freeze
+                  </button>
+
+                </mat-menu>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="d-flex justify-content-end">
+        <pagination-controls responsive="true"
+                             id="coupons"
+                             previousLabel="Prev"
+                             nextLabel="Next"
+                             (pageChange)="couponsPageChange($event)">
+        </pagination-controls>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

@@ -4,11 +4,14 @@
 }
 
 ::ng-deep .main_pg {
-  padding-left: 20px !important;
+  padding-left: 28px !important;
+  padding-right: 15px !important;
 }
+
 ::ng-deep .content-wrapper {
   padding: 0;
 }
+
 ::ng-deep .ng-star-inserted .col-md-4 {
   padding-right: 5px;
 }
@@ -16,4 +19,293 @@
 ::ng-deep .menu-title {
   font-size: 14px !important;
   font-weight: 600 !important;
+}
+
+tr {
+  white-space: nowrap;
+}
+::ng-deep .add-user-btn {
+  height: 38px !important;
+  background: #988149 !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+::ng-deep .table td {
+  line-height: 22px !important;
+}
+::ng-deep .badge-success {
+  border: 1px solid #00c292;
+  color: #ffffff !important;
+  background: #00c292 0% 0% no-repeat padding-box !important;
+  border-radius: 4px !important;
+  font-family: "Montserrat" !important;
+  font-size: 12px !important;
+  padding: 7px 20px 7px 20px;
+}
+
+::ng-deep .badge-danger {
+  background: #fa4242 !important;
+  border: 1px solid #fa4242 !important;
+  color: #ffffff;
+  border-radius: 4px !important;
+  font-family: "Montserrat" !important;
+  font-size: 12px !important;
+  padding: 6px 12px 6px 12px;
+}
+::ng-deep .filter-btn {
+  height: 38px !important;
+  background: transparent !important;
+  border: 1px solid #988149 !important;
+  color: #988149 !important;
+  font-size: 16px !important;
+  font-family: "Montserrat", sans-serif !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  padding: 0 14px;
+}
+::ng-deep .btn-outline-35 {
+  height: 34px !important;
+  background: transparent !important;
+  border: 1px solid #988149 !important;
+  color: #988149 !important;
+  font-family: "Montserrat", sans-serif !important;
+  margin-left: -9px !important;
+}
+::ng-deep .btn-outline-35 span {
+  font-size: 13px !important;
+}
+
+::ng-deep .table thead th {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  font-weight: 600 !important;
+}
+::ng-deep .table td img {
+  width: 46px;
+  height: 46px;
+}
+::ng-deep .table tbody td {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+}
+::ng-deep .table thead tr {
+  white-space: nowrap !important;
+  text-align: left !important;
+}
+::ng-deep .mat-form-field .matInput:hover {
+  border: none !important;
+  outline: none !important;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  opacity: 1;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #eee !important;
+}
+::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline-thick {
+  color: #988149 !important;
+}
+::ng-deep .table-responsive tr td {
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+}
+::ng-deep .table-responsive tr td span {
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 12px !important;
+  text-transform: capitalize;
+}
+::ng-deep .table-responsive tr td .fa-edit {
+  color: #988149 !important;
+  font-size: 18px !important;
+}
+::ng-deep .table-responsive tr td .fa-trash {
+  color: #ff485a;
+  font-size: 18px;
+}
+// }
+// ::ng-deep .table-responsive {
+//   overflow-x: scroll;
+// }
+
+// ::ng-deep .table-responsive::-webkit-scrollbar-track {
+//   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+//   height: 10px !important;
+//   width: 15px !important;
+// }
+
+// ::ng-deep .table-responsive::-webkit-scrollbar {
+//   -webkit-box-shadow: inset 0 0 6px #f1f1ef;
+//   padding: 5px !important;
+//   height: 7px !important;
+// }
+
+// ::ng-deep .table-responsive::-webkit-scrollbar-thumb {
+//   background-color: #f8b8b7;
+//   border-radius: 10px !important;
+// }
+::ng-deep input.mat-input-element {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 500;
+  font-size: 14px;
+}
+::ng-deep table tr td .mat-button {
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  background-color: #ef5d5d !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+::ng-deep .lable-font-title {
+  font: normal normal normal 0.9rem/24px Montserrat !important;
+  font-weight: 600 !important;
+}
+.lable-color-gray {
+  color: gray;
+}
+::ng-deep .mat-ink-bar {
+  background-color: #9c8550 !important;
+  padding: 2px !important;
+}
+::ng-deep .page_induvidul_title .page-title {
+  font-weight: 600 !important;
+}
+::ng-deep .save-button {
+  // width: 100%;
+  height: 37px !important;
+  width: 86px !important;
+  padding: 0 !important;
+  margin: 0.25rem 1rem 0.25rem 0 !important;
+  font-size: 16px;
+  background: #988149 !important;
+  border-radius: 4px !important;
+  font-family: "Montserrat", sans-serif;
+}
+::ng-deep .cancel-button {
+  height: 37px !important;
+  width: 86px !important;
+  padding: 0 !important;
+  margin: 0.25rem 1rem 0.25rem 0 !important;
+  font-size: 16px;
+  border-radius: 4px !important;
+  background: #a4a4a4;
+  font-family: "Montserrat", sans-serif;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-underline::before {
+  background-color: rgba(0, 0, 0, 0.42) !important;
+  border: rgba(0, 0, 0, 0.42) !important;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  ::ng-deep .mobile_userInfo {
+    margin: 10px 12px !important;
+    margin-left: 0 !important;
+    padding: 0 !important;
+    height: 100vh !important;
+  }
+
+  ::ng-deep .mobile_button_group {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  ::ng-deep .filter-btn {
+    font-size: 13px !important;
+    height: 32px !important;
+  }
+  ::ng-deep .add-user-btn {
+    height: 32px !important;
+    font-size: 12px !important;
+  }
+  ::ng-deep .mobile_admin_heading {
+    margin: 0 12px 0 0 !important;
+  }
+  ::ng-deep .btn-outline-35 span {
+    font-size: 10px !important;
+    min-width: 50px !important;
+    padding: 0 6px !important;
+  }
+  ::ng-deep .btn-outline-35 {
+    min-width: 50px !important;
+    padding: 0 6px !important;
+    height: 25px !important;
+  }
+  ::ng-depp .mat-form-field-appearance-outline {
+    position: absolute !important;
+    right: 110px !important;
+    top: 40px !important;
+  }
+  ::ng-depp .mat-form-field-infix {
+    width: 111px !important;
+  }
+  .page-body-wrapper {
+    padding: 0 0 100px 0 !important;
+  }
+  ::ng-deep .sidebar-offcanvas {
+    top: 60px !important;
+  }
+  ::ng-deep .mat-paginator-range-label {
+    margin: 5px 0 0 0 !important;
+  }
+  ::ng-deep .navbar-menu-wrapper h4.panelTitle {
+    font-size: 16px !important;
+    margin-top: 27px !important;
+  }
+  ::ng-deep .mobile_admin_heading .page--title {
+    font-size: 16px !important;
+    margin-top: 10px !important;
+  }
+  ::ng-deep .outline--button {
+    font-size: 13px !important;
+    height: 30px !important;
+  }
+  ::ng-deep .primary--button {
+    font-size: 13px !important;
+    height: 33px !important;
+  }
+  ::ng-deep .mat-dialog-content form {
+    width: 100% !important;
+  }
+  ::ng-deep .mat-dialog-content form .submit-button {
+    margin-top: 0 !important;
+  }
+}
+
+.ng-star-inserted .lable-font-title {
+  padding-left: 0;
+}
+::ng-deep .mat-body p,
+.mat-body-1 p,
+.mat-typography p {
+  font-family: "Montserrat" !important;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0 !important;
+}
+.onboarding-button {
+  min-width: 130px !important;
+  height: 37px !important;
+  font-size: 16px;
+  background: #fb8773;
+  border-radius: 4px !important;
+  font-family: "Montserrat", sans-serif;
+}
+::ng-deep .search_mobile_inforamtive .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+::ng-deep .search_mobile_inforamtive {
+  padding: 15px 0 !important;
+  align-items: center !important;
 }

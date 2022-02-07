@@ -1,0 +1,54 @@
+.font-color {
+  color: #988149;
+}
+.full-width {
+  width: 100%;
+  font: normal normal medium 16px/19px "Montserrat";
+}
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #f8b8b7 !important;
+}
+::ng-deep.mat-select-arrow {
+  color: #f8b8b7 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #f8b8b7;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #f8b8b7;
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #f8b8b7;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #f8b8b7;
+}
+.form--lable {
+  font-size: 14px;
+  font-weight: 500;
+  color: gray;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex:hover {
+  border-bottom: 1px solid #ddd !important;
+}
+.mat-form-field-ripple {
+  border-bottom: 1px solid #ddd !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: var(--app-priamry-color);
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  ::ng-deep .mobile_button_group {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
