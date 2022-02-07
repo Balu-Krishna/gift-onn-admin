@@ -92,7 +92,12 @@ body {
   // background-image: linear-gradient(to top, rgba(255, 0, 0, 0), #f7eeed);
   background-color:#f7eeed;
 }
-
+.mat-option.mat-active {
+  background: #F7EEED !important;
+}
+.mat-option:hover:not(.mat-option-disabled), .mat-option:focus:not(.mat-option-disabled) {
+  background: #F7EEED !important;
+}
 .navbar,
 .content-wrapper {
   background: transparent !important;
@@ -387,6 +392,9 @@ input:-webkit-autofill {
 }
 .ngx-pagination {
   padding-right: 20px !important;
+  li {
+    margin: 5px !important;
+  }
 }
 .ngx-pagination .current {
   background: #fb8773 !important;
