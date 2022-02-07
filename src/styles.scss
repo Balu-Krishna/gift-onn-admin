@@ -84,12 +84,13 @@ body {
 }
 
 body {
-  background-image: -webkit-linear-gradient(
-    to top,
-    rgba(255, 0, 0, 0),
-    #f7eeed
-  );
-  background-image: linear-gradient(to top, rgba(255, 0, 0, 0), #f7eeed);
+  // background-image: -webkit-linear-gradient(
+  //   to top,
+  //   rgba(255, 0, 0, 0),
+  //   #f7eeed
+  // );
+  // background-image: linear-gradient(to top, rgba(255, 0, 0, 0), #f7eeed);
+  background-color:#f7eeed;
 }
 
 .navbar,
@@ -384,9 +385,24 @@ nav#sidebar.setPositionRelative {
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
+.ngx-pagination {
+  padding-right: 20px !important;
+}
 .ngx-pagination .current {
-  background: #988149 !important;
+  background: #fb8773 !important;
   border-radius: 4px;
+  color: #000000;
+}
+.ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after{
+  display: none !important;
+}
+.ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before {
+  display: none !important;
+}
+.ngx-pagination li:not(.current) {
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.1);
 }
 .ngx-pagination a,
 .ngx-pagination button {

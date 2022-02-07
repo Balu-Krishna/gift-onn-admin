@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { NgbDropdownConfig } from "@ng-bootstrap/ng-bootstrap";
+import { AuthenticationService } from "src/app/core/_services/authentication.service";
 
 @Component({
   selector: "app-navbar",
@@ -11,7 +13,7 @@ export class NavbarComponent implements OnInit {
   public iconOnlyToggled = false;
   public sidebarToggled = false;
 
-  constructor(config: NgbDropdownConfig) {
+  constructor(config: NgbDropdownConfig, private authenticationService: AuthenticationService,private router: Router,) {
     config.placement = "bottom-right";
   }
 
@@ -21,7 +23,10 @@ export class NavbarComponent implements OnInit {
   toggleOffcanvas() {
     document.querySelector(".sidebar-offcanvas").classList.toggle("active");
   }
-
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(["/user-pages/login"]);
+  }
   // toggle sidebar
   toggleSidebar() {
     let body = document.querySelector("body");
