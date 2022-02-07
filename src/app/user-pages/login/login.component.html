@@ -16,10 +16,14 @@
             <mat-form-field class="full-width"
                             appearance="standard">
               <input matInput
+                     formControlName="email"
                      placeholder="Enter Email Id" />
-              <!-- <mat-error *ngIf="loginGroup.get('email').hasError('required')">
-                Email is Required!
-              </mat-error> -->
+              <mat-error *ngIf="loginGroup.get('email').hasError('required')">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="loginGroup.get('email').hasError('incorrect')">
+                No User Found
+              </mat-error>
             </mat-form-field>
           </div>
           <div class="pt-35">
@@ -28,6 +32,7 @@
             <mat-form-field class="full-width"
                             appearance="standard">
               <input matInput
+                     formControlName="password"
                      class="password_info"
                      placeholder="Password"
                      [type]="hide ? 'password' : 'text'">
@@ -37,9 +42,12 @@
                       (click)="hide = !hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
-              <!-- <mat-error *ngIf="loginGroup.get('password').hasError('required')">
-                Password is Required!
-              </mat-error> -->
+              <mat-error *ngIf="loginGroup.get('password').hasError('required')">
+                Password is required
+              </mat-error>
+              <mat-error *ngIf="loginGroup.get('password').hasError('incorrect')">
+                Password for this email is not right
+              </mat-error>
             </mat-form-field>
           </div>
           <div class="full-width">

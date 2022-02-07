@@ -25,6 +25,7 @@ import { OnboardingPartnersComponent } from "./partners/add-partners/onboarding-
 import { AdminEditComponent } from "./admin-edit/admin-edit.component";
 import { LanguageComponent } from "./language/language.component";
 import { AdminChangePasswordComponent } from "./admin-change-password/admin-change-password.component";
+import { AuthGuard } from "./core/_helpers/auth.gaurd";
 const routes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
   {
@@ -36,84 +37,163 @@ const routes: Routes = [
     path: "users",
     loadChildren: () =>
       import("./users/users.module").then((m) => m.UsersModule),
+    canActivate: [AuthGuard],
   },
   {
     path: "vendors",
     loadChildren: () =>
       import("./vendor/vendor.module").then((m) => m.VendorModule),
+    canActivate: [AuthGuard],
   },
   {
     path: "products",
     loadChildren: () =>
       import("./product/product.module").then((m) => m.ProductModule),
+    canActivate: [AuthGuard],
   },
   {
     path: "partners",
     loadChildren: () =>
       import("./partners/partners.module").then((m) => m.PartnersModule),
+    canActivate: [AuthGuard],
   },
   {
     path: "marketing",
     loadChildren: () =>
       import("./marketing/marketing.module").then((m) => m.MarketingModule),
+    canActivate: [AuthGuard],
   },
   {
     path: "loyalty",
     loadChildren: () =>
       import("./loyailty/loyailty.module").then((m) => m.LoyailtyModule),
+    canActivate: [AuthGuard],
   },
   {
     path: "offers",
     loadChildren: () =>
       import("./offers/offers.module").then((m) => m.OffersModule),
+    canActivate: [AuthGuard],
   },
-  { path: "dashboard", component: DashboardComponent },
-  { path: "customers", component: CustomerComponent },
-  { path: "add-successful", component: SuccessfulModelComponent },
-  { path: "delete-successful", component: DeleteModelComponent },
-  { path: "analytics", component: AnalyticsComponent },
-  { path: "venderOrder", component: VenderOrderComponent },
-  { path: "loyalty", component: LoyailtyComponent },
-  { path: "Payments", component: PaymentsComponent },
-  { path: "offers", component: OffersComponent },
-  { path: "purchasersOrder", component: PurchasersOrderComponent },
-  { path: "customersSupport", component: CustomersSupportComponent },
-  { path: "freezed", component: FreezedModelComponent },
-  { path: "ratingForCustomer", component: RatingForCustomerComponent },
-  { path: "deny-product", component: DenyProductComponent },
-  { path: "reward-categories", component: RewardCategoriesComponent },
-  { path: "add-language", component: AddLanguageComponent },
-  { path: "languages", component: LanguageComponent },
-  { path: "vendor-policies", component: VendorPoliciesComponent },
-  { path: "customer-policies", component: CustomerPoliciesComponent },
-  { path: "terms-conditions", component: TermsConditionsComponent },
-  { path: "about-us", component: AboutUsComponent },
-  { path: "add-e-signature", component: AddESignatureComponent },
-  { path: "edit", component: AdminEditComponent },
-  { path: "change-password", component: AdminChangePasswordComponent },
+  {
+    path: "dashboard",
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: "customers", component: CustomerComponent, canActivate: [AuthGuard] },
+  {
+    path: "add-successful",
+    component: SuccessfulModelComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "delete-successful",
+    component: DeleteModelComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "analytics",
+    component: AnalyticsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "venderOrder",
+    component: VenderOrderComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: "Payments", component: PaymentsComponent, canActivate: [AuthGuard] },
+  { path: "offers", component: OffersComponent, canActivate: [AuthGuard] },
+  {
+    path: "purchasersOrder",
+    component: PurchasersOrderComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "customersSupport",
+    component: CustomersSupportComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "freezed",
+    component: FreezedModelComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "ratingForCustomer",
+    component: RatingForCustomerComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "deny-product",
+    component: DenyProductComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "reward-categories",
+    component: RewardCategoriesComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "add-language",
+    component: AddLanguageComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: "languages", component: LanguageComponent, canActivate: [AuthGuard] },
+  {
+    path: "vendor-policies",
+    component: VendorPoliciesComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "customer-policies",
+    component: CustomerPoliciesComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "terms-conditions",
+    component: TermsConditionsComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: "about-us", component: AboutUsComponent, canActivate: [AuthGuard] },
+  {
+    path: "add-e-signature",
+    component: AddESignatureComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: "edit", component: AdminEditComponent, canActivate: [AuthGuard] },
+  {
+    path: "change-password",
+    component: AdminChangePasswordComponent,
+    canActivate: [AuthGuard],
+  },
   {
     path: "basic-ui",
     loadChildren: () =>
       import("./basic-ui/basic-ui.module").then((m) => m.BasicUiModule),
+    canActivate: [AuthGuard],
   },
   {
     path: "charts",
     loadChildren: () =>
       import("./charts/charts.module").then((m) => m.ChartsDemoModule),
+    canActivate: [AuthGuard],
   },
   {
     path: "forms",
     loadChildren: () => import("./forms/form.module").then((m) => m.FormModule),
+    canActivate: [AuthGuard],
   },
   {
     path: "tables",
     loadChildren: () =>
       import("./tables/tables.module").then((m) => m.TablesModule),
+    canActivate: [AuthGuard],
   },
   {
     path: "icons",
     loadChildren: () =>
       import("./icons/icons.module").then((m) => m.IconsModule),
+    canActivate: [AuthGuard],
   },
   {
     path: "general-pages",
@@ -121,10 +201,12 @@ const routes: Routes = [
       import("./general-pages/general-pages.module").then(
         (m) => m.GeneralPagesModule
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: "apps",
     loadChildren: () => import("./apps/apps.module").then((m) => m.AppsModule),
+    canActivate: [AuthGuard],
   },
 
   {

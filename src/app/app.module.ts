@@ -59,10 +59,12 @@ import { ContactComponent } from "./customers-support/contact/contact.component"
 import { ReceivedMessageComponent } from "./customers-support/received-message/received-message.component";
 import { SentMessageComponent } from "./customers-support/sent-message/sent-message.component";
 import { NgxPaginationModule } from "ngx-pagination";
-import { AdminEditComponent } from './admin-edit/admin-edit.component';
-import { AdminChangePasswordComponent } from './admin-change-password/admin-change-password.component';
+import { AdminEditComponent } from "./admin-edit/admin-edit.component";
+import { AdminChangePasswordComponent } from "./admin-change-password/admin-change-password.component";
 import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
-import { LanguageComponent } from './language/language.component';
+import { LanguageComponent } from "./language/language.component";
+import { ApiHttpService } from "./core/_services/app-http.service";
+import { Constants } from "./core/_config/constants";
 @NgModule({
   declarations: [
     AppComponent,
@@ -133,7 +135,7 @@ import { LanguageComponent } from './language/language.component';
     CKEditorModule,
   ],
   exports: [AngularEditorModule],
-  providers: [ThemeService],
+  providers: [ThemeService, ApiHttpService, Constants],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
