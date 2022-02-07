@@ -12,12 +12,14 @@ import { AuthenticationService } from "src/app/core/_services/authentication.ser
 export class NavbarComponent implements OnInit {
   public iconOnlyToggled = false;
   public sidebarToggled = false;
-
+  public user;
   constructor(config: NgbDropdownConfig, private authenticationService: AuthenticationService,private router: Router,) {
     config.placement = "bottom-right";
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.user = this.authenticationService.currentUserValue;
+  }
 
   // toggle sidebar in small devices
   toggleOffcanvas() {
