@@ -90,13 +90,118 @@ body {
   //   #f7eeed
   // );
   // background-image: linear-gradient(to top, rgba(255, 0, 0, 0), #f7eeed);
-  background-color:#f7eeed;
+  background-color: #f7eeed;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: rgb(217, 209, 208) !important;
+}
+.mat-form-field-infix {
+  border-top: 0.4em solid transparent !important;
+}
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #eea7a7;
+}
+.mat-select {
+  font-family: "Montserrat", sans-serif !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-label {
+  top: 1.84375em;
+  margin-top: -0.25em;
+  text-transform: initial !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 1em 0 0.4em 0 !important;
+}
+// input.mat-input-element {
+//   margin-top: -0.0625em;
+//   font-size: 0.8rem;
+//   font-weight: 600;
+//   color: #000;
+// }
+textarea.form-control {
+  font-size: 0.8rem;
+}
+mat-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #a4a4a4;
+}
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 1.25em;
+}
+.card {
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0px 0px 6px #0000001a;
+  margin-bottom: 1rem;
+}
+.card-body {
+  padding: 0 !important;
+}
+.mat-form-field-label-wrapper,
+.formlabel {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 500;
+}
+.formlabel {
+  font-size: 12.5px;
+  margin-bottom: 0.4rem !important;
+  display: block;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #eea7a7;
+}
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #eea7a7;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #eea7a7;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #eea7a7;
 }
 .mat-option.mat-active {
-  background: #F7EEED !important;
+  background: rgb(247, 238, 237) !important;
+  color: rgba(0, 0, 0, 0.87);
 }
-.mat-option:hover:not(.mat-option-disabled), .mat-option:focus:not(.mat-option-disabled) {
-  background: #F7EEED !important;
+.mat-select-panel::-webkit-scrollbar {
+  -webkit-box-shadow: inset 0 0 6px #edd35b;
+  width: 5px !important;
+  height: 5px !important;
+}
+.mat-option {
+  font-family: "Montserrat" !important;
+}
+.mat-option:hover:not(.mat-option-disabled),
+.mat-option:focus:not(.mat-option-disabled) {
+  background: rgb(247, 238, 237) !important;
+}
+.mat-input-element::placeholder {
+  color: #000;
+}
+.form-group {
+  margin-bottom: 1rem !important;
+}
+.mat-placeholder-required {
+  color: red;
+}
+.mat-select-arrow {
+  color: #eea7a7;
+}
+.mat-select-placeholder {
+  color: #000;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 1;
+}
+.mat-radio-label-content {
+  font-family: "Montserrat", sans-serif !important;
+  padding-right: 2rem !important;
+  font-weight: 500;
+  color: #000;
+  font-size: 0.8rem;
 }
 .navbar,
 .content-wrapper {
@@ -240,78 +345,6 @@ nav#sidebar.setPositionRelative {
   padding-top: 25px !important;
 }
 
-// mat-label normal state style
-::ng-deep .mat-form-field-label {
-  color: rgba(0, 0, 0, 0.6) !important;
-  // color: $mainColor!important;
-}
-
-// mat-label error style
-::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
-  color: rgba(0, 0, 0, 0.6) !important;
-}
-
-// mat-input error carent color
-::ng-deep .mat-form-field-invalid .mat-input-element,
-.mat-warn .mat-input-element {
-  caret-color: rgba(0, 0, 0, 0.6) !important;
-}
-
-// mat-input error outline color
-::ng-deep
-  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
-  .mat-form-field-outline-thick {
-  color: rgba(0, 0, 0, 0.6) !important;
-  opacity: 0.8 !important;
-}
-
-::ng-deep
-  .mat-form-field-appearance-fill.mat-form-field-invalid.mat-form-field-invalid
-  .mat-form-field-fill-thick {
-  color: rgba(0, 0, 0, 0.6) !important;
-  opacity: 0.8 !important;
-}
-
-::ng-deep .mat-step-header .mat-step-icon-selected,
-.mat-step-header .mat-step-icon-state-done,
-.mat-step-header .mat-step-icon-state-edit {
-  color: rgba(0, 0, 0, 0.6) !important;
-}
-
-::ng-deep .mat-input-invalid .mat-form-field-underline {
-  color: rgba(0, 0, 0, 0.6) !important;
-}
-
-/** Overrides underline color **/
-
-.my-form-field.mat-form-field-appearance-fill .mat-form-field-underline,
-.my-form-field.mat-form-field-appearance-fill .mat-form-field-ripple,
-.my-form-field.mat-form-field-appearance-fill.mat-focused
-  .mat-form-field-underline,
-.my-form-field.mat-form-field-appearance-fill.mat-focused
-  .mat-form-field-ripple {
-  background-color: white;
-}
-
-::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-underline {
-  color: rgb(14, 13, 13) !important;
-}
-
-.mat-form-field-invalid .mat-input-element {
-  caret-color: #0c0c0c;
-}
-
-.mat-form-field-invalid .mat-input-element {
-  color: #0c0c0c;
-}
-
-.mat-form-field.mat-form-field-invalid .mat-form-field-underline {
-  color: #0e0d0d !important;
-}
-
-// .mat-tab-list{padding-left: 169px !important;}
-// .mat-tab-label-content:hover{color:#8b7441;}
-// .mat-ink-bar{background-color: #9e9e9e !important; color:#8b7441;}
 .page--title {
   font: normal normal 600 20px/24px "Montserrat" !important;
 }
@@ -401,10 +434,12 @@ input:-webkit-autofill {
   border-radius: 4px;
   color: #000000;
 }
-.ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after{
+.ngx-pagination .pagination-next a::after,
+.ngx-pagination .pagination-next.disabled::after {
   display: none !important;
 }
-.ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before {
+.ngx-pagination .pagination-previous a::before,
+.ngx-pagination .pagination-previous.disabled::before {
   display: none !important;
 }
 .ngx-pagination li:not(.current) {
@@ -479,7 +514,3 @@ button.mat-focus-indicator.primary--button.mat-stroked-button.mat-button-base.ma
     overflow: hidden !important;
   }
 }
-// .myMatOptions{  position: absolute;  top: 30vh;  left: 30vw; }
-// ::ng-deep .cdk-overlay-container{right: 0;left:0}
-
-// ::ng-deep .mat-select-panel{left: 0}
