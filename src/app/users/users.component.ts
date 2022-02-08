@@ -1,6 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { Router } from "@angular/router";
+import { first } from "rxjs/operators";
+import { Constants } from "../core/_config/constants";
+import { ApiHttpService } from "../core/_services/app-http.service";
+import { AuthenticationService } from "../core/_services/authentication.service";
 import { DeleteModelComponent } from "../delete-model/delete-model.component";
 import { FilterComponent } from "../filter/filter.component";
 @Component({
@@ -14,114 +18,33 @@ export class UsersComponent implements OnInit {
   tableSize = 4;
   userData = [];
 
-  constructor(private router: Router, public dialog: MatDialog) {}
+  constructor(
+    private router: Router,
+    public dialog: MatDialog,
+    private authenticationService: AuthenticationService,
+    public apiHttpService: ApiHttpService,
+    public constants: Constants
+  ) {}
 
   ngOnInit(): void {
     this.showData();
   }
   showData(): void {
-    this.userData = [
-      {
-        empid: 1,
-        lastName: "Nallamothu",
-        firstName: "Sudharshan",
-        role: "IT",
-        department: "Test",
-        status: "ACTIVE",
-        email: "sudharshan.nallamothu@oracle.com",
-      },
-      {
-        empid: 2,
-        lastName: "Nallamothu",
-        firstName: "Sudharshan",
-        role: "IT",
-        department: "Test",
-        status: "ACTIVE",
-        email: "sudharshan.nallamothu@oracle.com",
-      },
-      {
-        empid: 3,
-        lastName: "Nallamothu",
-        firstName: "Sudharshan",
-        role: "IT",
-        department: "Test",
-        status: "ACTIVE",
-        email: "sudharshan.nallamothu@oracle.com",
-      },
-      {
-        empid: 4,
-        lastName: "Nallamothu",
-        firstName: "Sudharshan",
-        role: "IT",
-        status: "IN-ACTIVE",
-        email: "sudharshan.nallamothu@oracle.com",
-      },
-      {
-        empid: 11,
-        lastName: "Nallamothu",
-        firstName: "Sudharshan",
-        role: "IT",
-        status: "ACTIVE",
-        department: "Test",
-        email: "sudharshan.nallamothu@oracle.com",
-      },
-      {
-        empid: 21,
-        lastName: "Nallamothu",
-        firstName: "Sudharshan",
-        role: "IT",
-        status: "ACTIVE",
-        email: "sudharshan.nallamothu@oracle.com",
-      },
-      {
-        empid: 31,
-        lastName: "Nallamothu",
-        firstName: "Sudharshan",
-        role: "IT",
-        status: "ACTIVE",
-        email: "sudharshan.nallamothu@oracle.com",
-      },
-      {
-        empid: 41,
-        lastName: "Nallamothu",
-        firstName: "Sudharshan",
-        role: "IT",
-        status: "IN-ACTIVE",
-        email: "sudharshan.nallamothu@oracle.com",
-      },
-      {
-        empid: 12,
-        lastName: "Nallamothu",
-        firstName: "Sudharshan",
-        role: "IT",
-        status: "ACTIVE",
-        email: "sudharshan.nallamothu@oracle.com",
-      },
-      {
-        empid: 22,
-        lastName: "Nallamothu",
-        firstName: "Sudharshan",
-        role: "IT",
-        status: "ACTIVE",
-        email: "sudharshan.nallamothu@oracle.com",
-      },
-      {
-        empid: 32,
-        lastName: "Nallamothu",
-        firstName: "Sudharshan",
-        role: "IT",
-        status: "ACTIVE",
-        email: "sudharshan.nallamothu@oracle.com",
-      },
-      {
-        empid: 42,
-        lastName: "Nallamothu",
-        firstName: "Sudharshan",
-        role: "IT",
-        status: "IN-ACTIVE",
-        email: "sudharshan.nallamothu@oracle.com",
-      },
-    ];
+    const url = this.constants.GET_ALL_USER_TYPES;
+    let headers = {
+      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+    };
+    this.apiHttpService
+      .get(url, {headers})
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          this.userData = data['data'].data;
+        },
+        (error) => {
+          console.log(error.error.message);
+        }
+      );
   }
   pageChange(event) {
     this.page = event;
