@@ -25,11 +25,12 @@ export class AppComponent implements OnInit {
     router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         const url = event["url"];
+        console.log(url);
         if (
-          url.includes("/user-pages/login") ||
-          url.includes("/user-pages/register") ||
-          url.includes("/error-pages/404") ||
-          url.includes("/error-pages/500")
+          url.includes("login") ||
+          url.includes("register") ||
+          url.includes("404") ||
+          url.includes("500")
         ) {
           this.showSidebar = false;
           this.showNavbar = false;

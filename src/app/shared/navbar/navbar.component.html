@@ -25,11 +25,11 @@
            id="messageDropdown"
            ngbDropdownToggle>
           <div class="nav-profile-img nav_img">
-            <img [src]="this.user.data.profileImage"
+            <img [src]="this.user?.data?.profileImage"
                  alt="image">
           </div>
           <div class="nav-profile-text nav_text">
-            <p class="mb-1 text-black">{{this.user.data.fullName}}</p>
+            <p class="mb-1 text-black">{{this.user?.data?.fullName}}</p>
           </div>
         </a>
         <div style="left: 0"
@@ -37,9 +37,9 @@
              ngbDropdownMenu
              aria-labelledby="messageDropdown">
           <div class="admin_user_profile">
-            <img [src]="this.user.data.profileImage"
+            <img [src]="this.user?.data?.profileImage"
                  alt="image">
-            <h6>{{this.user.data.fullName}}</h6>
+            <h6>{{this.user?.data?.fullName}}</h6>
           </div>
           <a class="dropdown-item">
             <div class="admin_user_profile_list">

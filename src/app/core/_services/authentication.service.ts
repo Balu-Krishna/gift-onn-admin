@@ -21,7 +21,7 @@ export class AuthenticationService {
 
   login(data) {
     return this.http
-      .post<any>(`${this.Constants.BASE_URI}${this.Constants.LOGIN}`, data)
+      .post<any>(`${this.Constants.LOGIN}`, data)
       .pipe(
         map((user) => {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
