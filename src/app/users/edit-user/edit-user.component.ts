@@ -21,13 +21,13 @@ export class EditUserComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.editUserForm = this.fb.group({
-      firstName: ["", Validators.required],
-      lastName: ["", Validators.required],
-      email: ["", Validators.required],
-      role: ["", Validators.required],
-      department: ["", Validators.required],
-      id: ["", Validators.required],
-      status: ["", Validators.required],
+      firstName: [""],
+      lastName: [""],
+      email: [""],
+      role: [""],
+      department: [""],
+      id: [""],
+      status: [""],
     });
   }
 

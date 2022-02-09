@@ -10,263 +10,212 @@
 
 <section style="margin-left: 20px"
          class="add_user_informative">
-  <mat-card style="border-radius: 12px">
-    <form [formGroup]="addVendorGroup">
-      <div class="row">
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">STORE NAME</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <input matInput
-                   placeholder="Enter Full Store Name" />
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">CATEGORY</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <mat-select placeholder="Select Category">
-              <mat-option value=""> Select Category </mat-option>
-              <mat-option value="vendor"> Vendor Category </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">PHONE NUMBER</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <input matInput
-                   placeholder="Enter Phone Number" />
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">EMAIL NAME</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <input matInput
-                   placeholder="Enter Email Id" />
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">GST NUMBER</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <input matInput
-                   placeholder="Enter GST Number" />
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">STORE PAN NUMBER</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <input matInput
-                   placeholder="Enter Pan Number" />
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">COUNTRY NAME</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <mat-select placeholder="Select Country">
-              <mat-option value=""> Select Country </mat-option>
-              <mat-option value="india"> India </mat-option>
-              <mat-option value="afghanistan"> Afghanistan </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">STATE NAME</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <mat-select placeholder="Select State">
-              <mat-option value=""> Select State </mat-option>
-              <mat-option value="arunachal pradesh">
-                Arunachal Pradesh
-              </mat-option>
-              <mat-option value="assam"> Assam </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">CITY NAME</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <mat-select placeholder="Select City">
-              <mat-option value=""> Select City </mat-option>
-              <mat-option value="gondia"> Gondia </mat-option>
-              <mat-option value="nagpur"> Nagpur </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">LOCALITY NAME</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <mat-select placeholder="Select Locality">
-              <mat-option value=""> Select Locality </mat-option>
-              <mat-option value="Aamby Valley Road">
-                Aamby Valley Road
-              </mat-option>
-              <mat-option value="Adarsh Nagar"> Adarsh Nagar </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="col-md-12 col-lg-12 col-sm-12">
-          <p class="m-0 form-lable">ADDRESS</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <input matInput
-                   placeholder="Enter Address" />
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">STORE MANAGER NAME</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <input matInput
-                   placeholder="Enter Manager Name" />
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">STORE MANAGER EMAIL ID</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <input matInput
-                   placeholder="Enter Manager Email Id" />
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-12">
-          <p class="m-0 form-lable">STORE MANAGER PHONE NUMBER</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <!-- <mat-label>STORE MANAGER PHONE NUMBER</mat-label> -->
-            <input matInput
-                   placeholder="Enter Manager Phone" />
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-12">
-          <p class="m-0 form-lable">STORE ID</p>
-          <mat-form-field class="full-width"
-                          appearance="fill">
-            <!-- <mat-label>STORE ID</mat-label> -->
-            <input matInput
-                   placeholder="Enter Store Id" />
-          </mat-form-field>
-        </div>
-        <div class="col-md-12 col-lg-12 col-sm-12">
-          <p class="lable-font-title">About Store</p>
-          <mat-form-field class="full-width"
-                          appearance="outline">
-            <textarea matInput
-                      rows="7"
-                      cols="20"
-                      placeholder="write here..."></textarea>
-          </mat-form-field>
-        </div>
-        <div class="col-sm-12 mt-2 mobile_images">
-          <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <p class="lable-font-title">Store Manager Image</p>
-              <div class="p-5 file-uploader"
-                   (click)="openManagerImage()">
-                <input #fileInput
-                       id="manager-image"
-                       type="file"
-                       hidden
-                       (change)="handleChange($event.target.files)"
-                       formControlName="managerImage" />
-                <img src="assets/cloud-computing%20(1).svg"
-                     style="width: 50px;">
-                <div style="text-align: center">
-                  <p style="font-size:16px"
-                     class="pb-0 pt-1">Click to Upload</p>
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="addVendorGroup">
+        <div class="row">
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>STORE NAME</mat-label>
+              <input matInput
+                     placeholder="Enter Full Store Name" />
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>CATEGORY</mat-label>
+              <mat-select placeholder="Select Category">
+                <mat-option value=""> Select Category </mat-option>
+                <mat-option value="vendor"> Vendor Category </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>PHONE NUMBER</mat-label>
+              <input matInput
+                     placeholder="Enter Phone Number" />
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>EMAIL NAME</mat-label>
+              <input matInput
+                     placeholder="Enter Email Id" />
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>GST NUMBER</mat-label>
+              <input matInput
+                     placeholder="Enter GST Number" />
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>STORE PAN NUMBER</mat-label>
+              <input matInput
+                     placeholder="Enter Pan Number" />
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>COUNTRY NAME</mat-label>
+              <mat-select placeholder="Select Country">
+                <mat-option value=""> Select Country </mat-option>
+                <mat-option value="india"> India </mat-option>
+                <mat-option value="afghanistan"> Afghanistan </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>STATE NAME</mat-label>
+              <mat-select placeholder="Select State">
+                <mat-option value=""> Select State </mat-option>
+                <mat-option value="arunachal pradesh">
+                  Arunachal Pradesh
+                </mat-option>
+                <mat-option value="assam"> Assam </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>CITY NAME</mat-label>
+              <mat-select placeholder="Select City">
+                <mat-option value=""> Select City </mat-option>
+                <mat-option value="gondia"> Gondia </mat-option>
+                <mat-option value="nagpur"> Nagpur </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>LOCALITY NAME</mat-label>
+              <mat-select placeholder="Select Locality">
+                <mat-option value=""> Select Locality </mat-option>
+                <mat-option value="Aamby Valley Road">
+                  Aamby Valley Road
+                </mat-option>
+                <mat-option value="Adarsh Nagar"> Adarsh Nagar </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>ADDRESS</mat-label>
+              <input matInput
+                     placeholder="Enter Address" />
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>STORE MANAGER NAME</mat-label>
+              <input matInput
+                     placeholder="Enter Manager Name" />
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>STORE MANAGER EMAIL ID</mat-label>
+              <input matInput
+                     placeholder="Enter Manager Email Id" />
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+            <mat-label>STORE MANAGER PHONE NUMBER</mat-label>
+              <input matInput
+                     placeholder="Enter Manager Phone" />
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-6" floatLabel="always">
+              <mat-label>STORE ID</mat-label>
+              <input matInput
+                     placeholder="Enter Store Id" />
+            </mat-form-field>
+            
+            <mat-form-field class="form-group col-sm-12" floatLabel="always">
+            <mat-label>About Store</mat-label>
+              <textarea matInput
+                        rows="7"
+                        cols="20"
+                        placeholder="write here..."></textarea>
+            </mat-form-field>
+          <div class="col-sm-12 mt-2 mobile_images">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <p class="lable-font-title">Store Manager Image</p>
+                <div class="p-5 file-uploader"
+                     (click)="openManagerImage()">
+                  <input #fileInput
+                         id="manager-image"
+                         type="file"
+                         hidden
+                         (change)="handleChange($event.target.files)"
+                         formControlName="managerImage" />
+                  <img src="assets/cloud-computing%20(1).svg"
+                       style="width: 50px;">
+                  <div style="text-align: center">
+                    <p style="font-size:16px"
+                       class="pb-0 pt-1">Click to Upload</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-              <p class="lable-font-title">Upload Logo</p>
-              <div class="p-5 file-uploader"
-                   (click)="openLogoFile()">
-                <input #fileInput
-                       id="logo"
-                       type="file"
-                       hidden
-                       (change)="handleChange($event.target.files)"
-                       formControlName="logo" />
-                <img src="assets/cloud-computing%20(1).svg"
-                     style="width: 50px;">
-                <div style="text-align: center">
-                  <p style="font-size:16px"
-                     class="pb-0 pt-1">Click to Upload</p>
+              <div class="col-md-6 col-sm-12">
+                <p class="lable-font-title">Upload Logo</p>
+                <div class="p-5 file-uploader"
+                     (click)="openLogoFile()">
+                  <input #fileInput
+                         id="logo"
+                         type="file"
+                         hidden
+                         (change)="handleChange($event.target.files)"
+                         formControlName="logo" />
+                  <img src="assets/cloud-computing%20(1).svg"
+                       style="width: 50px;">
+                  <div style="text-align: center">
+                    <p style="font-size:16px"
+                       class="pb-0 pt-1">Click to Upload</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6 col-sm-12 mt-3">
-              <p class="lable-font-title">Upload Store Image</p>
-              <div class="p-5 file-uploader"
-                   (click)="openStoreImageFile()">
-                <input #fileInput
-                       id="store-image"
-                       type="file"
-                       hidden
-                       (change)="handleChange($event.target.files)"
-                       formControlName="storeImage" />
-                <img src="assets/cloud-computing%20(1).svg"
-                     style="width: 50px;">
-                <div style="text-align: center">
-                  <p style="font-size:16px"
-                     class="pb-0 pt-1">Click to Upload</p>
+              <div class="col-md-6 col-sm-12 mt-3">
+                <p class="lable-font-title">Upload Store Image</p>
+                <div class="p-5 file-uploader"
+                     (click)="openStoreImageFile()">
+                  <input #fileInput
+                         id="store-image"
+                         type="file"
+                         hidden
+                         (change)="handleChange($event.target.files)"
+                         formControlName="storeImage" />
+                  <img src="assets/cloud-computing%20(1).svg"
+                       style="width: 50px;">
+                  <div style="text-align: center">
+                    <p style="font-size:16px"
+                       class="pb-0 pt-1">Click to Upload</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6 col-sm-12 mt-3">
-              <p class="lable-font-title">Store Certifications (if any)</p>
-              <div class="p-5 file-uploader"
-                   (click)="openCerificationsFile()">
-                <input #fileInput
-                       id="store-cerifications"
-                       type="file"
-                       hidden
-                       (change)="handleChange($event.target.files)"
-                       formControlName="storeImage" />
-                <img src="assets/cloud-computing%20(1).svg"
-                     style="width: 50px;">
-                <div style="text-align: center">
-                  <p style="font-size:16px"
-                     class="pb-0 pt-1">Click to Upload</p>
+              <div class="col-md-6 col-sm-12 mt-3">
+                <p class="lable-font-title">Store Certifications (if any)</p>
+                <div class="p-5 file-uploader"
+                     (click)="openCerificationsFile()">
+                  <input #fileInput
+                         id="store-cerifications"
+                         type="file"
+                         hidden
+                         (change)="handleChange($event.target.files)"
+                         formControlName="storeImage" />
+                  <img src="assets/cloud-computing%20(1).svg"
+                       style="width: 50px;">
+                  <div style="text-align: center">
+                    <p style="font-size:16px"
+                       class="pb-0 pt-1">Click to Upload</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+  
         </div>
-
-      </div>
-    </form>
-    <div class="row mt-5">
-      <div class="col-sm-12">
+      </form>
+      <div class="mt-5 form-group">
         <div class="mobile_button_group">
           <button mat-flat-button
                   color="primary"
-                  style="height: 38px;"
-                  class="save-button  px-5"
+                  class="primary--button  mr-3"
                   (click)="addVendorSubmit()">
             Save
           </button>
           <button mat-flat-button
                   color="accent"
-                  style="height: 38px;"
-                  class="cancel-button  px-5">
+                  class="secondary--button  mr-3">
             Cancel
           </button>
           <button mat-flat-button
                   color="warn"
                   style="height: 38px;"
-                  class="onboarding-button  px-4"
+                  class="clarify--button  px-4"
                   (click)="onBoarding()">
             Onboarding
           </button>
-        </div>
       </div>
     </div>
-  </mat-card>
+    </div>
+  </div>
 </section>
