@@ -311,9 +311,8 @@
   .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float
   .mat-form-field-label {
   background: transparent !important;
-  padding: 0 10px !important;
+  margin-left: 0px !important;
   margin-left: 2px !important;
-  width: 82px !important;
 }
 
 ::ng-deep.mat-form-field-ripple {
