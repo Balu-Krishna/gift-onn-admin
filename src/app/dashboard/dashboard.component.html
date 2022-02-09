@@ -18,9 +18,10 @@
       </div>
       <div class="col-md-3 d-flex justify-content-end month_infos"
            id="test">
+         
         <mat-form-field>
-          <mat-label>Monthly</mat-label>
-          <mat-select style="right: 15px;">
+          <mat-label class="mon-tab" >Monthly</mat-label> 
+         <mat-select style="right: 15px;">
             <mat-option id="months_informations"
                         *ngFor="let item of Monthly"
                         [value]="item.lable ">

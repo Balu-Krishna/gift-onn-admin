@@ -14,36 +14,40 @@
     <form [formGroup]="addOffersGroup">
       <div class="row">
         <div class="col-md-4 col-lg-4 col-sm-12">
-          <p class="m-0 form-lable">OFFER NAME</p>
+          <!-- <p class="m-0 form-lable">OFFER NAME</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>OFFER Name</mat-label>
             <input matInput
                    formControlName="offerName"
                    placeholder="Enter Offer Name" />
           </mat-form-field>
         </div>
         <div class="col-md-4 col-lg-4 col-sm-12">
-          <p class="m-0 form-lable">OFFER ID</p>
+          <!-- <p class="m-0 form-lable">OFFER ID</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Offer Id</mat-label>
             <input matInput
                    formControlName="offerId"
                    placeholder="Enter Offer Id" />
           </mat-form-field>
         </div>
         <div class="col-md-4 col-lg-4 col-sm-12">
-          <p class="m-0 form-lable">STORE ID</p>
+          <!-- <p class="m-0 form-lable">STORE ID</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Store Id</mat-label>
             <input matInput
                    formControlName="storeId"
                    placeholder="Enter Store Id" />
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-12">
-          <p class="m-0 form-lable">OFFER CATEGORY</p>
+          <!-- <p class="m-0 form-lable">OFFER CATEGORY</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Offer Category</mat-label>
             <mat-select formControlName="offerCategoty"
                         placeholder="Select Category">
               <mat-option value=""> Select Category </mat-option>
@@ -52,9 +56,10 @@
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-12">
-          <p class="m-0 form-lable">OFFER SUB CATEGORY</p>
+          <!-- <p class="m-0 form-lable">OFFER SUB CATEGORY</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Offer Sub Category</mat-label>
             <mat-select formControlName="offerSubCategory"
                         placeholder="Select Sub Category">
               <mat-option value=""> Select Sub Category </mat-option>
@@ -63,9 +68,10 @@
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-12">
-          <p class="m-0 form-lable">COUNTRY</p>
+          <!-- <p class="m-0 form-lable">COUNTRY</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>COUNTRY</mat-label>
             <mat-select formControlName="country"
                         placeholder="Select Country">
               <mat-option value=""> Select Country </mat-option>
@@ -74,9 +80,10 @@
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-12">
-          <p class="m-0 form-lable">LOCATION</p>
+          <!-- <p class="m-0 form-lable">LOCATION</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Location</mat-label>
             <mat-select formControlName="location"
                         placeholder="Select Location">
               <mat-option value=""> Select Location </mat-option>
@@ -86,9 +93,10 @@
         </div>
         <div class="col-sm-12">
           <div class="">
-            <p class="m-0 form-lable">OFFER DESCRIPTION</p>
+            <!-- <p class="m-0 form-lable">OFFER DESCRIPTION</p> -->
             <mat-form-field class="full-width"
-                            appearance="fill">
+                            appearance="fill" floatLabel="always">
+                            <mat-label>Offer Description</mat-label>
               <input matInput
                      formControlName="description"
                      placeholder="Enter Description" />
@@ -96,9 +104,10 @@
           </div>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-12">
-          <p class="m-0 form-lable">START DATE</p>
+          <!-- <p class="m-0 form-lable">START DATE</p> -->
           <mat-form-field appearance="fill"
-                          class="full-width">
+                          class="full-width" floatLabel="always">
+                          <mat-label>Start Date</mat-label>
             <input matInput
                    formControlName="startDate"
                    placeholder="Enter Date"
@@ -110,9 +119,11 @@
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-12">
-          <p class="m-0 form-lable">END DATE</p>
+          <!-- <p class="m-0 form-lable">END DATE</p> -->
           <mat-form-field appearance="fill"
-                          class="full-width">
+
+                          class="full-width" floatLabel="always">
+                          <mat-label>End Date</mat-label>
             <input matInput
                    formControlName="endDate"
                    placeholder="Enter Date"

@@ -29,18 +29,20 @@
         <form [formGroup]="addAdminEditGroup">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form--lable">FULL NAME</p>
+                    <!-- <p class="m-0 form--lable">FULL NAME</p> -->
                     <mat-form-field class="full-width"
-                                    appearance="fill">
+                                    appearance="fill" floatLabel="always">
+                                    <mat-label> Full Name</mat-label>
                         <input matInput
                                formControlName="fullName"
                                placeholder="Enter Name" />
                     </mat-form-field>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <p class="m-0 form--lable">EMAIL</p>
+                    <!-- <p class="m-0 form--lable">EMAIL</p> -->
                     <mat-form-field class="full-width"
-                                    appearance="fill">
+                                    appearance="fill" floatLabel="always">
+                                    <mat-label> Email</mat-label>
                         <input matInput
                                formControlName="email"
                                placeholder="Enter Email" />

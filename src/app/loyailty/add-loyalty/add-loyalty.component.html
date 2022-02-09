@@ -14,51 +14,57 @@
           (ngSubmit)="addLayaltySubmit()">
       <div class="row">
         <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form--lable">PURCHASER NAME</p>
+          <!-- <p class="m-0 form--lable">PURCHASER NAME</p> -->
 
 
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always" >
+                          <mat-label>Purchaser Name</mat-label>
             <input matInput
                    placeholder="Enter Purchaser Name" />
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form--lable">PRODUCT ID</p>
+          <!-- <p class="m-0 form--lable">PRODUCT ID</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Product Id</mat-label>
             <input matInput
                    placeholder="Enter Product Id" />
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form--lable">AMOUNT</p>
+          <!-- <p class="m-0 form--lable">AMOUNT</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Amount</mat-label>
             <input matInput
                    placeholder="Enter Amount" />
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form--lable">POINTS</p>
+          <!-- <p class="m-0 form--lable">POINTS</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Points</mat-label>
             <input matInput
                    placeholder="select Currency Code" />
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form--lable">CURRENCY CODE</p>
+          <!-- <p class="m-0 form--lable">CURRENCY CODE</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Currency Code</mat-label>
             <input matInput
                    placeholder="Enter Product Id" />
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-12">
-          <p class="m-0 form-lable">EXPIRED DATE</p>
+          <!-- <p class="m-0 form-lable">EXPIRED DATE</p> -->
           <mat-form-field appearance="fill"
-                          class="full-width">
+                          class="full-width" floatLabel="always">
+                          <mat-label>Expired Date</mat-label>
             <input matInput
                    placeholder="Enter Date"
                    [matDatepicker]="picker">
@@ -70,17 +76,19 @@
         </div>
 
         <div class="col-md-6 col-sm-12">
-          <p class="m-0 form--lable">EARN POINTS</p>
+          <!-- <p class="m-0 form--lable">EARN POINTS</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Earn Points</mat-label>
             <input matInput
                    placeholder="Enter Earn Points" />
           </mat-form-field>
         </div>
         <div class="col-md-6 col-sm-12">
-          <p class="m-0 form--lable">REWARD TYPE</p>
+          <!-- <p class="m-0 form--lable">REWARD TYPE</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Reward Type</mat-label>
             <mat-select placeholder="Enter Type">
               <mat-option value=""> Select Location </mat-option>
               <mat-option value="vendor"> Bonus </mat-option>

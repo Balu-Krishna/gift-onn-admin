@@ -12,6 +12,7 @@ import { Constants } from "src/app/core/_config/constants";
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"],
 })
+
 export class LoginComponent implements OnInit {
   loginGroup;
   submitted = false;

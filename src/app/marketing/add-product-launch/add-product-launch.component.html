@@ -14,33 +14,37 @@
     <form [formGroup]="addproductlanch">
       <div class="row">
         <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">VENDOR ID</p>
+          <!-- <p class="m-0 form-lable">VENDOR ID</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Vendor Id</mat-label>
             <input matInput
                    placeholder="Enter Vendor Id" />
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">PRODUCT ID</p>
+          <!-- <p class="m-0 form-lable">PRODUCT ID</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Product Id</mat-label>
             <input matInput
                    placeholder="Enter Product Id" />
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">PARTNER ID</p>
+          <!-- <p class="m-0 form-lable">PARTNER ID</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Partner Id</mat-label>
             <input matInput
                    placeholder="Enter Partner Id" />
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">PRODUCT CATEGORY</p>
+          <!-- <p class="m-0 form-lable">PRODUCT CATEGORY</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Product Category</mat-label>
             <mat-select placeholder="Select Category">
               <mat-option value=""> Select Category </mat-option>
               <mat-option value="vendor"> Vendor Category </mat-option>
@@ -48,9 +52,10 @@
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">PRODUCT SUB CATEGORY</p>
+          <!-- <p class="m-0 form-lable">PRODUCT SUB CATEGORY</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Product Sub Category</mat-label>
             <mat-select placeholder="Select Sub Category">
               <mat-option value=""> Select Sub Category </mat-option>
               <mat-option value="vendor"> Vendor Sub Category </mat-option>
@@ -58,9 +63,10 @@
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">COUNTRY</p>
+          <!-- <p class="m-0 form-lable">COUNTRY</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Country</mat-label>
             <mat-select placeholder="Select Country">
               <mat-option value=""> Select Country </mat-option>
               <mat-option value="vendor"> India </mat-option>
@@ -68,9 +74,10 @@
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">LOCATION</p>
+          <!-- <p class="m-0 form-lable">LOCATION</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Location</mat-label>
             <mat-select placeholder="Select Location">
               <mat-option value=""> Select Location </mat-option>
               <mat-option value="vendor"> Hyderabad </mat-option>
@@ -78,9 +85,10 @@
           </mat-form-field>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6">
-          <p class="m-0 form-lable">LAUNCHING DATE</p>
+          <!-- <p class="m-0 form-lable">LAUNCHING DATE</p> -->
           <mat-form-field appearance="fill"
-                          class="full-width">
+                          class="full-width" floatLabel="always">
+                          <mat-label>Launching Date</mat-label>
             <input matInput
                    placeholder="Enter Date"
                    [matDatepicker]="picker">
@@ -91,9 +99,10 @@
           </mat-form-field>
         </div>
         <div class="col-sm-12">
-          <p class="m-0 form-lable">TIME</p>
+          <!-- <p class="m-0 form-lable">TIME</p> -->
           <mat-form-field class="full-width"
-                          appearance="fill">
+                          appearance="fill" floatLabel="always">
+                          <mat-label>Time</mat-label>
             <input matInput
                    placeholder="Select Time" />
             <mat-icon matSuffix
@@ -102,9 +111,10 @@
         </div>
 
         <div class="col-md-12 col-lg-12 col-sm-12">
-          <p class="lable-font-title">PRODUCT DESCRIPTION</p>
+          <!-- <p class="lable-font-title">PRODUCT DESCRIPTION</p> -->
           <mat-form-field class="full-width"
-                          appearance="outline">
+                          appearance="outline" floatLabel="always">
+                          <mat-label>Product Description</mat-label>
             <textarea matInput
                       rows="7"
                       cols="20"

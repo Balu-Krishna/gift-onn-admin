@@ -110,7 +110,7 @@ body {
   text-transform: initial !important;
 }
 .mat-form-field-appearance-outline .mat-form-field-infix {
-  padding: 1em 0 0.4em 0 !important;
+  padding: 0.5em 0 0.4em 0 !important;
 }
 // input.mat-input-element {
 //   margin-top: -0.0625em;
@@ -143,6 +143,9 @@ mat-label {
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif !important;
   font-weight: 500;
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: rgba(0,0,0,.42) !important;
 }
 .formlabel {
   font-size: 12.5px;
@@ -434,6 +437,7 @@ input:-webkit-autofill {
   border-radius: 4px;
   color: #000000;
 }
+
 .ngx-pagination .pagination-next a::after,
 .ngx-pagination .pagination-next.disabled::after {
   display: none !important;
