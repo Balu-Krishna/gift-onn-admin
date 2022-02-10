@@ -27,23 +27,30 @@
           <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>ROLE</mat-label>
             <mat-select formControlName="role">
-              <mat-option value="vendor"> Vendor </mat-option>
+              <mat-option value="IT"> IT </mat-option>
+              <mat-option value="Sales"> Sales </mat-option>
+              <mat-option value="Marketing"> Marketing </mat-option>
+              <mat-option value="Finance"> Finance </mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>EMP ID</mat-label>
-            <input matInput formControlName="id" placeholder="Enter Id" />
+            <input matInput formControlName="empid" placeholder="Enter Id" />
           </mat-form-field>
           <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>DEPARTMENT</mat-label>
             <mat-select formControlName="department">
-              <mat-option value="Pending"> Pending </mat-option>
+              <mat-option value="IT"> IT </mat-option>
+              <mat-option value="Sale"> Sales </mat-option>
+              <mat-option value="Marketing"> Marketing </mat-option>
+              <mat-option value="Finance"> Finance </mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>STATUS</mat-label>
             <mat-select formControlName="status">
-              <mat-option value="Pending"> Pending </mat-option>
+              <mat-option value="Active"> Active </mat-option>
+              <mat-option value="In-Active"> In-Active </mat-option>
             </mat-select>
           </mat-form-field>
 
@@ -51,7 +58,7 @@
         </div>
       </form>
       <div class="mt-5 form-group">
-        <button mat-flat-button type="submit" style="height: 38px;" class="primary--button mr-5">
+        <button mat-flat-button type="submit" style="height: 38px;" class="primary--button mr-5" (click)="updateUser()">
           Save
         </button>
         <button mat-flat-button type="button" style="height: 38px;" class="outline--button">

@@ -14,60 +14,61 @@
       <form [formGroup]="addAdminGroup">
         <div class="row">
           <mat-form-field class="form-group col-md-6" floatLabel="always">
-            <mat-label> FIRST NAME</mat-label>
-            <input matInput #input type="text" placeholder="Enter Full store name">
+            <mat-label>FIRST NAME</mat-label>
+            <input matInput formControlName="firstName" placeholder="Enter First Name" />
           </mat-form-field>
-
           <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>SECOND NAME</mat-label>
-            <input matInput placeholder="Enter Second Name" />
+            <input matInput formControlName="lastName" placeholder="Enter Second Name" />
           </mat-form-field>
-          <mat-form-field class="form-group col-sm-12" floatLabel="always">
+          <mat-form-field class="form-group col-md-12" floatLabel="always">
             <mat-label>EMAIL ID</mat-label>
-            <input matInput placeholder="Enter Email Id" />
+            <input matInput formControlName="email" placeholder="Enter email id" />
           </mat-form-field>
           <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>ROLE</mat-label>
-            <mat-select placeholder="Select Role">
-              <mat-option value=""> Select Role </mat-option>
-              <mat-option value="vendor"> Junior </mat-option>
-              <mat-option value="vendor"> Senior </mat-option>
+            <mat-select formControlName="role">
+              <mat-option value="IT"> IT </mat-option>
+              <mat-option value="Sales"> Sales </mat-option>
+              <mat-option value="Marketing"> Marketing </mat-option>
+              <mat-option value="Finance"> Finance </mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>EMP ID</mat-label>
-            <input matInput placeholder="Enter Id" />
+            <input matInput formControlName="empid" placeholder="Enter Id" />
           </mat-form-field>
           <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>DEPARTMENT</mat-label>
-            <mat-select placeholder="Select Department">
-              <mat-option value=""> Select Department </mat-option>
-              <mat-option value="vendor"> Junior </mat-option>
-              <mat-option value="vendor"> Senior </mat-option>
+            <mat-select formControlName="department">
+              <mat-option value="IT"> IT </mat-option>
+              <mat-option value="Sale"> Sales </mat-option>
+              <mat-option value="Marketing"> Marketing </mat-option>
+              <mat-option value="Finance"> Finance </mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>STATUS</mat-label>
-            <mat-select placeholder="Select Department">
-              <mat-option value=""> Select Status </mat-option>
-              <mat-option value="active"> Active </mat-option>
-              <mat-option value="vendor"> In-Active </mat-option>
+            <mat-select formControlName="status">
+              <mat-option value="Active"> Active </mat-option>
+              <mat-option value="In-Active"> In-Active </mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field class="form-group col-md-6" floatLabel="always">
-            <mat-label>PASSWORD</mat-label>
-            <input matInput placeholder="Enter Password" />
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" placeholder="Enter Password" />
           </mat-form-field>
           <mat-form-field class="form-group col-md-6" floatLabel="always">
-            <mat-label>CONFIRM PASSWORD</mat-label>
-            <input matInput placeholder="Re-Enter Password" />
+            <mat-label>Confirm password</mat-label>
+            <input matInput type="password" formControlName="confirm" placeholder="Enter Password" />
           </mat-form-field>
+
         </div>
       </form>
       <div class="row mt-5">
         <div class="col-sm-12">
           <div class="mobile_button_group">
-            <button mat-flat-button color="primary" style="height: 38px;" class="save-button  px-5">
+            <button mat-flat-button color="primary" style="height: 38px;" class="save-button  px-5" (click)="addAdminSubmit()">
               Save
             </button>
             <button mat-flat-button color="accent" style="height: 38px;" class="cancel-button  px-5">

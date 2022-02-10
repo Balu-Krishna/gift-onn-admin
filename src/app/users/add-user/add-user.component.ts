@@ -1,6 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatDialog } from "@angular/material/dialog";
+import { first } from "rxjs/operators";
+import { Constants } from "src/app/core/_config/constants";
+import { ApiHttpService } from "src/app/core/_services/app-http.service";
+import { AuthenticationService } from "src/app/core/_services/authentication.service";
 import { SuccessfulModelComponent } from "src/app/successful-model/successful-model.component";
 import { ConfirmedValidator } from "./confirmed.validator";
 @Component({
@@ -14,35 +18,59 @@ export class AddUserComponent implements OnInit {
   submitted = false;
   hide = true;
   hide1 = true;
-  constructor(private fb: FormBuilder, public dialog: MatDialog) {
+  constructor(
+    private fb: FormBuilder,
+    public dialog: MatDialog,
+    private authenticationService: AuthenticationService,
+    public apiHttpService: ApiHttpService,
+    public constants: Constants
+  ) {
     this.addAdminGroup = this.fb.group(
       {
-        firstName: ["", Validators.required],
-        lastName: ["", Validators.required],
-        email: ["", Validators.required],
-        role: ["", Validators.required],
-        department: ["", Validators.required],
-        id: ["", Validators.required],
-        status: ["", Validators.required],
-        password: ["", Validators.required],
-        confirm: ["", Validators.required],
+        firstName: [""],
+        lastName: [""],
+        email: [""],
+        role: [""],
+        department: [""],
+        empid: [""],
+        status: [""],
+        password: [""],
+        confirm: [""],
       },
       { validator: ConfirmedValidator("password", "confirm") }
     );
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   addAdminSubmit() {
     this.submitted = true;
     if (this.addAdminGroup.invalid) {
       return;
     }
     console.log("this.addAdminGroup.value", this.addAdminGroup.value);
-    const dialogRef = this.dialog.open(SuccessfulModelComponent, {
-      data: "user",
-    });
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    const url = `${this.constants.ADD_USER}`;
+    let headers = {
+      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+    };
+    // this.addAdminGroup.removeControl('confirm');
+    const body = this.addAdminGroup.value;
+    this.apiHttpService
+      .post(url, body, { headers })
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          const dialogRef = this.dialog.open(SuccessfulModelComponent, {
+            data: "user",
+          });
+          dialogRef.afterClosed().subscribe((result) => {
+            console.log(`Dialog result: ${result}`);
+          });
+          this.addAdminGroup.reset();
+          console.log(data);
+        },
+        (error) => {
+          console.log(error.error.message);
+        }
+      );
   }
 }

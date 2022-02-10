@@ -81,6 +81,9 @@
         <input matInput
                type="search"
                placeholder="search"
+               [(ngModel)]="filterText"
+               (keyup.enter)="showData(1)"
+               (blur)="showData(1)"
                class="search-input" />
         <i class="fa fa-search"></i>
 
@@ -127,7 +130,7 @@
               <img src="assets/edit.svg"
                    alt=""> </button>
             <button mat-icon-button
-                    (click)="deleteModel()">
+                    (click)="deleteModel(user)">
 
               <img src="assets/trash.svg"
                    alt="">
