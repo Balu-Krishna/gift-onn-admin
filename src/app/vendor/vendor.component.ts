@@ -1,7 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { Router } from "@angular/router";
+import { first } from "rxjs/operators";
 import { ApprovedModelComponent } from "../approved-model/approved-model.component";
+import { Constants } from "../core/_config/constants";
+import { ApiHttpService } from "../core/_services/app-http.service";
+import { AuthenticationService } from "../core/_services/authentication.service";
 import { FilterComponent } from "../filter/filter.component";
 import { VendorActionsComponent } from "../vendor-actions/vendor-actions.component";
 import { VendorJoyalukkasSubComponent } from "./vendor-joyalukkas-sub/vendor-joyalukkas-sub.component";
@@ -12,132 +16,44 @@ import { VendorJoyalukkasSubComponent } from "./vendor-joyalukkas-sub/vendor-joy
 })
 export class VendorComponent implements OnInit {
   page = 1;
-  count = 12;
-  tableSize = 4;
-  vendorList;
+  count = 1;
+  tableSize = 10;
+  vendorList = [];
   foods = [
     { value: "deny", viewValue: "Deny" },
     { value: "freeze", viewValue: "Freeze" },
     { value: "approve", viewValue: "Approve" },
     { value: "rating", viewValue: "Rating" },
   ];
-  constructor(private router: Router, public dialog: MatDialog) {}
+  constructor( private router: Router,
+    public dialog: MatDialog,
+    private authenticationService: AuthenticationService,
+    public apiHttpService: ApiHttpService,
+    public constants: Constants) {}
 
   ngOnInit(): void {
     this.showData();
   }
   showData(): void {
-    this.vendorList = [
-      {
-        vendorName: "Joyalukkas",
-        storeManager: "Rakesh",
-        storeId: "JO568",
-        storeEmail: "joyalukkas@gmail.com",
-        phoneNumber: "9945912312",
-        location: "Hyderbad",
-        status: "pending",
-      },
-      {
-        vendorName: "Joyalukkas",
-        storeManager: "Rakesh",
-        storeId: "JO569",
-        storeEmail: "joyalukkas@gmail.com",
-        phoneNumber: "9945912312",
-        location: "Hyderbad",
-        status: "approved",
-      },
-      {
-        vendorName: "Joyalukkas",
-        storeManager: "Rakesh",
-        storeId: "JO567",
-        storeEmail: "joyalukkas@gmail.com",
-        phoneNumber: "9945912312",
-        location: "Hyderbad",
-        status: "freezed",
-      },
-      {
-        vendorName: "Joyalukkas",
-        storeManager: "Rakesh",
-        storeId: "JO568",
-        storeEmail: "joyalukkas@gmail.com",
-        phoneNumber: "9945912312",
-        location: "Hyderbad",
-        status: "pending",
-      },
-      {
-        vendorName: "Joyalukkas",
-        storeManager: "Rakesh",
-        storeId: "JO569",
-        storeEmail: "joyalukkas@gmail.com",
-        phoneNumber: "9945912312",
-        location: "Hyderbad",
-        status: "approved",
-      },
-      {
-        vendorName: "Joyalukkas",
-        storeManager: "Rakesh",
-        storeId: "JO567",
-        storeEmail: "joyalukkas@gmail.com",
-        phoneNumber: "9945912312",
-        location: "Hyderbad",
-        status: "freezed",
-      },
-      {
-        vendorName: "Joyalukkas",
-        storeManager: "Rakesh",
-        storeId: "JO568",
-        storeEmail: "joyalukkas@gmail.com",
-        phoneNumber: "9945912312",
-        location: "Hyderbad",
-        status: "pending",
-      },
-      {
-        vendorName: "Joyalukkas",
-        storeManager: "Rakesh",
-        storeId: "JO569",
-        storeEmail: "joyalukkas@gmail.com",
-        phoneNumber: "9945912312",
-        location: "Hyderbad",
-        status: "approved",
-      },
-      {
-        vendorName: "Joyalukkas",
-        storeManager: "Rakesh",
-        storeId: "JO567",
-        storeEmail: "joyalukkas@gmail.com",
-        phoneNumber: "9945912312",
-        location: "Hyderbad",
-        status: "freezed",
-      },
-      {
-        vendorName: "Joyalukkas",
-        storeManager: "Rakesh",
-        storeId: "JO568",
-        storeEmail: "joyalukkas@gmail.com",
-        phoneNumber: "9945912312",
-        location: "Hyderbad",
-        status: "pending",
-      },
-      {
-        vendorName: "Joyalukkas",
-        storeManager: "Rakesh",
-        storeId: "JO569",
-        storeEmail: "joyalukkas@gmail.com",
-        phoneNumber: "9945912312",
-        location: "Hyderbad",
-        status: "approved",
-      },
-      {
-        vendorName: "Joyalukkas",
-        storeManager: "Rakesh",
-        storeId: "JO567",
-        storeEmail: "joyalukkas@gmail.com",
-        phoneNumber: "9945912312",
-        location: "Hyderbad",
-        status: "freezed",
-      },
-    ];
+    const url = this.constants.GET_ALL_VENDOR_TYPES;
+    let headers = {
+      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+    };
+    this.apiHttpService
+      .get(url+this.page+'/'+this.tableSize, {headers})
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          this.vendorList = data['data'].result;
+          this.count=data['data'].count;
+          console.log(data['data'].result);
+        },
+        (error) => {
+          console.log(error.error.message);
+        }
+      );
   }
+
   pageChange(event) {
     this.page = event;
     this.showData();
@@ -175,11 +91,11 @@ export class VendorComponent implements OnInit {
       data: "vendor",
     });
   }
-  viewPromotion(promotion) {
+  viewPromotion(vendor ) {
     const dialogRef = this.dialog.open(VendorJoyalukkasSubComponent, {
       width: "673px",
       height: "513px",
-      data: promotion,
+      data: "vendor",
     });
   }
   ratingVendor(vendor) {
