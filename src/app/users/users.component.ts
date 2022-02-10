@@ -75,7 +75,8 @@ export class UsersComponent implements OnInit {
     let headers = {
       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
     };
-    this.apiHttpService
+    if(type === 'csv'){
+      this.apiHttpService
       .get(url, {headers, responseType: 'blob'})
       .pipe(first())
       .subscribe(
@@ -90,6 +91,24 @@ export class UsersComponent implements OnInit {
           console.log(error);
         }
       );
+    } else if(type === 'xls'){
+      this.apiHttpService
+      .get(url, {headers, responseType: 'arrayBuffer'})
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          console.log(data);
+          const blob = new Blob([data], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+          const url= window.URL.createObjectURL(blob);
+          window.open(url);
+          console.log(data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
+    
   }
   deleteModel(user) {
     const url = `${this.constants.DELETE_USER}${user._id}`;
