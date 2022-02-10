@@ -70,7 +70,26 @@ export class UsersComponent implements OnInit {
     this.router.navigate(["users/edit-user", user._id]);
   }
   download(type) {
-    console.log(type);
+    const url = `${this.constants.DOWNLOAD_USER_FILE}${type}`;
+    
+    let headers = {
+      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+    };
+    this.apiHttpService
+      .get(url, {headers, responseType: 'blob'})
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          console.log(data);
+          const blob = new Blob([data], {type: 'application/octet-stream'});
+          const url= window.URL.createObjectURL(blob);
+          window.open(url);
+          console.log(data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
   deleteModel(user) {
     const url = `${this.constants.DELETE_USER}${user._id}`;

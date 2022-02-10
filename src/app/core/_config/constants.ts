@@ -8,4 +8,5 @@ export class Constants {
   public readonly UPDATE_USER: string = `${this.BASE_URI}admin/usertype/`;
   public readonly ADD_USER: string = `${this.BASE_URI}admin/usertype/`;
   public readonly DELETE_USER: string = `${this.BASE_URI}admin/usertype/`;
+  public readonly DOWNLOAD_USER_FILE: string = `${this.BASE_URI}admin/usertype/download/`;
 }
