@@ -28,7 +28,6 @@ export class FilterComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder
   ) {
-    console.log(data.filterType);
     this.userForm = this.fb.group({
       role: ["senior", Validators.required],
       department: ["it", Validators.required],
@@ -206,6 +205,13 @@ export class FilterComponent implements OnInit {
   close() {
     this.dialogRef.close();
     this.reset();
+  }
+  apply() {
+    let data = {};
+     if(this.data.filterType == 'user'){
+      data = this.userForm.value;
+    }
+    this.dialogRef.close(data);
   }
   ngOnInit(): void {}
 }

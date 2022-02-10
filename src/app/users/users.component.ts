@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { Router } from "@angular/router";
+import { data } from "jquery";
 import { first } from "rxjs/operators";
 import { Constants } from "../core/_config/constants";
 import { ApiHttpService } from "../core/_services/app-http.service";
@@ -35,7 +36,7 @@ export class UsersComponent implements OnInit {
       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
     };
     const body = {
-      "pageno":1,
+      "pageno":page,
       "size":this.tableSize,
       "filter": filter || {
           "role":"",
@@ -105,6 +106,9 @@ export class UsersComponent implements OnInit {
       width: "700px",
       height: "545px",
       data: { filterType: "user" },
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.showData(1, result)
     });
   }
 }
