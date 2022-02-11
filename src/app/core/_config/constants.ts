@@ -9,4 +9,9 @@ export class Constants {
   public readonly ADD_USER: string = `${this.BASE_URI}admin/usertype/`;
   public readonly DELETE_USER: string = `${this.BASE_URI}admin/usertype/`;
   public readonly DOWNLOAD_USER_FILE: string = `${this.BASE_URI}admin/usertype/download/`;
+  public readonly GET_ALL_VENDOR_TYPES: string = `${this.BASE_URI}admin/vendor/all`;
+  public readonly DOWNLOAD_VENDOR_FILE: string = `${this.BASE_URI}admin/vendor/download/`;
+  public readonly ADD_VENDOR: string = `${this.BASE_URI}admin/vendor/addvendor`;
+  
+
 }

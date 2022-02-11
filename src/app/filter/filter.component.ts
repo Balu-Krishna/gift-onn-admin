@@ -34,10 +34,10 @@ export class FilterComponent implements OnInit {
       status: ["active", Validators.required],
     });
     this.vendorForm = this.fb.group({
-      location: [""],
-      vendorName: [""],
-      storeId: [""],
-      status: [""],
+      Locality: [""],
+      Managername: [""],
+      StoreId: [""],
+      Status: [""],
     });
     this.productForm = this.fb.group({
       productId: [""],
@@ -189,6 +189,12 @@ export class FilterComponent implements OnInit {
       status: "active",
     });
     this.vendorForm.reset();
+    this.userForm.patchValue({
+      Locality: "Hyderabad",
+      Managername: "Joyalukkas",
+      StoreId: "125478",
+      Status: "Pending",
+    });
     this.productForm.reset();
     this.customerForm.reset();
     this.partnerForm.reset();

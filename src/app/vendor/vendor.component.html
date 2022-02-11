@@ -112,23 +112,23 @@
                     <td>
                         <a href="javascript:void(0);"
                            (click)="viewPromotion(promotion)"
-                           style="color: #9e8656">{{ vendor.vendorName }}</a>
+                           style="color: #9e8656">{{ vendor.Managername }}</a>
                     </td>
-                    <td>{{ vendor.storeManager }}</td>
-                    <td>{{ vendor.storeId }}</td>
-                    <td>{{ vendor.storeEmail }}</td>
-                    <td>{{ vendor.phoneNumber }}</td>
-                    <td>{{ vendor.location }}</td>
+                    <td>{{ vendor.fullName }}</td>
+                    <td>{{ vendor.StoreId }}</td>
+                    <td>{{ vendor.Email }}</td>
+                    <td>{{ vendor.Mobile }}</td>
+                    <td>{{ vendor.Locality }}</td>
                     <td>
                         <div class="font-weight-bold"
                              [ngClass]="
-                vendor.status.toUpperCase() == 'APPROVED'
+                vendor.Status.toUpperCase() == 'APPROVED'
                   ? 'text-success'
-                  : vendor.status.toUpperCase() == 'PENDING'
+                  : vendor.Status.toUpperCase() == 'PENDING'
                   ? 'text-warning'
                   : 'text-danger'
               ">
-                            <span style="font-size: 16px"> {{ vendor.status }} </span>
+                            <span style="font-size: 16px"> {{ vendor.Status}} </span>
                         </div>
                     </td>
                     <td>
