@@ -46,10 +46,10 @@ export class VendorComponent implements OnInit {
       "pageno":page,
       "size":this.tableSize,
       "filter": filter || {
-          " Locality":"",
-          "Managername":"",
-          "StoreId":"" ,
-          "Status":"",
+          "location":"",
+          "vendor_name":"",
+          "storeId":"" ,
+          "status":"",
       },
       "searchText":this.filterText || ""
     }

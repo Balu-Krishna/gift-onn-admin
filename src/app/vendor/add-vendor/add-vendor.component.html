@@ -17,13 +17,13 @@
             <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>STORE NAME</mat-label>
               <input matInput
-                     placeholder="Enter Full Store Name" formControlName="storename" />
+                     placeholder="Enter Full Store Name" formControlName="storeName" />
             </mat-form-field>
             <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>CATEGORY</mat-label>
-              <mat-select placeholder="Select Category" formControlName="category">
-                <mat-option value=""> Select Category </mat-option>
-                <mat-option value="vendor"> Vendor Category </mat-option>
+              <mat-select placeholder="Select Category" formControlName="storeCategory">
+                <!-- <mat-option value=""> </mat-option>  -->
+                <mat-option *ngFor="let category of addCategory" value="{{category.categoryName}}"> {{category.categoryName}} </mat-option>
               </mat-select>
             </mat-form-field>
             <mat-form-field class="form-group col-md-6" floatLabel="always">
@@ -48,20 +48,20 @@
             </mat-form-field>
             <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>COUNTRY NAME</mat-label>
-              <mat-select placeholder="Select Country" formControlName="country">
-                <mat-option value=""> Select Country </mat-option>
-                <mat-option value="india"> India </mat-option>
-                <mat-option value="afghanistan"> Afghanistan </mat-option>
+              <mat-select placeholder="Select Country" formControlName="country" (selectionChange)="showDataState($event)">
+                <mat-option *ngFor="let country of addCountry" value="{{country._id}}">{{country.name}} </mat-option>
+                <!-- <mat-option value="india"> India </mat-option>
+                <mat-option value="afghanistan"> Afghanistan </mat-option> -->
               </mat-select>
             </mat-form-field>
             <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>STATE NAME</mat-label>
               <mat-select placeholder="Select State" formControlName="state">
-                <mat-option value=""> Select State </mat-option>
-                <mat-option value="arunachal pradesh">
+                <mat-option *ngFor="let state of addState" value="{{state._id}}"> {{state.name}} </mat-option>
+                <!-- <mat-option value="arunachal pradesh">
                   Arunachal Pradesh
                 </mat-option>
-                <mat-option value="assam"> Assam </mat-option>
+                <mat-option value="assam"> Assam </mat-option> -->
               </mat-select>
             </mat-form-field>
             <mat-form-field class="form-group col-md-6" floatLabel="always">
@@ -100,7 +100,7 @@
             <mat-form-field class="form-group col-md-6" floatLabel="always">
             <mat-label>STORE MANAGER PHONE NUMBER</mat-label>
               <input matInput
-                     placeholder="Enter Manager Phone" formControlName="managerImage" />
+                     placeholder="Enter Manager Phone" formControlName="managermobile" />
             </mat-form-field>
             <mat-form-field class="form-group col-md-6" floatLabel="always">
               <mat-label>STORE ID</mat-label>
@@ -113,7 +113,7 @@
               <textarea matInput
                         rows="7"
                         cols="20"
-                        placeholder="write here..." formControlName="aboutstore"></textarea>
+                        placeholder="write here..." formControlName="storeInfo"></textarea>
             </mat-form-field>
           <div class="col-sm-12 mt-2 mobile_images">
             <div class="row">
@@ -126,7 +126,7 @@
                          type="file"
                          hidden
                          (change)="handleChange($event.target.files)"
-                         formControlName="managerImage" />
+                         formControlName="storeManagerImage" />
                   <img src="assets/cloud-computing%20(1).svg"
                        style="width: 50px;">
                   <div style="text-align: center">
@@ -144,7 +144,7 @@
                          type="file"
                          hidden
                          (change)="handleChange($event.target.files)"
-                         formControlName="logo" />
+                         formControlName="storeLogo" />
                   <img src="assets/cloud-computing%20(1).svg"
                        style="width: 50px;">
                   <div style="text-align: center">
@@ -180,7 +180,7 @@
                          type="file"
                          hidden
                          (change)="handleChange($event.target.files)"
-                         formControlName="storeImage" />
+                         formControlName="storeCertificate" />
                   <img src="assets/cloud-computing%20(1).svg"
                        style="width: 50px;">
                   <div style="text-align: center">

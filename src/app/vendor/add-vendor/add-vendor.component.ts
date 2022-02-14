@@ -17,7 +17,10 @@ export class AddVendorComponent implements OnInit {
   submitted = false;
   hide = true;
   hide1 = true;
-
+ addCategory = [];
+  addCountry = [];
+  addState =[];
+  addCity = [];
   constructor(
     private fb: FormBuilder,
     public dialog: MatDialog,
@@ -27,8 +30,8 @@ export class AddVendorComponent implements OnInit {
     private router: Router,
   ) {
     this.addVendorGroup = this.fb.group({
-      storename: [""],
-      category: [""],
+      storeName: [""],
+      storeCategory: [""],
       phone: [""],
       email: [""],
       gst: [""],
@@ -40,24 +43,30 @@ export class AddVendorComponent implements OnInit {
       address: [""],
       managername: [""],
       manageremail: [""],
-      managerPhone: [""],
+      managermobile: [""],
       storeId: [""],
-      aboutstore: [""],
-      managerImage: [""],
-      logo: [""],
+      storeInfo: [""],
+      storeManagerImage: [""],
+      storeLogo: [""],
       storeImage: [""],
-      storeCertifications: [""],
-    });
+      storeCertificate: [""],
+      latitude: ["10:52"],
+      longitude: ["11:528"],
+    },);
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    this.showDataCategory();
+    this.showDataContury();
+    //this.showDataState();
+  }
 
   addVendorSubmit() {
     this.submitted = true;
-    if (this.addVendorSubmit. invalid) {
+    if (this.addVendorGroup.invalid) {
       return;
     }
-    console.log("this.addVendorSubmit.value", this.addVendorSubmit. value);
+    console.log("this.addVendorGroup.value", this.addVendorGroup.value);
     const url = `${this.constants.ADD_VENDOR}`;
     let headers = {
       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
@@ -83,6 +92,93 @@ export class AddVendorComponent implements OnInit {
         }
       );
   }
+  showDataCategory(): void {
+    const url = this.constants.GET_ADD_VENDOR_CATEGORY;
+    let headers = {
+      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+    };
+    this.apiHttpService
+      .get(url ,{headers})
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          this.addCategory = data['data'];
+        
+          console.log(data['data']);
+        },
+        (error) => {
+          console.log(error.error.message);
+        }
+      );
+  }
+showDataContury(): void{
+ const url = this.constants.GET_ADD_VENDOR_COUNTRY;
+    let headers = {
+      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+    };
+    this.apiHttpService
+      .get(url ,{headers})
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          this.addCountry = data['data'];
+        
+          console.log(data['data']);
+        },
+        (error) => {
+          console.log(error.error.message);
+        }
+      );
+
+}
+showDataState(ob): void{
+ const url =this.constants.GET_ADD_VENDOR_STATE;
+    let headers = {
+      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+    };
+    const body = {id:ob.value};
+    this.apiHttpService
+      .post(url , body,{headers})
+      .pipe(first())
+      .subscribe(
+        (data) => {
+console.log(data);
+          this.addState = data['data'];
+        
+          console.log(data['data']);
+          
+        },
+        (error) => {
+          console.log(error.error.message);
+        }
+      );
+
+}
+
+showDataCity(ob): void{
+  const url =this.constants.GET_ADD_VENDOR_CITY;
+     let headers = {
+       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+     };
+     const body = {id:ob.value};
+     this.apiHttpService
+       .post(url , body,{headers})
+       .pipe(first())
+       .subscribe(
+         (data) => {
+ console.log(data);
+           this.addCity = data['data'];
+         
+           console.log(data['data']);
+           
+         },
+         (error) => {
+           console.log(error.error.message);
+         }
+       );
+ 
+ }
+
   onBoarding() {
     this.router.navigate(["vendors/vendor-policies-view"]);
   }
@@ -103,3 +199,5 @@ export class AddVendorComponent implements OnInit {
     input.click();
   }
 }
+
+

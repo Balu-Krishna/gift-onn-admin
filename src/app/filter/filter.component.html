@@ -75,7 +75,7 @@
             <mat-form-field appearance="fill"
                             class="full-width" floatLabel="always">
                             <mat-label>Location</mat-label>
-              <mat-select formControlName="Locality"
+              <mat-select formControlName="location"
                           placeholder="Select Location">        
                 <mat-option value="hyderabad"> Hyderabad </mat-option>
                 <mat-option value="banglore"> Banglore </mat-option>
@@ -89,7 +89,7 @@
                             class="full-width"  floatLabel="always">
                             <mat-label>Vendor Name</mat-label>
               <mat-select formControlName="Managername"
-                          placeholder="Select Name" >
+                          placeholder="vendor_name" >
                           
                 <mat-option value="hyderabad"> Joyalukkas </mat-option>
                 <mat-option value="banglore"> Malabar Gold </mat-option>
@@ -102,7 +102,7 @@
             <mat-form-field appearance="fill"
                             class="full-width" floatLabel="always"> 
                             <mat-label>Store Id</mat-label>
-              <mat-select formControlName="StoreId"
+              <mat-select formControlName="storeId"
                           placeholder="Select Store Id">
                 <mat-option value="hyderabad"> JOS543 </mat-option>
 
@@ -113,7 +113,7 @@
           </div>
           <div class="col-sm-12">
             <p class="form-lable">Status</p>
-            <mat-radio-group formControlName="Status">
+            <mat-radio-group formControlName="status">
               <mat-radio-button class="form-radio"
                                 value="active"
                                 class="">Pending</mat-radio-button>
