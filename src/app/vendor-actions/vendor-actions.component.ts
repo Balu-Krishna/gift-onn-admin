@@ -34,7 +34,7 @@ export class VendorActionsComponent implements OnInit {
 
   ngOnInit(): void {}
   close() {
-    this.dialogRef.close();
+    this.dialogRef.close(this.selectedValue);
   }
   submitForm() {
     console.log(this.data);

@@ -12,5 +12,6 @@ export class Constants {
 
   public readonly GET_ALL_PARTNERS: string = `${this.BASE_URI}admin/partners/all`;
   public readonly ADD_PARTNER: string = `${this.BASE_URI}admin/partners`;
+  public readonly UPDATE_PARTNER_RATEING: string = `${this.BASE_URI}admin/partners/partnerrating/`;
   public readonly DOWNLOAD_PARTNERS_FILE: string = `${this.BASE_URI}admin/partners/download/`;
 }

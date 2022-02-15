@@ -183,8 +183,27 @@ export class PartnersComponent implements OnInit {
       data: { name: "Rating", type: "partner", data: partner },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+      const url = `${this.constants.UPDATE_PARTNER_RATEING}${partner._id}`;
+    let headers = {
+      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+    };
+    const body = {
+      "rating": result
+    }
+    this.apiHttpService
+      .put(url, body, {headers})
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          console.log(data);
+        },
+        (error) => {
+          console.log(error.error.message);
+        }
+      );
+      this.showData(1);
     });
+
   }
 
   action(value) {
