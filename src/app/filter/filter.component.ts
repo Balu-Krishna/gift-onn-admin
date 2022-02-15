@@ -35,9 +35,10 @@ export class FilterComponent implements OnInit {
     });
     this.vendorForm = this.fb.group({
       location: [""],
-      vendorName: [""],
+      vendor_name: [""],
       storeId: [""],
       status: [""],
+      
     });
     this.productForm = this.fb.group({
       productId: [""],
@@ -189,6 +190,12 @@ export class FilterComponent implements OnInit {
       status: "active",
     });
     this.vendorForm.reset();
+    this.userForm.patchValue({
+      location: "Hyderabad",
+      vendor_name: "Joyalukkas",
+      storeId: "125478",
+      status: "Pending",
+    });
     this.productForm.reset();
     this.customerForm.reset();
     this.partnerForm.reset();

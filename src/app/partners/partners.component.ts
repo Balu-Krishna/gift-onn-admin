@@ -23,40 +23,44 @@ export class PartnersComponent implements OnInit {
   count = 12;
   tableSize = 4;
   patners = [];
-  filterText="";
-  logo = 'assets/gift.jpeg';
-  constructor(private router: Router, public dialog: MatDialog, private authenticationService: AuthenticationService,
+  filterText = "";
+  logo = "assets/gift.jpeg";
+  constructor(
+    private router: Router,
+    public dialog: MatDialog,
+    private authenticationService: AuthenticationService,
     public apiHttpService: ApiHttpService,
-    public constants: Constants) {}
+    public constants: Constants
+  ) {}
 
   ngOnInit(): void {
     this.showData(1);
   }
-  showData(page,filter?:any , searchText?: string): void {
+  showData(page, filter?: any, searchText?: string): void {
     const url = this.constants.GET_ALL_PARTNERS;
     let headers = {
       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
     };
     const body = {
-      "pageno":page,
-      "size":this.tableSize,
-      "filter": filter || {
-        "partnername":"",
-        "partnerid":"",
-        "category":"",
-        "subcategory":"",
-        "country":"",
-        "location":"",
-        "status":"" 
+      pageno: page,
+      size: this.tableSize,
+      filter: filter || {
+        partnername: "",
+        partnerid: "",
+        category: "",
+        subcategory: "",
+        country: "",
+        location: "",
+        status: "",
       },
-      "searchText":this.filterText || ""
-    }
+      searchText: this.filterText || "",
+    };
     this.apiHttpService
-      .post(url, body, {headers})
+      .post(url, body, { headers })
       .pipe(first())
       .subscribe(
         (data) => {
-          this.patners = data['data'].result;
+          this.patners = data["data"].result;
           console.log(this.patners);
           this.count = data["count"];
         },
@@ -74,60 +78,61 @@ export class PartnersComponent implements OnInit {
   }
   download(type) {
     const url = `${this.constants.DOWNLOAD_PARTNERS_FILE}${type}`;
-    
+
     let headers = {
       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
     };
-    if(type === 'csv'){
+    if (type === "csv") {
       this.apiHttpService
-      .get(url, {headers, responseType: 'blob'})
-      .pipe(first())
-      .subscribe(
-        (data) => {
-          console.log(data);
-          const blob = new Blob([data], {type: 'application/octet-stream'});
-          const url= window.URL.createObjectURL(blob);
-          window.open(url);
-          console.log(data);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-    } else if(type === 'xls'){
+        .get(url, { headers, responseType: "blob" })
+        .pipe(first())
+        .subscribe(
+          (data) => {
+            console.log(data);
+            const blob = new Blob([data], { type: "application/octet-stream" });
+            const url = window.URL.createObjectURL(blob);
+            window.open(url);
+            console.log(data);
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+    } else if (type === "xls") {
       this.apiHttpService
-      .get(url, {headers, responseType: 'arrayBuffer'})
-      .pipe(first())
-      .subscribe(
-        (data) => {
-          console.log(data);
-          const blob = new Blob([data], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
-          const url= window.URL.createObjectURL(blob);
-          window.open(url);
-          console.log(data);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
+        .get(url, { headers, responseType: "arrayBuffer" })
+        .pipe(first())
+        .subscribe(
+          (data) => {
+            console.log(data);
+            const blob = new Blob([data], {
+              type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            });
+            const url = window.URL.createObjectURL(blob);
+            window.open(url);
+            console.log(data);
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
     } else {
       this.apiHttpService
-      .get(url, {headers, responseType: 'arrayBuffer'})
-      .pipe(first())
-      .subscribe(
-        (data) => {
-          console.log(data);
-          const blob = new Blob([data], { type: 'application/pdf' });
-          const url= window.URL.createObjectURL(blob);
-          window.open(url);
-          console.log(data);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
+        .get(url, { headers, responseType: "arrayBuffer" })
+        .pipe(first())
+        .subscribe(
+          (data) => {
+            console.log(data);
+            const blob = new Blob([data], { type: "application/pdf" });
+            const url = window.URL.createObjectURL(blob);
+            window.open(url);
+            console.log(data);
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
     }
-    
   }
   viewPartner(partner) {
     const dialogRef = this.dialog.open(ViewPartnerComponent, {
@@ -142,8 +147,8 @@ export class PartnersComponent implements OnInit {
       height: "620px",
       data: { filterType: "partner" },
     });
-    dialogRef.afterClosed().subscribe(result => {
-      this.showData(1, result)
+    dialogRef.afterClosed().subscribe((result) => {
+      this.showData(1, result);
     });
   }
   approvePatner(partner) {
@@ -184,26 +189,25 @@ export class PartnersComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result) => {
       const url = `${this.constants.UPDATE_PARTNER_RATEING}${partner._id}`;
-    let headers = {
-      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
-    };
-    const body = {
-      "rating": result
-    }
-    this.apiHttpService
-      .put(url, body, {headers})
-      .pipe(first())
-      .subscribe(
-        (data) => {
-          console.log(data);
-        },
-        (error) => {
-          console.log(error.error.message);
-        }
-      );
-      this.showData(1);
+      let headers = {
+        Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+      };
+      const body = {
+        rating: result,
+      };
+      this.apiHttpService
+        .put(url, body, { headers })
+        .pipe(first())
+        .subscribe(
+          (data) => {
+            this.showData(1);
+          },
+          (error) => {
+            console.log(error.error.message);
+          }
+        );
+      
     });
-
   }
 
   action(value) {
