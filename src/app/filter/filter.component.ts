@@ -57,10 +57,10 @@ export class FilterComponent implements OnInit {
       status: [""],
     });
     this.partnerForm = this.fb.group({
-      partnerName: [""],
-      partnerId: [""],
+      partnername: [""],
+      partnerid: [""],
       category: [""],
-      subCategory: [""],
+      subcategory: [""],
       country: [""],
       location: [""],
       status: [""],
@@ -208,8 +208,11 @@ export class FilterComponent implements OnInit {
   }
   apply() {
     let data = {};
-     if(this.data.filterType == 'user'){
+    if(this.data.filterType == 'user'){
       data = this.userForm.value;
+    }
+    if(this.data.filterType == 'partner'){
+      data = this.partnerForm.value;
     }
     this.dialogRef.close(data);
   }

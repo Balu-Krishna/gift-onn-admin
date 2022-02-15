@@ -1,7 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { Router } from "@angular/router";
+import { filter, first } from "rxjs/operators";
 import { ApprovedModelComponent } from "../approved-model/approved-model.component";
+import { Constants } from "../core/_config/constants";
+import { ApiHttpService } from "../core/_services/app-http.service";
+import { AuthenticationService } from "../core/_services/authentication.service";
 import { DenyProductComponent } from "../deny-product/deny-product.component";
 import { FilterComponent } from "../filter/filter.component";
 import { FreezeRoleComponent } from "../freeze-role/freeze-role.component";
@@ -19,201 +23,111 @@ export class PartnersComponent implements OnInit {
   count = 12;
   tableSize = 4;
   patners = [];
-  constructor(private router: Router, public dialog: MatDialog) {}
+  filterText="";
+  logo = 'assets/gift.jpeg';
+  constructor(private router: Router, public dialog: MatDialog, private authenticationService: AuthenticationService,
+    public apiHttpService: ApiHttpService,
+    public constants: Constants) {}
 
   ngOnInit(): void {
-    this.showData();
+    this.showData(1);
   }
-  showData(): void {
-    this.patners = [
-      {
-        logo: "assets/gift.jpeg",
-        partnerName: "Apple",
-        partnerId: "Ap1231",
-        partnerEmailId: "apple@gmail.com",
-        category: "Electronics",
-        subCategory: "iPhone12 mini",
-        country: "india",
-        location: "Hyderabad",
-        rating: "4.3",
-        status: "Active",
-        contactNumber: "1234567890",
-        state: "Telangana",
-        address: "Hyderabad,Telangana,50054",
+  showData(page,filter?:any , searchText?: string): void {
+    const url = this.constants.GET_ALL_PARTNERS;
+    let headers = {
+      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+    };
+    const body = {
+      "pageno":page,
+      "size":this.tableSize,
+      "filter": filter || {
+        "partnername":"",
+        "partnerid":"",
+        "category":"",
+        "subcategory":"",
+        "country":"",
+        "location":"",
+        "status":"" 
       },
-      {
-        logo: "assets/gift.jpeg",
-        partnerName: "Apple",
-        partnerId: "Ap1232",
-        partnerEmailId: "apple@gmail.com",
-        category: "Electronics",
-        subCategory: "iPhone12 mini",
-        country: "india",
-        location: "Hyderabad",
-        rating: "4.3",
-        status: "ACTIVE",
-        contactNumber: "1234567890",
-        state: "Telangana",
-        address: "Hyderabad,Telangana,50054",
-      },
-      {
-        logo: "assets/gift.jpeg",
-        partnerName: "Apple",
-        partnerId: "Ap1232",
-        partnerEmailId: "apple@gmail.com",
-        category: "Electronics",
-        subCategory: "iPhone12 mini",
-        country: "india",
-        location: "Hyderabad",
-        rating: "4.3",
-        status: "ACTIVE",
-        contactNumber: "1234567890",
-        state: "Telangana",
-        address: "Hyderabad,Telangana,50054",
-      },
-      {
-        logo: "assets/gift.jpeg",
-        partnerName: "Apple",
-        partnerId: "Ap1231",
-        partnerEmailId: "apple@gmail.com",
-        category: "Electronics",
-        subCategory: "iPhone12 mini",
-        country: "india",
-        location: "Hyderabad",
-        rating: "4.3",
-        status: "In-Active",
-        contactNumber: "1234567890",
-        state: "Telangana",
-        address: "Hyderabad,Telangana,50054",
-      },
-      {
-        logo: "assets/gift.jpeg",
-        partnerName: "Apple",
-        partnerId: "Ap1231",
-        partnerEmailId: "apple@gmail.com",
-        category: "Electronics",
-        subCategory: "iPhone12 mini",
-        country: "india",
-        location: "Hyderabad",
-        rating: "4.3",
-        status: "Active",
-        contactNumber: "1234567890",
-        state: "Telangana",
-        address: "Hyderabad,Telangana,50054",
-      },
-      {
-        logo: "assets/gift.jpeg",
-        partnerName: "Apple",
-        partnerId: "Ap1232",
-        partnerEmailId: "apple@gmail.com",
-        category: "Electronics",
-        subCategory: "iPhone12 mini",
-        country: "india",
-        location: "Hyderabad",
-        rating: "4.3",
-        status: "ACTIVE",
-        contactNumber: "1234567890",
-        state: "Telangana",
-        address: "Hyderabad,Telangana,50054",
-      },
-      {
-        logo: "assets/gift.jpeg",
-        partnerName: "Apple",
-        partnerId: "Ap1232",
-        partnerEmailId: "apple@gmail.com",
-        category: "Electronics",
-        subCategory: "iPhone12 mini",
-        country: "india",
-        location: "Hyderabad",
-        rating: "4.3",
-        status: "ACTIVE",
-        contactNumber: "1234567890",
-        state: "Telangana",
-        address: "Hyderabad,Telangana,50054",
-      },
-      {
-        logo: "assets/gift.jpeg",
-        partnerName: "Apple",
-        partnerId: "Ap1231",
-        partnerEmailId: "apple@gmail.com",
-        category: "Electronics",
-        subCategory: "iPhone12 mini",
-        country: "india",
-        location: "Hyderabad",
-        rating: "4.3",
-        status: "In-Active",
-        contactNumber: "1234567890",
-        state: "Telangana",
-        address: "Hyderabad,Telangana,50054",
-      },
-      {
-        logo: "assets/gift.jpeg",
-        partnerName: "Apple",
-        partnerId: "Ap1232",
-        partnerEmailId: "apple@gmail.com",
-        category: "Electronics",
-        subCategory: "iPhone12 mini",
-        country: "india",
-        location: "Hyderabad",
-        rating: "4.3",
-        status: "ACTIVE",
-        contactNumber: "1234567890",
-        state: "Telangana",
-        address: "Hyderabad,Telangana,50054",
-      },
-      {
-        logo: "assets/gift.jpeg",
-        partnerName: "Apple",
-        partnerId: "Ap1232",
-        partnerEmailId: "apple@gmail.com",
-        category: "Electronics",
-        subCategory: "iPhone12 mini",
-        country: "india",
-        location: "Hyderabad",
-        rating: "4.3",
-        status: "ACTIVE",
-        contactNumber: "1234567890",
-        state: "Telangana",
-        address: "Hyderabad,Telangana,50054",
-      },
-      {
-        logo: "assets/gift.jpeg",
-        partnerName: "Apple",
-        partnerId: "Ap1231",
-        partnerEmailId: "apple@gmail.com",
-        category: "Electronics",
-        subCategory: "iPhone12 mini",
-        country: "india",
-        location: "Hyderabad",
-        rating: "4.3",
-        status: "Active",
-        contactNumber: "1234567890",
-        state: "Telangana",
-        address: "Hyderabad,Telangana,50054",
-      },
-      {
-        logo: "assets/gift.jpeg",
-        partnerName: "Apple",
-        partnerId: "Ap1232",
-        partnerEmailId: "apple@gmail.com",
-        category: "Electronics",
-        subCategory: "iPhone12 mini",
-        country: "india",
-        location: "Hyderabad",
-        rating: "4.3",
-        status: "ACTIVE",
-        contactNumber: "1234567890",
-        state: "Telangana",
-        address: "Hyderabad,Telangana,50054",
-      },
-    ];
+      "searchText":this.filterText || ""
+    }
+    this.apiHttpService
+      .post(url, body, {headers})
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          this.patners = data['data'].result;
+          console.log(this.patners);
+          this.count = data["count"];
+        },
+        (error) => {
+          console.log(error.error.message);
+        }
+      );
   }
   pageChange(event) {
     this.page = event;
-    this.showData();
+    this.showData(this.page);
   }
   addPartner() {
     this.router.navigate(["partners/add-partner"]);
+  }
+  download(type) {
+    const url = `${this.constants.DOWNLOAD_PARTNERS_FILE}${type}`;
+    
+    let headers = {
+      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+    };
+    if(type === 'csv'){
+      this.apiHttpService
+      .get(url, {headers, responseType: 'blob'})
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          console.log(data);
+          const blob = new Blob([data], {type: 'application/octet-stream'});
+          const url= window.URL.createObjectURL(blob);
+          window.open(url);
+          console.log(data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    } else if(type === 'xls'){
+      this.apiHttpService
+      .get(url, {headers, responseType: 'arrayBuffer'})
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          console.log(data);
+          const blob = new Blob([data], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+          const url= window.URL.createObjectURL(blob);
+          window.open(url);
+          console.log(data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    } else {
+      this.apiHttpService
+      .get(url, {headers, responseType: 'arrayBuffer'})
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          console.log(data);
+          const blob = new Blob([data], { type: 'application/pdf' });
+          const url= window.URL.createObjectURL(blob);
+          window.open(url);
+          console.log(data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
+    
   }
   viewPartner(partner) {
     const dialogRef = this.dialog.open(ViewPartnerComponent, {
@@ -227,6 +141,9 @@ export class PartnersComponent implements OnInit {
       width: "673px",
       height: "620px",
       data: { filterType: "partner" },
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.showData(1, result)
     });
   }
   approvePatner(partner) {

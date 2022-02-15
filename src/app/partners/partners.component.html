@@ -80,6 +80,9 @@
         <input matInput
                type="search"
                placeholder="search"
+               [(ngModel)]="filterText"
+               (keyup.enter)="showData(1)"
+               (blur)="showData(1)"
                class="search-input" />
         <i class="fa fa-search"></i>
 
@@ -111,20 +114,20 @@
                     totalItems: count
                   }">
           <!-- <td>{{ partner.logo }}</td> -->
-          <td class="img_tab"><img [src]="partner.logo" /></td>
+          <td class="img_tab"><img [src]="logo" /></td>
           <td>
             <a href="javascript:void(0);"
                (click)="viewPartner(partner)"
                style="color: #9e8656">
-              {{ partner.partnerName }}
+              {{ partner.partnername }}
             </a>
           </td>
-          <td>{{ partner.partnerId }}</td>
-          <td>{{ partner.partnerEmailId }}</td>
+          <td>{{ partner.partnerid }}</td>
+          <td>{{ partner.emailid }}</td>
           <td>{{ partner.category }}</td>
-          <td>{{ partner.subCategory }}</td>
+          <td>{{ partner.subcategory }}</td>
           <td>{{ partner.country }}</td>
-          <td>{{ partner.location }}</td>
+          <td>{{ partner.city }}</td>
           <td>{{ partner.rating }}</td>
           <td>
             <div class="badge rounded"

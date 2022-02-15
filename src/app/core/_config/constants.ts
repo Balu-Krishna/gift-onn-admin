@@ -9,4 +9,8 @@ export class Constants {
   public readonly ADD_USER: string = `${this.BASE_URI}admin/usertype/`;
   public readonly DELETE_USER: string = `${this.BASE_URI}admin/usertype/`;
   public readonly DOWNLOAD_USER_FILE: string = `${this.BASE_URI}admin/usertype/download/`;
+
+  public readonly GET_ALL_PARTNERS: string = `${this.BASE_URI}admin/partners/all`;
+  public readonly ADD_PARTNER: string = `${this.BASE_URI}admin/partners`;
+  public readonly DOWNLOAD_PARTNERS_FILE: string = `${this.BASE_URI}admin/partners/download/`;
 }
