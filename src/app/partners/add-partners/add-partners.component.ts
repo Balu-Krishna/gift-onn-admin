@@ -147,6 +147,9 @@ export class AddPartnersComponent implements OnInit {
   }
   savePartner() {
     this.submitted = true;
+    if(this.addPartnersGroup.invalid){
+      return ;
+    }
     const formData = new FormData();
     formData.append(
       "partnername",
@@ -192,6 +195,10 @@ export class AddPartnersComponent implements OnInit {
     this.router.navigate(["partners"]);
   }
   onboardPartner() {
+    this.submitted = true;
+    if(this.addPartnersGroup.invalid){
+      return ;
+    }
     if(this.partnerId.length > 0) {
       this.router.navigate(["partners/add-e-sign", this.partnerId]);
     } else {
