@@ -112,12 +112,7 @@ body {
 .mat-form-field-appearance-outline .mat-form-field-infix {
   padding: 0.5em 0 0.4em 0 !important;
 }
-// input.mat-input-element {
-//   margin-top: -0.0625em;
-//   font-size: 0.8rem;
-//   font-weight: 600;
-//   color: #000;
-// }
+
 textarea.form-control {
   font-size: 0.8rem;
 }
@@ -167,6 +162,9 @@ mat-label {
 .mat-option.mat-active {
   background: rgb(247, 238, 237) !important;
   color: rgba(0, 0, 0, 0.87);
+}
+.mat-form-field-appearance-fill .mat-form-field-subscript-wrapper {
+  padding-bottom: 0 !important;
 }
 .mat-select-panel::-webkit-scrollbar {
   -webkit-box-shadow: inset 0 0 6px #edd35b;

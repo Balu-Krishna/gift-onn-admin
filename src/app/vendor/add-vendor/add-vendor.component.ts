@@ -1,5 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators, FormControl } from "@angular/forms";
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl,
+} from "@angular/forms";
 import { MatDialog } from "@angular/material/dialog";
 import { Router } from "@angular/router";
 import { first } from "rxjs/operators";
@@ -17,9 +22,9 @@ export class AddVendorComponent implements OnInit {
   submitted = false;
   hide = true;
   hide1 = true;
- addCategory = [];
+  addCategory = [];
   addCountry = [];
-  addState =[];
+  addState = [];
   addCity = [];
   constructor(
     private fb: FormBuilder,
@@ -27,7 +32,7 @@ export class AddVendorComponent implements OnInit {
     private authenticationService: AuthenticationService,
     public apiHttpService: ApiHttpService,
     public constants: Constants,
-    private router: Router,
+    private router: Router
   ) {
     this.addVendorGroup = this.fb.group({
       storeName: [""],
@@ -52,10 +57,10 @@ export class AddVendorComponent implements OnInit {
       storeCertificate: [""],
       latitude: ["10:52"],
       longitude: ["11:528"],
-    },);
+    });
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.showDataCategory();
     this.showDataContury();
     //this.showDataState();
@@ -84,7 +89,7 @@ export class AddVendorComponent implements OnInit {
           dialogRef.afterClosed().subscribe((result) => {
             console.log(`Dialog result: ${result}`);
           });
-          this. addVendorGroup.reset();
+          this.addVendorGroup.reset();
           console.log(data);
         },
         (error) => {
@@ -98,86 +103,81 @@ export class AddVendorComponent implements OnInit {
       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
     };
     this.apiHttpService
-      .get(url ,{headers})
+      .get(url, { headers })
       .pipe(first())
       .subscribe(
         (data) => {
-          this.addCategory = data['data'];
-        
-          console.log(data['data']);
+          this.addCategory = data["data"];
+
+          console.log(data["data"]);
         },
         (error) => {
           console.log(error.error.message);
         }
       );
   }
-showDataContury(): void{
- const url = this.constants.GET_ADD_VENDOR_COUNTRY;
+  showDataContury(): void {
+    const url = this.constants.GET_ADD_VENDOR_COUNTRY;
     let headers = {
       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
     };
     this.apiHttpService
-      .get(url ,{headers})
+      .get(url, { headers })
       .pipe(first())
       .subscribe(
         (data) => {
-          this.addCountry = data['data'];
-        
-          console.log(data['data']);
+          this.addCountry = data["data"];
+
+          console.log(data["data"]);
         },
         (error) => {
           console.log(error.error.message);
         }
       );
-
-}
-showDataState(ob): void{
- const url =this.constants.GET_ADD_VENDOR_STATE;
+  }
+  showDataState(ob): void {
+    const url = this.constants.GET_ADD_VENDOR_STATE;
     let headers = {
       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
     };
-    const body = {id:ob.value};
+    const body = { id: ob.value };
     this.apiHttpService
-      .post(url , body,{headers})
+      .post(url, body, { headers })
       .pipe(first())
       .subscribe(
         (data) => {
-console.log(data);
-          this.addState = data['data'];
-        
-          console.log(data['data']);
-          
+          console.log(data);
+          this.addState = data["data"];
+
+          console.log(data["data"]);
         },
         (error) => {
           console.log(error.error.message);
         }
       );
+  }
 
-}
+  showDataCity(ob): void {
+    const url = this.constants.GET_ADD_VENDOR_CITY;
+    let headers = {
+      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+    };
+    const body = { id: ob.value };
+    this.apiHttpService
+      .post(url, body, { headers })
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          console.log(data);
+          this.addCity = data["data"];
 
-showDataCity(ob): void{
-  const url =this.constants.GET_ADD_VENDOR_CITY;
-     let headers = {
-       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
-     };
-     const body = {id:ob.value};
-     this.apiHttpService
-       .post(url , body,{headers})
-       .pipe(first())
-       .subscribe(
-         (data) => {
- console.log(data);
-           this.addCity = data['data'];
-         
-           console.log(data['data']);
-           
-         },
-         (error) => {
-           console.log(error.error.message);
-         }
-       );
- 
- }
+          console.log(data["data"]);
+        },
+        (error) => {
+          console.log(error.error.message);
+        }
+      );
+  }
 
   onBoarding() {
     this.router.navigate(["vendors/vendor-policies-view"]);
@@ -199,5 +199,3 @@ showDataCity(ob): void{
     input.click();
   }
 }
-
-
