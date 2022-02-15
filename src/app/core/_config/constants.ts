@@ -14,7 +14,10 @@ export class Constants {
   public readonly ADD_PARTNER: string = `${this.BASE_URI}admin/partners`;
   public readonly UPDATE_PARTNER_RATEING: string = `${this.BASE_URI}admin/partners/partnerrating/`;
   public readonly DOWNLOAD_PARTNERS_FILE: string = `${this.BASE_URI}admin/partners/download/`;
-  
+  public readonly GET_PARTNERS_CATEGORIES: string = `${this.BASE_URI}admin/vendor/getcategory`;
+  public readonly GET_PARTNERS_SUB_CATEGORIES: string = `${this.BASE_URI}admin/partners/subcategory`;
+
+
   public readonly GET_ALL_VENDOR_TYPES: string = `${this.BASE_URI}admin/vendor/all`;
   public readonly DOWNLOAD_VENDOR_FILE: string = `${this.BASE_URI}admin/vendor/download/`;
   public readonly ADD_VENDOR: string = `${this.BASE_URI}admin/vendor/addvendor`;

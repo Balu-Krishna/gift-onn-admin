@@ -46,9 +46,11 @@
 
           <mat-form-field class="form-group col-md-6" appearance="fill" floatLabel="always">
             <mat-label>Category</mat-label>
-            <mat-select matinput placeholder="Select Category" formControlName="category">
-              <mat-option value="vendor"> Vendor Category </mat-option>
-              <mat-option value="vendor"> Vendor Category </mat-option>
+            
+            <mat-select matinput placeholder="Select Category" formControlName="category" (selectionChange)="categoryChange($event.value)">
+              <mat-option *ngFor="let category of categories" [value]=category._id>
+                {{category.categoryName}}
+              </mat-option>
             </mat-select>
             <mat-error *ngIf="addPartnersGroup.get('category').hasError('required')  && submitted">
               <div class="d-flex align-items-center">
@@ -65,7 +67,9 @@
           <mat-form-field class="form-group col-md-6" appearance="fill" floatLabel="always">
             <mat-label>Sub Category</mat-label>
             <mat-select placeholder="Select Sub Category" formControlName="subcategory">
-              <mat-option value="vendor"> Vendor Category </mat-option>
+              <mat-option *ngFor="let category of subcategories" [value]=category._id>
+                {{category.subcategoryname}}
+              </mat-option>
             </mat-select>
             <mat-error *ngIf="addPartnersGroup.get('subcategory').hasError('required') && submitted">
               <div class="d-flex align-items-center">

@@ -17,7 +17,9 @@ export class AddPartnersComponent implements OnInit {
   countries = [];
   states=[];
   cities = [];
-
+  categories=[];
+  file;
+  subcategories: [];
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -37,13 +39,29 @@ export class AddPartnersComponent implements OnInit {
       city: [null, Validators.required],
       address: [null, Validators.required],
       logo: [null, Validators.required],
-      logosource: [null],
     });
   }
   get register() {
     return this.addPartnersGroup.controls;
   }
   ngOnInit(): void {
+    const cat_url = this.constants.GET_PARTNERS_CATEGORIES;
+    let cat_headers = {
+      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+    };
+    this.apiHttpService
+      .get(cat_url, { headers:  cat_headers})
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          console.log(data);
+          this.categories = data['data'];
+        },
+        (error) => {
+          console.log(error.error.message);
+        }
+      );
+
     const url = this.constants.GET_ADD_VENDOR_COUNTRY;
     let headers = {
       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
@@ -101,7 +119,27 @@ export class AddPartnersComponent implements OnInit {
         }
       );
   }
-  
+  categoryChange(value) {
+    const url = this.constants.GET_PARTNERS_SUB_CATEGORIES;
+    let headers = {
+      Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+    };
+    const body = {
+      categoryId: value
+    }
+    this.apiHttpService
+      .post(url, body, { headers })
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          console.log(data['data']);
+          this.subcategories = data['data'];
+        },
+        (error) => {
+          console.log(error.error.message);
+        }
+      );
+  }
   submitForm() {
     this.submitted = true;
     console.log(this.addPartnersGroup.value);
@@ -128,7 +166,7 @@ export class AddPartnersComponent implements OnInit {
     formData.append("state", this.addPartnersGroup.get("state").value);
     formData.append("city", this.addPartnersGroup.get("city").value);
     formData.append("address", this.addPartnersGroup.get("address").value);
-    formData.append("logo", this.addPartnersGroup.get("logosource").value);
+    formData.append("logo", this.file, this.file.name);
     const url = this.constants.ADD_PARTNER;
     let headers = {
       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
@@ -172,7 +210,7 @@ export class AddPartnersComponent implements OnInit {
     formData.append("state", this.addPartnersGroup.get("state").value);
     formData.append("city", this.addPartnersGroup.get("city").value);
     formData.append("address", this.addPartnersGroup.get("address").value);
-    formData.append("logo", this.addPartnersGroup.get("logosource").value);
+    formData.append("logo", this.file, this.file.name);
     const url = this.constants.ADD_PARTNER;
     let headers = {
       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
@@ -192,9 +230,7 @@ export class AddPartnersComponent implements OnInit {
   }
   handleChange(event: FileList) {
     console.log(event[0]);
-    this.addPartnersGroup.patchValue({
-      logosource: event[0],
-    });
+    this.file = event[0];
   }
   openLogoFile() {
     const input = <any>document.querySelector("#logo");
