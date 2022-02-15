@@ -9,7 +9,7 @@ import { MaterialModule } from "../material/material.module";
 const routes: Routes = [
   { path: "", component: PartnersComponent },
   { path: "add-partner", component: AddPartnersComponent },
-  { path: "add-e-sign", component: OnboardingPartnersComponent },
+  { path: "add-e-sign/:id", component: OnboardingPartnersComponent },
 ];
 
 @NgModule({

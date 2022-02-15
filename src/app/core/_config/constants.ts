@@ -16,6 +16,7 @@ export class Constants {
   public readonly DOWNLOAD_PARTNERS_FILE: string = `${this.BASE_URI}admin/partners/download/`;
   public readonly GET_PARTNERS_CATEGORIES: string = `${this.BASE_URI}admin/vendor/getcategory`;
   public readonly GET_PARTNERS_SUB_CATEGORIES: string = `${this.BASE_URI}admin/partners/subcategory`;
+  public readonly UPLOAD_PARTNERS_SIGN: string = `${this.BASE_URI}admin/partners/esignature/`;
 
 
   public readonly GET_ALL_VENDOR_TYPES: string = `${this.BASE_URI}admin/vendor/all`;

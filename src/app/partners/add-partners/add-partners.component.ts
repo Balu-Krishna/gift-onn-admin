@@ -20,6 +20,7 @@ export class AddPartnersComponent implements OnInit {
   categories=[];
   file;
   subcategories: [];
+  partnerId = '';
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -170,6 +171,7 @@ export class AddPartnersComponent implements OnInit {
     const url = this.constants.ADD_PARTNER;
     let headers = {
       Authorization: `Bearer ${this.authenticationService.currentUserValue.data.token}`,
+      'Accept': 'application/json'
     };
 
     this.apiHttpService
@@ -178,6 +180,7 @@ export class AddPartnersComponent implements OnInit {
       .subscribe(
         (data) => {
           console.log(data);
+          this.partnerId = data['data'];
         },
         (error) => {
           console.log(error.error.message);
@@ -189,7 +192,10 @@ export class AddPartnersComponent implements OnInit {
     this.router.navigate(["partners"]);
   }
   onboardPartner() {
-    this.submitted = true;
+    if(this.partnerId.length > 0) {
+      this.router.navigate(["partners/add-e-sign", this.partnerId]);
+    } else {
+      this.submitted = true;
     const formData = new FormData();
     formData.append(
       "partnername",
@@ -221,15 +227,17 @@ export class AddPartnersComponent implements OnInit {
       .pipe(first())
       .subscribe(
         (data) => {
-          this.router.navigate(["partners/add-e-sign"]);
+          this.partnerId = data['data'];
+          this.router.navigate(["partners/add-e-sign", this.partnerId]);
         },
         (error) => {
           console.log(error.error.message);
         }
       );
+    }
+    
   }
   handleChange(event: FileList) {
-    console.log(event[0]);
     this.file = event[0];
   }
   openLogoFile() {
