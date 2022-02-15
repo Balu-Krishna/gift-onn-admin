@@ -83,7 +83,9 @@ export class EditUserComponent implements OnInit {
       .pipe(first())
       .subscribe(
         (data) => {
-          console.log(data);
+          const dialogRef = this.dialog.open(SuccessfulModelComponent, {
+            data: "updateUser",
+          });
         },
         (error) => {
           console.log(error.error.message);
